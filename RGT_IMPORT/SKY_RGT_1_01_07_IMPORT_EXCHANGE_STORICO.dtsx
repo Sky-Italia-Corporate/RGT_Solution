@@ -1,0 +1,871 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/28/2013 12:13:43 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="HYPSRV-SVIL01"
+  DTS:CreatorName="SKY\vennia"
+  DTS:DTSID="{3A0B4BF2-03BB-4309-901F-750E47A6B606}"
+  DTS:EnableConfig="True"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.113"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="SKY_RGT_1_01_07_IMPORT_EXCHANGE_STORICO"
+  DTS:PackageType="5"
+  DTS:VersionBuild="41"
+  DTS:VersionGUID="{2DC4C3DA-1F9A-4E3E-9B12-5F4F7B92BD94}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[(local).ICO_MONITOR]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{9470d9c0-6b8a-48af-9afd-1b661e38addc}"
+      DTS:ObjectName="(local).ICO_MONITOR">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL01;Initial Catalog=ICO_MONITOR;Provider=SQLNCLI11;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_RGT_1_01_07_IMPORT_EXCHANGE_STORICO-{9470d9c0-6b8a-48af-9afd-1b661e38addc}(local).ICO_MONITOR;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[(local).SKY_RGT]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{d7bbf7c7-4d99-448f-bbf2-1da9010755fb}"
+      DTS:ObjectName="(local).SKY_RGT">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL01;Initial Catalog=SKY_RGT;Provider=SQLNCLI11;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_RGT_1_01_07_IMPORT_EXCHANGE_STORICO-{d7bbf7c7-4d99-448f-bbf2-1da9010755fb}(local).SKY_RGT;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[RGT_EXC]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{93877cad-f80e-4080-811c-1ee0a1c1e7fd}"
+      DTS:ObjectName="RGT_EXC">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="\\DEVRMWDBHYP01\StagingArea\RGT\SAP\RGT_EXC.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Budget Id"
+              DTS:DTSID="{B0B8F0CE-2936-4802-A29E-52B8B22B6737}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Acquisition Currency"
+              DTS:DTSID="{2ABBD457-2390-4A02-842A-5A0B919AD832}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Civil Month"
+              DTS:DTSID="{D282F4EE-4606-4BF7-B420-09189DB607A6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Transaction Date Value Valuta"
+              DTS:DTSID="{A5018B75-4198-4419-B88F-B4F6790103FA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Transaction Date Value Euro"
+              DTS:DTSID="{9FF01F4D-06CB-4107-8368-9C9A2E5DB5FF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Total Payments Valuta (ITD)"
+              DTS:DTSID="{916836E8-6A62-43FC-AE94-4F9C456F9F66}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Total Payments Euro (ITD)"
+              DTS:DTSID="{267E6C3E-0B21-4800-89A4-24BE92AA812C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Un-realized G/L on Exchange Rate (ITD)"
+              DTS:DTSID="{34AD7B67-3B61-4DC7-967D-1EB729AB7EC8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Realized G/L on Exchange Rate (ITD)"
+              DTS:DTSID="{06940CE9-47DB-4C73-9B91-821BAC7602B3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Actual Cash Cost"
+              DTS:DTSID="{69BECD2E-F2CC-4384-9330-8CC43EE91449}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Tipo Ordine"
+              DTS:DTSID="{C3222F06-1B6D-4669-A511-5DED2B7BE3D6}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SQL01.SSIS_CONFIGURATION]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{7520BF83-D279-404E-95D4-A4F81F5AC0C5}"
+      DTS:ObjectName="SQL01.SSIS_CONFIGURATION">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL01;Initial Catalog=SSIS_CONFIGURATION;Provider=SQLNCLI11;Integrated Security=SSPI;Application Name=SSIS-SKY_RGT_1_01_07_IMPORT_EXCHANGE_STORICO-{7520BF83-D279-404E-95D4-A4F81F5AC0C5}SQL01.SSIS_CONFIGURATION;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Configurations>
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;SQL01.SSIS_CONFIGURATION&quot;;&quot;[dbo].[RGT_Solution]&quot;;&quot;File_RGT_EXC&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{41F4A26C-9649-429A-9A3C-5CB1815A2212}"
+      DTS:ObjectName="File_RGT_EXC" />
+  </DTS:Configurations>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Import anagrafica in T_IMPORT_EXCHANGE"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{22d3545f-aa04-441c-b8f1-47fa7db82362}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Import anagrafica in T_IMPORT_EXCHANGE">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <pipeline
+          BLOBTempStoragePath=""
+          bufferTempStoragePath=""
+          engineThreads="5"
+          version="1">
+          <components>
+            <component
+              refId="Package\Import anagrafica in T_IMPORT_EXCHANGE\RGT_EXC"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="RGT_EXC"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import anagrafica in T_IMPORT_EXCHANGE\RGT_EXC.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[RGT_EXC]"
+                  connectionManagerRefId="Package.ConnectionManagers[RGT_EXC]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Import anagrafica in T_IMPORT_EXCHANGE\RGT_EXC.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import anagrafica in T_IMPORT_EXCHANGE\RGT_EXC.Outputs[Flat File Source Output].Columns[Budget Id]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import anagrafica in T_IMPORT_EXCHANGE\RGT_EXC.Outputs[Flat File Source Output].ExternalColumns[Budget Id]"
+                      length="50"
+                      lineageId="Package\Import anagrafica in T_IMPORT_EXCHANGE\RGT_EXC.Outputs[Flat File Source Output].Columns[Budget Id]"
+                      name="Budget Id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import anagrafica in T_IMPORT_EXCHANGE\RGT_EXC.Outputs[Flat File Source Output].Columns[Acquisition Currency]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import anagrafica in T_IMPORT_EXCHANGE\RGT_EXC.Outputs[Flat File Source Output].ExternalColumns[Acquisition Currency]"
+                      length="50"
+                      lineageId="Package\Import anagrafica in T_IMPORT_EXCHANGE\RGT_EXC.Outputs[Flat File Source Output].Columns[Acquisition Currency]"
+                      name="Acquisition Currency"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import anagrafica in T_IMPORT_EXCHANGE\RGT_EXC.Outputs[Flat File Source Output].Columns[Civil Month]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import anagrafica in T_IMPORT_EXCHANGE\RGT_EXC.Outputs[Flat File Source Output].ExternalColumns[Civil Month]"
+                      length="50"
+                      lineageId="Package\Import anagrafica in T_IMPORT_EXCHANGE\RGT_EXC.Outputs[Flat File Source Output].Columns[Civil Month]"
+                      name="Civil Month"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import anagrafica in T_IMPORT_EXCHANGE\RGT_EXC.Outputs[Flat File Source Output].Columns[Transaction Date Value Valuta]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import anagrafica in T_IMPORT_EXCHANGE\RGT_EXC.Outputs[Flat File Source Output].ExternalColumns[Transaction Date Value Valuta]"
+                      length="50"
+                      lineageId="Package\Import anagrafica in T_IMPORT_EXCHANGE\RGT_EXC.Outputs[Flat File Source Output].Columns[Transaction Date Value Valuta]"
+                      name="Transaction Date Value Valuta"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import anagrafica in T_IMPORT_EXCHANGE\RGT_EXC.Outputs[Flat File Source Output].Columns[Transaction Date Value Euro]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import anagrafica in T_IMPORT_EXCHANGE\RGT_EXC.Outputs[Flat File Source Output].ExternalColumns[Transaction Date Value Euro]"
+                      length="50"
+                      lineageId="Package\Import anagrafica in T_IMPORT_EXCHANGE\RGT_EXC.Outputs[Flat File Source Output].Columns[Transaction Date Value Euro]"
+                      name="Transaction Date Value Euro"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import anagrafica in T_IMPORT_EXCHANGE\RGT_EXC.Outputs[Flat File Source Output].Columns[Total Payments Valuta (ITD)]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import anagrafica in T_IMPORT_EXCHANGE\RGT_EXC.Outputs[Flat File Source Output].ExternalColumns[Total Payments Valuta (ITD)]"
+                      length="50"
+                      lineageId="Package\Import anagrafica in T_IMPORT_EXCHANGE\RGT_EXC.Outputs[Flat File Source Output].Columns[Total Payments Valuta (ITD)]"
+                      name="Total Payments Valuta (ITD)"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import anagrafica in T_IMPORT_EXCHANGE\RGT_EXC.Outputs[Flat File Source Output].Columns[Total Payments Euro (ITD)]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import anagrafica in T_IMPORT_EXCHANGE\RGT_EXC.Outputs[Flat File Source Output].ExternalColumns[Total Payments Euro (ITD)]"
+                      length="50"
+                      lineageId="Package\Import anagrafica in T_IMPORT_EXCHANGE\RGT_EXC.Outputs[Flat File Source Output].Columns[Total Payments Euro (ITD)]"
+                      name="Total Payments Euro (ITD)"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import anagrafica in T_IMPORT_EXCHANGE\RGT_EXC.Outputs[Flat File Source Output].Columns[Un-realized G/L on Exchange Rate (ITD)]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import anagrafica in T_IMPORT_EXCHANGE\RGT_EXC.Outputs[Flat File Source Output].ExternalColumns[Un-realized G/L on Exchange Rate (ITD)]"
+                      length="50"
+                      lineageId="Package\Import anagrafica in T_IMPORT_EXCHANGE\RGT_EXC.Outputs[Flat File Source Output].Columns[Un-realized G/L on Exchange Rate (ITD)]"
+                      name="Un-realized G/L on Exchange Rate (ITD)"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import anagrafica in T_IMPORT_EXCHANGE\RGT_EXC.Outputs[Flat File Source Output].Columns[Realized G/L on Exchange Rate (ITD)]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import anagrafica in T_IMPORT_EXCHANGE\RGT_EXC.Outputs[Flat File Source Output].ExternalColumns[Realized G/L on Exchange Rate (ITD)]"
+                      length="50"
+                      lineageId="Package\Import anagrafica in T_IMPORT_EXCHANGE\RGT_EXC.Outputs[Flat File Source Output].Columns[Realized G/L on Exchange Rate (ITD)]"
+                      name="Realized G/L on Exchange Rate (ITD)"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import anagrafica in T_IMPORT_EXCHANGE\RGT_EXC.Outputs[Flat File Source Output].Columns[Actual Cash Cost]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import anagrafica in T_IMPORT_EXCHANGE\RGT_EXC.Outputs[Flat File Source Output].ExternalColumns[Actual Cash Cost]"
+                      length="50"
+                      lineageId="Package\Import anagrafica in T_IMPORT_EXCHANGE\RGT_EXC.Outputs[Flat File Source Output].Columns[Actual Cash Cost]"
+                      name="Actual Cash Cost"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import anagrafica in T_IMPORT_EXCHANGE\RGT_EXC.Outputs[Flat File Source Output].Columns[Tipo Ordine]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import anagrafica in T_IMPORT_EXCHANGE\RGT_EXC.Outputs[Flat File Source Output].ExternalColumns[Tipo Ordine]"
+                      length="50"
+                      lineageId="Package\Import anagrafica in T_IMPORT_EXCHANGE\RGT_EXC.Outputs[Flat File Source Output].Columns[Tipo Ordine]"
+                      name="Tipo Ordine"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafica in T_IMPORT_EXCHANGE\RGT_EXC.Outputs[Flat File Source Output].ExternalColumns[Budget Id]"
+                      dataType="wstr"
+                      length="50"
+                      name="Budget Id" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafica in T_IMPORT_EXCHANGE\RGT_EXC.Outputs[Flat File Source Output].ExternalColumns[Acquisition Currency]"
+                      dataType="wstr"
+                      length="50"
+                      name="Acquisition Currency" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafica in T_IMPORT_EXCHANGE\RGT_EXC.Outputs[Flat File Source Output].ExternalColumns[Civil Month]"
+                      dataType="wstr"
+                      length="50"
+                      name="Civil Month" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafica in T_IMPORT_EXCHANGE\RGT_EXC.Outputs[Flat File Source Output].ExternalColumns[Transaction Date Value Valuta]"
+                      dataType="wstr"
+                      length="50"
+                      name="Transaction Date Value Valuta" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafica in T_IMPORT_EXCHANGE\RGT_EXC.Outputs[Flat File Source Output].ExternalColumns[Transaction Date Value Euro]"
+                      dataType="wstr"
+                      length="50"
+                      name="Transaction Date Value Euro" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafica in T_IMPORT_EXCHANGE\RGT_EXC.Outputs[Flat File Source Output].ExternalColumns[Total Payments Valuta (ITD)]"
+                      dataType="wstr"
+                      length="50"
+                      name="Total Payments Valuta (ITD)" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafica in T_IMPORT_EXCHANGE\RGT_EXC.Outputs[Flat File Source Output].ExternalColumns[Total Payments Euro (ITD)]"
+                      dataType="wstr"
+                      length="50"
+                      name="Total Payments Euro (ITD)" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafica in T_IMPORT_EXCHANGE\RGT_EXC.Outputs[Flat File Source Output].ExternalColumns[Un-realized G/L on Exchange Rate (ITD)]"
+                      dataType="wstr"
+                      length="50"
+                      name="Un-realized G/L on Exchange Rate (ITD)" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafica in T_IMPORT_EXCHANGE\RGT_EXC.Outputs[Flat File Source Output].ExternalColumns[Realized G/L on Exchange Rate (ITD)]"
+                      dataType="wstr"
+                      length="50"
+                      name="Realized G/L on Exchange Rate (ITD)" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafica in T_IMPORT_EXCHANGE\RGT_EXC.Outputs[Flat File Source Output].ExternalColumns[Actual Cash Cost]"
+                      dataType="wstr"
+                      length="50"
+                      name="Actual Cash Cost" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafica in T_IMPORT_EXCHANGE\RGT_EXC.Outputs[Flat File Source Output].ExternalColumns[Tipo Ordine]"
+                      dataType="wstr"
+                      length="50"
+                      name="Tipo Ordine" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Import anagrafica in T_IMPORT_EXCHANGE\RGT_EXC.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import anagrafica in T_IMPORT_EXCHANGE\RGT_EXC.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="65001"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Import anagrafica in T_IMPORT_EXCHANGE\RGT_EXC.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Import anagrafica in T_IMPORT_EXCHANGE\RGT_EXC.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import anagrafica in T_IMPORT_EXCHANGE\RGT_EXC.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import anagrafica in T_IMPORT_EXCHANGE\RGT_EXC.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import anagrafica in T_IMPORT_EXCHANGE\RGT_EXC.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import anagrafica in T_IMPORT_EXCHANGE\T_RST_EXCHANGE"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="T_RST_EXCHANGE"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[T_RST_EXCHANGE]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destinaton. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">ROWS_PER_BATCH = 10000</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">0</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import anagrafica in T_IMPORT_EXCHANGE\T_RST_EXCHANGE.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[(local).SKY_RGT]"
+                  connectionManagerRefId="Package.ConnectionManagers[(local).SKY_RGT]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Import anagrafica in T_IMPORT_EXCHANGE\T_RST_EXCHANGE.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import anagrafica in T_IMPORT_EXCHANGE\T_RST_EXCHANGE.Inputs[OLE DB Destination Input].Columns[Budget Id]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Budget Id"
+                      externalMetadataColumnId="Package\Import anagrafica in T_IMPORT_EXCHANGE\T_RST_EXCHANGE.Inputs[OLE DB Destination Input].ExternalColumns[Budget Id]"
+                      lineageId="Package\Import anagrafica in T_IMPORT_EXCHANGE\RGT_EXC.Outputs[Flat File Source Output].Columns[Budget Id]" />
+                    <inputColumn
+                      refId="Package\Import anagrafica in T_IMPORT_EXCHANGE\T_RST_EXCHANGE.Inputs[OLE DB Destination Input].Columns[Acquisition Currency]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Acquisition Currency"
+                      externalMetadataColumnId="Package\Import anagrafica in T_IMPORT_EXCHANGE\T_RST_EXCHANGE.Inputs[OLE DB Destination Input].ExternalColumns[Acquisition Currency]"
+                      lineageId="Package\Import anagrafica in T_IMPORT_EXCHANGE\RGT_EXC.Outputs[Flat File Source Output].Columns[Acquisition Currency]" />
+                    <inputColumn
+                      refId="Package\Import anagrafica in T_IMPORT_EXCHANGE\T_RST_EXCHANGE.Inputs[OLE DB Destination Input].Columns[Civil Month]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Civil Month"
+                      externalMetadataColumnId="Package\Import anagrafica in T_IMPORT_EXCHANGE\T_RST_EXCHANGE.Inputs[OLE DB Destination Input].ExternalColumns[Civil Month]"
+                      lineageId="Package\Import anagrafica in T_IMPORT_EXCHANGE\RGT_EXC.Outputs[Flat File Source Output].Columns[Civil Month]" />
+                    <inputColumn
+                      refId="Package\Import anagrafica in T_IMPORT_EXCHANGE\T_RST_EXCHANGE.Inputs[OLE DB Destination Input].Columns[Transaction Date Value Valuta]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Transaction Date Value Valuta"
+                      externalMetadataColumnId="Package\Import anagrafica in T_IMPORT_EXCHANGE\T_RST_EXCHANGE.Inputs[OLE DB Destination Input].ExternalColumns[Transaction Date Value Valuta]"
+                      lineageId="Package\Import anagrafica in T_IMPORT_EXCHANGE\RGT_EXC.Outputs[Flat File Source Output].Columns[Transaction Date Value Valuta]" />
+                    <inputColumn
+                      refId="Package\Import anagrafica in T_IMPORT_EXCHANGE\T_RST_EXCHANGE.Inputs[OLE DB Destination Input].Columns[Transaction Date Value Euro]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Transaction Date Value Euro"
+                      externalMetadataColumnId="Package\Import anagrafica in T_IMPORT_EXCHANGE\T_RST_EXCHANGE.Inputs[OLE DB Destination Input].ExternalColumns[Transaction Date Value Euro]"
+                      lineageId="Package\Import anagrafica in T_IMPORT_EXCHANGE\RGT_EXC.Outputs[Flat File Source Output].Columns[Transaction Date Value Euro]" />
+                    <inputColumn
+                      refId="Package\Import anagrafica in T_IMPORT_EXCHANGE\T_RST_EXCHANGE.Inputs[OLE DB Destination Input].Columns[Total Payments Valuta (ITD)]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Total Payments Valuta (ITD)"
+                      externalMetadataColumnId="Package\Import anagrafica in T_IMPORT_EXCHANGE\T_RST_EXCHANGE.Inputs[OLE DB Destination Input].ExternalColumns[Total Payments Valuta (ITD)]"
+                      lineageId="Package\Import anagrafica in T_IMPORT_EXCHANGE\RGT_EXC.Outputs[Flat File Source Output].Columns[Total Payments Valuta (ITD)]" />
+                    <inputColumn
+                      refId="Package\Import anagrafica in T_IMPORT_EXCHANGE\T_RST_EXCHANGE.Inputs[OLE DB Destination Input].Columns[Total Payments Euro (ITD)]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Total Payments Euro (ITD)"
+                      externalMetadataColumnId="Package\Import anagrafica in T_IMPORT_EXCHANGE\T_RST_EXCHANGE.Inputs[OLE DB Destination Input].ExternalColumns[Total Payments Euro (ITD)]"
+                      lineageId="Package\Import anagrafica in T_IMPORT_EXCHANGE\RGT_EXC.Outputs[Flat File Source Output].Columns[Total Payments Euro (ITD)]" />
+                    <inputColumn
+                      refId="Package\Import anagrafica in T_IMPORT_EXCHANGE\T_RST_EXCHANGE.Inputs[OLE DB Destination Input].Columns[Un-realized G/L on Exchange Rate (ITD)]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Un-realized G/L on Exchange Rate (ITD)"
+                      externalMetadataColumnId="Package\Import anagrafica in T_IMPORT_EXCHANGE\T_RST_EXCHANGE.Inputs[OLE DB Destination Input].ExternalColumns[Un-realized G/L on Exchange Rate (ITD)]"
+                      lineageId="Package\Import anagrafica in T_IMPORT_EXCHANGE\RGT_EXC.Outputs[Flat File Source Output].Columns[Un-realized G/L on Exchange Rate (ITD)]" />
+                    <inputColumn
+                      refId="Package\Import anagrafica in T_IMPORT_EXCHANGE\T_RST_EXCHANGE.Inputs[OLE DB Destination Input].Columns[Realized G/L on Exchange Rate (ITD)]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Realized G/L on Exchange Rate (ITD)"
+                      externalMetadataColumnId="Package\Import anagrafica in T_IMPORT_EXCHANGE\T_RST_EXCHANGE.Inputs[OLE DB Destination Input].ExternalColumns[Realized G/L on Exchange Rate (ITD)]"
+                      lineageId="Package\Import anagrafica in T_IMPORT_EXCHANGE\RGT_EXC.Outputs[Flat File Source Output].Columns[Realized G/L on Exchange Rate (ITD)]" />
+                    <inputColumn
+                      refId="Package\Import anagrafica in T_IMPORT_EXCHANGE\T_RST_EXCHANGE.Inputs[OLE DB Destination Input].Columns[Actual Cash Cost]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Actual Cash Cost"
+                      externalMetadataColumnId="Package\Import anagrafica in T_IMPORT_EXCHANGE\T_RST_EXCHANGE.Inputs[OLE DB Destination Input].ExternalColumns[Actual Cash Cost]"
+                      lineageId="Package\Import anagrafica in T_IMPORT_EXCHANGE\RGT_EXC.Outputs[Flat File Source Output].Columns[Actual Cash Cost]" />
+                    <inputColumn
+                      refId="Package\Import anagrafica in T_IMPORT_EXCHANGE\T_RST_EXCHANGE.Inputs[OLE DB Destination Input].Columns[Tipo Ordine]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Tipo Ordine"
+                      externalMetadataColumnId="Package\Import anagrafica in T_IMPORT_EXCHANGE\T_RST_EXCHANGE.Inputs[OLE DB Destination Input].ExternalColumns[Tipo Ordine]"
+                      lineageId="Package\Import anagrafica in T_IMPORT_EXCHANGE\RGT_EXC.Outputs[Flat File Source Output].Columns[Tipo Ordine]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafica in T_IMPORT_EXCHANGE\T_RST_EXCHANGE.Inputs[OLE DB Destination Input].ExternalColumns[Budget Id]"
+                      dataType="wstr"
+                      length="255"
+                      name="Budget Id" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafica in T_IMPORT_EXCHANGE\T_RST_EXCHANGE.Inputs[OLE DB Destination Input].ExternalColumns[Acquisition Currency]"
+                      dataType="wstr"
+                      length="255"
+                      name="Acquisition Currency" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafica in T_IMPORT_EXCHANGE\T_RST_EXCHANGE.Inputs[OLE DB Destination Input].ExternalColumns[Civil Month]"
+                      dataType="i4"
+                      name="Civil Month" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafica in T_IMPORT_EXCHANGE\T_RST_EXCHANGE.Inputs[OLE DB Destination Input].ExternalColumns[Transaction Date Value Valuta]"
+                      dataType="wstr"
+                      length="255"
+                      name="Transaction Date Value Valuta" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafica in T_IMPORT_EXCHANGE\T_RST_EXCHANGE.Inputs[OLE DB Destination Input].ExternalColumns[Transaction Date Value Euro]"
+                      dataType="wstr"
+                      length="255"
+                      name="Transaction Date Value Euro" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafica in T_IMPORT_EXCHANGE\T_RST_EXCHANGE.Inputs[OLE DB Destination Input].ExternalColumns[Total Payments Valuta (ITD)]"
+                      dataType="wstr"
+                      length="255"
+                      name="Total Payments Valuta (ITD)" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafica in T_IMPORT_EXCHANGE\T_RST_EXCHANGE.Inputs[OLE DB Destination Input].ExternalColumns[Total Payments Euro (ITD)]"
+                      dataType="wstr"
+                      length="255"
+                      name="Total Payments Euro (ITD)" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafica in T_IMPORT_EXCHANGE\T_RST_EXCHANGE.Inputs[OLE DB Destination Input].ExternalColumns[Actual Cash Cost]"
+                      dataType="wstr"
+                      length="255"
+                      name="Actual Cash Cost" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafica in T_IMPORT_EXCHANGE\T_RST_EXCHANGE.Inputs[OLE DB Destination Input].ExternalColumns[Tipo Ordine]"
+                      dataType="wstr"
+                      length="255"
+                      name="Tipo Ordine" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafica in T_IMPORT_EXCHANGE\T_RST_EXCHANGE.Inputs[OLE DB Destination Input].ExternalColumns[Un-realized G/L on Exchange Rate (ITD)]"
+                      dataType="wstr"
+                      length="255"
+                      name="Un-realized G/L on Exchange Rate (ITD)" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafica in T_IMPORT_EXCHANGE\T_RST_EXCHANGE.Inputs[OLE DB Destination Input].ExternalColumns[Realized G/L on Exchange Rate (ITD)]"
+                      dataType="wstr"
+                      length="255"
+                      name="Realized G/L on Exchange Rate (ITD)" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import anagrafica in T_IMPORT_EXCHANGE\T_RST_EXCHANGE.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Import anagrafica in T_IMPORT_EXCHANGE\T_RST_EXCHANGE.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import anagrafica in T_IMPORT_EXCHANGE\T_RST_EXCHANGE.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import anagrafica in T_IMPORT_EXCHANGE\T_RST_EXCHANGE.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import anagrafica in T_IMPORT_EXCHANGE\T_RST_EXCHANGE.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import anagrafica in T_IMPORT_EXCHANGE\T_RST_EXCHANGE.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Import anagrafica in T_IMPORT_EXCHANGE.Paths[Flat File Source Output]"
+              endId="Package\Import anagrafica in T_IMPORT_EXCHANGE\T_RST_EXCHANGE.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Import anagrafica in T_IMPORT_EXCHANGE\RGT_EXC.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate T_IMPORT_EXCHANGE"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{143ea577-2e1c-4ebc-ab49-6fdba5052015}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate T_IMPORT_EXCHANGE"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{d7bbf7c7-4d99-448f-bbf2-1da9010755fb}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE [dbo].[T_RST_EXCHANGE]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{33bac13c-98e9-45ae-b030-f3cbc9129520}"
+      DTS:From="Package\Truncate T_IMPORT_EXCHANGE"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Import anagrafica in T_IMPORT_EXCHANGE" />
+  </DTS:PrecedenceConstraints>
+  <DTS:PackageVariables>
+    <DTS:PackageVariable
+      DTS:CreationName=""
+      DTS:DTSID="{F6E5D6F5-A53D-46CB-A895-40B736332699}"
+      DTS:Namespace="dts-designer-1.0"
+      DTS:ObjectName="{22d3545f-aa04-441c-b8f1-47fa7db82362}">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="PackageVariableValue">&lt;TaskHost xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0"&gt;&lt;dwd:DtsDataFlowDiagram&gt;&lt;dwd:BoundingLeft&gt;-1085&lt;/dwd:BoundingLeft&gt;&lt;dwd:BoundingTop&gt;-1403&lt;/dwd:BoundingTop&gt;&lt;dwd:Layout&gt;&lt;dds&gt;&lt;diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="Microsoft.DataWarehouse.Layout.GraphLayout110" defaultlineroute="Microsoft.DataWarehouse.Layout.GraphLayout110" version="7" nextobject="13" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-2085" scrolltop="-2403" gridx="150" gridy="150" marginx="1000" marginy="1000" zoom="100" x="38973" y="7408" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="1" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="0" backpictureclsid="{00000000-0000-0000-0000-000000000000}"&gt;&lt;font&gt;&lt;ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" /&gt;&lt;/font&gt;&lt;mouseicon&gt;&lt;ddsxmlobjectstreamwrapper binary="6c74000000000000" /&gt;&lt;/mouseicon&gt;&lt;/diagram&gt;&lt;layoutmanager&gt;&lt;ddsxmlobj /&gt;&lt;/layoutmanager&gt;&lt;ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="OLE DB Destination" left="-1085" top="3016" logicalid="4" controlid="1" masterid="0" hint1="0" hint2="0" width="8387" height="1164" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobjectstreaminitwrapper binary="00080000c32000008c040000" /&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj&gt;&lt;property name="LogicalObject" value="Package\Import anagrafica in T_IMPORT_EXCHANGE\T_RST_EXCHANGE" vartype="8" /&gt;&lt;property name="ShowConnectorSource" value="0" vartype="2" /&gt;&lt;/ddsxmlobj&gt;&lt;/layoutobject&gt;&lt;shape groupshapeid="0" groupnode="0" /&gt;&lt;/ddscontrol&gt;&lt;ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Flat File Source" left="1309" top="-1403" logicalid="5" controlid="2" masterid="0" hint1="0" hint2="0" width="3598" height="1164" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobjectstreaminitwrapper binary="000800000e0e00008c040000" /&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj&gt;&lt;property name="LogicalObject" value="Package\Import anagrafica in T_IMPORT_EXCHANGE\RGT_EXC" vartype="8" /&gt;&lt;property name="ShowConnectorSource" value="0" vartype="2" /&gt;&lt;/ddsxmlobj&gt;&lt;/layoutobject&gt;&lt;shape groupshapeid="0" groupnode="0" /&gt;&lt;/ddscontrol&gt;&lt;ddscontrol controlprogid="MSDDS.Polyline" left="2709" top="-638" logicalid="6" controlid="3" masterid="0" hint1="0" hint2="0" width="799" height="4154" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobj&gt;&lt;polyline endtypedst="3" endtypesrc="1" usercolor="32768" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1"&gt;&lt;adornment percentpos="49.9539170506912" controlid="9" width="1557" height="344" side="0" behavior="2" himetric="1626" distfromline="175" startobj="0" x="1376" y="1216" visible="1" allowoverlap="1" usepercent="1" /&gt;&lt;/polyline&gt;&lt;/ddsxmlobj&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj&gt;&lt;property name="LogicalObject" value="Package\Import anagrafica in T_IMPORT_EXCHANGE.Paths[Flat File Source Output]" vartype="8" /&gt;&lt;property name="Virtual" value="0" vartype="11" /&gt;&lt;property name="VisibleAP" value="0" vartype="3" /&gt;&lt;/ddsxmlobj&gt;&lt;/layoutobject&gt;&lt;connector lineroutestyle="Microsoft.DataWarehouse.Layout.GraphLayout110" sourceid="2" destid="1" sourceattachpoint="7" destattachpoint="14" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="2" relatedid="0" virtual="0"&gt;&lt;point x="3108" y="-239" /&gt;&lt;point x="3108" y="3016" /&gt;&lt;/connector&gt;&lt;/ddscontrol&gt;&lt;ddscontrol controlprogid="MSDDS.Text" left="1376" top="1216" logicalid="12" controlid="9" masterid="3" hint1="0" hint2="0" width="1557" height="344" noresize="1" nomove="0" nodefaultattachpoints="1" autodrag="1" usedefaultiddshape="1" selectable="0" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="1" groupcollapsed="0" tabstop="0" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobjectstreaminitwrapper binary="000200001506000058010000030000000000050000800800008001000000250001000000900144420100065461686f6d610a0036002e00310037003700200072006f007700730000000000" /&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj&gt;&lt;property name="AnnotationAdornment" value="-1" vartype="11" /&gt;&lt;/ddsxmlobj&gt;&lt;/layoutobject&gt;&lt;shape groupshapeid="0" groupnode="0" /&gt;&lt;/ddscontrol&gt;&lt;/dds&gt;&lt;/dwd:Layout&gt;&lt;dwd:PersistedViewPortLeft&gt;-2085&lt;/dwd:PersistedViewPortLeft&gt;&lt;dwd:PersistedViewPortTop&gt;-2403&lt;/dwd:PersistedViewPortTop&gt;&lt;/dwd:DtsDataFlowDiagram&gt;&lt;dwd:DtsComponentDesignerPropertiesList&gt;&lt;dwd:DtsComponentDesignTimeProperty&gt;&lt;dwd:key xsi:type="xsd:string"&gt;31039	TableInfoObjectType&lt;/dwd:key&gt;&lt;dwd:value xsi:type="xsd:string"&gt;Table&lt;/dwd:value&gt;&lt;/dwd:DtsComponentDesignTimeProperty&gt;&lt;dwd:DtsComponentDesignTimeProperty&gt;&lt;dwd:key xsi:type="xsd:string"&gt;33624	TableInfoObjectType&lt;/dwd:key&gt;&lt;dwd:value xsi:type="xsd:string"&gt;Table&lt;/dwd:value&gt;&lt;/dwd:DtsComponentDesignTimeProperty&gt;&lt;dwd:DtsComponentDesignTimeProperty&gt;&lt;dwd:key xsi:type="xsd:string"&gt;31039	DataSourceViewID&lt;/dwd:key&gt;&lt;/dwd:DtsComponentDesignTimeProperty&gt;&lt;dwd:DtsComponentDesignTimeProperty&gt;&lt;dwd:key xsi:type="xsd:string"&gt;27179	DataSourceViewID&lt;/dwd:key&gt;&lt;/dwd:DtsComponentDesignTimeProperty&gt;&lt;dwd:DtsComponentDesignTimeProperty&gt;&lt;dwd:key xsi:type="xsd:string"&gt;33624	DataSourceViewID&lt;/dwd:key&gt;&lt;/dwd:DtsComponentDesignTimeProperty&gt;&lt;dwd:DtsComponentDesignTimeProperty&gt;&lt;dwd:key xsi:type="xsd:string"&gt;34377	TableInfoObjectType&lt;/dwd:key&gt;&lt;dwd:value xsi:type="xsd:string"&gt;Table&lt;/dwd:value&gt;&lt;/dwd:DtsComponentDesignTimeProperty&gt;&lt;dwd:DtsComponentDesignTimeProperty&gt;&lt;dwd:key xsi:type="xsd:string"&gt;34377	DataSourceViewID&lt;/dwd:key&gt;&lt;/dwd:DtsComponentDesignTimeProperty&gt;&lt;dwd:DtsComponentDesignTimeProperty&gt;&lt;dwd:key xsi:type="xsd:string"&gt;27954	TableInfoObjectType&lt;/dwd:key&gt;&lt;dwd:value xsi:type="xsd:string"&gt;Table&lt;/dwd:value&gt;&lt;/dwd:DtsComponentDesignTimeProperty&gt;&lt;dwd:DtsComponentDesignTimeProperty&gt;&lt;dwd:key xsi:type="xsd:string"&gt;27179	TableInfoObjectType&lt;/dwd:key&gt;&lt;dwd:value xsi:type="xsd:string"&gt;Table&lt;/dwd:value&gt;&lt;/dwd:DtsComponentDesignTimeProperty&gt;&lt;dwd:DtsComponentDesignTimeProperty&gt;&lt;dwd:key xsi:type="xsd:string"&gt;27954	DataSourceViewID&lt;/dwd:key&gt;&lt;/dwd:DtsComponentDesignTimeProperty&gt;&lt;/dwd:DtsComponentDesignerPropertiesList&gt;&lt;/TaskHost&gt;</DTS:Property>
+    </DTS:PackageVariable>
+    <DTS:PackageVariable
+      DTS:CreationName=""
+      DTS:DTSID="{3F2F01DD-6605-449A-BE7A-8AC76C25C80F}"
+      DTS:Namespace="dts-designer-1.0"
+      DTS:ObjectName="{22d3545f-aa04-441c-b8f1-47fa7db82362}-34554">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="PackageVariableValue">&lt;PipelinePath xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0"&gt;&lt;dwd:SourceName&gt;Flat File Source Output&lt;/dwd:SourceName&gt;&lt;dwd:DestinationName&gt;OLE DB Destination Input&lt;/dwd:DestinationName&gt;&lt;/PipelinePath&gt;</DTS:Property>
+    </DTS:PackageVariable>
+    <DTS:PackageVariable
+      DTS:CreationName=""
+      DTS:DTSID="{D8E1E8FE-545A-403D-A8C1-EC088A43CF2B}"
+      DTS:Namespace="dts-designer-1.0"
+      DTS:ObjectName="{33bac13c-98e9-45ae-b030-f3cbc9129520}">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="PackageVariableValue">&lt;PrecedenceConstraint xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0"&gt;&lt;dwd:EvalOp&gt;Constraint&lt;/dwd:EvalOp&gt;&lt;/PrecedenceConstraint&gt;</DTS:Property>
+    </DTS:PackageVariable>
+    <DTS:PackageVariable
+      DTS:CreationName=""
+      DTS:DTSID="{3146B0D1-4A7F-400B-BD40-12DC16447D10}"
+      DTS:Namespace="dts-designer-1.0"
+      DTS:ObjectName="package-diagram">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="PackageVariableValue">&lt;Package xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0"&gt;&lt;dwd:DtsControlFlowDiagram&gt;&lt;dwd:BoundingLeft&gt;1000&lt;/dwd:BoundingLeft&gt;&lt;dwd:BoundingTop&gt;1000&lt;/dwd:BoundingTop&gt;&lt;dwd:Layout&gt;&lt;dds&gt;&lt;diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="Microsoft.DataWarehouse.Layout.GraphLayout110" defaultlineroute="Microsoft.DataWarehouse.Layout.GraphLayout110" version="7" nextobject="10" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="0" scrolltop="942" gridx="150" gridy="150" marginx="1000" marginy="1000" zoom="100" x="38973" y="7832" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="1" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}"&gt;&lt;font&gt;&lt;ddsxmlobjectstreamwrapper binary="01010000900180380100065461686f6d61" /&gt;&lt;/font&gt;&lt;mouseicon&gt;&lt;ddsxmlobjectstreamwrapper binary="6c74000000000000" /&gt;&lt;/mouseicon&gt;&lt;/diagram&gt;&lt;layoutmanager&gt;&lt;ddsxmlobj /&gt;&lt;/layoutmanager&gt;&lt;ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Execute SQL Task" left="1224" top="1000" logicalid="4" controlid="1" masterid="0" hint1="0" hint2="0" width="6985" height="1164" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobjectstreaminitwrapper binary="00080000491b00008c040000" /&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj&gt;&lt;property name="LogicalObject" value="Package\Truncate T_IMPORT_EXCHANGE" vartype="8" /&gt;&lt;property name="ShowConnectorSource" value="0" vartype="2" /&gt;&lt;/ddsxmlobj&gt;&lt;/layoutobject&gt;&lt;shape groupshapeid="0" groupnode="0" /&gt;&lt;/ddscontrol&gt;&lt;ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Data Flow Task" left="1000" top="5750" logicalid="5" controlid="2" masterid="0" hint1="0" hint2="0" width="7432" height="1164" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobjectstreaminitwrapper binary="00080000081d00008c040000" /&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj&gt;&lt;property name="LogicalObject" value="Package\Import anagrafica in T_IMPORT_EXCHANGE" vartype="8" /&gt;&lt;property name="ShowConnectorSource" value="0" vartype="2" /&gt;&lt;/ddsxmlobj&gt;&lt;/layoutobject&gt;&lt;shape groupshapeid="0" groupnode="0" /&gt;&lt;/ddscontrol&gt;&lt;ddscontrol controlprogid="MSDDS.Polyline" left="4317" top="1765" logicalid="6" controlid="3" masterid="0" hint1="0" hint2="0" width="799" height="4485" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobj&gt;&lt;polyline endtypedst="3" endtypesrc="1" usercolor="32768" linestyle="0" linerender="2" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" /&gt;&lt;/ddsxmlobj&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj&gt;&lt;property name="LogicalObject" value="Package.PrecedenceConstraints[Constraint 2]" vartype="8" /&gt;&lt;property name="Virtual" value="0" vartype="11" /&gt;&lt;property name="VisibleAP" value="0" vartype="3" /&gt;&lt;/ddsxmlobj&gt;&lt;/layoutobject&gt;&lt;connector sourceid="1" destid="2" sourceattachpoint="13" destattachpoint="12" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="2" relatedid="0" virtual="0"&gt;&lt;point x="4716" y="2164" /&gt;&lt;point x="4716" y="5750" /&gt;&lt;/connector&gt;&lt;/ddscontrol&gt;&lt;/dds&gt;&lt;/dwd:Layout&gt;&lt;dwd:PersistedViewPortTop&gt;942&lt;/dwd:PersistedViewPortTop&gt;&lt;/dwd:DtsControlFlowDiagram&gt;&lt;/Package&gt;</DTS:Property>
+    </DTS:PackageVariable>
+    <DTS:PackageVariable
+      DTS:CreationName=""
+      DTS:DTSID="{01ECAF79-2CA2-4FF3-B76F-9F2164E93452}"
+      DTS:Namespace="dts-designer-1.0"
+      DTS:ObjectName="package-diagram">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="PackageVariableValue">&lt;Package xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0"&gt;&lt;dwd:DtsControlFlowDiagram&gt;&lt;dwd:BoundingLeft&gt;1000&lt;/dwd:BoundingLeft&gt;&lt;dwd:BoundingTop&gt;1000&lt;/dwd:BoundingTop&gt;&lt;dwd:Layout&gt;&lt;dds&gt;&lt;diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="Microsoft.DataWarehouse.Layout.GraphLayout110" defaultlineroute="Microsoft.DataWarehouse.Layout.GraphLayout110" version="7" nextobject="10" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="0" scrolltop="942" gridx="150" gridy="150" marginx="1000" marginy="1000" zoom="100" x="38973" y="7832" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="1" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}"&gt;&lt;font&gt;&lt;ddsxmlobjectstreamwrapper binary="01010000900180380100065461686f6d61" /&gt;&lt;/font&gt;&lt;mouseicon&gt;&lt;ddsxmlobjectstreamwrapper binary="6c74000000000000" /&gt;&lt;/mouseicon&gt;&lt;/diagram&gt;&lt;layoutmanager&gt;&lt;ddsxmlobj /&gt;&lt;/layoutmanager&gt;&lt;ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Execute SQL Task" left="1224" top="1000" logicalid="4" controlid="1" masterid="0" hint1="0" hint2="0" width="6985" height="1164" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobjectstreaminitwrapper binary="00080000491b00008c040000" /&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj&gt;&lt;property name="LogicalObject" value="Package\Truncate T_IMPORT_EXCHANGE" vartype="8" /&gt;&lt;property name="ShowConnectorSource" value="0" vartype="2" /&gt;&lt;/ddsxmlobj&gt;&lt;/layoutobject&gt;&lt;shape groupshapeid="0" groupnode="0" /&gt;&lt;/ddscontrol&gt;&lt;ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Data Flow Task" left="1000" top="5750" logicalid="5" controlid="2" masterid="0" hint1="0" hint2="0" width="7432" height="1164" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobjectstreaminitwrapper binary="00080000081d00008c040000" /&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj&gt;&lt;property name="LogicalObject" value="Package\Import anagrafica in T_IMPORT_EXCHANGE" vartype="8" /&gt;&lt;property name="ShowConnectorSource" value="0" vartype="2" /&gt;&lt;/ddsxmlobj&gt;&lt;/layoutobject&gt;&lt;shape groupshapeid="0" groupnode="0" /&gt;&lt;/ddscontrol&gt;&lt;ddscontrol controlprogid="MSDDS.Polyline" left="4317" top="1765" logicalid="6" controlid="3" masterid="0" hint1="0" hint2="0" width="799" height="4485" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobj&gt;&lt;polyline endtypedst="3" endtypesrc="1" usercolor="32768" linestyle="0" linerender="2" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" /&gt;&lt;/ddsxmlobj&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj&gt;&lt;property name="LogicalObject" value="Package.PrecedenceConstraints[Constraint 2]" vartype="8" /&gt;&lt;property name="Virtual" value="0" vartype="11" /&gt;&lt;property name="VisibleAP" value="0" vartype="3" /&gt;&lt;/ddsxmlobj&gt;&lt;/layoutobject&gt;&lt;connector sourceid="1" destid="2" sourceattachpoint="13" destattachpoint="12" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="2" relatedid="0" virtual="0"&gt;&lt;point x="4716" y="2164" /&gt;&lt;point x="4716" y="5750" /&gt;&lt;/connector&gt;&lt;/ddscontrol&gt;&lt;/dds&gt;&lt;/dwd:Layout&gt;&lt;dwd:PersistedViewPortTop&gt;942&lt;/dwd:PersistedViewPortTop&gt;&lt;/dwd:DtsControlFlowDiagram&gt;&lt;/Package&gt;</DTS:Property>
+    </DTS:PackageVariable>
+  </DTS:PackageVariables>
+</DTS:Executable>

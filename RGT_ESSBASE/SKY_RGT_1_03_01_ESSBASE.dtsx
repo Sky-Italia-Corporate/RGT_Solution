@@ -1,0 +1,452 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/8/2011 11:22:35 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="HYPSRV-SVIL01"
+  DTS:CreatorName="SKY\vennia"
+  DTS:DTSID="{719D4AB9-0891-470A-8AB5-2C5F197B7B20}"
+  DTS:EnableConfig="True"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.113"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="SKY_RGT_1_03_01_ESSBASE"
+  DTS:PackageType="5"
+  DTS:VersionBuild="135"
+  DTS:VersionGUID="{BB7F8ABE-B372-41E5-8F76-B0D1A60E4713}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[(local).ICO_MONITOR]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{3AEED4F4-87FF-402A-AA2E-392649E03228}"
+      DTS:ObjectName="(local).ICO_MONITOR">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL02;Initial Catalog=ICO_MONITOR;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_RGT_1_03_01_ESSBASE-{3AEED4F4-87FF-402A-AA2E-392649E03228}(local).ICO_MONITOR;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[(local).SKY_RGT]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{C468131C-1F2F-4832-B5D7-403FF2768CDB}"
+      DTS:ObjectName="(local).SKY_RGT">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL02;Initial Catalog=SKY_RGT;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_RGT_1_03_01_ESSBASE-{C468131C-1F2F-4832-B5D7-403FF2768CDB}(local).SKY_RGT;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SQL01.SSIS_CONFIGURATION]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{AB2BA923-3935-4E75-8608-581E1EFC2DBD}"
+      DTS:ObjectName="SQL01.SSIS_CONFIGURATION">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL02;Initial Catalog=SSIS_CONFIGURATION;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_RGT_1_03_01_ESSBASE-{AB2BA923-3935-4E75-8608-581E1EFC2DBD}SQL01.SSIS_CONFIGURATION;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SSAS_MSOLAP]"
+      DTS:CreationName="MSOLAP100"
+      DTS:DTSID="{23973814-A24F-4795-B44D-0A9496361637}"
+      DTS:ObjectName="SSAS_MSOLAP">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=DEVRMWDBHYP01;Provider=MSOLAP.8;Integrated Security=SSPI;Impersonation Level=Impersonate;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Configurations>
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;SQL01.SSIS_CONFIGURATION&quot;;&quot;[dbo].[RGT_Solution]&quot;;&quot;VAR_ServerApp01&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{F5BAFEEA-983C-44AA-8674-BB835795A0D2}"
+      DTS:ObjectName="VAR_ServerApp01" />
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;SQL01.SSIS_CONFIGURATION&quot;;&quot;[dbo].[RGT_Solution]&quot;;&quot;VAR_AMBITO&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{8F1292F5-3B96-4511-86E1-048E47F18910}"
+      DTS:ObjectName="VAR_AMBITO" />
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;SQL01.SSIS_CONFIGURATION&quot;;&quot;[dbo].[RGT_Solution]&quot;;&quot;SSAS_Connection&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{0C81B367-06D5-44CC-8E5E-C181FEBFC615}"
+      DTS:ObjectName="VAR_SSAS_Connection" />
+  </DTS:Configurations>
+  <DTS:LogProviders>
+    <DTS:LogProvider
+      DTS:ConfigString="(local).ICO_MONITOR"
+      DTS:CreationName="Microsoft.LogProviderSQLServer"
+      DTS:Description="Writes log entries for events to a SQL Server database"
+      DTS:DTSID="{D95CCF0C-3906-4156-BF57-FEFB5D4A9CF4}"
+      DTS:ObjectName="SSIS log provider for SQL Server">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+  </DTS:LogProviders>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{1B3C6EEA-759B-4E6C-9D52-CC7523EFCF0F}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="AMB">
+      <DTS:VariableValue
+        DTS:DataType="8">STU</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E1DD1805-68EF-4F8C-B5D6-8F16FD9DE2DB}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ServerApp01">
+      <DTS:VariableValue
+        DTS:DataType="8">DEVRMWASHYP01</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{D664C39D-B3E9-4DE8-A7BB-90DC231E1E24}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;RGT&quot;+ @[User::AMB]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="vOLAPDatabaseName">
+      <DTS:VariableValue
+        DTS:DataType="8">RGTSTU</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{CF352B72-23AD-4A2F-946B-41EF7266A690}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;&lt;Batch xmlns=\&quot;http://schemas.microsoft.com/analysisservices/2003/engine\&quot;&gt;&#xA;  &lt;Process    xmlns:xsd=\&quot;http://www.w3.org/2001/XMLSchema\&quot;&#xA;              xmlns:xsi=\&quot;http://www.w3.org/2001/XMLSchema-instance\&quot;&#xA;              xmlns:ddl2=\&quot;http://schemas.microsoft.com/analysisservices/2003/engine/2\&quot;&#xA;              xmlns:ddl2_2=\&quot;http://schemas.microsoft.com/analysisservices/2003/engine/2/2\&quot;&#xA;              xmlns:ddl100_100=\&quot;http://schemas.microsoft.com/analysisservices/2008/engine/100/100\&quot;&#xA;              xmlns:ddl200=\&quot;http://schemas.microsoft.com/analysisservices/2010/engine/200\&quot;&#xA;              xmlns:ddl200_200=\&quot;http://schemas.microsoft.com/analysisservices/2010/engine/200/200\&quot;&#xA;              xmlns:ddl300=\&quot;http://schemas.microsoft.com/analysisservices/2011/engine/300\&quot;&#xA;              xmlns:ddl300_300=\&quot;http://schemas.microsoft.com/analysisservices/2011/engine/300/300\&quot;&#xA;              xmlns:ddl400=\&quot;http://schemas.microsoft.com/analysisservices/2012/engine/400\&quot;&#xA;              xmlns:ddl400_400=\&quot;http://schemas.microsoft.com/analysisservices/2012/engine/400/400\&quot;&#xA;              xmlns:ddl500=\&quot;http://schemas.microsoft.com/analysisservices/2013/engine/500\&quot;&#xA;              xmlns:ddl500_500=\&quot;http://schemas.microsoft.com/analysisservices/2013/engine/500/500\&quot;&gt;&#xA;    &lt;Object&gt;&#xA;      &lt;DatabaseID&gt;&quot;+ @[User::vOLAPDatabaseName] +&quot;&lt;/DatabaseID&gt;&#xA;    &lt;/Object&gt;&#xA;    &lt;Type&gt;ProcessFull&lt;/Type&gt;&#xA;    &lt;WriteBackTableCreation&gt;UseExisting&lt;/WriteBackTableCreation&gt;&#xA;  &lt;/Process&gt;&#xA;&lt;/Batch&gt;&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="vOLAPProcessXMLA">
+      <DTS:VariableValue
+        DTS:DataType="8">&lt;Batch xmlns="http://schemas.microsoft.com/analysisservices/2003/engine"&gt;
+  &lt;Process    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2"
+              xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2"
+              xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100"
+              xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200"
+              xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200"
+              xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300"
+              xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300"
+              xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400"
+              xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400"
+              xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500"
+              xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500"&gt;
+    &lt;Object&gt;
+      &lt;DatabaseID&gt;RGTSTU&lt;/DatabaseID&gt;
+    &lt;/Object&gt;
+    &lt;Type&gt;ProcessFull&lt;/Type&gt;
+    &lt;WriteBackTableCreation&gt;UseExisting&lt;/WriteBackTableCreation&gt;
+  &lt;/Process&gt;
+&lt;/Batch&gt;</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">6,7,OnError,13,OnPostExecute,14,OnPostValidate,12,OnPreExecute,13,OnPreValidate,12,OnTaskFailed</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnTaskFailed"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:SelectedLogProviders>
+      <DTS:SelectedLogProvider
+        DTS:InstanceID="{D95CCF0C-3906-4156-BF57-FEFB5D4A9CF4}" />
+    </DTS:SelectedLogProviders>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Aggiornamento SF_AMMORTAMENTO_WEEKLY"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="TPC"
+      DTS:DTSID="{0F88D64D-5244-4762-8FBB-D7959C4FC7CA}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Aggiornamento SF_AMMORTAMENTO_WEEKLY"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{C468131C-1F2F-4832-B5D7-403FF2768CDB}"
+          SQLTask:SqlStatementSource="EXEC&#x9;[dbo].[RGT_SF_AMMORTAMENTO_WEEKLY] ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::AMB"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Cube Processing"
+      DTS:CreationName="Microsoft.ASExecuteDDLTask"
+      DTS:Description="Analysis Services Execute DDL Task"
+      DTS:DTSID="{6256742E-3D44-45B8-80DD-17378D720339}"
+      DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Cube Processing"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ASDdlData
+          ConnectionName="SSAS_MSOLAP"
+          SourceType="Variable"
+          Source="User::vOLAPProcessXMLA" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load DimData"
+      DTS:CreationName="Microsoft.ExecuteProcess"
+      DTS:Description="Execute Process Task"
+      DTS:DTSID="{EB25E27E-B4AD-4791-A9A5-337E33FA2D20}"
+      DTS:ExecutableType="Microsoft.ExecuteProcess"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load DimData"
+      DTS:TaskContact="Execute Process Task;Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:PropertyExpression
+        DTS:Name="Arguments">"/C \"E:\\StagingArea\\PsExec\\PsExec \\\\"+ @[User::ServerApp01] +" E:\\StagingArea\\RGT\\Batch\\Load_RGT_DimData.bat " +@[User::AMB]+"  -accepteula\""</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <ExecuteProcessData
+          Executable="C:\WINDOWS\System32\CMD.exe"
+          Arguments="/C &quot;E:\StagingArea\PsExec\PsExec \\DEVRMWASHYP01 E:\StagingArea\RGT\Batch\Load_RGT_DimData.bat STU  -accepteula&quot;" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{D2593F44-2CC0-4D55-9209-45B97FDC9499}"
+      DTS:EvalOp="1"
+      DTS:Expression="(@[User::AMB]==&quot;ATL&quot;)||(@[User::AMB]==&quot;UNO&quot;)||(@[User::AMB]==&quot;OTE&quot;)||(@[User::AMB]==&quot;STU&quot;)"
+      DTS:From="Package\Aggiornamento SF_AMMORTAMENTO_WEEKLY"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Cube Processing" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{0C3C4B13-593C-4FD8-A0C8-BC91C0D970DA}"
+      DTS:EvalOp="1"
+      DTS:Expression="(@[User::AMB]!=&quot;ATL&quot;)&amp;&amp;(@[User::AMB]!=&quot;UNO&quot;)&amp;&amp;(@[User::AMB]!=&quot;OTE&quot;)&amp;&amp;(@[User::AMB]!=&quot;STU&quot;)"
+      DTS:From="Package\Aggiornamento SF_AMMORTAMENTO_WEEKLY"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Load DimData" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="253,44"
+          Id="Package\Aggiornamento SF_AMMORTAMENTO_WEEKLY"
+          TopLeft="6.5,5.5" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Cube Processing"
+          TopLeft="54,131" />
+        <NodeLayout
+          Size="136,44"
+          Id="Package\Load DimData"
+          TopLeft="358.5,120" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="132.5,49.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,81.5"
+              Start="0,0"
+              End="0,74">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,74" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,29,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="173.833333333333,49.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="252.666666666667,70.5"
+              Start="0,0"
+              End="252.666666666667,63">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.4658287509819" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.4658287509819"
+                    Point2="0,28.4658287509819"
+                    Point3="4,28.4658287509819" />
+                  <mssgle:LineSegment
+                    End="248.666666666667,28.4658287509819" />
+                  <mssgle:CubicBezierSegment
+                    Point1="248.666666666667,28.4658287509819"
+                    Point2="252.666666666667,28.4658287509819"
+                    Point3="252.666666666667,32.4658287509819" />
+                  <mssgle:LineSegment
+                    End="252.666666666667,63" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="118.333333333333,33.4658287509819,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <ConnectionManager
+    design-time-name="Package.ConnectionManagers[SSAS_MSOLAP]">
+    <ProjectReferenceName></ProjectReferenceName>
+  </ConnectionManager>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

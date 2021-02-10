@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.960
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "RGT_IMPORT", "RGT_IMPORT\RGT_IMPORT.dtproj", "{BFE76C0D-C24C-4D24-9C98-C7AE796EE13F}"
+EndProject
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "RGT_ESSBASE", "RGT_ESSBASE\RGT_ESSBASE.dtproj", "{3C03A7E8-B31F-47C8-98CF-AC67B032BE0F}"
+EndProject
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "RGT_LEV2-3", "RGT_LEV2-3\RGT_LEV2-3.dtproj", "{7CAADFC7-2DB6-40B0-B20F-2B4BD87002F0}"
+EndProject
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "RGT_EXPORT", "RGT_EXPORT\RGT_EXPORT.dtproj", "{D01D85B7-8EC8-431B-82ED-FF822FDE630A}"
+EndProject
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "RGT_SA", "RGT_SA\RGT_SA.dtproj", "{99EC1A73-5D4A-4273-B493-3992BB18BB36}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BFE76C0D-C24C-4D24-9C98-C7AE796EE13F}.Development|Default.ActiveCfg = Development
+		{BFE76C0D-C24C-4D24-9C98-C7AE796EE13F}.Development|Default.Build.0 = Development
+		{3C03A7E8-B31F-47C8-98CF-AC67B032BE0F}.Development|Default.ActiveCfg = Development
+		{3C03A7E8-B31F-47C8-98CF-AC67B032BE0F}.Development|Default.Build.0 = Development
+		{7CAADFC7-2DB6-40B0-B20F-2B4BD87002F0}.Development|Default.ActiveCfg = Development
+		{7CAADFC7-2DB6-40B0-B20F-2B4BD87002F0}.Development|Default.Build.0 = Development
+		{D01D85B7-8EC8-431B-82ED-FF822FDE630A}.Development|Default.ActiveCfg = Development
+		{D01D85B7-8EC8-431B-82ED-FF822FDE630A}.Development|Default.Build.0 = Development
+		{99EC1A73-5D4A-4273-B493-3992BB18BB36}.Development|Default.ActiveCfg = Development
+		{99EC1A73-5D4A-4273-B493-3992BB18BB36}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {12B50C2C-77ED-448D-9831-D0661DF4CA8D}
+	EndGlobalSection
+EndGlobal

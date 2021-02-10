@@ -1,0 +1,1201 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="6/21/2011 2:04:32 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="HYPSRV-SVIL01"
+  DTS:CreatorName="SKY\vennia"
+  DTS:DTSID="{29B47DF9-A535-45FD-B561-255EE3FAFC33}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.113"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="SKY_RGT_1_02_04_CA_PERIODS"
+  DTS:PackageType="5"
+  DTS:VersionBuild="54"
+  DTS:VersionGUID="{8006615F-CF40-4A7F-8E95-FF40C274B77A}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SQL01.ICO_MONITOR]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{A1D97F86-8125-498E-B0C1-1F080F6482DC}"
+      DTS:ObjectName="SQL01.ICO_MONITOR">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL01;Initial Catalog=ICO_MONITOR;Provider=SQLNCLI11;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_PTV_1_02_04_CA_PERIODS-{A1D97F86-8125-498E-B0C1-1F080F6482DC}(local).ICO_MONITOR;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SQL01.SKY_RGT]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{D33B4621-0AEC-4EB5-A704-F70CCF630888}"
+      DTS:ObjectName="SQL01.SKY_RGT">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL01;Initial Catalog=SKY_RGT;Provider=SQLNCLI11;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_PTV_1_02_04_CA_PERIODS-{D33B4621-0AEC-4EB5-A704-F70CCF630888}(local).SKY_PTV;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SQL02.SKY_SA]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{D752A29C-D2C9-441D-B461-88977CC18013}"
+      DTS:ObjectName="SQL02.SKY_SA">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQl02;Initial Catalog=SKY_SA;Provider=SQLNCLI11;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_PTV_1_02_04_CA_PERIODS-{D752A29C-D2C9-441D-B461-88977CC18013}(local).SKY_SA;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:LogProviders>
+    <DTS:LogProvider
+      DTS:ConfigString="SQL01.ICO_MONITOR"
+      DTS:CreationName="Microsoft.LogProviderSQLServer"
+      DTS:Description="Writes log entries for events to a SQL Server database"
+      DTS:DTSID="{83BA6D7D-B2EB-4BBE-BACD-07338B5BEC8B}"
+      DTS:ObjectName="SSIS log provider for SQL Server1">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+  </DTS:LogProviders>
+  <DTS:Variables />
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">6,7,OnError,13,OnPostExecute,14,OnPostValidate,12,OnPreExecute,13,OnPreValidate,12,OnTaskFailed</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnTaskFailed"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:SelectedLogProviders>
+      <DTS:SelectedLogProvider
+        DTS:InstanceID="{83BA6D7D-B2EB-4BBE-BACD-07338B5BEC8B}" />
+    </DTS:SelectedLogProviders>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Dimensioni Period Fiscale e Civilistica"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{54ce86fe-3e3f-4cd3-af7e-e731d5e06fb7}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Dimensioni Period Fiscale e Civilistica"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{D33B4621-0AEC-4EB5-A704-F70CCF630888}"
+          SQLTask:SqlStatementSource="-- DIMENSIONE FISCALE&#xA;IF  EXISTS (SELECT * FROM sys.objects &#xA;WHERE object_id = OBJECT_ID(N'[dbo].[S_PER_FISCALWEEK]') AND type in (N'U'))&#xA;DROP TABLE [dbo].[S_PER_FISCALWEEK]&#xA;&#xA;select distinct &#xA;FiscalWeekYear_ID,&#xA;'FY'+right(cast(FiscalYear as char(4)),2)+'-'+FiscalWeek as FiscalWeekYear,&#xA;cast(cast(FiscalYear as char(4))+right(cast(FiscalMonth as char(4)),2) as int) as FiscalMonthYear_ID&#xA;into S_PER_FISCALWEEK&#xA;from S_PER_PERIOD &#xA;order by FiscalWeekYear&#xA;&#xA;IF  EXISTS (SELECT * FROM sys.objects &#xA;WHERE object_id = OBJECT_ID(N'[dbo].[S_PER_FISCALMONTH]') AND type in (N'U'))&#xA;DROP TABLE [dbo].[S_PER_FISCALMONTH]&#xA;&#xA;select distinct &#xA;cast(cast(FiscalYear as char(4))+right(cast(FiscalMonth as char(4)),2) as int) as FiscalMonthYear_ID,&#xA;'FY'+right(cast(FiscalYear as char(4)),2)+'-'+FiscalMonth as FiscalMonthYear,&#xA;FiscalYear&#xA;into S_PER_FISCALMONTH&#xA;from S_PER_PERIOD &#xA;order by FiscalYear&#xA;&#xA;-- DIMENSIONE CIVILISTICA&#xA;IF  EXISTS (SELECT * FROM sys.objects &#xA;WHERE object_id = OBJECT_ID(N'[dbo].[S_PER_CIVILMONTH]') AND type in (N'U'))&#xA;DROP TABLE [dbo].[S_PER_CIVILMONTH]&#xA;&#xA;select distinct &#xA;cast(cast(CivilYear as char(4))+right(cast(CivilMonth as char(4)),2) as int) as CivilMonthYear_ID,&#xA;'CY'+RIGHT(cast(CivilYear as char(4)),2)+'-'+CivilMonth as CivilMonthYear,&#xA;CivilYear&#xA;into S_PER_CIVILMONTH&#xA;from S_PER_PERIOD &#xA;order by CivilYear" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Drop S_PER_PERIOD"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{dbe20085-d744-4c4a-8f1d-4e12fd945c60}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Drop S_PER_PERIOD"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{D33B4621-0AEC-4EB5-A704-F70CCF630888}"
+          SQLTask:SqlStatementSource="IF  EXISTS (SELECT * FROM sys.objects &#xA;WHERE object_id = OBJECT_ID(N'[dbo].[S_PER_PERIOD]') AND type in (N'U'))&#xA;DROP TABLE [dbo].[S_PER_PERIOD]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{C63678F4-8936-4722-8CA8-4D18390D4148}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{D33B4621-0AEC-4EB5-A704-F70CCF630888}"
+          SQLTask:SqlStatementSource="-- First Period (&lt;= X-6)&#xA;USE SKY_RGT&#xA;select &#xA;MIN(Period_ID) as Period_ID,&#xA;'FIRST-PERIOD' as Period,&#xA;min(PeriodStart) as PeriodStartDate,&#xA;max(PeriodEnd) as PeriodEndDate,&#xA;min(FiscalWeek) as FiscalWeek,&#xA;min(FiscalMonth) as FiscalMonth,&#xA;min(Fyear) as FiscalYear,&#xA;min(Fweek) as Fweek,&#xA;min(Fmonth) as Fmonth,&#xA;min(CivilMonth) as CivilMonth,&#xA;min(CYear) as CivilYear,&#xA;min(Cmonth) as Cmonth,&#xA;cast(cast(min(CYear) as char(4))+right(cast(min(CivilMonth) as char(4)),2) as int) as CivilMonthYear_ID,&#xA;cast(cast(min(Fyear) as char(4))+right(cast(min(FiscalWeek) as char(3)),2) as int) as FiscalWeekYear_ID&#xA;into #S_PER_PERIOD&#xA;from SQL02.[SKY_SA].dbo.[M_PERIOD_SOURCE]&#xA;where Fyear &lt;=&#xA;(&#xA;&#x9;select cast(SET_VALUE as int)-6&#xA;&#x9;from M_SETTINGS&#xA;&#x9;where SET_KEY='CURRENT_FY_CREATION_PERIOD'&#xA;)&#xA;union all&#xA;--Tre anni a dettaglio annuale (da X-5 a X-2)&#xA;select &#xA;MIN(Period_ID) as Period_ID,&#xA;'FY'+right(Fyear,2)+'-'+'CY'+RIGHT(cast(Cyear as char(4)),2)&#xA;as Period,&#xA;min(PeriodStart) as PeriodStartDate,&#xA;max(PeriodEnd) as PeriodEndDate,&#xA;min(FiscalWeek) as FiscalWeek,&#xA;min(FiscalMonth) as FiscalMonth,&#xA;min(Fyear) as FiscalYear,&#xA;min(Fweek) as Fweek,&#xA;min(Fmonth) as Fmonth,&#xA;min(CivilMonth) as CivilMonth,&#xA;min(CYear) as CivilYear,&#xA;min(Cmonth) as Cmonth,&#xA;cast(cast(min(CYear) as char(4))+right(cast(min(CivilMonth) as char(4)),2) as int) as CivilMonthYear_ID,&#xA;cast(cast(min(Fyear) as char(4))+right(cast(min(FiscalWeek) as char(3)),2) as int) as FiscalWeekYear_ID&#xA;from SQL02.[SKY_SA].dbo.[M_PERIOD_SOURCE]&#xA;where Fyear &gt;=&#xA;(&#xA;&#x9;select cast(SET_VALUE as int)-5&#xA;&#x9;from M_SETTINGS&#xA;&#x9;where SET_KEY='CURRENT_FY_CREATION_PERIOD'&#xA;)&#xA;and Cyear &lt;=&#xA;(&#xA;&#x9;select cast(SET_VALUE as int)-2&#xA;&#x9;from M_SETTINGS&#xA;&#x9;where SET_KEY='CURRENT_FY_CREATION_PERIOD'&#xA;)&#xA;and Fyear &lt;=&#xA;(&#xA;&#x9;select cast(SET_VALUE as int)-2&#xA;&#x9;from M_SETTINGS&#xA;&#x9;where SET_KEY='CURRENT_FY_CREATION_PERIOD'&#xA;)&#xA;group by &#xA;'FY'+right(Fyear,2)+'-'+'CY'+RIGHT(cast(Cyear as char(4)),2), Fyear&#xA;union all&#xA;--Tre anni a dettaglio settimanale (da X-1 a X+1)&#xA;select &#xA;Period_ID,&#xA;PeriodCinemaPTV as Period,&#xA;PeriodStart as PeriodStartDate,&#xA;PeriodEnd as PeriodEndDate,&#xA;FiscalWeek as FiscalWeek,&#xA;FiscalMonth as FiscalMonth,&#xA;Fyear as FiscalYear,&#xA;Fweek as Fweek,&#xA;Fmonth as Fmonth,&#xA;CivilMonth as CivilMonth,&#xA;CYear as CivilYear,&#xA;Cmonth as Cmonth,&#xA;cast(cast(CYear as char(4))+right(cast(CivilMonth as char(4)),2) as int) as CivilMonthYear_ID,&#xA;cast(cast(Fyear as char(4))+right(cast(FiscalWeek as char(3)),2) as int) as FiscalWeekYear_ID&#xA;from SQL02.[SKY_SA].dbo.[M_PERIOD_SOURCE]&#xA;where Fyear &gt;=&#xA;(&#xA;&#x9;select cast(SET_VALUE as int)-1&#xA;&#x9;from M_SETTINGS&#xA;&#x9;where SET_KEY='CURRENT_FY_CREATION_PERIOD'&#xA;)&#xA;and Fyear &lt;=&#xA;(&#xA;&#x9;select cast(SET_VALUE as int)+1&#xA;&#x9;from M_SETTINGS&#xA;&#x9;where SET_KEY='CURRENT_FY_CREATION_PERIOD'&#xA;)&#xA;union&#x9;&#x9;&#x9;&#x9;-- bug fix cambio anno FY12-FY13&#xA;&#xA;select &#xA;Period_ID,&#xA;PeriodCinemaPTV as Period,&#xA;PeriodStart as PeriodStartDate,&#xA;PeriodEnd as PeriodEndDate,&#xA;FiscalWeek as FiscalWeek,&#xA;FiscalMonth as FiscalMonth,&#xA;Fyear as FiscalYear,&#xA;Fweek as Fweek,&#xA;Fmonth as Fmonth,&#xA;CivilMonth as CivilMonth,&#xA;CYear as CivilYear,&#xA;Cmonth as Cmonth,&#xA;cast(cast(CYear as char(4))+right(cast(CivilMonth as char(4)),2) as int) as CivilMonthYear_ID,&#xA;cast(cast(Fyear as char(4))+right(cast(FiscalWeek as char(3)),2) as int) as FiscalWeekYear_ID&#xA;from SQL02.[SKY_SA].dbo.[M_PERIOD_SOURCE]&#xA;where Cyear &gt;=&#xA;(&#xA;&#x9;select cast(SET_VALUE as int)-1&#xA;&#x9;from M_SETTINGS&#xA;&#x9;where SET_KEY='CURRENT_FY_CREATION_PERIOD'&#xA;)&#xA;and Fyear &lt;=&#xA;(&#xA;&#x9;select cast(SET_VALUE as int)+1&#xA;&#x9;from M_SETTINGS&#xA;&#x9;where SET_KEY='CURRENT_FY_CREATION_PERIOD'&#xA;)&#xA;union all&#xA;--Tre anni a dettaglio mensile (da X+2 a X+7)&#xA;select &#xA;MIN(Period_ID) as Period_ID,&#xA;'FY'+right(Fyear,2)+'-M'+right(FiscalMonth,2)+'-'+'CY'+RIGHT(cast(Cyear as char(4)),2) +'-'+cast(CivilMonth as char(4))&#xA;as Period,&#xA;min(PeriodStart) as PeriodStartDate,&#xA;max(PeriodEnd) as PeriodEndDate,&#xA;min(FiscalWeek) as FiscalWeek,&#xA;min(FiscalMonth) as FiscalMonth,&#xA;min(Fyear) as FiscalYear,&#xA;min(Fweek) as Fweek,&#xA;min(Fmonth) as Fmonth,&#xA;min(CivilMonth) as CivilMonth,&#xA;min(CYear) as CivilYear,&#xA;min(Cmonth) as Cmonth,&#xA;cast(cast(min(CYear) as char(4))+right(cast(min(CivilMonth) as char(4)),2) as int) as CivilMonthYear_ID,&#xA;cast(cast(min(Fyear) as char(4))+right(cast(min(FiscalWeek) as char(3)),2) as int) as FiscalWeekYear_ID&#xA;from SQL02.[SKY_SA].dbo.[M_PERIOD_SOURCE]&#xA;where Fyear &gt;=&#xA;(&#xA;&#x9;select cast(SET_VALUE as int)+2&#xA;&#x9;from M_SETTINGS&#xA;&#x9;where SET_KEY='CURRENT_FY_CREATION_PERIOD'&#xA;)&#xA;and Fyear &lt;=&#xA;(&#xA;&#x9;select cast(SET_VALUE as int)+7&#xA;&#x9;from M_SETTINGS&#xA;&#x9;where SET_KEY='CURRENT_FY_CREATION_PERIOD'&#xA;)&#xA;group by &#xA;&#x9;'FY'+right(Fyear,2)+'-M'+right(FiscalMonth,2)+'-'+'CY'+RIGHT(cast(Cyear as char(4)),2) +'-'+cast(CivilMonth as char(4))&#xA;&#x9;,Fmonth&#xA;union all&#xA;--Tre anni a dettaglio annuale (da X+8 a X+10)&#xA;select &#xA;MIN(Period_ID) as Period_ID,&#xA;'FY'+right(Fyear,2)+'-'+'CY'+RIGHT(cast(Cyear as char(4)),2)&#xA;as Period,&#xA;min(PeriodStart) as PeriodStartDate,&#xA;max(PeriodEnd) as PeriodEndDate,&#xA;min(FiscalWeek) as FiscalWeek,&#xA;min(FiscalMonth) as FiscalMonth,&#xA;min(Fyear) as FiscalYear,&#xA;min(Fweek) as Fweek,&#xA;min(Fmonth) as Fmonth,&#xA;min(CivilMonth) as CivilMonth,&#xA;min(CYear) as CivilYear,&#xA;min(Cmonth) as Cmonth,&#xA;cast(cast(min(CYear) as char(4))+right(cast(min(CivilMonth) as char(4)),2) as int) as CivilMonthYear_ID,&#xA;cast(cast(min(Fyear) as char(4))+right(cast(min(FiscalWeek) as char(3)),2) as int) as FiscalWeekYear_ID&#xA;from SQL02.[SKY_SA].dbo.[M_PERIOD_SOURCE]&#xA;where Fyear &gt;=&#xA;(&#xA;&#x9;select cast(SET_VALUE as int)+8&#xA;&#x9;from M_SETTINGS&#xA;&#x9;where SET_KEY='CURRENT_FY_CREATION_PERIOD'&#xA;)&#xA;and Fyear &lt;=&#xA;(&#xA;&#x9;select cast(SET_VALUE as int)+10&#xA;&#x9;from M_SETTINGS&#xA;&#x9;where SET_KEY='CURRENT_FY_CREATION_PERIOD'&#xA;)&#xA;group by &#xA;'FY'+right(Fyear,2)+'-'+'CY'+RIGHT(cast(Cyear as char(4)),2), Fyear&#xA;union all&#xA;-- LAST Period (&lt;= X+11)&#xA;select &#xA;MIN(Period_ID) as Period_ID,&#xA;'LAST-PERIOD' as Period,&#xA;min(PeriodStart) as PeriodStartDate,&#xA;max(PeriodEnd) as PeriodEndDate,&#xA;min(FiscalWeek) as FiscalWeek,&#xA;min(FiscalMonth) as FiscalMonth,&#xA;min(Fyear) as FiscalYear,&#xA;min(Fweek) as Fweek,&#xA;min(Fmonth) as Fmonth,&#xA;min(CivilMonth) as CivilMonth,&#xA;min(CYear) as CivilYear,&#xA;min(Cmonth) as Cmonth,&#xA;cast(cast(min(CYear) as char(4))+right(cast(min(CivilMonth) as char(4)),2) as int) as CivilMonthYear_ID,&#xA;cast(cast(min(Fyear) as char(4))+right(cast(min(FiscalWeek) as char(3)),2) as int) as FiscalWeekYear_ID&#xA;from SQL02.[SKY_SA].dbo.[M_PERIOD_SOURCE]&#xA;where Fyear &gt;=&#xA;(&#xA;&#x9;select cast(SET_VALUE as int)+11&#xA;&#x9;from M_SETTINGS&#xA;&#x9;where SET_KEY='CURRENT_FY_CREATION_PERIOD'&#xA;)&#xA;order by PeriodStartDate&#xA;&#xA;&#xA;&#xA;&#xA;select [Period_ID], [Period], [PeriodStartDate], [PeriodEndDate], [CivilMonthYear_ID], [FiscalWeekYear_ID],&#xA;cast([FiscalWeek]as varchar(3))as [FiscalWeek], cast([FiscalMonth] as varchar(4)) as [FiscalMonth], [FiscalYear], &#xA;CAST([CivilMonth] as varchar(4)) as [CivilMonth],&#xA;[CivilYear], [Fweek], [Fmonth], [CMonth]&#xA;INTO S_PER_PERIOD&#xA;from #S_PER_PERIOD&#xA;&#xA;&#xA;drop table #S_PER_PERIOD&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\RGT_CAMBIO_ANNO_CREAZIONE_ANAGRAFICHE_TEMPORALI"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{1EEE778A-C601-40C5-8360-6900566B8418}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="RGT_CAMBIO_ANNO_CREAZIONE_ANAGRAFICHE_TEMPORALI"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{D33B4621-0AEC-4EB5-A704-F70CCF630888}"
+          SQLTask:SqlStatementSource="EXEC [RGT_CAMBIO_ANNO_CREAZIONE_ANAGRAFICHE_TEMPORALI]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\S_PER_PERIOD"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{29f50301-3ed8-4da9-bfc8-0a1aa2dc169f}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="S_PER_PERIOD"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server v9; (C) 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <pipeline
+          BLOBTempStoragePath=""
+          bufferTempStoragePath=""
+          engineThreads="5"
+          version="1">
+          <components>
+            <component
+              refId="Package\S_PER_PERIOD\Lettura Period PTV"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Lettura Period PTV"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">-- First Period (&lt;= X-6)
+USE SKY_RGT
+select 
+MIN(Period_ID) as Period_ID,
+'FIRST-PERIOD' as Period,
+min(PeriodStart) as PeriodStartDate,
+max(PeriodEnd) as PeriodEndDate,
+min(FiscalWeek) as FiscalWeek,
+min(FiscalMonth) as FiscalMonth,
+min(Fyear) as FiscalYear,
+min(Fweek) as Fweek,
+min(Fmonth) as Fmonth,
+min(CivilMonth) as CivilMonth,
+min(CYear) as CivilYear,
+min(Cmonth) as Cmonth,
+cast(cast(min(CYear) as char(4))+right(cast(min(CivilMonth) as char(4)),2) as int) as CivilMonthYear_ID,
+cast(cast(min(Fyear) as char(4))+right(cast(min(FiscalWeek) as char(3)),2) as int) as FiscalWeekYear_ID
+from SQL02.[SKY_SA].dbo.[M_PERIOD_SOURCE]
+where Fyear &lt;=
+(
+	select cast(SET_VALUE as int)-6
+	from M_SETTINGS
+	where SET_KEY='CURRENT_FY_CREATION_PERIOD'
+)
+union all
+--Tre anni a dettaglio annuale (da X-5 a X-2)
+select 
+MIN(Period_ID) as Period_ID,
+'FY'+right(Fyear,2)+'-'+'CY'+RIGHT(cast(Cyear as char(4)),2)
+as Period,
+min(PeriodStart) as PeriodStartDate,
+max(PeriodEnd) as PeriodEndDate,
+min(FiscalWeek) as FiscalWeek,
+min(FiscalMonth) as FiscalMonth,
+min(Fyear) as FiscalYear,
+min(Fweek) as Fweek,
+min(Fmonth) as Fmonth,
+min(CivilMonth) as CivilMonth,
+min(CYear) as CivilYear,
+min(Cmonth) as Cmonth,
+cast(cast(min(CYear) as char(4))+right(cast(min(CivilMonth) as char(4)),2) as int) as CivilMonthYear_ID,
+cast(cast(min(Fyear) as char(4))+right(cast(min(FiscalWeek) as char(3)),2) as int) as FiscalWeekYear_ID
+from SQL02.[SKY_SA].dbo.[M_PERIOD_SOURCE]
+where Fyear &gt;=
+(
+	select cast(SET_VALUE as int)-5
+	from M_SETTINGS
+	where SET_KEY='CURRENT_FY_CREATION_PERIOD'
+)
+and Cyear &lt;=
+(
+	select cast(SET_VALUE as int)-2
+	from M_SETTINGS
+	where SET_KEY='CURRENT_FY_CREATION_PERIOD'
+)
+and Fyear &lt;=
+(
+	select cast(SET_VALUE as int)-2
+	from M_SETTINGS
+	where SET_KEY='CURRENT_FY_CREATION_PERIOD'
+)
+group by 
+'FY'+right(Fyear,2)+'-'+'CY'+RIGHT(cast(Cyear as char(4)),2), Fyear
+union all
+--Tre anni a dettaglio settimanale (da X-1 a X+1)
+select 
+Period_ID,
+PeriodCinemaPTV as Period,
+PeriodStart as PeriodStartDate,
+PeriodEnd as PeriodEndDate,
+FiscalWeek as FiscalWeek,
+FiscalMonth as FiscalMonth,
+Fyear as FiscalYear,
+Fweek as Fweek,
+Fmonth as Fmonth,
+CivilMonth as CivilMonth,
+CYear as CivilYear,
+Cmonth as Cmonth,
+cast(cast(CYear as char(4))+right(cast(CivilMonth as char(4)),2) as int) as CivilMonthYear_ID,
+cast(cast(Fyear as char(4))+right(cast(FiscalWeek as char(3)),2) as int) as FiscalWeekYear_ID
+from SQL02.[SKY_SA].dbo.[M_PERIOD_SOURCE]
+where Fyear &gt;=
+(
+	select cast(SET_VALUE as int)-1
+	from M_SETTINGS
+	where SET_KEY='CURRENT_FY_CREATION_PERIOD'
+)
+and Fyear &lt;=
+(
+	select cast(SET_VALUE as int)+1
+	from M_SETTINGS
+	where SET_KEY='CURRENT_FY_CREATION_PERIOD'
+)
+union				-- bug fix cambio anno FY12-FY13
+
+select 
+Period_ID,
+PeriodCinemaPTV as Period,
+PeriodStart as PeriodStartDate,
+PeriodEnd as PeriodEndDate,
+FiscalWeek as FiscalWeek,
+FiscalMonth as FiscalMonth,
+Fyear as FiscalYear,
+Fweek as Fweek,
+Fmonth as Fmonth,
+CivilMonth as CivilMonth,
+CYear as CivilYear,
+Cmonth as Cmonth,
+cast(cast(CYear as char(4))+right(cast(CivilMonth as char(4)),2) as int) as CivilMonthYear_ID,
+cast(cast(Fyear as char(4))+right(cast(FiscalWeek as char(3)),2) as int) as FiscalWeekYear_ID
+from SQL02.[SKY_SA].dbo.[M_PERIOD_SOURCE]
+where Cyear &gt;=
+(
+	select cast(SET_VALUE as int)-1
+	from M_SETTINGS
+	where SET_KEY='CURRENT_FY_CREATION_PERIOD'
+)
+and Fyear &lt;=
+(
+	select cast(SET_VALUE as int)+1
+	from M_SETTINGS
+	where SET_KEY='CURRENT_FY_CREATION_PERIOD'
+)
+union all
+--Tre anni a dettaglio mensile (da X+2 a X+7)
+select 
+MIN(Period_ID) as Period_ID,
+'FY'+right(Fyear,2)+'-M'+right(FiscalMonth,2)+'-'+'CY'+RIGHT(cast(Cyear as char(4)),2) +'-'+cast(CivilMonth as char(4))
+as Period,
+min(PeriodStart) as PeriodStartDate,
+max(PeriodEnd) as PeriodEndDate,
+min(FiscalWeek) as FiscalWeek,
+min(FiscalMonth) as FiscalMonth,
+min(Fyear) as FiscalYear,
+min(Fweek) as Fweek,
+min(Fmonth) as Fmonth,
+min(CivilMonth) as CivilMonth,
+min(CYear) as CivilYear,
+min(Cmonth) as Cmonth,
+cast(cast(min(CYear) as char(4))+right(cast(min(CivilMonth) as char(4)),2) as int) as CivilMonthYear_ID,
+cast(cast(min(Fyear) as char(4))+right(cast(min(FiscalWeek) as char(3)),2) as int) as FiscalWeekYear_ID
+from SQL02.[SKY_SA].dbo.[M_PERIOD_SOURCE]
+where Fyear &gt;=
+(
+	select cast(SET_VALUE as int)+2
+	from M_SETTINGS
+	where SET_KEY='CURRENT_FY_CREATION_PERIOD'
+)
+and Fyear &lt;=
+(
+	select cast(SET_VALUE as int)+7
+	from M_SETTINGS
+	where SET_KEY='CURRENT_FY_CREATION_PERIOD'
+)
+group by 
+	'FY'+right(Fyear,2)+'-M'+right(FiscalMonth,2)+'-'+'CY'+RIGHT(cast(Cyear as char(4)),2) +'-'+cast(CivilMonth as char(4))
+	,Fmonth
+union all
+--Tre anni a dettaglio annuale (da X+8 a X+10)
+select 
+MIN(Period_ID) as Period_ID,
+'FY'+right(Fyear,2)+'-'+'CY'+RIGHT(cast(Cyear as char(4)),2)
+as Period,
+min(PeriodStart) as PeriodStartDate,
+max(PeriodEnd) as PeriodEndDate,
+min(FiscalWeek) as FiscalWeek,
+min(FiscalMonth) as FiscalMonth,
+min(Fyear) as FiscalYear,
+min(Fweek) as Fweek,
+min(Fmonth) as Fmonth,
+min(CivilMonth) as CivilMonth,
+min(CYear) as CivilYear,
+min(Cmonth) as Cmonth,
+cast(cast(min(CYear) as char(4))+right(cast(min(CivilMonth) as char(4)),2) as int) as CivilMonthYear_ID,
+cast(cast(min(Fyear) as char(4))+right(cast(min(FiscalWeek) as char(3)),2) as int) as FiscalWeekYear_ID
+from SQL02.[SKY_SA].dbo.[M_PERIOD_SOURCE]
+where Fyear &gt;=
+(
+	select cast(SET_VALUE as int)+8
+	from M_SETTINGS
+	where SET_KEY='CURRENT_FY_CREATION_PERIOD'
+)
+and Fyear &lt;=
+(
+	select cast(SET_VALUE as int)+10
+	from M_SETTINGS
+	where SET_KEY='CURRENT_FY_CREATION_PERIOD'
+)
+group by 
+'FY'+right(Fyear,2)+'-'+'CY'+RIGHT(cast(Cyear as char(4)),2), Fyear
+union all
+-- LAST Period (&lt;= X+11)
+select 
+MIN(Period_ID) as Period_ID,
+'LAST-PERIOD' as Period,
+min(PeriodStart) as PeriodStartDate,
+max(PeriodEnd) as PeriodEndDate,
+min(FiscalWeek) as FiscalWeek,
+min(FiscalMonth) as FiscalMonth,
+min(Fyear) as FiscalYear,
+min(Fweek) as Fweek,
+min(Fmonth) as Fmonth,
+min(CivilMonth) as CivilMonth,
+min(CYear) as CivilYear,
+min(Cmonth) as Cmonth,
+cast(cast(min(CYear) as char(4))+right(cast(min(CivilMonth) as char(4)),2) as int) as CivilMonthYear_ID,
+cast(cast(min(Fyear) as char(4))+right(cast(min(FiscalWeek) as char(3)),2) as int) as FiscalWeekYear_ID
+from SQL02.[SKY_SA].dbo.[M_PERIOD_SOURCE]
+where Fyear &gt;=
+(
+	select cast(SET_VALUE as int)+11
+	from M_SETTINGS
+	where SET_KEY='CURRENT_FY_CREATION_PERIOD'
+)
+order by PeriodStartDate</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\S_PER_PERIOD\Lettura Period PTV.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SQL01.SKY_RGT]"
+                  connectionManagerRefId="Package.ConnectionManagers[SQL01.SKY_RGT]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].Columns[Period_ID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].ExternalColumns[Period_ID]"
+                      lineageId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].Columns[Period_ID]"
+                      name="Period_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].Columns[Period]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].ExternalColumns[Period]"
+                      length="19"
+                      lineageId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].Columns[Period]"
+                      name="Period"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].Columns[PeriodStartDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].ExternalColumns[PeriodStartDate]"
+                      lineageId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].Columns[PeriodStartDate]"
+                      name="PeriodStartDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].Columns[PeriodEndDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].ExternalColumns[PeriodEndDate]"
+                      lineageId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].Columns[PeriodEndDate]"
+                      name="PeriodEndDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].Columns[FiscalWeek]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].ExternalColumns[FiscalWeek]"
+                      length="3"
+                      lineageId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].Columns[FiscalWeek]"
+                      name="FiscalWeek"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].Columns[FiscalMonth]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].ExternalColumns[FiscalMonth]"
+                      length="4"
+                      lineageId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].Columns[FiscalMonth]"
+                      name="FiscalMonth"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].Columns[FiscalYear]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].ExternalColumns[FiscalYear]"
+                      lineageId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].Columns[FiscalYear]"
+                      name="FiscalYear"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].Columns[Fweek]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].ExternalColumns[Fweek]"
+                      lineageId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].Columns[Fweek]"
+                      name="Fweek"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].Columns[Fmonth]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].ExternalColumns[Fmonth]"
+                      lineageId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].Columns[Fmonth]"
+                      name="Fmonth"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].Columns[CivilMonth]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].ExternalColumns[CivilMonth]"
+                      length="4"
+                      lineageId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].Columns[CivilMonth]"
+                      name="CivilMonth"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].Columns[Cmonth]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].ExternalColumns[Cmonth]"
+                      lineageId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].Columns[Cmonth]"
+                      name="Cmonth"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].Columns[CivilMonthYear_ID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].ExternalColumns[CivilMonthYear_ID]"
+                      lineageId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].Columns[CivilMonthYear_ID]"
+                      name="CivilMonthYear_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].Columns[FiscalWeekYear_ID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].ExternalColumns[FiscalWeekYear_ID]"
+                      lineageId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].Columns[FiscalWeekYear_ID]"
+                      name="FiscalWeekYear_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].Columns[CivilYear]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].ExternalColumns[CivilYear]"
+                      lineageId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].Columns[CivilYear]"
+                      name="CivilYear"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].ExternalColumns[Period_ID]"
+                      dataType="i4"
+                      name="Period_ID" />
+                    <externalMetadataColumn
+                      refId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].ExternalColumns[Period]"
+                      codePage="1252"
+                      dataType="str"
+                      length="19"
+                      name="Period" />
+                    <externalMetadataColumn
+                      refId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].ExternalColumns[PeriodStartDate]"
+                      dataType="dbTimeStamp"
+                      name="PeriodStartDate" />
+                    <externalMetadataColumn
+                      refId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].ExternalColumns[PeriodEndDate]"
+                      dataType="dbTimeStamp"
+                      name="PeriodEndDate" />
+                    <externalMetadataColumn
+                      refId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].ExternalColumns[FiscalWeek]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="FiscalWeek" />
+                    <externalMetadataColumn
+                      refId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].ExternalColumns[FiscalMonth]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="FiscalMonth" />
+                    <externalMetadataColumn
+                      refId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].ExternalColumns[FiscalYear]"
+                      dataType="i4"
+                      name="FiscalYear" />
+                    <externalMetadataColumn
+                      refId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].ExternalColumns[Fweek]"
+                      dataType="i4"
+                      name="Fweek" />
+                    <externalMetadataColumn
+                      refId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].ExternalColumns[Fmonth]"
+                      dataType="i4"
+                      name="Fmonth" />
+                    <externalMetadataColumn
+                      refId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].ExternalColumns[CivilMonth]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="CivilMonth" />
+                    <externalMetadataColumn
+                      refId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].ExternalColumns[CivilYear]"
+                      dataType="i4"
+                      name="CivilYear" />
+                    <externalMetadataColumn
+                      refId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].ExternalColumns[Cmonth]"
+                      dataType="i4"
+                      name="Cmonth" />
+                    <externalMetadataColumn
+                      refId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].ExternalColumns[CivilMonthYear_ID]"
+                      dataType="i4"
+                      name="CivilMonthYear_ID" />
+                    <externalMetadataColumn
+                      refId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].ExternalColumns[FiscalWeekYear_ID]"
+                      dataType="i4"
+                      name="FiscalWeekYear_ID" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Error Output].Columns[Period_ID]"
+                      dataType="i4"
+                      lineageId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Error Output].Columns[Period_ID]"
+                      name="Period_ID" />
+                    <outputColumn
+                      refId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Error Output].Columns[Period]"
+                      codePage="1252"
+                      dataType="str"
+                      length="19"
+                      lineageId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Error Output].Columns[Period]"
+                      name="Period" />
+                    <outputColumn
+                      refId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Error Output].Columns[PeriodStartDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Error Output].Columns[PeriodStartDate]"
+                      name="PeriodStartDate" />
+                    <outputColumn
+                      refId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Error Output].Columns[PeriodEndDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Error Output].Columns[PeriodEndDate]"
+                      name="PeriodEndDate" />
+                    <outputColumn
+                      refId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Error Output].Columns[FiscalWeek]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      lineageId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Error Output].Columns[FiscalWeek]"
+                      name="FiscalWeek" />
+                    <outputColumn
+                      refId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Error Output].Columns[FiscalMonth]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Error Output].Columns[FiscalMonth]"
+                      name="FiscalMonth" />
+                    <outputColumn
+                      refId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Error Output].Columns[FiscalYear]"
+                      dataType="i4"
+                      lineageId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Error Output].Columns[FiscalYear]"
+                      name="FiscalYear" />
+                    <outputColumn
+                      refId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Error Output].Columns[Fweek]"
+                      dataType="i4"
+                      lineageId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Error Output].Columns[Fweek]"
+                      name="Fweek" />
+                    <outputColumn
+                      refId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Error Output].Columns[Fmonth]"
+                      dataType="i4"
+                      lineageId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Error Output].Columns[Fmonth]"
+                      name="Fmonth" />
+                    <outputColumn
+                      refId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Error Output].Columns[CivilMonth]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Error Output].Columns[CivilMonth]"
+                      name="CivilMonth" />
+                    <outputColumn
+                      refId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Error Output].Columns[Cmonth]"
+                      dataType="i4"
+                      lineageId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Error Output].Columns[Cmonth]"
+                      name="Cmonth" />
+                    <outputColumn
+                      refId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Error Output].Columns[CivilMonthYear_ID]"
+                      dataType="i4"
+                      lineageId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Error Output].Columns[CivilMonthYear_ID]"
+                      name="CivilMonthYear_ID" />
+                    <outputColumn
+                      refId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Error Output].Columns[FiscalWeekYear_ID]"
+                      dataType="i4"
+                      lineageId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Error Output].Columns[FiscalWeekYear_ID]"
+                      name="FiscalWeekYear_ID" />
+                    <outputColumn
+                      refId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Error Output].Columns[CivilYear]"
+                      dataType="i4"
+                      lineageId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Error Output].Columns[CivilYear]"
+                      name="CivilYear" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\S_PER_PERIOD\S_PER_PERIOD"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="S_PER_PERIOD"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[S_PER_PERIOD]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destinaton. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,ROWS_PER_BATCH = 100</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">10000</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\S_PER_PERIOD\S_PER_PERIOD.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SQL01.SKY_RGT]"
+                  connectionManagerRefId="Package.ConnectionManagers[SQL01.SKY_RGT]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\S_PER_PERIOD\S_PER_PERIOD.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\S_PER_PERIOD\S_PER_PERIOD.Inputs[OLE DB Destination Input].Columns[Period_ID]"
+                      cachedDataType="i4"
+                      cachedName="Period_ID"
+                      externalMetadataColumnId="Package\S_PER_PERIOD\S_PER_PERIOD.Inputs[OLE DB Destination Input].ExternalColumns[Period_ID]"
+                      lineageId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].Columns[Period_ID]" />
+                    <inputColumn
+                      refId="Package\S_PER_PERIOD\S_PER_PERIOD.Inputs[OLE DB Destination Input].Columns[Period]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="19"
+                      cachedName="Period"
+                      externalMetadataColumnId="Package\S_PER_PERIOD\S_PER_PERIOD.Inputs[OLE DB Destination Input].ExternalColumns[Period]"
+                      lineageId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].Columns[Period]" />
+                    <inputColumn
+                      refId="Package\S_PER_PERIOD\S_PER_PERIOD.Inputs[OLE DB Destination Input].Columns[PeriodStartDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="PeriodStartDate"
+                      externalMetadataColumnId="Package\S_PER_PERIOD\S_PER_PERIOD.Inputs[OLE DB Destination Input].ExternalColumns[PeriodStartDate]"
+                      lineageId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].Columns[PeriodStartDate]" />
+                    <inputColumn
+                      refId="Package\S_PER_PERIOD\S_PER_PERIOD.Inputs[OLE DB Destination Input].Columns[PeriodEndDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="PeriodEndDate"
+                      externalMetadataColumnId="Package\S_PER_PERIOD\S_PER_PERIOD.Inputs[OLE DB Destination Input].ExternalColumns[PeriodEndDate]"
+                      lineageId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].Columns[PeriodEndDate]" />
+                    <inputColumn
+                      refId="Package\S_PER_PERIOD\S_PER_PERIOD.Inputs[OLE DB Destination Input].Columns[FiscalWeek]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="FiscalWeek"
+                      externalMetadataColumnId="Package\S_PER_PERIOD\S_PER_PERIOD.Inputs[OLE DB Destination Input].ExternalColumns[FiscalWeek]"
+                      lineageId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].Columns[FiscalWeek]" />
+                    <inputColumn
+                      refId="Package\S_PER_PERIOD\S_PER_PERIOD.Inputs[OLE DB Destination Input].Columns[FiscalMonth]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="FiscalMonth"
+                      externalMetadataColumnId="Package\S_PER_PERIOD\S_PER_PERIOD.Inputs[OLE DB Destination Input].ExternalColumns[FiscalMonth]"
+                      lineageId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].Columns[FiscalMonth]" />
+                    <inputColumn
+                      refId="Package\S_PER_PERIOD\S_PER_PERIOD.Inputs[OLE DB Destination Input].Columns[FiscalYear]"
+                      cachedDataType="i4"
+                      cachedName="FiscalYear"
+                      externalMetadataColumnId="Package\S_PER_PERIOD\S_PER_PERIOD.Inputs[OLE DB Destination Input].ExternalColumns[FiscalYear]"
+                      lineageId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].Columns[FiscalYear]" />
+                    <inputColumn
+                      refId="Package\S_PER_PERIOD\S_PER_PERIOD.Inputs[OLE DB Destination Input].Columns[Fweek]"
+                      cachedDataType="i4"
+                      cachedName="Fweek"
+                      externalMetadataColumnId="Package\S_PER_PERIOD\S_PER_PERIOD.Inputs[OLE DB Destination Input].ExternalColumns[Fweek]"
+                      lineageId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].Columns[Fweek]" />
+                    <inputColumn
+                      refId="Package\S_PER_PERIOD\S_PER_PERIOD.Inputs[OLE DB Destination Input].Columns[Fmonth]"
+                      cachedDataType="i4"
+                      cachedName="Fmonth"
+                      externalMetadataColumnId="Package\S_PER_PERIOD\S_PER_PERIOD.Inputs[OLE DB Destination Input].ExternalColumns[Fmonth]"
+                      lineageId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].Columns[Fmonth]" />
+                    <inputColumn
+                      refId="Package\S_PER_PERIOD\S_PER_PERIOD.Inputs[OLE DB Destination Input].Columns[CivilMonth]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="CivilMonth"
+                      externalMetadataColumnId="Package\S_PER_PERIOD\S_PER_PERIOD.Inputs[OLE DB Destination Input].ExternalColumns[CivilMonth]"
+                      lineageId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].Columns[CivilMonth]" />
+                    <inputColumn
+                      refId="Package\S_PER_PERIOD\S_PER_PERIOD.Inputs[OLE DB Destination Input].Columns[CivilYear]"
+                      cachedDataType="i4"
+                      cachedName="CivilYear"
+                      externalMetadataColumnId="Package\S_PER_PERIOD\S_PER_PERIOD.Inputs[OLE DB Destination Input].ExternalColumns[CivilYear]"
+                      lineageId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].Columns[CivilYear]" />
+                    <inputColumn
+                      refId="Package\S_PER_PERIOD\S_PER_PERIOD.Inputs[OLE DB Destination Input].Columns[Cmonth]"
+                      cachedDataType="i4"
+                      cachedName="Cmonth"
+                      externalMetadataColumnId="Package\S_PER_PERIOD\S_PER_PERIOD.Inputs[OLE DB Destination Input].ExternalColumns[Cmonth]"
+                      lineageId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].Columns[Cmonth]" />
+                    <inputColumn
+                      refId="Package\S_PER_PERIOD\S_PER_PERIOD.Inputs[OLE DB Destination Input].Columns[CivilMonthYear_ID]"
+                      cachedDataType="i4"
+                      cachedName="CivilMonthYear_ID"
+                      externalMetadataColumnId="Package\S_PER_PERIOD\S_PER_PERIOD.Inputs[OLE DB Destination Input].ExternalColumns[CivilMonthYear_ID]"
+                      lineageId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].Columns[CivilMonthYear_ID]" />
+                    <inputColumn
+                      refId="Package\S_PER_PERIOD\S_PER_PERIOD.Inputs[OLE DB Destination Input].Columns[FiscalWeekYear_ID]"
+                      cachedDataType="i4"
+                      cachedName="FiscalWeekYear_ID"
+                      externalMetadataColumnId="Package\S_PER_PERIOD\S_PER_PERIOD.Inputs[OLE DB Destination Input].ExternalColumns[FiscalWeekYear_ID]"
+                      lineageId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output].Columns[FiscalWeekYear_ID]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\S_PER_PERIOD\S_PER_PERIOD.Inputs[OLE DB Destination Input].ExternalColumns[Period_ID]"
+                      dataType="i4"
+                      name="Period_ID" />
+                    <externalMetadataColumn
+                      refId="Package\S_PER_PERIOD\S_PER_PERIOD.Inputs[OLE DB Destination Input].ExternalColumns[Period]"
+                      codePage="1252"
+                      dataType="str"
+                      length="19"
+                      name="Period" />
+                    <externalMetadataColumn
+                      refId="Package\S_PER_PERIOD\S_PER_PERIOD.Inputs[OLE DB Destination Input].ExternalColumns[PeriodStartDate]"
+                      dataType="dbTimeStamp"
+                      name="PeriodStartDate" />
+                    <externalMetadataColumn
+                      refId="Package\S_PER_PERIOD\S_PER_PERIOD.Inputs[OLE DB Destination Input].ExternalColumns[PeriodEndDate]"
+                      dataType="dbTimeStamp"
+                      name="PeriodEndDate" />
+                    <externalMetadataColumn
+                      refId="Package\S_PER_PERIOD\S_PER_PERIOD.Inputs[OLE DB Destination Input].ExternalColumns[CivilMonthYear_ID]"
+                      dataType="i4"
+                      name="CivilMonthYear_ID" />
+                    <externalMetadataColumn
+                      refId="Package\S_PER_PERIOD\S_PER_PERIOD.Inputs[OLE DB Destination Input].ExternalColumns[FiscalWeekYear_ID]"
+                      dataType="i4"
+                      name="FiscalWeekYear_ID" />
+                    <externalMetadataColumn
+                      refId="Package\S_PER_PERIOD\S_PER_PERIOD.Inputs[OLE DB Destination Input].ExternalColumns[FiscalWeek]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="FiscalWeek" />
+                    <externalMetadataColumn
+                      refId="Package\S_PER_PERIOD\S_PER_PERIOD.Inputs[OLE DB Destination Input].ExternalColumns[FiscalMonth]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="FiscalMonth" />
+                    <externalMetadataColumn
+                      refId="Package\S_PER_PERIOD\S_PER_PERIOD.Inputs[OLE DB Destination Input].ExternalColumns[FiscalYear]"
+                      dataType="i4"
+                      name="FiscalYear" />
+                    <externalMetadataColumn
+                      refId="Package\S_PER_PERIOD\S_PER_PERIOD.Inputs[OLE DB Destination Input].ExternalColumns[CivilMonth]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="CivilMonth" />
+                    <externalMetadataColumn
+                      refId="Package\S_PER_PERIOD\S_PER_PERIOD.Inputs[OLE DB Destination Input].ExternalColumns[CivilYear]"
+                      dataType="i4"
+                      name="CivilYear" />
+                    <externalMetadataColumn
+                      refId="Package\S_PER_PERIOD\S_PER_PERIOD.Inputs[OLE DB Destination Input].ExternalColumns[Fweek]"
+                      dataType="i4"
+                      name="Fweek" />
+                    <externalMetadataColumn
+                      refId="Package\S_PER_PERIOD\S_PER_PERIOD.Inputs[OLE DB Destination Input].ExternalColumns[Fmonth]"
+                      dataType="i4"
+                      name="Fmonth" />
+                    <externalMetadataColumn
+                      refId="Package\S_PER_PERIOD\S_PER_PERIOD.Inputs[OLE DB Destination Input].ExternalColumns[Cmonth]"
+                      dataType="i4"
+                      name="Cmonth" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\S_PER_PERIOD\S_PER_PERIOD.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\S_PER_PERIOD\S_PER_PERIOD.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\S_PER_PERIOD\S_PER_PERIOD.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\S_PER_PERIOD\S_PER_PERIOD.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\S_PER_PERIOD\S_PER_PERIOD.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\S_PER_PERIOD\S_PER_PERIOD.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\S_PER_PERIOD.Paths[OLE DB Source Output]"
+              endId="Package\S_PER_PERIOD\S_PER_PERIOD.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\S_PER_PERIOD\Lettura Period PTV.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{47642390-3207-42A8-AC68-3F4680BB7AE1}"
+      DTS:From="Package\Drop S_PER_PERIOD"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Execute SQL Task" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{B429C6E8-1FB2-48C7-839B-BAEC5288E96F}"
+      DTS:From="Package\Execute SQL Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Dimensioni Period Fiscale e Civilistica" />
+  </DTS:PrecedenceConstraints>
+  <DTS:PackageVariables>
+    <DTS:PackageVariable
+      DTS:CreationName=""
+      DTS:DTSID="{2B79BE54-C451-43B8-9638-A7623239FBAD}"
+      DTS:Namespace="dts-designer-1.0"
+      DTS:ObjectName="{29f50301-3ed8-4da9-bfc8-0a1aa2dc169f}">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="PackageVariableValue">&lt;TaskHost xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0"&gt;&lt;dwd:DtsDataFlowDiagram&gt;&lt;dwd:Layout&gt;&lt;dds&gt;&lt;diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="Microsoft.DataWarehouse.Layout.GraphLayout110" defaultlineroute="Microsoft.DataWarehouse.Layout.GraphLayout110" version="7" nextobject="12" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-1053" scrolltop="-1000" gridx="150" gridy="150" marginx="1000" marginy="1000" zoom="100" x="13547" y="11695" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="1" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="0" backpictureclsid="{00000000-0000-0000-0000-000000000000}"&gt;&lt;font&gt;&lt;ddsxmlobjectstreamwrapper binary="01010000900180380100065461686f6d61" /&gt;&lt;/font&gt;&lt;mouseicon&gt;&lt;ddsxmlobjectstreamwrapper binary="6c74000000000000" /&gt;&lt;/mouseicon&gt;&lt;/diagram&gt;&lt;layoutmanager&gt;&lt;ddsxmlobj /&gt;&lt;/layoutmanager&gt;&lt;ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="OLE DB Source" left="-53" top="0" logicalid="4" controlid="1" masterid="0" hint1="0" hint2="0" width="3598" height="1164" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobjectstreaminitwrapper binary="000800000e0e00008c040000" /&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj&gt;&lt;property name="LogicalObject" value="Package\S_PER_PERIOD\Lettura Period PTV" vartype="8" /&gt;&lt;property name="ShowConnectorSource" value="0" vartype="2" /&gt;&lt;/ddsxmlobj&gt;&lt;/layoutobject&gt;&lt;shape groupshapeid="0" groupnode="0" /&gt;&lt;/ddscontrol&gt;&lt;ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="OLE DB Destination" left="-53" top="2593" logicalid="5" controlid="2" masterid="0" hint1="0" hint2="0" width="3598" height="1164" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobjectstreaminitwrapper binary="000800000e0e00008c040000" /&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj&gt;&lt;property name="LogicalObject" value="Package\S_PER_PERIOD\S_PER_PERIOD" vartype="8" /&gt;&lt;property name="ShowConnectorSource" value="0" vartype="2" /&gt;&lt;/ddsxmlobj&gt;&lt;/layoutobject&gt;&lt;shape groupshapeid="0" groupnode="0" /&gt;&lt;/ddscontrol&gt;&lt;ddscontrol controlprogid="MSDDS.Polyline" left="1347" top="765" logicalid="11" controlid="8" masterid="0" hint1="0" hint2="0" width="799" height="2328" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobj&gt;&lt;polyline endtypedst="3" endtypesrc="1" usercolor="32768" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" /&gt;&lt;/ddsxmlobj&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj&gt;&lt;property name="LogicalObject" value="Package\S_PER_PERIOD.Paths[OLE DB Source Output]" vartype="8" /&gt;&lt;property name="Virtual" value="0" vartype="11" /&gt;&lt;property name="VisibleAP" value="0" vartype="3" /&gt;&lt;/ddsxmlobj&gt;&lt;/layoutobject&gt;&lt;connector lineroutestyle="Microsoft.DataWarehouse.Layout.GraphLayout110" sourceid="1" destid="2" sourceattachpoint="7" destattachpoint="6" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="2" relatedid="0" virtual="0"&gt;&lt;point x="1746" y="1164" /&gt;&lt;point x="1746" y="2593" /&gt;&lt;/connector&gt;&lt;/ddscontrol&gt;&lt;/dds&gt;&lt;/dwd:Layout&gt;&lt;dwd:PersistedViewPortLeft&gt;-1053&lt;/dwd:PersistedViewPortLeft&gt;&lt;dwd:PersistedViewPortTop&gt;-1000&lt;/dwd:PersistedViewPortTop&gt;&lt;/dwd:DtsDataFlowDiagram&gt;&lt;dwd:DtsComponentDesignerPropertiesList&gt;&lt;dwd:DtsComponentDesignTimeProperty&gt;&lt;dwd:key xsi:type="xsd:string"&gt;1223	DataSourceViewID&lt;/dwd:key&gt;&lt;/dwd:DtsComponentDesignTimeProperty&gt;&lt;dwd:DtsComponentDesignTimeProperty&gt;&lt;dwd:key xsi:type="xsd:string"&gt;1345	DataSourceViewID&lt;/dwd:key&gt;&lt;/dwd:DtsComponentDesignTimeProperty&gt;&lt;dwd:DtsComponentDesignTimeProperty&gt;&lt;dwd:key xsi:type="xsd:string"&gt;1094	DataSourceViewID&lt;/dwd:key&gt;&lt;/dwd:DtsComponentDesignTimeProperty&gt;&lt;dwd:DtsComponentDesignTimeProperty&gt;&lt;dwd:key xsi:type="xsd:string"&gt;1345	TableInfoObjectType&lt;/dwd:key&gt;&lt;dwd:value xsi:type="xsd:string"&gt;Table&lt;/dwd:value&gt;&lt;/dwd:DtsComponentDesignTimeProperty&gt;&lt;dwd:DtsComponentDesignTimeProperty&gt;&lt;dwd:key xsi:type="xsd:string"&gt;1223	TableInfoObjectType&lt;/dwd:key&gt;&lt;dwd:value xsi:type="xsd:string"&gt;Table&lt;/dwd:value&gt;&lt;/dwd:DtsComponentDesignTimeProperty&gt;&lt;/dwd:DtsComponentDesignerPropertiesList&gt;&lt;/TaskHost&gt;</DTS:Property>
+    </DTS:PackageVariable>
+    <DTS:PackageVariable
+      DTS:CreationName=""
+      DTS:DTSID="{01C17E87-3D56-4662-9447-B0C63A87DB51}"
+      DTS:Namespace="dts-designer-1.0"
+      DTS:ObjectName="{29f50301-3ed8-4da9-bfc8-0a1aa2dc169f}-1392">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="PackageVariableValue">&lt;PipelinePath xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0"&gt;&lt;dwd:SourceName&gt;OLE DB Source Output&lt;/dwd:SourceName&gt;&lt;dwd:DestinationName&gt;OLE DB Destination Input&lt;/dwd:DestinationName&gt;&lt;/PipelinePath&gt;</DTS:Property>
+    </DTS:PackageVariable>
+    <DTS:PackageVariable
+      DTS:CreationName=""
+      DTS:DTSID="{D4AEC423-3F05-4D09-853F-9A66EC4932CC}"
+      DTS:Namespace="dts-designer-1.0"
+      DTS:ObjectName="{47642390-3207-42A8-AC68-3F4680BB7AE1}">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="PackageVariableValue">&lt;PrecedenceConstraint xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0"&gt;&lt;dwd:EvalOp&gt;Constraint&lt;/dwd:EvalOp&gt;&lt;/PrecedenceConstraint&gt;</DTS:Property>
+    </DTS:PackageVariable>
+    <DTS:PackageVariable
+      DTS:CreationName=""
+      DTS:DTSID="{EE4E0781-BE59-494C-BB3A-01B4E638770C}"
+      DTS:Namespace="dts-designer-1.0"
+      DTS:ObjectName="{B429C6E8-1FB2-48C7-839B-BAEC5288E96F}">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="PackageVariableValue">&lt;PrecedenceConstraint xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0"&gt;&lt;dwd:EvalOp&gt;Constraint&lt;/dwd:EvalOp&gt;&lt;/PrecedenceConstraint&gt;</DTS:Property>
+    </DTS:PackageVariable>
+    <DTS:PackageVariable
+      DTS:CreationName=""
+      DTS:DTSID="{86E2B73C-650E-4CF0-8178-892DB9424620}"
+      DTS:Namespace="dts-designer-1.0"
+      DTS:ObjectName="package-diagram">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="PackageVariableValue">&lt;Package xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0"&gt;&lt;dwd:DtsControlFlowDiagram&gt;&lt;dwd:BoundingLeft&gt;-7820&lt;/dwd:BoundingLeft&gt;&lt;dwd:BoundingTop&gt;-6194&lt;/dwd:BoundingTop&gt;&lt;dwd:Layout&gt;&lt;dds&gt;&lt;diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="Microsoft.DataWarehouse.Layout.GraphLayout110" defaultlineroute="Microsoft.DataWarehouse.Layout.GraphLayout110" version="7" nextobject="19" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-8820" scrolltop="-7914" gridx="150" gridy="150" marginx="1000" marginy="1000" zoom="100" x="24104" y="16007" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="1" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}"&gt;&lt;font&gt;&lt;ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" /&gt;&lt;/font&gt;&lt;mouseicon&gt;&lt;ddsxmlobjectstreamwrapper binary="6c74000000000000" /&gt;&lt;/mouseicon&gt;&lt;/diagram&gt;&lt;layoutmanager&gt;&lt;ddsxmlobj /&gt;&lt;/layoutmanager&gt;&lt;ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Execute SQL Task" left="8782" top="961" logicalid="7" controlid="1" masterid="0" hint1="0" hint2="0" width="3598" height="1164" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobjectstreaminitwrapper binary="000800000e0e00008c040000" /&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj&gt;&lt;property name="LogicalObject" value="Package\Dimensioni Period Fiscale e Civilistica" vartype="8" /&gt;&lt;property name="ShowConnectorSource" value="0" vartype="2" /&gt;&lt;/ddsxmlobj&gt;&lt;/layoutobject&gt;&lt;shape groupshapeid="0" groupnode="0" /&gt;&lt;/ddscontrol&gt;&lt;ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Execute SQL Task" left="8399" top="-4633" logicalid="8" controlid="2" masterid="0" hint1="0" hint2="0" width="4365" height="1164" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobjectstreaminitwrapper binary="000800000d1100008c040000" /&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj&gt;&lt;property name="LogicalObject" value="Package\Drop S_PER_PERIOD" vartype="8" /&gt;&lt;property name="ShowConnectorSource" value="0" vartype="2" /&gt;&lt;/ddsxmlobj&gt;&lt;/layoutobject&gt;&lt;shape groupshapeid="0" groupnode="0" /&gt;&lt;/ddscontrol&gt;&lt;ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Data Flow Task" left="8543" top="3295" logicalid="9" controlid="3" masterid="0" hint1="0" hint2="0" width="3598" height="1164" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobjectstreaminitwrapper binary="000800000e0e00008c040000" /&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj&gt;&lt;property name="LogicalObject" value="Package\S_PER_PERIOD" vartype="8" /&gt;&lt;property name="ShowConnectorSource" value="0" vartype="2" /&gt;&lt;/ddsxmlobj&gt;&lt;/layoutobject&gt;&lt;shape groupshapeid="0" groupnode="0" /&gt;&lt;/ddscontrol&gt;&lt;ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Execute SQL Task" left="8782" top="-1929" logicalid="10" controlid="4" masterid="0" hint1="0" hint2="0" width="3598" height="1164" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobjectstreaminitwrapper binary="000800000e0e00008c040000" /&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj&gt;&lt;property name="LogicalObject" value="Package\Execute SQL Task" vartype="8" /&gt;&lt;property name="ShowConnectorSource" value="0" vartype="2" /&gt;&lt;/ddsxmlobj&gt;&lt;/layoutobject&gt;&lt;shape groupshapeid="0" groupnode="0" /&gt;&lt;/ddscontrol&gt;&lt;ddscontrol controlprogid="MSDDS.Polyline" left="10182" top="-3868" logicalid="11" controlid="5" masterid="0" hint1="0" hint2="0" width="799" height="2439" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobj&gt;&lt;polyline endtypedst="3" endtypesrc="1" usercolor="32768" linestyle="0" linerender="2" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" /&gt;&lt;/ddsxmlobj&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj&gt;&lt;property name="LogicalObject" value="Package.PrecedenceConstraints[Constraint]" vartype="8" /&gt;&lt;property name="Virtual" value="0" vartype="11" /&gt;&lt;property name="VisibleAP" value="0" vartype="3" /&gt;&lt;/ddsxmlobj&gt;&lt;/layoutobject&gt;&lt;connector lineroutestyle="Microsoft.DataWarehouse.Layout.GraphLayout110" sourceid="2" destid="4" sourceattachpoint="7" destattachpoint="6" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="2" relatedid="0" virtual="0"&gt;&lt;point x="10581" y="-3469" /&gt;&lt;point x="10581" y="-1929" /&gt;&lt;/connector&gt;&lt;/ddscontrol&gt;&lt;ddscontrol controlprogid="MSDDS.Polyline" left="10182" top="-1164" logicalid="12" controlid="6" masterid="0" hint1="0" hint2="0" width="799" height="2625" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobj&gt;&lt;polyline endtypedst="3" endtypesrc="1" usercolor="32768" linestyle="0" linerender="2" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" /&gt;&lt;/ddsxmlobj&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj&gt;&lt;property name="LogicalObject" value="Package.PrecedenceConstraints[Constraint 1]" vartype="8" /&gt;&lt;property name="Virtual" value="0" vartype="11" /&gt;&lt;property name="VisibleAP" value="0" vartype="3" /&gt;&lt;/ddsxmlobj&gt;&lt;/layoutobject&gt;&lt;connector lineroutestyle="Microsoft.DataWarehouse.Layout.GraphLayout110" sourceid="4" destid="1" sourceattachpoint="7" destattachpoint="6" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="2" relatedid="0" virtual="0"&gt;&lt;point x="10581" y="-765" /&gt;&lt;point x="10581" y="961" /&gt;&lt;/connector&gt;&lt;/ddscontrol&gt;&lt;ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Execute SQL Task" left="-6571" top="-4945" logicalid="16" controlid="10" masterid="0" hint1="0" hint2="0" width="7196" height="1217" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobjectstreaminitwrapper binary="000800001c1c0000c1040000" /&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj&gt;&lt;property name="LogicalObject" value="Package\RGT_CAMBIO_ANNO_CREAZIONE_ANAGRAFICHE_TEMPORALI" vartype="8" /&gt;&lt;property name="ShowConnectorSource" value="0" vartype="2" /&gt;&lt;/ddsxmlobj&gt;&lt;/layoutobject&gt;&lt;shape groupshapeid="0" groupnode="0" /&gt;&lt;/ddscontrol&gt;&lt;ddscontrol controlprogid="MSDDS.Text" left="9515" top="-5817" logicalid="17" controlid="11" masterid="0" hint1="0" hint2="0" width="2004" height="786" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="1" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobjectstreaminitwrapper binary="00020000d4070000120300000300640000000500008008000080000000002a0001000000900144420100065461686f6d610e005600650063006300680069006f00200066006c007500730073006f0000000000" /&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj /&gt;&lt;/layoutobject&gt;&lt;shape groupshapeid="0" groupnode="0" /&gt;&lt;/ddscontrol&gt;&lt;ddscontrol controlprogid="MSDDS.Text" left="-3714" top="-6194" logicalid="18" controlid="12" masterid="0" hint1="0" hint2="0" width="2058" height="574" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="1" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobjectstreaminitwrapper binary="000200000a0800003e0200000300640000000500008008000080000000002a0001000000900144420100065461686f6d610c004e0075006f0076006f00200066006c007500730073006f0000000000" /&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj /&gt;&lt;/layoutobject&gt;&lt;shape groupshapeid="0" groupnode="0" /&gt;&lt;/ddscontrol&gt;&lt;/dds&gt;&lt;/dwd:Layout&gt;&lt;dwd:PersistedViewPortLeft&gt;-8820&lt;/dwd:PersistedViewPortLeft&gt;&lt;dwd:PersistedViewPortTop&gt;-7914&lt;/dwd:PersistedViewPortTop&gt;&lt;/dwd:DtsControlFlowDiagram&gt;&lt;/Package&gt;</DTS:Property>
+    </DTS:PackageVariable>
+    <DTS:PackageVariable
+      DTS:CreationName=""
+      DTS:DTSID="{EEB0D21B-E2DE-4E3B-905C-B06D608BDA53}"
+      DTS:Namespace="dts-designer-1.0"
+      DTS:ObjectName="package-diagram">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="PackageVariableValue">&lt;Package xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0"&gt;&lt;dwd:DtsControlFlowDiagram&gt;&lt;dwd:BoundingLeft&gt;-7820&lt;/dwd:BoundingLeft&gt;&lt;dwd:BoundingTop&gt;-6194&lt;/dwd:BoundingTop&gt;&lt;dwd:Layout&gt;&lt;dds&gt;&lt;diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="Microsoft.DataWarehouse.Layout.GraphLayout110" defaultlineroute="Microsoft.DataWarehouse.Layout.GraphLayout110" version="7" nextobject="19" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-8820" scrolltop="-7914" gridx="150" gridy="150" marginx="1000" marginy="1000" zoom="100" x="24104" y="16007" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="1" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}"&gt;&lt;font&gt;&lt;ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" /&gt;&lt;/font&gt;&lt;mouseicon&gt;&lt;ddsxmlobjectstreamwrapper binary="6c74000000000000" /&gt;&lt;/mouseicon&gt;&lt;/diagram&gt;&lt;layoutmanager&gt;&lt;ddsxmlobj /&gt;&lt;/layoutmanager&gt;&lt;ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Execute SQL Task" left="8782" top="961" logicalid="7" controlid="1" masterid="0" hint1="0" hint2="0" width="3598" height="1164" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobjectstreaminitwrapper binary="000800000e0e00008c040000" /&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj&gt;&lt;property name="LogicalObject" value="Package\Dimensioni Period Fiscale e Civilistica" vartype="8" /&gt;&lt;property name="ShowConnectorSource" value="0" vartype="2" /&gt;&lt;/ddsxmlobj&gt;&lt;/layoutobject&gt;&lt;shape groupshapeid="0" groupnode="0" /&gt;&lt;/ddscontrol&gt;&lt;ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Execute SQL Task" left="8399" top="-4633" logicalid="8" controlid="2" masterid="0" hint1="0" hint2="0" width="4365" height="1164" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobjectstreaminitwrapper binary="000800000d1100008c040000" /&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj&gt;&lt;property name="LogicalObject" value="Package\Drop S_PER_PERIOD" vartype="8" /&gt;&lt;property name="ShowConnectorSource" value="0" vartype="2" /&gt;&lt;/ddsxmlobj&gt;&lt;/layoutobject&gt;&lt;shape groupshapeid="0" groupnode="0" /&gt;&lt;/ddscontrol&gt;&lt;ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Data Flow Task" left="8543" top="3295" logicalid="9" controlid="3" masterid="0" hint1="0" hint2="0" width="3598" height="1164" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobjectstreaminitwrapper binary="000800000e0e00008c040000" /&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj&gt;&lt;property name="LogicalObject" value="Package\S_PER_PERIOD" vartype="8" /&gt;&lt;property name="ShowConnectorSource" value="0" vartype="2" /&gt;&lt;/ddsxmlobj&gt;&lt;/layoutobject&gt;&lt;shape groupshapeid="0" groupnode="0" /&gt;&lt;/ddscontrol&gt;&lt;ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Execute SQL Task" left="8782" top="-1929" logicalid="10" controlid="4" masterid="0" hint1="0" hint2="0" width="3598" height="1164" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobjectstreaminitwrapper binary="000800000e0e00008c040000" /&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj&gt;&lt;property name="LogicalObject" value="Package\Execute SQL Task" vartype="8" /&gt;&lt;property name="ShowConnectorSource" value="0" vartype="2" /&gt;&lt;/ddsxmlobj&gt;&lt;/layoutobject&gt;&lt;shape groupshapeid="0" groupnode="0" /&gt;&lt;/ddscontrol&gt;&lt;ddscontrol controlprogid="MSDDS.Polyline" left="10182" top="-3868" logicalid="11" controlid="5" masterid="0" hint1="0" hint2="0" width="799" height="2439" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobj&gt;&lt;polyline endtypedst="3" endtypesrc="1" usercolor="32768" linestyle="0" linerender="2" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" /&gt;&lt;/ddsxmlobj&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj&gt;&lt;property name="LogicalObject" value="Package.PrecedenceConstraints[Constraint]" vartype="8" /&gt;&lt;property name="Virtual" value="0" vartype="11" /&gt;&lt;property name="VisibleAP" value="0" vartype="3" /&gt;&lt;/ddsxmlobj&gt;&lt;/layoutobject&gt;&lt;connector lineroutestyle="Microsoft.DataWarehouse.Layout.GraphLayout110" sourceid="2" destid="4" sourceattachpoint="7" destattachpoint="6" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="2" relatedid="0" virtual="0"&gt;&lt;point x="10581" y="-3469" /&gt;&lt;point x="10581" y="-1929" /&gt;&lt;/connector&gt;&lt;/ddscontrol&gt;&lt;ddscontrol controlprogid="MSDDS.Polyline" left="10182" top="-1164" logicalid="12" controlid="6" masterid="0" hint1="0" hint2="0" width="799" height="2625" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobj&gt;&lt;polyline endtypedst="3" endtypesrc="1" usercolor="32768" linestyle="0" linerender="2" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" /&gt;&lt;/ddsxmlobj&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj&gt;&lt;property name="LogicalObject" value="Package.PrecedenceConstraints[Constraint 1]" vartype="8" /&gt;&lt;property name="Virtual" value="0" vartype="11" /&gt;&lt;property name="VisibleAP" value="0" vartype="3" /&gt;&lt;/ddsxmlobj&gt;&lt;/layoutobject&gt;&lt;connector lineroutestyle="Microsoft.DataWarehouse.Layout.GraphLayout110" sourceid="4" destid="1" sourceattachpoint="7" destattachpoint="6" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="2" relatedid="0" virtual="0"&gt;&lt;point x="10581" y="-765" /&gt;&lt;point x="10581" y="961" /&gt;&lt;/connector&gt;&lt;/ddscontrol&gt;&lt;ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Execute SQL Task" left="-6571" top="-4945" logicalid="16" controlid="10" masterid="0" hint1="0" hint2="0" width="7196" height="1217" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobjectstreaminitwrapper binary="000800001c1c0000c1040000" /&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj&gt;&lt;property name="LogicalObject" value="Package\RGT_CAMBIO_ANNO_CREAZIONE_ANAGRAFICHE_TEMPORALI" vartype="8" /&gt;&lt;property name="ShowConnectorSource" value="0" vartype="2" /&gt;&lt;/ddsxmlobj&gt;&lt;/layoutobject&gt;&lt;shape groupshapeid="0" groupnode="0" /&gt;&lt;/ddscontrol&gt;&lt;ddscontrol controlprogid="MSDDS.Text" left="9515" top="-5817" logicalid="17" controlid="11" masterid="0" hint1="0" hint2="0" width="2004" height="786" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="1" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobjectstreaminitwrapper binary="00020000d4070000120300000300640000000500008008000080000000002a0001000000900144420100065461686f6d610e005600650063006300680069006f00200066006c007500730073006f0000000000" /&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj /&gt;&lt;/layoutobject&gt;&lt;shape groupshapeid="0" groupnode="0" /&gt;&lt;/ddscontrol&gt;&lt;ddscontrol controlprogid="MSDDS.Text" left="-3714" top="-6194" logicalid="18" controlid="12" masterid="0" hint1="0" hint2="0" width="2058" height="574" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="1" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobjectstreaminitwrapper binary="000200000a0800003e0200000300640000000500008008000080000000002a0001000000900144420100065461686f6d610c004e0075006f0076006f00200066006c007500730073006f0000000000" /&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj /&gt;&lt;/layoutobject&gt;&lt;shape groupshapeid="0" groupnode="0" /&gt;&lt;/ddscontrol&gt;&lt;/dds&gt;&lt;/dwd:Layout&gt;&lt;dwd:PersistedViewPortLeft&gt;-8820&lt;/dwd:PersistedViewPortLeft&gt;&lt;dwd:PersistedViewPortTop&gt;-7914&lt;/dwd:PersistedViewPortTop&gt;&lt;/dwd:DtsControlFlowDiagram&gt;&lt;/Package&gt;</DTS:Property>
+    </DTS:PackageVariable>
+  </DTS:PackageVariables>
+</DTS:Executable>

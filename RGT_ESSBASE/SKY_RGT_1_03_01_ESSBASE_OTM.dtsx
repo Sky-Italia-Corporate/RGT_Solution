@@ -1,0 +1,172 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/21/2014 12:41:52 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="HYPAPP-SVL01"
+  DTS:CreatorName="SKY\scavolinia"
+  DTS:DTSID="{F50236BF-D64B-4DDC-8DC3-8C627509F451}"
+  DTS:EnableConfig="True"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.113"
+  DTS:LocaleID="1040"
+  DTS:ObjectName="SKY_RGT_1_03_01_ESSBASE_OTM"
+  DTS:PackageType="5"
+  DTS:VersionBuild="18"
+  DTS:VersionGUID="{14FB56D0-DA75-40DA-BF14-7D3DEDD1A63B}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[(local).ICO_MONITOR]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{9a7f5b65-1b01-4857-83d6-1d0262700e97}"
+      DTS:ObjectName="(local).ICO_MONITOR">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL01;Initial Catalog=ICO_MONITOR;Provider=SQLNCLI11;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_PTV_1_03_01_ESSBASE-{A6277EC5-51E2-452A-87A8-91EB6C952007}(local).ICO_MONITOR;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SQL01.SKY_RGT]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{6b46ac86-1763-473c-9907-65349205ea45}"
+      DTS:ObjectName="SQL01.SKY_RGT">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL01;Initial Catalog=SKY_RGT;Provider=SQLNCLI11;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_PTV_1_03_01_ESSBASE-{4521B8E5-A13B-4E99-8D6D-50BCE396BE31}SQL01.SKY_PTV;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SQL01.SSIS_CONFIGURATION]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{dfa9ba2b-c42c-4deb-807e-2a0fc1d697f0}"
+      DTS:ObjectName="SQL01.SSIS_CONFIGURATION">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL01;Initial Catalog=SSIS_CONFIGURATION;Provider=SQLNCLI11;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_PTV_1_03_01_ESSBASE-{95785172-51F9-4D72-9B1A-7A7DBD81BDD4}SQL01.SSIS_CONFIGURATION;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Configurations>
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;SQL01.SSIS_CONFIGURATION&quot;;&quot;[dbo].[PTV_Solution]&quot;;&quot;VAR_ServerApp01&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{6F7D0369-1A27-45B0-B9A4-4424F155A0E4}"
+      DTS:ObjectName="ServerApp01" />
+  </DTS:Configurations>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{9DB0C6B5-7807-4858-A347-08EFEDCAF3AD}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ServerApp01">
+      <DTS:VariableValue
+        DTS:DataType="8">DEVRMWASHYP01</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Aggiornamento SF_AMMORTAMENTO_WEEKLY"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{bdb447b7-dc72-459f-84fa-ba467b9f4574}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Aggiornamento SF_AMMORTAMENTO_WEEKLY"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{6b46ac86-1763-473c-9907-65349205ea45}"
+          SQLTask:SqlStatementSource="USE SKY_RGT&#xA;EXEC [dbo].[RGT_SF_AMMORTAMENTO_WEEKLY] 'OTM'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute Process Task"
+      DTS:CreationName="Microsoft.ExecuteProcess"
+      DTS:Description="Execute Process Task"
+      DTS:DTSID="{bdff53d0-7ac8-4015-9069-67e543f4322e}"
+      DTS:ExecutableType="Microsoft.ExecuteProcess"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute Process Task"
+      DTS:TaskContact="Execute Process Task;Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:PropertyExpression
+        DTS:Name="Arguments">"/c \"E:\\StagingArea\\PsExec\\PsExec \\\\"+ @[User::ServerApp01] +" E:\\StagingArea\\OTM\\Batch\\Load_OTM_DimData.bat -accepteula\""</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <ExecuteProcessData
+          Executable="C:\WINDOWS\System32\CMD.exe"
+          Arguments="/c &quot;E:\StagingArea\PsExec\PsExec \\DEVRMWASHYP01 E:\StagingArea\OTM\Batch\Load_OTM_DimData.bat -accepteula&quot;" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{36C72B28-34D1-480A-A003-FE27E1AA415C}"
+      DTS:From="Package\Aggiornamento SF_AMMORTAMENTO_WEEKLY"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Execute Process Task" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="185,47"
+          Id="Package\Aggiornamento SF_AMMORTAMENTO_WEEKLY"
+          TopLeft="5.5,5.5" />
+        <NodeLayout
+          Size="136,44"
+          Id="Package\Execute Process Task"
+          TopLeft="31.3867924528302,97.2358490566038" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="97.8396226415094,52.4056603773585">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="1.43396226415094,44.8301886792453"
+              Start="0,0"
+              End="1.43396226415094,37.3301886792453">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.4150943396226" />
+                  <mssgle:LineSegment
+                    End="1.43396226415094,22.4150943396226" />
+                  <mssgle:LineSegment
+                    End="1.43396226415094,37.3301886792453" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -1,0 +1,2959 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/28/2011 4:34:04 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="HYPSRV-SVIL01"
+  DTS:CreatorName="SKY\vennia"
+  DTS:DTSID="{89788433-94E1-4A32-9B8B-732D862F85B6}"
+  DTS:EnableConfig="True"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.113"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="SKY_RGT_1_02_11_EXPORT_WBS"
+  DTS:PackageType="5"
+  DTS:VersionBuild="522"
+  DTS:VersionGUID="{13F87686-E5C4-41A9-AFC7-946676C171DE}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[(local).ICO_MONITOR]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{ECF8A372-D13E-4384-8E91-B2DF4B279C46}"
+      DTS:ObjectName="(local).ICO_MONITOR">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL01;Initial Catalog=ICO_MONITOR;Provider=SQLNCLI11;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_RGT_1_02_02_EXPORT_AMORTIZATION-{ECF8A372-D13E-4384-8E91-B2DF4B279C46}(local).ICO_MONITOR;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[(local).SKY_RGT]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{6E5F921A-6390-4934-A632-F20F6E43D7F1}"
+      DTS:ObjectName="(local).SKY_RGT">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL01;Initial Catalog=SKY_RGT;Provider=SQLNCLI11;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_RGT_1_02_02_EXPORT_AMORTIZATION-{6E5F921A-6390-4934-A632-F20F6E43D7F1}(local).SKY_RGT;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[RGT_WBS_WEB_SERVICE_INPUT]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{510960B4-E81A-4D90-83C2-A537825C51CA}"
+      DTS:ObjectName="RGT_WBS_WEB_SERVICE_INPUT">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1040"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="\\TSTRMWASHYP01\e$\StagingArea\utilities\WebService\RGT_WBS_WEB_SERVICE_INPUT.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="WBS"
+              DTS:DTSID="{42724987-6696-4C6C-ADC9-4205FF31BC14}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MODE"
+              DTS:DTSID="{A4B8E76E-AD72-4D98-B083-7FD8B2184283}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="HYPERION_REFERENCE_CODE"
+              DTS:DTSID="{C18B6E08-EC8A-4555-8BD1-E4E4B15A020A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="COMPANY_CODE"
+              DTS:DTSID="{935E5824-11D7-4D95-B1CA-89B509D225E6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DESCRIPTION"
+              DTS:DTSID="{FD90AD75-2747-4D0B-96AC-518FA7F1255F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="2"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DESCRIPTION_CHG"
+              DTS:DTSID="{7EB2A9C5-C14D-4F00-92C2-AAB87CF1B465}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SAP_VENDOR"
+              DTS:DTSID="{0DBE2F70-D512-4B3A-AF62-31A5BD3B41AA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="2"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SAP_VENDOR_CHG"
+              DTS:DTSID="{558008AB-6850-41E8-8AB8-C0BE7687F06A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BENEFICIAL_OWNER"
+              DTS:DTSID="{05C2C1C2-DA14-40EB-AE9E-3B09C006D20B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BENEFICIAL_OWNER_CHG"
+              DTS:DTSID="{7581128C-C0BE-42DA-91B1-D006DD83CEC3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="STARTDATE"
+              DTS:DTSID="{99D24182-C531-4392-AAEC-E8DC21C23150}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="2"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="STARTDATE_CHG"
+              DTS:DTSID="{158F3232-BF24-4D94-97C9-DCE166641C78}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ENDDATE"
+              DTS:DTSID="{32808455-D335-49E9-A409-481A736C4D15}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="2"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ENDDATE_CHG"
+              DTS:DTSID="{3ACC6A5F-F521-4417-A6E4-8E385EECA39E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BROADCAST_STARTDATE"
+              DTS:DTSID="{AFBD5DBC-6A55-450F-9ED7-7B1BFC0A9667}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="2"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BROADCAST_STARTDATE_CHG"
+              DTS:DTSID="{C083023A-630F-4308-A344-FEDBD43FF75E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BROADCAST_ENDDATE"
+              DTS:DTSID="{43FF3089-798E-4ABD-9D17-1DD28CA33F15}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="2"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BROADCAST_ENDDATE_CHG"
+              DTS:DTSID="{6E0AABE3-15B6-4AA5-9ADB-44D469A1994E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="COSTCENTRE"
+              DTS:DTSID="{032E6C4B-F963-4D80-B0D7-47A1DD1B1FF0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="2"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="COSTCENTRE_CHG"
+              DTS:DTSID="{C51206C4-8164-48A3-9856-2FB232CA48CE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PARENT_WBS"
+              DTS:DTSID="{E755754D-0184-4E51-8CDB-AC3946C53005}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="WBS_LEVEL"
+              DTS:DTSID="{1B2462B9-193E-49B6-98F9-FA756E18A34E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="STATUS"
+              DTS:DTSID="{6439F100-8C19-4864-A2F6-570C57960C7F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="3"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DELETION_FLAG"
+              DTS:DTSID="{556AF82B-464D-4A22-95FD-14CFF437451C}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[RGT_WBS_WEB_SERVICE_OUTPUT]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{D2C0C2D5-163D-4209-A50A-385B48C01777}"
+      DTS:ObjectName="RGT_WBS_WEB_SERVICE_OUTPUT">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1040"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="\\TSTRMWASHYP01\e$\StagingArea\utilities\WebService\RGT_WBS_WEB_SERVICE_OUTPUT.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 0"
+              DTS:DTSID="{9CBD6F0C-0DD1-49B8-BC4F-E0FB3F3AD7D5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 1"
+              DTS:DTSID="{4EBBE0A8-8EDB-4821-8544-E0C9EAE660D7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 2"
+              DTS:DTSID="{2FDD6404-3104-4BC1-A4AA-3D1D2A0C15D5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 3"
+              DTS:DTSID="{37A91C55-DBCA-4E7E-B560-7E409CF96CFE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 4"
+              DTS:DTSID="{421BE28D-2178-431C-A7F5-ACD4641393F1}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SQL01.SSIS_CONFIGURATION]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{4AF29179-6227-409F-83F6-05B76294C3E9}"
+      DTS:ObjectName="SQL01.SSIS_CONFIGURATION">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL01;Initial Catalog=SSIS_CONFIGURATION;Provider=SQLNCLI11;Integrated Security=SSPI;Application Name=SSIS-SKY_RGT_1_02_02_EXPORT_AMORTIZATION-{4AF29179-6227-409F-83F6-05B76294C3E9}SQL01.SSIS_CONFIGURATION;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Configurations>
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;SQL01.SSIS_CONFIGURATION&quot;;&quot;[dbo].[RGT_Solution]&quot;;&quot;Username_Web_Service&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{4E414517-87AB-4B5B-9137-1F11824893C1}"
+      DTS:ObjectName="Username_Web_Service" />
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;SQL01.SSIS_CONFIGURATION&quot;;&quot;[dbo].[RGT_Solution]&quot;;&quot;Password_Web_Service&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{1E2411C2-790D-44A6-94AE-30F1AEC142E0}"
+      DTS:ObjectName="Password_Web_Service" />
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;SQL01.SSIS_CONFIGURATION&quot;;&quot;[dbo].[RGT_Solution]&quot;;&quot;Url_Web_Service&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{4DE5B0D3-397B-4649-A665-73183FA7B61C}"
+      DTS:ObjectName="Url_Web_Service" />
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;SQL01.SSIS_CONFIGURATION&quot;;&quot;[dbo].[RGT_Solution]&quot;;&quot;Path_Web_Service_Script&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{A5EB361D-8A91-413F-9EFC-DF30E91EEA30}"
+      DTS:ObjectName="Path_Web_Service_Script" />
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;SQL01.SSIS_CONFIGURATION&quot;;&quot;[dbo].[RGT_Solution]&quot;;&quot;VAR_ServerApp01&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{50EB128E-7A84-4165-AA9F-48124400DB10}"
+      DTS:ObjectName="VAR_ServerApp01" />
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;SQL01.SSIS_CONFIGURATION&quot;;&quot;[dbo].[RGT_Solution]&quot;;&quot;Path_Windows_Winrs&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{B13EC367-50B9-4CF5-ABC0-239757A1E3DF}"
+      DTS:ObjectName="Path_Windows_Winrs" />
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;SQL01.SSIS_CONFIGURATION&quot;;&quot;[dbo].[RGT_Solution]&quot;;&quot;Path_WBS_Input&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{6E2A0178-2720-40EC-ABFF-E789D4587C07}"
+      DTS:ObjectName="Path_WBS_Input" />
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;SQL01.SSIS_CONFIGURATION&quot;;&quot;[dbo].[RGT_Solution]&quot;;&quot;Path_WBS_Output&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{802B4F65-BCB9-4DFD-BE3A-93B0648ACB21}"
+      DTS:ObjectName="Path_WBS_Output" />
+  </DTS:Configurations>
+  <DTS:LogProviders>
+    <DTS:LogProvider
+      DTS:ConfigString="(local).ICO_MONITOR"
+      DTS:CreationName="Microsoft.LogProviderSQLServer"
+      DTS:Description="Writes log entries for events to a SQL Server database"
+      DTS:DTSID="{BB9D0DF2-6330-48C7-A209-7EF306F92F9F}"
+      DTS:ObjectName="SSIS log provider for SQL Server">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+  </DTS:LogProviders>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{9EAF0612-6C57-48BF-AB89-FEFE72DEA49A}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="File_WBS_Input">
+      <DTS:VariableValue
+        DTS:DataType="8">RGT_WBS_WEB_SERVICE_INPUT.csv</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C5EB3472-90A4-4CE3-88C7-F3E86EACA389}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="File_WBS_Output">
+      <DTS:VariableValue
+        DTS:DataType="8">RGT_WBS_WEB_SERVICE_OUTPUT.csv</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{8C2F39B9-DA30-41E7-80A1-7EE04DC7A1F9}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Path_Web_Service_Script">
+      <DTS:VariableValue
+        DTS:DataType="8">E:\StagingArea\utilities\WebService Sky.WebService.Client.exe</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E17D2BF7-F0D8-4658-8033-E205BD1BCF6B}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Path_Windows_Winrs">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\WINDOWS\System32\winrs.exe</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{50A3D00C-AB04-4DEB-A487-F5575A051EF2}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Script_Return_Code">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{1AE44CC1-55DA-4755-9324-71FA4536403A}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;Return code is: &quot; +  (DT_WSTR, 2) @[User::Script_Return_Code]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Script_Return_Message">
+      <DTS:VariableValue
+        DTS:DataType="8">Return code is: 0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{5B967683-353C-4C6F-9DF9-046321E08A21}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ServerApp01">
+      <DTS:VariableValue
+        DTS:DataType="8">TSTRMWASHYP01</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{118483D6-73AA-47EE-BE9D-699E6C97997A}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Web_Service_Password">
+      <DTS:VariableValue
+        DTS:DataType="8">Oxford2018</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{02B3C69E-A2D3-4D71-8197-02CA2EAA67D4}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Web_Service_Url">
+      <DTS:VariableValue
+        DTS:DataType="8">https://vqx1wd.bskyb.com/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=BS_Hyperion_Q&amp;receiverParty=&amp;receiverService=&amp;interface=SI_GTPROJPROJ03_WBSElements_Out_Sync&amp;interfaceNamespace=urn:sky.IT:Hyperion:WBSElements</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F5CD5316-06D4-44FA-8B9F-07B4C9554792}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Web_Service_Username">
+      <DTS:VariableValue
+        DTS:DataType="8">INT_HYP_TEST</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">6,7,OnError,13,OnPostExecute,14,OnPostValidate,12,OnPreExecute,13,OnPreValidate,12,OnTaskFailed</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnTaskFailed"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:SelectedLogProviders>
+      <DTS:SelectedLogProvider
+        DTS:InstanceID="{BB9D0DF2-6330-48C7-A209-7EF306F92F9F}" />
+    </DTS:SelectedLogProviders>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\LOG FAILURE"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{c707746c-ff35-4c45-a5a8-3b0411993201}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="LOG FAILURE"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{ECF8A372-D13E-4384-8E91-B2DF4B279C46}"
+          SQLTask:SqlStatementSource="INSERT INTO [ICO_LOG].dbo.LOG_TABLE VALUES('RGT', GETDATE(), 'Error', '', 'RGT_WBS_WEB_SERVICE', ?  , '', '');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@ReturnCode"
+            SQLTask:DtsVariableName="User::Script_Return_Message"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="20" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\LOG OK"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{a6f07b64-83e8-4c57-badc-261f05757c81}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="LOG OK"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{ECF8A372-D13E-4384-8E91-B2DF4B279C46}"
+          SQLTask:SqlStatementSource="INSERT INTO [ICO_LOG].dbo.LOG_TABLE VALUES('RGT', GETDATE(), 'Info', '', 'RGT_WBS_WEB_SERVICE', ?  , '', '');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@ReturnCode"
+            SQLTask:DtsVariableName="User::Script_Return_Message"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="20" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\PREPARE WEB SERVICE REQUEST"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{3ec0d956-e40b-43b8-9a26-ac81540637d3}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="PREPARE WEB SERVICE REQUEST"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server v9; (C) 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <pipeline
+          BLOBTempStoragePath=""
+          bufferTempStoragePath=""
+          engineThreads="5"
+          version="1">
+          <components>
+            <component
+              refId="Package\PREPARE WEB SERVICE REQUEST\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\PREPARE WEB SERVICE REQUEST\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\Derived Column.Inputs[Derived Column Input].Columns[DESCRIPTION]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="DESCRIPTION"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[DESCRIPTION]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[REPLACE](#{Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[DESCRIPTION]},"\"","")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">REPLACE(DESCRIPTION,"\"","")</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\Derived Column.Inputs[Derived Column Input].Columns[WBS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="WBS"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[WBS]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[REPLACE](#{Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[WBS]},"\"","")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">REPLACE(WBS,"\"","")</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\Derived Column.Inputs[Derived Column Input].Columns[HYPERION_REFERENCE_CODE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="HYPERION_REFERENCE_CODE"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[HYPERION_REFERENCE_CODE]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[REPLACE](#{Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[HYPERION_REFERENCE_CODE]},"\"","")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">REPLACE(HYPERION_REFERENCE_CODE,"\"","")</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\Derived Column.Inputs[Derived Column Input].Columns[COMPANY_CODE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="COMPANY_CODE"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[COMPANY_CODE]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[REPLACE](#{Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[COMPANY_CODE]},"\"","")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">REPLACE(COMPANY_CODE,"\"","")</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\Derived Column.Inputs[Derived Column Input].Columns[DESCRIPTION_CHG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="DESCRIPTION_CHG"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[DESCRIPTION_CHG]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[REPLACE](#{Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[DESCRIPTION_CHG]},"\"","")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">REPLACE(DESCRIPTION_CHG,"\"","")</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\Derived Column.Inputs[Derived Column Input].Columns[SAP_VENDOR]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="SAP_VENDOR"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[SAP_VENDOR]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[REPLACE](#{Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[SAP_VENDOR]},"\"","")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">REPLACE(SAP_VENDOR,"\"","")</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\Derived Column.Inputs[Derived Column Input].Columns[SAP_VENDOR_CHG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="SAP_VENDOR_CHG"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[SAP_VENDOR_CHG]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[REPLACE](#{Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[SAP_VENDOR_CHG]},"\"","")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">REPLACE(SAP_VENDOR_CHG,"\"","")</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\Derived Column.Inputs[Derived Column Input].Columns[BENEFICIAL_OWNER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="BENEFICIAL_OWNER"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[BENEFICIAL_OWNER]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[REPLACE](#{Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[BENEFICIAL_OWNER]},"\"","")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">REPLACE(BENEFICIAL_OWNER,"\"","")</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\Derived Column.Inputs[Derived Column Input].Columns[BENEFICIAL_OWNER_CHG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="BENEFICIAL_OWNER_CHG"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[BENEFICIAL_OWNER_CHG]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[REPLACE](#{Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[BENEFICIAL_OWNER_CHG]},"\"","")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">REPLACE(BENEFICIAL_OWNER_CHG,"\"","")</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\Derived Column.Inputs[Derived Column Input].Columns[STARTDATE_CHG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="STARTDATE_CHG"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[STARTDATE_CHG]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[REPLACE](#{Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[STARTDATE_CHG]},"\"","")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">REPLACE(STARTDATE_CHG,"\"","")</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\Derived Column.Inputs[Derived Column Input].Columns[ENDDATE_CHG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="ENDDATE_CHG"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[ENDDATE_CHG]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[REPLACE](#{Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[ENDDATE_CHG]},"\"","")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">REPLACE(ENDDATE_CHG,"\"","")</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\Derived Column.Inputs[Derived Column Input].Columns[BROADCAST_STARTDATE_CHG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="BROADCAST_STARTDATE_CHG"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[BROADCAST_STARTDATE_CHG]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[REPLACE](#{Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[BROADCAST_STARTDATE_CHG]},"\"","")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">REPLACE(BROADCAST_STARTDATE_CHG,"\"","")</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\Derived Column.Inputs[Derived Column Input].Columns[BROADCAST_ENDDATE_CHG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="BROADCAST_ENDDATE_CHG"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[BROADCAST_ENDDATE_CHG]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[REPLACE](#{Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[BROADCAST_ENDDATE_CHG]},"\"","")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">REPLACE(BROADCAST_ENDDATE_CHG,"\"","")</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\Derived Column.Inputs[Derived Column Input].Columns[COSTCENTRE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="COSTCENTRE"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[COSTCENTRE]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[REPLACE](#{Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[COSTCENTRE]},"\"","")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">REPLACE(COSTCENTRE,"\"","")</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\Derived Column.Inputs[Derived Column Input].Columns[COSTCENTRE_CHG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="COSTCENTRE_CHG"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[COSTCENTRE_CHG]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[REPLACE](#{Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[COSTCENTRE_CHG]},"\"","")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">REPLACE(COSTCENTRE_CHG,"\"","")</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\Derived Column.Inputs[Derived Column Input].Columns[PARENT_WBS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="PARENT_WBS"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[PARENT_WBS]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[REPLACE](#{Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[PARENT_WBS]},"\"","")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">REPLACE(PARENT_WBS,"\"","")</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\Derived Column.Inputs[Derived Column Input].Columns[STATUS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="STATUS"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[STATUS]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[REPLACE](#{Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[STATUS]},"\"","")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">REPLACE(STATUS,"\"","")</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\Derived Column.Inputs[Derived Column Input].Columns[DELETION_FLAG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="DELETION_FLAG"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[DELETION_FLAG]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[REPLACE](#{Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[DELETION_FLAG]},"\"","")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">REPLACE(DELETION_FLAG,"\"","")</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\PREPARE WEB SERVICE REQUEST\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\PREPARE WEB SERVICE REQUEST\Derived Column.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\PREPARE WEB SERVICE REQUEST\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\PREPARE WEB SERVICE REQUEST\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Flat File Destination"
+              localeId="1040"
+              name="RGT_WBS_WEB_SERVICE_INPUT">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[RGT_WBS_WEB_SERVICE_INPUT]"
+                  connectionManagerRefId="Package.ConnectionManagers[RGT_WBS_WEB_SERVICE_INPUT]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].Columns[WBS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="WBS"
+                      externalMetadataColumnId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].ExternalColumns[WBS]"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[WBS]" />
+                    <inputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].Columns[MODE]"
+                      cachedDataType="i4"
+                      cachedName="MODE"
+                      externalMetadataColumnId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].ExternalColumns[MODE]"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[MODE]" />
+                    <inputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].Columns[HYPERION_REFERENCE_CODE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="HYPERION_REFERENCE_CODE"
+                      externalMetadataColumnId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].ExternalColumns[HYPERION_REFERENCE_CODE]"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[HYPERION_REFERENCE_CODE]" />
+                    <inputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].Columns[COMPANY_CODE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="COMPANY_CODE"
+                      externalMetadataColumnId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].ExternalColumns[COMPANY_CODE]"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[COMPANY_CODE]" />
+                    <inputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].Columns[DESCRIPTION]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="DESCRIPTION"
+                      externalMetadataColumnId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].ExternalColumns[DESCRIPTION]"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[DESCRIPTION]" />
+                    <inputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].Columns[DESCRIPTION_CHG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="DESCRIPTION_CHG"
+                      externalMetadataColumnId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].ExternalColumns[DESCRIPTION_CHG]"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[DESCRIPTION_CHG]" />
+                    <inputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].Columns[SAP_VENDOR]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="SAP_VENDOR"
+                      externalMetadataColumnId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].ExternalColumns[SAP_VENDOR]"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[SAP_VENDOR]" />
+                    <inputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].Columns[SAP_VENDOR_CHG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="SAP_VENDOR_CHG"
+                      externalMetadataColumnId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].ExternalColumns[SAP_VENDOR_CHG]"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[SAP_VENDOR_CHG]" />
+                    <inputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].Columns[BENEFICIAL_OWNER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="BENEFICIAL_OWNER"
+                      externalMetadataColumnId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].ExternalColumns[BENEFICIAL_OWNER]"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[BENEFICIAL_OWNER]" />
+                    <inputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].Columns[BENEFICIAL_OWNER_CHG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="BENEFICIAL_OWNER_CHG"
+                      externalMetadataColumnId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].ExternalColumns[BENEFICIAL_OWNER_CHG]"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[BENEFICIAL_OWNER_CHG]" />
+                    <inputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].Columns[STARTDATE]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="STARTDATE"
+                      externalMetadataColumnId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].ExternalColumns[STARTDATE]"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[STARTDATE]" />
+                    <inputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].Columns[STARTDATE_CHG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="STARTDATE_CHG"
+                      externalMetadataColumnId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].ExternalColumns[STARTDATE_CHG]"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[STARTDATE_CHG]" />
+                    <inputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].Columns[ENDDATE]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="ENDDATE"
+                      externalMetadataColumnId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].ExternalColumns[ENDDATE]"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[ENDDATE]" />
+                    <inputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].Columns[ENDDATE_CHG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="ENDDATE_CHG"
+                      externalMetadataColumnId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].ExternalColumns[ENDDATE_CHG]"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[ENDDATE_CHG]" />
+                    <inputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].Columns[BROADCAST_STARTDATE]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="BROADCAST_STARTDATE"
+                      externalMetadataColumnId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].ExternalColumns[BROADCAST_STARTDATE]"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[BROADCAST_STARTDATE]" />
+                    <inputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].Columns[BROADCAST_STARTDATE_CHG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="BROADCAST_STARTDATE_CHG"
+                      externalMetadataColumnId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].ExternalColumns[BROADCAST_STARTDATE_CHG]"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[BROADCAST_STARTDATE_CHG]" />
+                    <inputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].Columns[BROADCAST_ENDDATE]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="BROADCAST_ENDDATE"
+                      externalMetadataColumnId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].ExternalColumns[BROADCAST_ENDDATE]"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[BROADCAST_ENDDATE]" />
+                    <inputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].Columns[BROADCAST_ENDDATE_CHG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="BROADCAST_ENDDATE_CHG"
+                      externalMetadataColumnId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].ExternalColumns[BROADCAST_ENDDATE_CHG]"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[BROADCAST_ENDDATE_CHG]" />
+                    <inputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].Columns[COSTCENTRE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="COSTCENTRE"
+                      externalMetadataColumnId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].ExternalColumns[COSTCENTRE]"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[COSTCENTRE]" />
+                    <inputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].Columns[COSTCENTRE_CHG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="COSTCENTRE_CHG"
+                      externalMetadataColumnId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].ExternalColumns[COSTCENTRE_CHG]"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[COSTCENTRE_CHG]" />
+                    <inputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].Columns[PARENT_WBS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="PARENT_WBS"
+                      externalMetadataColumnId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].ExternalColumns[PARENT_WBS]"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[PARENT_WBS]" />
+                    <inputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].Columns[WBS_LEVEL]"
+                      cachedDataType="i4"
+                      cachedName="WBS_LEVEL"
+                      externalMetadataColumnId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].ExternalColumns[WBS_LEVEL]"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[WBS_LEVEL]" />
+                    <inputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].Columns[STATUS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="STATUS"
+                      externalMetadataColumnId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].ExternalColumns[STATUS]"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[STATUS]" />
+                    <inputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].Columns[DELETION_FLAG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="DELETION_FLAG"
+                      externalMetadataColumnId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].ExternalColumns[DELETION_FLAG]"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[DELETION_FLAG]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].ExternalColumns[WBS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="WBS" />
+                    <externalMetadataColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].ExternalColumns[MODE]"
+                      dataType="i4"
+                      name="MODE" />
+                    <externalMetadataColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].ExternalColumns[HYPERION_REFERENCE_CODE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="HYPERION_REFERENCE_CODE" />
+                    <externalMetadataColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].ExternalColumns[COMPANY_CODE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="COMPANY_CODE" />
+                    <externalMetadataColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].ExternalColumns[DESCRIPTION]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="DESCRIPTION" />
+                    <externalMetadataColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].ExternalColumns[DESCRIPTION_CHG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="DESCRIPTION_CHG" />
+                    <externalMetadataColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].ExternalColumns[SAP_VENDOR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="SAP_VENDOR" />
+                    <externalMetadataColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].ExternalColumns[SAP_VENDOR_CHG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="SAP_VENDOR_CHG" />
+                    <externalMetadataColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].ExternalColumns[BENEFICIAL_OWNER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="BENEFICIAL_OWNER" />
+                    <externalMetadataColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].ExternalColumns[BENEFICIAL_OWNER_CHG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="BENEFICIAL_OWNER_CHG" />
+                    <externalMetadataColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].ExternalColumns[STARTDATE]"
+                      dataType="dbTimeStamp"
+                      name="STARTDATE" />
+                    <externalMetadataColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].ExternalColumns[STARTDATE_CHG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="STARTDATE_CHG" />
+                    <externalMetadataColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].ExternalColumns[ENDDATE]"
+                      dataType="dbTimeStamp"
+                      name="ENDDATE" />
+                    <externalMetadataColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].ExternalColumns[ENDDATE_CHG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="ENDDATE_CHG" />
+                    <externalMetadataColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].ExternalColumns[BROADCAST_STARTDATE]"
+                      dataType="dbTimeStamp"
+                      name="BROADCAST_STARTDATE" />
+                    <externalMetadataColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].ExternalColumns[BROADCAST_STARTDATE_CHG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="BROADCAST_STARTDATE_CHG" />
+                    <externalMetadataColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].ExternalColumns[BROADCAST_ENDDATE]"
+                      dataType="dbTimeStamp"
+                      name="BROADCAST_ENDDATE" />
+                    <externalMetadataColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].ExternalColumns[BROADCAST_ENDDATE_CHG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="BROADCAST_ENDDATE_CHG" />
+                    <externalMetadataColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].ExternalColumns[COSTCENTRE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="COSTCENTRE" />
+                    <externalMetadataColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].ExternalColumns[COSTCENTRE_CHG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="COSTCENTRE_CHG" />
+                    <externalMetadataColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].ExternalColumns[PARENT_WBS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PARENT_WBS" />
+                    <externalMetadataColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].ExternalColumns[WBS_LEVEL]"
+                      dataType="i4"
+                      name="WBS_LEVEL" />
+                    <externalMetadataColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].ExternalColumns[STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="STATUS" />
+                    <externalMetadataColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input].ExternalColumns[DELETION_FLAG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="DELETION_FLAG" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="T_SAP_EXPORT_IT030_11"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[T_SAP_EXPORT_IT030_11]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [Budget Id]
+      ,[Acquisition Currency]
+      ,[Civil Month]
+      ,[Effect Type]
+      ,replace(cast([Amortization Valuta (YTD)] as varchar(50)),'.',',') as [Amortization Valuta (YTD)]
+      ,replace(cast([Amortization Euro (YTD)] as varchar(50)),'.',',') as [Amortization Euro (YTD)]
+      ,replace(cast([Amortization Euro Hedge (YTD)] as varchar(50)),'.',',') as [Amortization Euro Hedge (YTD)]
+      ,replace(cast([PPA tbp Valuta (YTD)] as varchar(50)),'.',',') as [PPA tbp Valuta (YTD)]
+      ,replace(cast([PPA tbp (YTD)] as varchar(50)),'.',',') as [PPA tbp (YTD)]
+      ,replace(cast([PPA tbp Euro Hedge (YTD)] as varchar(50)),'.',',') as [PPA tbp Euro Hedge (YTD)]
+      ,replace(cast([PPA-SOP Valuta (YTD)] as varchar(50)),'.',',') as [PPA-SOP Valuta (YTD)]
+      ,replace(cast([PPA-SOP (YTD)] as varchar(50)),'.',',') as [PPA-SOP (YTD)]
+      ,replace(cast([PPA-SOP Euro Hedge (YTD)] as varchar(50)),'.',',') as [PPA-SOP Euro Hedge (YTD)]
+      ,replace(cast([SOP Valuta (YTD)] as varchar(50)),'.',',') as [SOP Valuta (YTD)]
+      ,replace(cast([SOP (YTD)] as varchar(50)),'.',',') as [SOP (YTD)]
+      ,replace(cast([SOP Euro Hedge (YTD)] as varchar(50)),'.',',') as [SOP Euro Hedge (YTD)]
+      ,replace(cast([SOP tbp Valuta (YTD)] as varchar(50)),'.',',') as [SOP tbp Valuta (YTD)]
+      ,replace(cast([SOP tbp (YTD)] as varchar(50)),'.',',') as [SOP tbp (YTD)]
+      ,replace(cast([SOP tbp Euro Hedge (YTD)] as varchar(50)),'.',',') as [SOP tbp Euro Hedge (YTD)]
+      ,replace(cast([SOP-G&amp;A Valuta (YTD)] as varchar(50)),'.',',') as [SOP-G&amp;A Valuta (YTD)]
+      ,replace(cast([SOP-G&amp;A (YTD)] as varchar(50)),'.',',') as [SOP-G&amp;A (YTD)]
+      ,replace(cast([SOP-G&amp;A Euro Hedge (YTD)] as varchar(50)),'.',',') as [SOP-G&amp;A Euro Hedge (YTD)]
+      ,replace(cast([SOP-G&amp;A tbp Valuta (YTD)] as varchar(50)),'.',',') as [SOP-G&amp;A tbp Valuta (YTD)]
+      ,replace(cast([SOP-G&amp;A tbp (YTD)] as varchar(50)),'.',',') as [SOP-G&amp;A tbp (YTD)]
+      ,replace(cast([SOP-G&amp;A tbp Euro Hedge (YTD)] as varchar(50)),'.',',') as [SOP-G&amp;A tbp Euro Hedge (YTD)]
+      ,replace(cast([Effetto Giorni Valuta (YTD)] as varchar(50)),'.',',') as [Effetto Giorni Valuta (YTD)] 
+      ,replace(cast([Effetto Giorni Euro (YTD)] as varchar(50)),'.',',') as [Effetto Giorni Euro (YTD)]
+      ,replace(cast([Effetto Giorni Euro Hedge (YTD)] as varchar(50)),'.',',') as [Effetto Giorni Euro Hedge (YTD)]
+	  ,replace(cast([Effetto Giorni PY Valuta] as varchar(50)),'.',',') as [Effetto Giorni PY Valuta]
+	  ,replace(cast([Effetto Giorni PY Euro] as varchar(50)),'.',',') as [Effetto Giorni PY Euro],
+	  [Tipo Ordine],
+	  [Giorni Avail],
+	  [Giorni YTD],
+replace(cast([Amortization Run Valuta Stat (ITD)] as varchar(50)),'.',',') as [Amortization Run Valuta Stat (ITD)]
+,replace(cast([Amortization Run Euro Stat (ITD)] as varchar(50)),'.',',') as [Amortization Run Euro Stat (ITD)]
+,replace(cast([Amortization Run Euro Hedge Stat (ITD)] as varchar(50)),'.',',') as [Amortization Run Euro Hedge Stat (ITD)]
+,replace(cast([Amortization Lin Valuta Stat (ITD)] as varchar(50)),'.',',') as [Amortization Lin Valuta Stat (ITD)]
+,replace(cast([Amortization Lin Euro Stat (ITD)] as varchar(50)),'.',',') as [Amortization Lin Euro Stat (ITD)]
+,replace(cast([Amortization Lin Euro Hedge Stat (ITD)] as varchar(50)),'.',',') as [Amortization Lin Euro Hedge Stat (ITD)]
+,replace(cast([Scheduled Run FN (ITD)] as varchar(50)),'.',',') as [Scheduled Run FN (ITD)]
+,replace(cast([Scheduled Run Stat (ITD)] as varchar(50)),'.',',') as [Scheduled Run Stat (ITD)]
+,replace(cast([Scheduled Run FN (YTD)] as varchar(50)),'.',',') as [Scheduled Run FN (YTD)]
+,replace(cast([Scheduled Run Stat (YTD)] as varchar(50)),'.',',') as [Scheduled Run Stat (YTD)]
+,replace(cast([Totale Plays Allowed] as varchar(50)),'.',',') as [Totale Plays Allowed]
+,replace(cast([Exchange Rate Value] as varchar(50)),'.',',') as [Exchange Rate Value]
+,[Title State]
+FROM [T_EXPORT_AMORTIZATION] A
+  left join
+  [M_EXP_AMM] B
+  on A.[Tipo Ordine] = B.ORD_SAP_COD
+  where B.ORD_SAP_COD is not null</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[(local).SKY_RGT]"
+                  connectionManagerRefId="Package.ConnectionManagers[(local).SKY_RGT]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[WBS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].ExternalColumns[WBS]"
+                      length="255"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[WBS]"
+                      name="WBS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[MODE]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].ExternalColumns[MODE]"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[MODE]"
+                      name="MODE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[HYPERION_REFERENCE_CODE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].ExternalColumns[HYPERION_REFERENCE_CODE]"
+                      length="255"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[HYPERION_REFERENCE_CODE]"
+                      name="HYPERION_REFERENCE_CODE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[COMPANY_CODE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].ExternalColumns[COMPANY_CODE]"
+                      length="255"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[COMPANY_CODE]"
+                      name="COMPANY_CODE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[DESCRIPTION]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].ExternalColumns[DESCRIPTION]"
+                      length="255"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[DESCRIPTION]"
+                      name="DESCRIPTION"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[DESCRIPTION_CHG]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].ExternalColumns[DESCRIPTION_CHG]"
+                      length="2"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[DESCRIPTION_CHG]"
+                      name="DESCRIPTION_CHG"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[SAP_VENDOR]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].ExternalColumns[SAP_VENDOR]"
+                      length="255"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[SAP_VENDOR]"
+                      name="SAP_VENDOR"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[SAP_VENDOR_CHG]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].ExternalColumns[SAP_VENDOR_CHG]"
+                      length="2"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[SAP_VENDOR_CHG]"
+                      name="SAP_VENDOR_CHG"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[BENEFICIAL_OWNER]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].ExternalColumns[BENEFICIAL_OWNER]"
+                      length="255"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[BENEFICIAL_OWNER]"
+                      name="BENEFICIAL_OWNER"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[BENEFICIAL_OWNER_CHG]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].ExternalColumns[BENEFICIAL_OWNER_CHG]"
+                      length="255"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[BENEFICIAL_OWNER_CHG]"
+                      name="BENEFICIAL_OWNER_CHG"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[STARTDATE]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].ExternalColumns[STARTDATE]"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[STARTDATE]"
+                      name="STARTDATE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[STARTDATE_CHG]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].ExternalColumns[STARTDATE_CHG]"
+                      length="2"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[STARTDATE_CHG]"
+                      name="STARTDATE_CHG"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[ENDDATE]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].ExternalColumns[ENDDATE]"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[ENDDATE]"
+                      name="ENDDATE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[ENDDATE_CHG]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].ExternalColumns[ENDDATE_CHG]"
+                      length="2"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[ENDDATE_CHG]"
+                      name="ENDDATE_CHG"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[BROADCAST_STARTDATE]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].ExternalColumns[BROADCAST_STARTDATE]"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[BROADCAST_STARTDATE]"
+                      name="BROADCAST_STARTDATE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[BROADCAST_STARTDATE_CHG]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].ExternalColumns[BROADCAST_STARTDATE_CHG]"
+                      length="2"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[BROADCAST_STARTDATE_CHG]"
+                      name="BROADCAST_STARTDATE_CHG"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[BROADCAST_ENDDATE]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].ExternalColumns[BROADCAST_ENDDATE]"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[BROADCAST_ENDDATE]"
+                      name="BROADCAST_ENDDATE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[BROADCAST_ENDDATE_CHG]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].ExternalColumns[BROADCAST_ENDDATE_CHG]"
+                      length="2"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[BROADCAST_ENDDATE_CHG]"
+                      name="BROADCAST_ENDDATE_CHG"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[COSTCENTRE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].ExternalColumns[COSTCENTRE]"
+                      length="255"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[COSTCENTRE]"
+                      name="COSTCENTRE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[COSTCENTRE_CHG]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].ExternalColumns[COSTCENTRE_CHG]"
+                      length="2"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[COSTCENTRE_CHG]"
+                      name="COSTCENTRE_CHG"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[PARENT_WBS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].ExternalColumns[PARENT_WBS]"
+                      length="255"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[PARENT_WBS]"
+                      name="PARENT_WBS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[WBS_LEVEL]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].ExternalColumns[WBS_LEVEL]"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[WBS_LEVEL]"
+                      name="WBS_LEVEL"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].ExternalColumns[STATUS]"
+                      length="255"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[STATUS]"
+                      name="STATUS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[DELETION_FLAG]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].ExternalColumns[DELETION_FLAG]"
+                      length="3"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].Columns[DELETION_FLAG]"
+                      name="DELETION_FLAG"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].ExternalColumns[WBS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="WBS" />
+                    <externalMetadataColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].ExternalColumns[MODE]"
+                      dataType="i4"
+                      name="MODE" />
+                    <externalMetadataColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].ExternalColumns[HYPERION_REFERENCE_CODE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="HYPERION_REFERENCE_CODE" />
+                    <externalMetadataColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].ExternalColumns[COMPANY_CODE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="COMPANY_CODE" />
+                    <externalMetadataColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].ExternalColumns[DESCRIPTION]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="DESCRIPTION" />
+                    <externalMetadataColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].ExternalColumns[DESCRIPTION_CHG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="DESCRIPTION_CHG" />
+                    <externalMetadataColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].ExternalColumns[SAP_VENDOR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="SAP_VENDOR" />
+                    <externalMetadataColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].ExternalColumns[SAP_VENDOR_CHG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="SAP_VENDOR_CHG" />
+                    <externalMetadataColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].ExternalColumns[BENEFICIAL_OWNER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="BENEFICIAL_OWNER" />
+                    <externalMetadataColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].ExternalColumns[BENEFICIAL_OWNER_CHG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="BENEFICIAL_OWNER_CHG" />
+                    <externalMetadataColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].ExternalColumns[STARTDATE]"
+                      dataType="dbTimeStamp"
+                      name="STARTDATE" />
+                    <externalMetadataColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].ExternalColumns[STARTDATE_CHG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="STARTDATE_CHG" />
+                    <externalMetadataColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].ExternalColumns[ENDDATE]"
+                      dataType="dbTimeStamp"
+                      name="ENDDATE" />
+                    <externalMetadataColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].ExternalColumns[ENDDATE_CHG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="ENDDATE_CHG" />
+                    <externalMetadataColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].ExternalColumns[BROADCAST_STARTDATE]"
+                      dataType="dbTimeStamp"
+                      name="BROADCAST_STARTDATE" />
+                    <externalMetadataColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].ExternalColumns[BROADCAST_STARTDATE_CHG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="BROADCAST_STARTDATE_CHG" />
+                    <externalMetadataColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].ExternalColumns[BROADCAST_ENDDATE]"
+                      dataType="dbTimeStamp"
+                      name="BROADCAST_ENDDATE" />
+                    <externalMetadataColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].ExternalColumns[BROADCAST_ENDDATE_CHG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="BROADCAST_ENDDATE_CHG" />
+                    <externalMetadataColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].ExternalColumns[COSTCENTRE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="COSTCENTRE" />
+                    <externalMetadataColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].ExternalColumns[COSTCENTRE_CHG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="COSTCENTRE_CHG" />
+                    <externalMetadataColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].ExternalColumns[PARENT_WBS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PARENT_WBS" />
+                    <externalMetadataColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].ExternalColumns[WBS_LEVEL]"
+                      dataType="i4"
+                      name="WBS_LEVEL" />
+                    <externalMetadataColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].ExternalColumns[STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="STATUS" />
+                    <externalMetadataColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output].ExternalColumns[DELETION_FLAG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="DELETION_FLAG" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Error Output].Columns[MODE]"
+                      dataType="i4"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Error Output].Columns[MODE]"
+                      name="MODE" />
+                    <outputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Error Output].Columns[WBS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Error Output].Columns[WBS]"
+                      name="WBS" />
+                    <outputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Error Output].Columns[HYPERION_REFERENCE_CODE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Error Output].Columns[HYPERION_REFERENCE_CODE]"
+                      name="HYPERION_REFERENCE_CODE" />
+                    <outputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Error Output].Columns[COMPANY_CODE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Error Output].Columns[COMPANY_CODE]"
+                      name="COMPANY_CODE" />
+                    <outputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Error Output].Columns[DESCRIPTION]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Error Output].Columns[DESCRIPTION]"
+                      name="DESCRIPTION" />
+                    <outputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Error Output].Columns[DESCRIPTION_CHG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Error Output].Columns[DESCRIPTION_CHG]"
+                      name="DESCRIPTION_CHG" />
+                    <outputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Error Output].Columns[SAP_VENDOR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Error Output].Columns[SAP_VENDOR]"
+                      name="SAP_VENDOR" />
+                    <outputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Error Output].Columns[SAP_VENDOR_CHG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Error Output].Columns[SAP_VENDOR_CHG]"
+                      name="SAP_VENDOR_CHG" />
+                    <outputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Error Output].Columns[BENEFICIAL_OWNER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Error Output].Columns[BENEFICIAL_OWNER]"
+                      name="BENEFICIAL_OWNER" />
+                    <outputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Error Output].Columns[BENEFICIAL_OWNER_CHG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Error Output].Columns[BENEFICIAL_OWNER_CHG]"
+                      name="BENEFICIAL_OWNER_CHG" />
+                    <outputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Error Output].Columns[STARTDATE]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Error Output].Columns[STARTDATE]"
+                      name="STARTDATE" />
+                    <outputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Error Output].Columns[STARTDATE_CHG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Error Output].Columns[STARTDATE_CHG]"
+                      name="STARTDATE_CHG" />
+                    <outputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Error Output].Columns[ENDDATE]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Error Output].Columns[ENDDATE]"
+                      name="ENDDATE" />
+                    <outputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Error Output].Columns[ENDDATE_CHG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Error Output].Columns[ENDDATE_CHG]"
+                      name="ENDDATE_CHG" />
+                    <outputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Error Output].Columns[BROADCAST_STARTDATE]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Error Output].Columns[BROADCAST_STARTDATE]"
+                      name="BROADCAST_STARTDATE" />
+                    <outputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Error Output].Columns[BROADCAST_STARTDATE_CHG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Error Output].Columns[BROADCAST_STARTDATE_CHG]"
+                      name="BROADCAST_STARTDATE_CHG" />
+                    <outputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Error Output].Columns[BROADCAST_ENDDATE]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Error Output].Columns[BROADCAST_ENDDATE]"
+                      name="BROADCAST_ENDDATE" />
+                    <outputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Error Output].Columns[BROADCAST_ENDDATE_CHG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Error Output].Columns[BROADCAST_ENDDATE_CHG]"
+                      name="BROADCAST_ENDDATE_CHG" />
+                    <outputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Error Output].Columns[COSTCENTRE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Error Output].Columns[COSTCENTRE]"
+                      name="COSTCENTRE" />
+                    <outputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Error Output].Columns[COSTCENTRE_CHG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Error Output].Columns[COSTCENTRE_CHG]"
+                      name="COSTCENTRE_CHG" />
+                    <outputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Error Output].Columns[PARENT_WBS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Error Output].Columns[PARENT_WBS]"
+                      name="PARENT_WBS" />
+                    <outputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Error Output].Columns[WBS_LEVEL]"
+                      dataType="i4"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Error Output].Columns[WBS_LEVEL]"
+                      name="WBS_LEVEL" />
+                    <outputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Error Output].Columns[STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Error Output].Columns[STATUS]"
+                      name="STATUS" />
+                    <outputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Error Output].Columns[DELETION_FLAG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Error Output].Columns[DELETION_FLAG]"
+                      name="DELETION_FLAG" />
+                    <outputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\PREPARE WEB SERVICE REQUEST.Paths[Derived Column Output]"
+              endId="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT.Inputs[Flat File Destination Input]"
+              name="Derived Column Output"
+              startId="Package\PREPARE WEB SERVICE REQUEST\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\PREPARE WEB SERVICE REQUEST.Paths[OLE DB Source Output]"
+              endId="Package\PREPARE WEB SERVICE REQUEST\Derived Column.Inputs[Derived Column Input]"
+              name="OLE DB Source Output"
+              startId="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SAVE WEB SERVICE RESPONSE"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{363f176b-a8f6-40c3-b79d-152a0d83b68e}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SAVE WEB SERVICE RESPONSE"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server v9; (C) 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <pipeline
+          BLOBTempStoragePath=""
+          bufferTempStoragePath=""
+          engineThreads="5"
+          version="1">
+          <components>
+            <component
+              refId="Package\SAVE WEB SERVICE RESPONSE\RGT_WBS_WEB_SERVICE_OUTPUT"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1040"
+              name="RGT_WBS_WEB_SERVICE_OUTPUT"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\SAVE WEB SERVICE RESPONSE\RGT_WBS_WEB_SERVICE_OUTPUT.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[RGT_WBS_WEB_SERVICE_OUTPUT]"
+                  connectionManagerRefId="Package.ConnectionManagers[RGT_WBS_WEB_SERVICE_OUTPUT]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\SAVE WEB SERVICE RESPONSE\RGT_WBS_WEB_SERVICE_OUTPUT.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\SAVE WEB SERVICE RESPONSE\RGT_WBS_WEB_SERVICE_OUTPUT.Outputs[Flat File Source Output].Columns[WBSELEMENT]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SAVE WEB SERVICE RESPONSE\RGT_WBS_WEB_SERVICE_OUTPUT.Outputs[Flat File Source Output].ExternalColumns[Column 0]"
+                      length="255"
+                      lineageId="Package\SAVE WEB SERVICE RESPONSE\RGT_WBS_WEB_SERVICE_OUTPUT.Outputs[Flat File Source Output].Columns[WBSELEMENT]"
+                      name="WBSELEMENT"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\SAVE WEB SERVICE RESPONSE\RGT_WBS_WEB_SERVICE_OUTPUT.Outputs[Flat File Source Output].Columns[RGMSTY]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SAVE WEB SERVICE RESPONSE\RGT_WBS_WEB_SERVICE_OUTPUT.Outputs[Flat File Source Output].ExternalColumns[Column 1]"
+                      length="255"
+                      lineageId="Package\SAVE WEB SERVICE RESPONSE\RGT_WBS_WEB_SERVICE_OUTPUT.Outputs[Flat File Source Output].Columns[RGMSTY]"
+                      name="RGMSTY"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\SAVE WEB SERVICE RESPONSE\RGT_WBS_WEB_SERVICE_OUTPUT.Outputs[Flat File Source Output].Columns[RGMSID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SAVE WEB SERVICE RESPONSE\RGT_WBS_WEB_SERVICE_OUTPUT.Outputs[Flat File Source Output].ExternalColumns[Column 2]"
+                      length="255"
+                      lineageId="Package\SAVE WEB SERVICE RESPONSE\RGT_WBS_WEB_SERVICE_OUTPUT.Outputs[Flat File Source Output].Columns[RGMSID]"
+                      name="RGMSID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\SAVE WEB SERVICE RESPONSE\RGT_WBS_WEB_SERVICE_OUTPUT.Outputs[Flat File Source Output].Columns[RGMSNO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SAVE WEB SERVICE RESPONSE\RGT_WBS_WEB_SERVICE_OUTPUT.Outputs[Flat File Source Output].ExternalColumns[Column 3]"
+                      length="255"
+                      lineageId="Package\SAVE WEB SERVICE RESPONSE\RGT_WBS_WEB_SERVICE_OUTPUT.Outputs[Flat File Source Output].Columns[RGMSNO]"
+                      name="RGMSNO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\SAVE WEB SERVICE RESPONSE\RGT_WBS_WEB_SERVICE_OUTPUT.Outputs[Flat File Source Output].Columns[RGMSTX]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SAVE WEB SERVICE RESPONSE\RGT_WBS_WEB_SERVICE_OUTPUT.Outputs[Flat File Source Output].ExternalColumns[Column 4]"
+                      length="255"
+                      lineageId="Package\SAVE WEB SERVICE RESPONSE\RGT_WBS_WEB_SERVICE_OUTPUT.Outputs[Flat File Source Output].Columns[RGMSTX]"
+                      name="RGMSTX"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\SAVE WEB SERVICE RESPONSE\RGT_WBS_WEB_SERVICE_OUTPUT.Outputs[Flat File Source Output].ExternalColumns[Column 0]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Column 0" />
+                    <externalMetadataColumn
+                      refId="Package\SAVE WEB SERVICE RESPONSE\RGT_WBS_WEB_SERVICE_OUTPUT.Outputs[Flat File Source Output].ExternalColumns[Column 1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Column 1" />
+                    <externalMetadataColumn
+                      refId="Package\SAVE WEB SERVICE RESPONSE\RGT_WBS_WEB_SERVICE_OUTPUT.Outputs[Flat File Source Output].ExternalColumns[Column 2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Column 2" />
+                    <externalMetadataColumn
+                      refId="Package\SAVE WEB SERVICE RESPONSE\RGT_WBS_WEB_SERVICE_OUTPUT.Outputs[Flat File Source Output].ExternalColumns[Column 3]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Column 3" />
+                    <externalMetadataColumn
+                      refId="Package\SAVE WEB SERVICE RESPONSE\RGT_WBS_WEB_SERVICE_OUTPUT.Outputs[Flat File Source Output].ExternalColumns[Column 4]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Column 4" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\SAVE WEB SERVICE RESPONSE\RGT_WBS_WEB_SERVICE_OUTPUT.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\SAVE WEB SERVICE RESPONSE\RGT_WBS_WEB_SERVICE_OUTPUT.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\SAVE WEB SERVICE RESPONSE\RGT_WBS_WEB_SERVICE_OUTPUT.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\SAVE WEB SERVICE RESPONSE\RGT_WBS_WEB_SERVICE_OUTPUT.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\SAVE WEB SERVICE RESPONSE\RGT_WBS_WEB_SERVICE_OUTPUT.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\SAVE WEB SERVICE RESPONSE\RGT_WBS_WEB_SERVICE_OUTPUT.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\SAVE WEB SERVICE RESPONSE\RGT_WBS_WEB_SERVICE_OUTPUT.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\SAVE WEB SERVICE RESPONSE\T_SAP_IMPORT_IT030_11"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="T_SAP_IMPORT_IT030_11"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[T_SAP_IMPORT_IT030_11]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\SAVE WEB SERVICE RESPONSE\T_SAP_IMPORT_IT030_11.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[(local).SKY_RGT]"
+                  connectionManagerRefId="Package.ConnectionManagers[(local).SKY_RGT]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\SAVE WEB SERVICE RESPONSE\T_SAP_IMPORT_IT030_11.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\SAVE WEB SERVICE RESPONSE\T_SAP_IMPORT_IT030_11.Inputs[OLE DB Destination Input].Columns[WBSELEMENT]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="WBSELEMENT"
+                      externalMetadataColumnId="Package\SAVE WEB SERVICE RESPONSE\T_SAP_IMPORT_IT030_11.Inputs[OLE DB Destination Input].ExternalColumns[WBSELEMENT]"
+                      lineageId="Package\SAVE WEB SERVICE RESPONSE\RGT_WBS_WEB_SERVICE_OUTPUT.Outputs[Flat File Source Output].Columns[WBSELEMENT]" />
+                    <inputColumn
+                      refId="Package\SAVE WEB SERVICE RESPONSE\T_SAP_IMPORT_IT030_11.Inputs[OLE DB Destination Input].Columns[RGMSTY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="RGMSTY"
+                      externalMetadataColumnId="Package\SAVE WEB SERVICE RESPONSE\T_SAP_IMPORT_IT030_11.Inputs[OLE DB Destination Input].ExternalColumns[RGMSTY]"
+                      lineageId="Package\SAVE WEB SERVICE RESPONSE\RGT_WBS_WEB_SERVICE_OUTPUT.Outputs[Flat File Source Output].Columns[RGMSTY]" />
+                    <inputColumn
+                      refId="Package\SAVE WEB SERVICE RESPONSE\T_SAP_IMPORT_IT030_11.Inputs[OLE DB Destination Input].Columns[RGMSID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="RGMSID"
+                      externalMetadataColumnId="Package\SAVE WEB SERVICE RESPONSE\T_SAP_IMPORT_IT030_11.Inputs[OLE DB Destination Input].ExternalColumns[RGMSID]"
+                      lineageId="Package\SAVE WEB SERVICE RESPONSE\RGT_WBS_WEB_SERVICE_OUTPUT.Outputs[Flat File Source Output].Columns[RGMSID]" />
+                    <inputColumn
+                      refId="Package\SAVE WEB SERVICE RESPONSE\T_SAP_IMPORT_IT030_11.Inputs[OLE DB Destination Input].Columns[RGMSNO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="RGMSNO"
+                      externalMetadataColumnId="Package\SAVE WEB SERVICE RESPONSE\T_SAP_IMPORT_IT030_11.Inputs[OLE DB Destination Input].ExternalColumns[RGMSNO]"
+                      lineageId="Package\SAVE WEB SERVICE RESPONSE\RGT_WBS_WEB_SERVICE_OUTPUT.Outputs[Flat File Source Output].Columns[RGMSNO]" />
+                    <inputColumn
+                      refId="Package\SAVE WEB SERVICE RESPONSE\T_SAP_IMPORT_IT030_11.Inputs[OLE DB Destination Input].Columns[RGMSTX]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="RGMSTX"
+                      externalMetadataColumnId="Package\SAVE WEB SERVICE RESPONSE\T_SAP_IMPORT_IT030_11.Inputs[OLE DB Destination Input].ExternalColumns[RGMSTX]"
+                      lineageId="Package\SAVE WEB SERVICE RESPONSE\RGT_WBS_WEB_SERVICE_OUTPUT.Outputs[Flat File Source Output].Columns[RGMSTX]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\SAVE WEB SERVICE RESPONSE\T_SAP_IMPORT_IT030_11.Inputs[OLE DB Destination Input].ExternalColumns[WBSELEMENT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="WBSELEMENT" />
+                    <externalMetadataColumn
+                      refId="Package\SAVE WEB SERVICE RESPONSE\T_SAP_IMPORT_IT030_11.Inputs[OLE DB Destination Input].ExternalColumns[RGMSTY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="RGMSTY" />
+                    <externalMetadataColumn
+                      refId="Package\SAVE WEB SERVICE RESPONSE\T_SAP_IMPORT_IT030_11.Inputs[OLE DB Destination Input].ExternalColumns[RGMSID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="RGMSID" />
+                    <externalMetadataColumn
+                      refId="Package\SAVE WEB SERVICE RESPONSE\T_SAP_IMPORT_IT030_11.Inputs[OLE DB Destination Input].ExternalColumns[RGMSNO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="RGMSNO" />
+                    <externalMetadataColumn
+                      refId="Package\SAVE WEB SERVICE RESPONSE\T_SAP_IMPORT_IT030_11.Inputs[OLE DB Destination Input].ExternalColumns[RGMSTX]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="RGMSTX" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\SAVE WEB SERVICE RESPONSE\T_SAP_IMPORT_IT030_11.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\SAVE WEB SERVICE RESPONSE\T_SAP_IMPORT_IT030_11.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\SAVE WEB SERVICE RESPONSE\T_SAP_IMPORT_IT030_11.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\SAVE WEB SERVICE RESPONSE\T_SAP_IMPORT_IT030_11.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\SAVE WEB SERVICE RESPONSE\T_SAP_IMPORT_IT030_11.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\SAVE WEB SERVICE RESPONSE\T_SAP_IMPORT_IT030_11.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\SAVE WEB SERVICE RESPONSE.Paths[Flat File Source Output]"
+              endId="Package\SAVE WEB SERVICE RESPONSE\T_SAP_IMPORT_IT030_11.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\SAVE WEB SERVICE RESPONSE\RGT_WBS_WEB_SERVICE_OUTPUT.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SEND REQUEST to WEB SERVICE"
+      DTS:CreationName="Microsoft.ExecuteProcess"
+      DTS:Description="Execute Process Task"
+      DTS:DTSID="{1B797385-E8DE-4DF2-91AB-E7BDBEC1FC58}"
+      DTS:ExecutableType="Microsoft.ExecuteProcess"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SEND REQUEST to WEB SERVICE"
+      DTS:TaskContact="Execute Process Task;Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:PropertyExpression
+        DTS:Name="Arguments">"/r:" + @[User::ServerApp01] + " " + "/directory:" + @[User::Path_Web_Service_Script] + " " + "\"" + @[User::Web_Service_Url] + "\"" + " " +   "\"" +@[User::Web_Service_Username] +  "\"" + " " +  "\"" + @[User::Web_Service_Password] +  "\"" + " " +  "\"" + @[User::File_WBS_Input] +  "\"" + " " +  "\"" + @[User::File_WBS_Output] + "\""</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="Executable">@[User::Path_Windows_Winrs]</DTS:PropertyExpression>
+      <DTS:Property
+        DTS:Name="ExecValueVariable">Script_Return_Code</DTS:Property>
+      <DTS:ObjectData>
+        <ExecuteProcessData
+          Executable="C:\WINDOWS\System32\winrs.exe"
+          Arguments="/r:TSTRMWASHYP01 /directory:E:\StagingArea\utilities\WebService Sky.WebService.Client.exe &quot;https://vqx1wd.bskyb.com/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=BS_Hyperion_Q&amp;receiverParty=&amp;receiverService=&amp;interface=SI_GTPROJPROJ03_WBSElements_Out_Sync&amp;interfaceNamespace=urn:sky.IT:Hyperion:WBSElements&quot; &quot;INT_HYP_TEST&quot; &quot;Oxford2018&quot; &quot;RGT_WBS_WEB_SERVICE_INPUT.csv&quot; &quot;RGT_WBS_WEB_SERVICE_OUTPUT.csv&quot;"
+          TimeOut="300"
+          TerminateAfterTimeout="False" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{CD0241C4-F1F5-4437-9B63-F7D286BA3DA5}"
+      DTS:From="Package\PREPARE WEB SERVICE REQUEST"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\SEND REQUEST to WEB SERVICE" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{0C098A6D-D4F5-4450-A5A1-8E55FB1CAC2A}"
+      DTS:From="Package\SEND REQUEST to WEB SERVICE"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\SAVE WEB SERVICE RESPONSE" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{FD99EB71-191E-4093-B8B5-149F0ED0CF43}"
+      DTS:From="Package\SEND REQUEST to WEB SERVICE"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\LOG OK" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{C0B5DF9A-B472-4374-BD63-39D849C2DE4C}"
+      DTS:From="Package\SEND REQUEST to WEB SERVICE"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\LOG FAILURE"
+      DTS:Value="1" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="135,44"
+          Id="Package\LOG FAILURE"
+          TopLeft="395.009433962264,118.858490566038" />
+        <NodeLayout
+          Size="135,44"
+          Id="Package\LOG OK"
+          TopLeft="395.009433962264,56.1037735849056" />
+        <NodeLayout
+          Size="269,44"
+          Id="Package\PREPARE WEB SERVICE REQUEST"
+          TopLeft="5.5,5.5" />
+        <NodeLayout
+          Size="269,44"
+          Id="Package\SAVE WEB SERVICE RESPONSE"
+          TopLeft="5.5,180.330188679245" />
+        <NodeLayout
+          Size="269,44"
+          Id="Package\SEND REQUEST to WEB SERVICE"
+          TopLeft="5.5,89.4245283018868" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="140.141509433962,49.3867924528302">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40.0377358490566"
+              Start="0,0"
+              End="0,32.5377358490566">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.5377358490566" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="140.141509433962,133.311320754717">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47.0188679245283"
+              Start="0,0"
+              End="0,39.5188679245283">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.5188679245283" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="274.783018867925,111.349056603774">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="120.226415094339,-33.3207547169811"
+              Start="0,0"
+              End="112.726415094339,-33.3207547169811">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="60.1132075471696,0" />
+                  <mssgle:LineSegment
+                    End="60.1132075471696,-33.3207547169811" />
+                  <mssgle:LineSegment
+                    End="112.726415094339,-33.3207547169811" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="274.783018867925,111.349056603774">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="120.226415094339,29.4339622641509"
+              Start="0,0"
+              End="112.726415094339,29.4339622641509">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="60.1132075471696,0" />
+                  <mssgle:LineSegment
+                    End="60.1132075471696,29.4339622641509" />
+                  <mssgle:LineSegment
+                    End="112.726415094339,29.4339622641509" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="44.8718598909196,-19.7490234375,30.4826953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\PREPARE WEB SERVICE REQUEST">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="230,44"
+          Id="Package\PREPARE WEB SERVICE REQUEST\T_SAP_EXPORT_IT030_11"
+          TopLeft="5.5,5.5" />
+        <NodeLayout
+          Size="230,44"
+          Id="Package\PREPARE WEB SERVICE REQUEST\RGT_WBS_WEB_SERVICE_INPUT"
+          TopLeft="12.4811320754717,177.122641509434" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\PREPARE WEB SERVICE REQUEST\Derived Column"
+          TopLeft="37,79" />
+        <EdgeLayout
+          Id="Package\PREPARE WEB SERVICE REQUEST.Paths[OLE DB Source Output]"
+          TopLeft="117.25,49.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.5"
+              Start="0,0"
+              End="0,22">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\PREPARE WEB SERVICE REQUEST.Paths[Derived Column Output]"
+          TopLeft="114,121">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="13.4811320754717,56.1226415094339"
+              Start="0,0"
+              End="13.4811320754717,48.6226415094339">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.061320754717" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.061320754717"
+                    Point2="0,28.061320754717"
+                    Point3="4,28.061320754717" />
+                  <mssgle:LineSegment
+                    End="9.48113207547169,28.061320754717" />
+                  <mssgle:CubicBezierSegment
+                    Point1="9.48113207547169,28.061320754717"
+                    Point2="13.4811320754717,28.061320754717"
+                    Point3="13.4811320754717,32.061320754717" />
+                  <mssgle:LineSegment
+                    End="13.4811320754717,48.6226415094339" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <TaskHost
+    design-time-name="Package\SAVE WEB SERVICE RESPONSE">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="251.547169811321,43.9245283018868"
+          Id="Package\SAVE WEB SERVICE RESPONSE\T_SAP_IMPORT_IT030_11"
+          TopLeft="5.5,167.27358490566" />
+        <NodeLayout
+          Size="251.547169811321,43.9245283018868"
+          Id="Package\SAVE WEB SERVICE RESPONSE\RGT_WBS_WEB_SERVICE_OUTPUT"
+          TopLeft="7.5,5.5" />
+        <EdgeLayout
+          Id="Package\SAVE WEB SERVICE RESPONSE.Paths[Flat File Source Output]"
+          TopLeft="133.27358490566,49.4245283018868">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-2,117.849056603774"
+              Start="0,0"
+              End="-2,110.349056603774">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,58.9056603773585" />
+                  <mssgle:LineSegment
+                    End="-2,58.9056603773585" />
+                  <mssgle:LineSegment
+                    End="-2,110.349056603774" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

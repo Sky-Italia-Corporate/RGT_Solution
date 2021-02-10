@@ -1,0 +1,3023 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/28/2013 12:13:43 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="HYPSRV-SVIL01"
+  DTS:CreatorName="SKY\vennia"
+  DTS:DTSID="{868695DA-F71C-4B55-866B-2F067FDCDCA8}"
+  DTS:EnableConfig="True"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.113"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="83"
+  DTS:VersionGUID="{4AB289CB-4AE5-4286-9E1C-0401A906C1BE}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[(local).ICO_MONITOR]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{9470d9c0-6b8a-48af-9afd-1b661e38addc}"
+      DTS:ObjectName="(local).ICO_MONITOR">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL01;Initial Catalog=ICO_MONITOR;Provider=SQLNCLI11;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{9470d9c0-6b8a-48af-9afd-1b661e38addc}(local).ICO_MONITOR;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[(local).SKY_RGT]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{d7bbf7c7-4d99-448f-bbf2-1da9010755fb}"
+      DTS:ObjectName="(local).SKY_RGT">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL01;Initial Catalog=SKY_RGT;Provider=SQLNCLI11;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{d7bbf7c7-4d99-448f-bbf2-1da9010755fb}(local).SKY_RGT;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[RGT_ANMO]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{0E4C5A08-014E-4004-BE86-3B9BBD0EC382}"
+      DTS:ObjectName="RGT_ANMO">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="\\DEVRMWDBHYP01\StagingArea\RGT\SAP\RGT_ANMO.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Budget Id"
+              DTS:DTSID="{4E8C64B7-F9C8-4C7C-B242-2FE26A9D0273}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Budget Title"
+              DTS:DTSID="{A94B5F69-0542-40E5-8885-C634676ECF8D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Title Notes"
+              DTS:DTSID="{509EB210-DCFE-4A34-B54D-88DE8EFAA06C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LTR"
+              DTS:DTSID="{D851687D-7BF3-4195-8565-37CFF492E7DF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Start Avail Date"
+              DTS:DTSID="{95E8A28C-3952-4B52-84D4-5114141C35F7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="End Avail Date"
+              DTS:DTSID="{B521292F-12D8-4E1E-9262-84FB65209337}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Type of data avail"
+              DTS:DTSID="{22C2ACE0-BB3C-4901-A09B-8BA38E9225FB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Minimum Guaranteed Valuta"
+              DTS:DTSID="{49B3B21E-85D6-4B20-945E-06E328228E7E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Minimum Guaranteed Euro"
+              DTS:DTSID="{ECDFA7BE-B372-4C5A-AB66-1E568799FC8C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Overages Valuta"
+              DTS:DTSID="{3FA1A042-72D8-4F9F-AED2-A956689398DE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Overages Euro"
+              DTS:DTSID="{F6EA4BB2-91A8-44C7-BF40-34F10BBA0BEF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Flat or Variable"
+              DTS:DTSID="{B4FC686A-9A80-4976-ABB7-234D9680B092}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Title State"
+              DTS:DTSID="{281CA10B-5B14-4F7E-9DF7-4E9F4A2C36BE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Minimum Guaranteed State"
+              DTS:DTSID="{839DA37C-FD8E-4051-ACD2-698A6BB5510E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Price State"
+              DTS:DTSID="{9B37460A-5B5A-4AE7-9DF2-3F55309D9392}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Reported Flag"
+              DTS:DTSID="{8ED0D29D-06AB-4721-B289-D2A6C13A4FB4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Contractual Accounting Statement Date"
+              DTS:DTSID="{FD1A3F91-E3F8-4D66-89B2-763C95B1F733}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Actual Accounting Statement Date"
+              DTS:DTSID="{31BD8C0E-9BC7-4361-B921-08FB19FDF93A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Master Deal Name IBMS"
+              DTS:DTSID="{5B6A7853-7D1F-48CB-9F52-8194AD4CCC0E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Master Deal Type IBMS"
+              DTS:DTSID="{D5F122B1-BA25-4DC7-A0F6-1ED2CFDEB07C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Master Deal Start Date IBMS"
+              DTS:DTSID="{B24ADB50-B279-47B1-AC54-84203D624A3A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Master Deal End Date IBMS"
+              DTS:DTSID="{4EF4A6D9-384B-41E3-B56B-0CBC063D4D44}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Master Deal Distributor IBMS"
+              DTS:DTSID="{ADAE21E5-DF19-4A9A-84DF-13BDE531A46F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Deal Code IBMS"
+              DTS:DTSID="{A65C7D2A-299D-41F7-92FC-6F68FAEAE448}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Deal Name IBMS"
+              DTS:DTSID="{9917220F-BA21-43EF-A25D-B9DDAD547BFE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Deal Sub Type IBMS"
+              DTS:DTSID="{5C4629AA-C40B-4842-B604-94088E2F0708}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Deal Start Date IBMS"
+              DTS:DTSID="{336FA630-84E0-4160-8B54-0604EA5B147F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Deal End Date IBMS"
+              DTS:DTSID="{5B3E6ECB-57A3-4AE4-8BAE-F811C8280061}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Purchase Id IBMS"
+              DTS:DTSID="{CAA1A430-0478-49E3-93C9-8573AA0DE5DD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Title IBMS"
+              DTS:DTSID="{A2FD3444-EA55-4120-B4ED-85E8A0F25817}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Title IBMS A.K.A."
+              DTS:DTSID="{0119ABAB-EE36-444D-87DF-FC168C1032F0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Country of Origin IBMS"
+              DTS:DTSID="{4AFE2613-A0F3-4956-AE08-FD6E209CCA00}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Material Status IBMS"
+              DTS:DTSID="{67E28919-8C3C-49F2-82B4-B10FB34B4CEC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Date Material Status IBMS"
+              DTS:DTSID="{2A6564B6-160F-41B8-AACB-52F37B3F0EBC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Showing IBMS"
+              DTS:DTSID="{450FB9BA-720B-45E2-85BB-922596C2D736}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Availability Start Date IBMS"
+              DTS:DTSID="{AD2FDE9D-1E2D-4876-871A-1EDCA5358D42}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Availability End Date IBMS"
+              DTS:DTSID="{45A88C58-7ACD-4CBF-8224-74B93513FDA3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Dates Status IBMS"
+              DTS:DTSID="{D0F5CDBC-F53D-4ADD-8A56-80DDF2FCF97D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AGCOM Indipendent Producer IBMS"
+              DTS:DTSID="{5088CE96-E143-4BA2-9245-A60863DEE1DE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AGCOM Country IBMS"
+              DTS:DTSID="{D5A50FEB-B903-472E-BBDB-3EF2464FC789}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AGCOM Genre IBMS"
+              DTS:DTSID="{C2AE1072-725A-479C-B218-58CD455C07D2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AGCOM Sub-Genre IBMS"
+              DTS:DTSID="{C8F0E50F-C8D7-4836-ADFD-FD0B4DEEB659}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AGCOM Year of Production IBMS"
+              DTS:DTSID="{E44F41DA-9F15-453D-906A-2031CF57273B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AGCOM Target IBMS"
+              DTS:DTSID="{E4ED14A8-937A-48A6-B906-E5B0E004A2AD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Station IBMS"
+              DTS:DTSID="{C997888B-94C8-417E-B216-183B8AA8DA38}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Hiatus Start Date IBMS"
+              DTS:DTSID="{55557D76-BBC8-4AE8-A8A7-A425398BB3C7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Hiatus End Date IBMS"
+              DTS:DTSID="{899A62D6-098E-4851-9A33-EB04E46ADD4D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Acquisition Id"
+              DTS:DTSID="{A575A12F-CF02-4D1B-9974-7B553BAE776E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Acquisition Desc"
+              DTS:DTSID="{6A66A517-374A-4894-8B2A-2AFA696BAC1D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Contract Desc"
+              DTS:DTSID="{BFCD2C9A-A33B-48C4-8623-A2C928D2EDF9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Acquisition State"
+              DTS:DTSID="{E2F113B9-8A2D-403F-850A-2651EF057EC8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Engagement Form"
+              DTS:DTSID="{D4FFAE97-8714-44F1-98E3-DE117E9B7F5B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Acquisition-Master Deal Code IBMS"
+              DTS:DTSID="{E3C15FF3-A769-4C91-9623-E28F86219005}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Acquisition Currency"
+              DTS:DTSID="{C934797B-FB08-4D70-85F4-F67B21D97046}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Acquisition Start Date"
+              DTS:DTSID="{144E7116-BFDD-41EA-B686-4AC871AF5D87}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Acquisition End Date"
+              DTS:DTSID="{0B37863C-5347-4FA1-8DB2-31AFB154073A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Accounting Statement Flag"
+              DTS:DTSID="{EE81513A-B5BE-46F7-8594-F0BAE7D727FB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Accounting Statement Frequency"
+              DTS:DTSID="{5D5249D2-86C5-4666-BD70-6A09D20FCF3E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Exchange Id"
+              DTS:DTSID="{390EEB80-77B5-472F-958E-8DCAD6C05FF0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Exchange Desc"
+              DTS:DTSID="{0E6103DB-C23A-48BA-9B95-26B1829E51AA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Exchange Type"
+              DTS:DTSID="{0DD29C60-B9DA-4B82-B483-ECBA975A0801}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Hedge Type"
+              DTS:DTSID="{4F5743A2-5BED-41C8-9789-47C237172AB5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Reporting Supplier Ordine Interno"
+              DTS:DTSID="{304D53A7-2EC3-4D12-AEF4-E315D7D33A6B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Supplier SAP Code"
+              DTS:DTSID="{33EAA84E-2E88-4946-9825-3E93C47FA819}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Step AF"
+              DTS:DTSID="{BC6DFC3F-EA9B-4FD5-9890-2519BFFD3DE6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Data Step AF"
+              DTS:DTSID="{5EB2091B-BC9E-41E7-B0FB-0A854EF11BA0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Step EF"
+              DTS:DTSID="{AEBBF460-4271-4152-93B4-BBA63DFA889D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Data Step EF"
+              DTS:DTSID="{925EEEB3-410A-4442-B9B9-0C6C37E2792B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Oggetto Contratto"
+              DTS:DTSID="{86A24715-E406-43AC-A081-0DD5ED614E52}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Protocollo OUT"
+              DTS:DTSID="{D1198B44-7EC6-40B7-B009-002D63156567}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Data Protocollo OUT"
+              DTS:DTSID="{22C1E78B-722D-4150-B1E7-611CEA1B70B8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Protocollo IN"
+              DTS:DTSID="{F6CFB64E-175E-4C37-9ACC-689C6CCB66AC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Data Protocollo IN"
+              DTS:DTSID="{69B2D0A9-35BF-4B20-9FCE-0C9969D05270}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Stato Contratto"
+              DTS:DTSID="{B799C324-BE21-4C7B-B673-0B62956DA93A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Integra/rinnova"
+              DTS:DTSID="{29ADCBD5-3770-45A6-B826-939DB288CB4D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Integrato/rinnovato"
+              DTS:DTSID="{5F9D2198-90D4-4F8D-B88F-367EC417C46C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CdC"
+              DTS:DTSID="{038B9AAF-75AC-4430-B040-0E1F99CACE2F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Appalto"
+              DTS:DTSID="{A572F318-AAE0-464E-9E32-BA9E207DDEB7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Tipo Ordine"
+              DTS:DTSID="{D6513C65-F138-4F57-8AA8-0B84FF4149AC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Ammortamento"
+              DTS:DTSID="{6BC2D85F-1E94-4CA5-B837-27960D4C72DC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BudgetId Extra Ambito"
+              DTS:DTSID="{2A2D3A42-3A9B-4A13-8BD2-5917125E08FC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Data Inizio Contratto"
+              DTS:DTSID="{43C8D9B0-4D1B-48CF-B010-E2E2CDF8BE4E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Data Fine Contratto"
+              DTS:DTSID="{CE1AA326-4822-49DA-9BA3-03F59551CADC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Cash Cost Totale MultiRights"
+              DTS:DTSID="{4F9ADB26-AA08-49BA-93CA-20C8AB664DF8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Quota Malus"
+              DTS:DTSID="{5EED8446-D98A-46B8-B240-9770884EADAD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Title Exchange"
+              DTS:DTSID="{89DD67B3-40FD-4CC1-B8CE-79E6497B4976}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Effective Date"
+              DTS:DTSID="{5F531E50-913F-4534-8D81-E49573D89BCC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Fornitore Emittente Fattura"
+              DTS:DTSID="{8A4EA37B-934C-4677-9D9B-33003C10C331}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Beneficial owner"
+              DTS:DTSID="{FBDAEC05-9A66-4570-A9DB-E8E0DA61F1F1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Fornitore beneficiario pagamento"
+              DTS:DTSID="{CCA14053-0A6A-42DA-9BC4-CC1B1CFA541B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Data firma contratto"
+              DTS:DTSID="{761C125A-2970-46F7-BC11-513CB88FD8A4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Codice RA"
+              DTS:DTSID="{48E4DED1-7CA8-493C-BC07-26668A2E4632}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Data validità RA Tax form"
+              DTS:DTSID="{1AB4842F-4211-42DD-939E-C0F53A9DD83E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Data ricevimento Tax form"
+              DTS:DTSID="{983F6BF7-ACED-4DA6-A027-C46E2DAEF3D6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Codice IVA"
+              DTS:DTSID="{B3F25099-34E2-43AD-A5F5-67C9713A43A4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Condizione di pagamento"
+              DTS:DTSID="{0B4B269E-3FC9-416A-B12E-7CA92C4DC916}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Percentuale interessi per ritardato pagamento"
+              DTS:DTSID="{8D60D252-48A0-4167-B1B3-4109D4D04F7A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Grace period"
+              DTS:DTSID="{E5D60E5F-CDE9-4F2B-BFDD-9760DFF0A41C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Flag  Contratto soggetto ad Audit"
+              DTS:DTSID="{B9843B6A-2AAE-4C03-8C32-6D4059941519}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Data termine Audit"
+              DTS:DTSID="{A752F90A-87CD-4D0F-AA63-5C0614EF7A5C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Cap Audit"
+              DTS:DTSID="{681925BB-295A-44C1-A807-E274F74EAA20}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Flag  Contratto soggetto ad accettazione materiali"
+              DTS:DTSID="{239583F0-E236-4DD0-9E98-24C9D1819EAC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Data contratto Hedge"
+              DTS:DTSID="{494AB769-A011-435F-B6D7-0D345F60FB3F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Fattura elettronica"
+              DTS:DTSID="{5DACE88E-5902-4871-9647-268D3ACFA6FF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Blocco contratto"
+              DTS:DTSID="{39778D04-922E-4481-B39D-B3D655DBD499}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Giorni anticipo fattura"
+              DTS:DTSID="{83AE9B3C-AF41-4672-A810-950AE36F0BAF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Compensazione"
+              DTS:DTSID="{4EF7B3CA-E7C3-48A2-85F2-D188FFBF9914}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Inventario Magazzino"
+              DTS:DTSID="{FC9A5D48-4702-4D34-87E7-A798723DFFE8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Note SAP - del Contratto"
+              DTS:DTSID="{80B55BC9-9278-46A9-AB92-C04FC0CA480B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Soggetto a RA"
+              DTS:DTSID="{94EEBE28-1DA9-4AF6-91C0-D7FFB79B981D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Tipo interesse"
+              DTS:DTSID="{63AAC523-C97C-4BCF-B1F2-E9B5833CB5A4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Modalità di Distribuzione Amortization - Civilistica"
+              DTS:DTSID="{0557E1D3-1898-47CD-9A08-A6490D99903C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Modalità di Distribuzione Amortization - Footnote"
+              DTS:DTSID="{56905BF7-196B-4F78-8FC1-0966E3E2D4AF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Tipo Piano di Fatturazione"
+              DTS:DTSID="{22697FCB-1BD5-4E48-A9DE-C96706BF2C41}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Codice Data Base"
+              DTS:DTSID="{FAB52792-6C5D-4E2E-B2F8-AFDBBFA7EA42}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Data Base Piano di Fatt"
+              DTS:DTSID="{B2533CD7-9FCE-4131-AD37-B66E6905B932}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Modello Piano Fatt"
+              DTS:DTSID="{B8AAA05A-A216-419F-B25B-030C2C25BA99}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Tipo Piano di Fatturazione - Ov"
+              DTS:DTSID="{288932E1-DFC0-4952-91E4-3CD61B495AD9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Codice Data Base - Ov"
+              DTS:DTSID="{9A3BEAA7-5F66-4BCF-9C60-72E99420D32F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Data Base Piano di Fatt - Ov"
+              DTS:DTSID="{C99BC41B-3A34-4F84-9A7F-EBBC7E4AEE03}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Modello Piano Fatt - Ov"
+              DTS:DTSID="{E0396F42-9DEE-4467-B0E9-58ED4F98BE15}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Note SAP - del Titolo"
+              DTS:DTSID="{AC53B03D-D2B0-4618-936E-480CF715FE26}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[RGT_DTBU_STO]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{1338682C-6784-4356-995D-554CF58814E6}"
+      DTS:ObjectName="RGT_DTBU_STO">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1040"
+          DTS:HeaderRowDelimiter="_x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="\\hypdb-svl01\StagingArea\RGT\CDW-BI\RGT_DT140307BU_STO.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DATA_TRASM"
+              DTS:DTSID="{BEFB5ADC-5437-46EA-AF70-CB7F53F75F44}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DATA_SCARICO_NC"
+              DTS:DTSID="{CB7860ED-90A2-4F0C-8D5C-83BFD4EC136B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DATA_ACQUISTO_NC"
+              DTS:DTSID="{2659015B-EB64-411F-9386-D21A54BDF853}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ID_EVENTO"
+              DTS:DTSID="{077A82E5-DBC2-464F-AE27-DF316FA86833}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PURCHASE_ID"
+              DTS:DTSID="{3E726318-C4C0-428B-B7DD-89F9DB17BDC8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TITOLO_BROD"
+              DTS:DTSID="{F28EA891-6EFB-4E29-BA2B-0CA299CA2A53}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PROVIDER"
+              DTS:DTSID="{E7831DE5-2BB5-405D-B342-A4DCEB867F5D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ACCOUNT"
+              DTS:DTSID="{20435F5A-5B1C-454D-A372-C88EF0D0BF80}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PREZZO_REALE"
+              DTS:DTSID="{971571A5-C838-4FC0-99CF-A05D76C1AD3A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PREZZO_LISTINO"
+              DTS:DTSID="{78DAFCF3-27E6-401C-84E6-47DBB08EB641}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PRIMA_FILA_RICARICA"
+              DTS:DTSID="{54091318-0913-45DA-9A37-4A45C6425ED0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PROVENIENZA"
+              DTS:DTSID="{B9CC7DA4-8BD1-41BA-A08A-DFEEE8F3600D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="GENERE"
+              DTS:DTSID="{D88AE025-D371-4D63-81E0-DE1965BB5CC3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SOTTOGENERE"
+              DTS:DTSID="{7F009274-1B45-44B0-A687-E8EA822B8585}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DETTAGLIO"
+              DTS:DTSID="{6A5D2154-7478-43BE-9AC5-CB4C66D16797}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TIPO_ACQUISTO"
+              DTS:DTSID="{4E5CA0A0-68BB-48CF-BE6E-4E7FB24AE585}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="COSTO_SERVIZIO"
+              DTS:DTSID="{37E8ED32-394D-4087-895D-A73FCBB9E5A1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CODICE_PROMOZIONE"
+              DTS:DTSID="{53A53C12-1087-4C72-9548-A2689DCD3DE7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DESCRIZIONE_PROMO"
+              DTS:DTSID="{FB233C0A-A085-4269-A1E6-BFF7A09049D0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DATA_INIZIO_PROMO"
+              DTS:DTSID="{7CE0EA02-1419-49CF-A5BF-3FFBFA174ED2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DATA_FINI_PROMO"
+              DTS:DTSID="{9936220D-B6F0-4480-AA2E-A8BF523B41B3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TIPO_ACQUISTO_PROMO"
+              DTS:DTSID="{4D9527C8-B9EB-4452-9406-4205E6C3077D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CLUSTER_PPV"
+              DTS:DTSID="{0D787D51-9075-4F95-B2B1-C4467F241244}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CREDITO_OMAGGIATO"
+              DTS:DTSID="{5CDDD1B2-18D0-48DC-B262-9F70386F9963}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CREDITO_REWARD"
+              DTS:DTSID="{38948466-4BB0-4ECB-9F0E-727AE8436AFD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="RICAVO_LORDO"
+              DTS:DTSID="{A5147E34-2D2F-4ECC-8847-B66E5F47AF45}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="RICAVO_NETTO"
+              DTS:DTSID="{578D6CB3-0912-4016-BD58-D3ADCBB5AB9C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CHANNEL_TYPE"
+              DTS:DTSID="{EAC3CB38-542D-48EF-B751-ACCD34280DD5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TECNOLOGIA_FRUIZ"
+              DTS:DTSID="{E5B79630-954B-4AAD-8CD0-D14AA5EDEEDF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OFFER_ID"
+              DTS:DTSID="{D3A0E069-4065-46D1-8180-98AD1EF865BD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SMC"
+              DTS:DTSID="{3644C00C-36C5-4185-BA99-69158BCDAEA0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FLAG_STORNO"
+              DTS:DTSID="{241894D2-8919-46B3-838B-6715531791BE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DATA_STORNO"
+              DTS:DTSID="{D9D0C9A2-517C-48C1-93C0-CB3378FA7A56}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SQL01.SSIS_CONFIGURATION]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{1191245D-6F10-414A-8563-2C5255A8D0E3}"
+      DTS:ObjectName="SQL01.SSIS_CONFIGURATION">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL01;Initial Catalog=SSIS_CONFIGURATION;Provider=SQLNCLI11;Integrated Security=SSPI;Application Name=SSIS-Package1-{1191245D-6F10-414A-8563-2C5255A8D0E3}SQL01.SSIS_CONFIGURATION;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Configurations>
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;SQL01.SSIS_CONFIGURATION&quot;;&quot;[dbo].[RGT_Solution]&quot;;&quot;File_RGT_ANMO&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{F4B9AB7E-C484-4E31-A811-3289DCE38299}"
+      DTS:ObjectName="File_RGT_ANMO" />
+  </DTS:Configurations>
+  <DTS:Variables />
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1" />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Drop and Create table T_PPV_BUYS_STORICO"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{F75C9173-2129-40D8-8B8C-A7A8A14EA031}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Drop and Create table T_PPV_BUYS_STORICO"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{d7bbf7c7-4d99-448f-bbf2-1da9010755fb}"
+          SQLTask:SqlStatementSource="USE [SKY_RGT]&#xA;GO&#xA;&#xA;IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[T_PPV_BUYS_STORICO]') AND type in (N'U'))&#xA;DROP TABLE [dbo].[T_PPV_BUYS_STORICO]&#xA;GO&#xA;&#xA;USE [SKY_RGT]&#xA;GO&#xA;&#xA;SET ANSI_NULLS ON&#xA;GO&#xA;&#xA;SET QUOTED_IDENTIFIER ON&#xA;GO&#xA;&#xA;CREATE TABLE [dbo].[T_PPV_BUYS_STORICO](&#xA;&#x9;[DATA_TRASM] [nvarchar](255) NULL,&#xA;&#x9;[DATA_SCARICO_NC] [nvarchar](255) NULL,&#xA;&#x9;[DATA_ACQUISTO_NC] [nvarchar](255) NULL,&#xA;&#x9;[ID_EVENTO] [nvarchar](255) NULL,&#xA;&#x9;[PURCHASE_ID] [nvarchar](255) NULL,&#xA;&#x9;[TITOLO_BROD] [nvarchar](255) NULL,&#xA;&#x9;[PROVIDER] [nvarchar](255) NULL,&#xA;&#x9;[ACCOUNT] [nvarchar](255) NULL,&#xA;&#x9;[PREZZO_REALE] [nvarchar](255) NULL,&#xA;&#x9;[PREZZO_LISTINO] [nvarchar](255) NULL,&#xA;&#x9;[PRIMA_FILA_RICARICA] [nvarchar](255) NULL,&#xA;&#x9;[PROVENIENZA] [nvarchar](255) NULL,&#xA;&#x9;[GENERE] [nvarchar](255) NULL,&#xA;&#x9;[SOTTOGENERE] [nvarchar](255) NULL,&#xA;&#x9;[DETTAGLIO] [nvarchar](255) NULL,&#xA;&#x9;[TIPO_ACQUISTO] [nvarchar](255) NULL,&#xA;&#x9;[COSTO_SERVIZIO] [nvarchar](255) NULL,&#xA;&#x9;[CODICE_PROMOZIONE] [nvarchar](255) NULL,&#xA;&#x9;[DESCRIZIONE_PROMO] [nvarchar](255) NULL,&#xA;&#x9;[DATA_INIZIO_PROMO] [nvarchar](255) NULL,&#xA;&#x9;[DATA_FINI_PROMO] [nvarchar](255) NULL,&#xA;&#x9;[TIPO_ACQUISTO_PROMO] [nvarchar](255) NULL,&#xA;&#x9;[CLUSTER_PPV] [nvarchar](255) NULL,&#xA;&#x9;[CREDITO_OMAGGIATO] [nvarchar](255) NULL,&#xA;&#x9;[CREDITO_REWARD] [nvarchar](255) NULL,&#xA;&#x9;[RICAVO_LORDO] [nvarchar](255) NULL,&#xA;&#x9;[RICAVO_NETTO] [nvarchar](255) NULL,&#xA;&#x9;[CHANNEL_TYPE] [nvarchar](255) NULL,&#xA;&#x9;[TECNOLOGIA_FRUIZ] [nvarchar](255) NULL,&#xA;&#x9;[OFFER_ID] [nvarchar](255) NULL,&#xA;&#x9;[SMC] [nvarchar](255) NULL,&#xA;&#x9;[FLAG_STORNO] [nvarchar](255) NULL,&#xA;&#x9;[DATA_STORNO] [nvarchar](255) NULL&#xA;) ON [PRIMARY]&#xA;&#xA;GO&#xA;&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Import buys storico in table T_PPV_BUYS_STORICO"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{398D9FA1-852E-4100-A1B2-98B8EDDE77BC}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Import buys storico in table T_PPV_BUYS_STORICO"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server v9; (C) 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          BLOBTempStoragePath=""
+          bufferTempStoragePath=""
+          engineThreads="5"
+          version="1">
+          <components>
+            <component
+              refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1040"
+              name="RGT_DTBU_STO"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[RGT_DTBU_STO]"
+                  connectionManagerRefId="Package.ConnectionManagers[RGT_DTBU_STO]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[DATA_TRASM]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].ExternalColumns[DATA_TRASM]"
+                      length="255"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[DATA_TRASM]"
+                      name="DATA_TRASM"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[DATA_SCARICO_NC]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].ExternalColumns[DATA_SCARICO_NC]"
+                      length="255"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[DATA_SCARICO_NC]"
+                      name="DATA_SCARICO_NC"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[DATA_ACQUISTO_NC]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].ExternalColumns[DATA_ACQUISTO_NC]"
+                      length="255"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[DATA_ACQUISTO_NC]"
+                      name="DATA_ACQUISTO_NC"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[ID_EVENTO]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].ExternalColumns[ID_EVENTO]"
+                      length="255"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[ID_EVENTO]"
+                      name="ID_EVENTO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[PURCHASE_ID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].ExternalColumns[PURCHASE_ID]"
+                      length="255"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[PURCHASE_ID]"
+                      name="PURCHASE_ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[TITOLO_BROD]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].ExternalColumns[TITOLO_BROD]"
+                      length="255"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[TITOLO_BROD]"
+                      name="TITOLO_BROD"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[PROVIDER]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].ExternalColumns[PROVIDER]"
+                      length="255"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[PROVIDER]"
+                      name="PROVIDER"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[ACCOUNT]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].ExternalColumns[ACCOUNT]"
+                      length="255"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[ACCOUNT]"
+                      name="ACCOUNT"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[PREZZO_REALE]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].ExternalColumns[PREZZO_REALE]"
+                      length="255"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[PREZZO_REALE]"
+                      name="PREZZO_REALE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[PREZZO_LISTINO]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].ExternalColumns[PREZZO_LISTINO]"
+                      length="255"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[PREZZO_LISTINO]"
+                      name="PREZZO_LISTINO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[PRIMA_FILA_RICARICA]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].ExternalColumns[PRIMA_FILA_RICARICA]"
+                      length="255"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[PRIMA_FILA_RICARICA]"
+                      name="PRIMA_FILA_RICARICA"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[PROVENIENZA]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].ExternalColumns[PROVENIENZA]"
+                      length="255"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[PROVENIENZA]"
+                      name="PROVENIENZA"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[GENERE]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].ExternalColumns[GENERE]"
+                      length="255"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[GENERE]"
+                      name="GENERE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[SOTTOGENERE]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].ExternalColumns[SOTTOGENERE]"
+                      length="255"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[SOTTOGENERE]"
+                      name="SOTTOGENERE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[DETTAGLIO]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].ExternalColumns[DETTAGLIO]"
+                      length="255"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[DETTAGLIO]"
+                      name="DETTAGLIO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[TIPO_ACQUISTO]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].ExternalColumns[TIPO_ACQUISTO]"
+                      length="255"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[TIPO_ACQUISTO]"
+                      name="TIPO_ACQUISTO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[COSTO_SERVIZIO]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].ExternalColumns[COSTO_SERVIZIO]"
+                      length="255"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[COSTO_SERVIZIO]"
+                      name="COSTO_SERVIZIO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[CODICE_PROMOZIONE]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].ExternalColumns[CODICE_PROMOZIONE]"
+                      length="255"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[CODICE_PROMOZIONE]"
+                      name="CODICE_PROMOZIONE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[DESCRIZIONE_PROMO]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].ExternalColumns[DESCRIZIONE_PROMO]"
+                      length="255"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[DESCRIZIONE_PROMO]"
+                      name="DESCRIZIONE_PROMO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[DATA_INIZIO_PROMO]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].ExternalColumns[DATA_INIZIO_PROMO]"
+                      length="255"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[DATA_INIZIO_PROMO]"
+                      name="DATA_INIZIO_PROMO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[DATA_FINI_PROMO]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].ExternalColumns[DATA_FINI_PROMO]"
+                      length="255"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[DATA_FINI_PROMO]"
+                      name="DATA_FINI_PROMO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[TIPO_ACQUISTO_PROMO]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].ExternalColumns[TIPO_ACQUISTO_PROMO]"
+                      length="255"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[TIPO_ACQUISTO_PROMO]"
+                      name="TIPO_ACQUISTO_PROMO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[CLUSTER_PPV]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].ExternalColumns[CLUSTER_PPV]"
+                      length="255"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[CLUSTER_PPV]"
+                      name="CLUSTER_PPV"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[CREDITO_OMAGGIATO]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].ExternalColumns[CREDITO_OMAGGIATO]"
+                      length="255"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[CREDITO_OMAGGIATO]"
+                      name="CREDITO_OMAGGIATO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[CREDITO_REWARD]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].ExternalColumns[CREDITO_REWARD]"
+                      length="255"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[CREDITO_REWARD]"
+                      name="CREDITO_REWARD"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[RICAVO_NETTO]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].ExternalColumns[RICAVO_NETTO]"
+                      length="255"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[RICAVO_NETTO]"
+                      name="RICAVO_NETTO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[RICAVO_LORDO]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].ExternalColumns[RICAVO_LORDO]"
+                      length="255"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[RICAVO_LORDO]"
+                      name="RICAVO_LORDO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[CHANNEL_TYPE]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].ExternalColumns[CHANNEL_TYPE]"
+                      length="255"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[CHANNEL_TYPE]"
+                      name="CHANNEL_TYPE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[TECNOLOGIA_FRUIZ]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].ExternalColumns[TECNOLOGIA_FRUIZ]"
+                      length="255"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[TECNOLOGIA_FRUIZ]"
+                      name="TECNOLOGIA_FRUIZ"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[OFFER_ID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].ExternalColumns[OFFER_ID]"
+                      length="255"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[OFFER_ID]"
+                      name="OFFER_ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[SMC]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].ExternalColumns[SMC]"
+                      length="255"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[SMC]"
+                      name="SMC"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[FLAG_STORNO]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].ExternalColumns[FLAG_STORNO]"
+                      length="255"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[FLAG_STORNO]"
+                      name="FLAG_STORNO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[DATA_STORNO]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].ExternalColumns[DATA_STORNO]"
+                      length="255"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[DATA_STORNO]"
+                      name="DATA_STORNO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].ExternalColumns[DATA_TRASM]"
+                      dataType="wstr"
+                      length="255"
+                      name="DATA_TRASM" />
+                    <externalMetadataColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].ExternalColumns[DATA_SCARICO_NC]"
+                      dataType="wstr"
+                      length="255"
+                      name="DATA_SCARICO_NC" />
+                    <externalMetadataColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].ExternalColumns[DATA_ACQUISTO_NC]"
+                      dataType="wstr"
+                      length="255"
+                      name="DATA_ACQUISTO_NC" />
+                    <externalMetadataColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].ExternalColumns[ID_EVENTO]"
+                      dataType="wstr"
+                      length="255"
+                      name="ID_EVENTO" />
+                    <externalMetadataColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].ExternalColumns[PURCHASE_ID]"
+                      dataType="wstr"
+                      length="255"
+                      name="PURCHASE_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].ExternalColumns[TITOLO_BROD]"
+                      dataType="wstr"
+                      length="255"
+                      name="TITOLO_BROD" />
+                    <externalMetadataColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].ExternalColumns[PROVIDER]"
+                      dataType="wstr"
+                      length="255"
+                      name="PROVIDER" />
+                    <externalMetadataColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].ExternalColumns[ACCOUNT]"
+                      dataType="wstr"
+                      length="255"
+                      name="ACCOUNT" />
+                    <externalMetadataColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].ExternalColumns[PREZZO_REALE]"
+                      dataType="wstr"
+                      length="255"
+                      name="PREZZO_REALE" />
+                    <externalMetadataColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].ExternalColumns[PREZZO_LISTINO]"
+                      dataType="wstr"
+                      length="255"
+                      name="PREZZO_LISTINO" />
+                    <externalMetadataColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].ExternalColumns[PRIMA_FILA_RICARICA]"
+                      dataType="wstr"
+                      length="255"
+                      name="PRIMA_FILA_RICARICA" />
+                    <externalMetadataColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].ExternalColumns[PROVENIENZA]"
+                      dataType="wstr"
+                      length="255"
+                      name="PROVENIENZA" />
+                    <externalMetadataColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].ExternalColumns[GENERE]"
+                      dataType="wstr"
+                      length="255"
+                      name="GENERE" />
+                    <externalMetadataColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].ExternalColumns[SOTTOGENERE]"
+                      dataType="wstr"
+                      length="255"
+                      name="SOTTOGENERE" />
+                    <externalMetadataColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].ExternalColumns[DETTAGLIO]"
+                      dataType="wstr"
+                      length="255"
+                      name="DETTAGLIO" />
+                    <externalMetadataColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].ExternalColumns[TIPO_ACQUISTO]"
+                      dataType="wstr"
+                      length="255"
+                      name="TIPO_ACQUISTO" />
+                    <externalMetadataColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].ExternalColumns[COSTO_SERVIZIO]"
+                      dataType="wstr"
+                      length="255"
+                      name="COSTO_SERVIZIO" />
+                    <externalMetadataColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].ExternalColumns[CODICE_PROMOZIONE]"
+                      dataType="wstr"
+                      length="255"
+                      name="CODICE_PROMOZIONE" />
+                    <externalMetadataColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].ExternalColumns[DESCRIZIONE_PROMO]"
+                      dataType="wstr"
+                      length="255"
+                      name="DESCRIZIONE_PROMO" />
+                    <externalMetadataColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].ExternalColumns[DATA_INIZIO_PROMO]"
+                      dataType="wstr"
+                      length="255"
+                      name="DATA_INIZIO_PROMO" />
+                    <externalMetadataColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].ExternalColumns[DATA_FINI_PROMO]"
+                      dataType="wstr"
+                      length="255"
+                      name="DATA_FINI_PROMO" />
+                    <externalMetadataColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].ExternalColumns[TIPO_ACQUISTO_PROMO]"
+                      dataType="wstr"
+                      length="255"
+                      name="TIPO_ACQUISTO_PROMO" />
+                    <externalMetadataColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].ExternalColumns[CLUSTER_PPV]"
+                      dataType="wstr"
+                      length="255"
+                      name="CLUSTER_PPV" />
+                    <externalMetadataColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].ExternalColumns[CREDITO_OMAGGIATO]"
+                      dataType="wstr"
+                      length="255"
+                      name="CREDITO_OMAGGIATO" />
+                    <externalMetadataColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].ExternalColumns[CREDITO_REWARD]"
+                      dataType="wstr"
+                      length="255"
+                      name="CREDITO_REWARD" />
+                    <externalMetadataColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].ExternalColumns[RICAVO_NETTO]"
+                      dataType="wstr"
+                      length="255"
+                      name="RICAVO_NETTO" />
+                    <externalMetadataColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].ExternalColumns[RICAVO_LORDO]"
+                      dataType="wstr"
+                      length="255"
+                      name="RICAVO_LORDO" />
+                    <externalMetadataColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].ExternalColumns[CHANNEL_TYPE]"
+                      dataType="wstr"
+                      length="255"
+                      name="CHANNEL_TYPE" />
+                    <externalMetadataColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].ExternalColumns[TECNOLOGIA_FRUIZ]"
+                      dataType="wstr"
+                      length="255"
+                      name="TECNOLOGIA_FRUIZ" />
+                    <externalMetadataColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].ExternalColumns[OFFER_ID]"
+                      dataType="wstr"
+                      length="255"
+                      name="OFFER_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].ExternalColumns[SMC]"
+                      dataType="wstr"
+                      length="255"
+                      name="SMC" />
+                    <externalMetadataColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].ExternalColumns[FLAG_STORNO]"
+                      dataType="wstr"
+                      length="255"
+                      name="FLAG_STORNO" />
+                    <externalMetadataColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].ExternalColumns[DATA_STORNO]"
+                      dataType="wstr"
+                      length="255"
+                      name="DATA_STORNO" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="T_PPV_BUYS_STORICO"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[T_PPV_BUYS_STORICO]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">ROWS_PER_BATCH = 10000</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">10000</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[(local).SKY_RGT]"
+                  connectionManagerRefId="Package.ConnectionManagers[(local).SKY_RGT]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].Columns[DATA_TRASM]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="DATA_TRASM"
+                      externalMetadataColumnId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].ExternalColumns[DATA_TRASM]"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[DATA_TRASM]" />
+                    <inputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].Columns[DATA_SCARICO_NC]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="DATA_SCARICO_NC"
+                      externalMetadataColumnId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].ExternalColumns[DATA_SCARICO_NC]"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[DATA_SCARICO_NC]" />
+                    <inputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].Columns[DATA_ACQUISTO_NC]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="DATA_ACQUISTO_NC"
+                      externalMetadataColumnId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].ExternalColumns[DATA_ACQUISTO_NC]"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[DATA_ACQUISTO_NC]" />
+                    <inputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].Columns[ID_EVENTO]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="ID_EVENTO"
+                      externalMetadataColumnId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].ExternalColumns[ID_EVENTO]"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[ID_EVENTO]" />
+                    <inputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].Columns[PURCHASE_ID]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="PURCHASE_ID"
+                      externalMetadataColumnId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].ExternalColumns[PURCHASE_ID]"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[PURCHASE_ID]" />
+                    <inputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].Columns[TITOLO_BROD]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="TITOLO_BROD"
+                      externalMetadataColumnId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].ExternalColumns[TITOLO_BROD]"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[TITOLO_BROD]" />
+                    <inputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].Columns[PROVIDER]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="PROVIDER"
+                      externalMetadataColumnId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].ExternalColumns[PROVIDER]"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[PROVIDER]" />
+                    <inputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].Columns[ACCOUNT]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="ACCOUNT"
+                      externalMetadataColumnId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].ExternalColumns[ACCOUNT]"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[ACCOUNT]" />
+                    <inputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].Columns[PREZZO_REALE]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="PREZZO_REALE"
+                      externalMetadataColumnId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].ExternalColumns[PREZZO_REALE]"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[PREZZO_REALE]" />
+                    <inputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].Columns[PREZZO_LISTINO]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="PREZZO_LISTINO"
+                      externalMetadataColumnId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].ExternalColumns[PREZZO_LISTINO]"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[PREZZO_LISTINO]" />
+                    <inputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].Columns[PRIMA_FILA_RICARICA]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="PRIMA_FILA_RICARICA"
+                      externalMetadataColumnId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].ExternalColumns[PRIMA_FILA_RICARICA]"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[PRIMA_FILA_RICARICA]" />
+                    <inputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].Columns[PROVENIENZA]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="PROVENIENZA"
+                      externalMetadataColumnId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].ExternalColumns[PROVENIENZA]"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[PROVENIENZA]" />
+                    <inputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].Columns[GENERE]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="GENERE"
+                      externalMetadataColumnId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].ExternalColumns[GENERE]"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[GENERE]" />
+                    <inputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].Columns[SOTTOGENERE]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="SOTTOGENERE"
+                      externalMetadataColumnId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].ExternalColumns[SOTTOGENERE]"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[SOTTOGENERE]" />
+                    <inputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].Columns[DETTAGLIO]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="DETTAGLIO"
+                      externalMetadataColumnId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].ExternalColumns[DETTAGLIO]"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[DETTAGLIO]" />
+                    <inputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].Columns[TIPO_ACQUISTO]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="TIPO_ACQUISTO"
+                      externalMetadataColumnId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].ExternalColumns[TIPO_ACQUISTO]"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[TIPO_ACQUISTO]" />
+                    <inputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].Columns[COSTO_SERVIZIO]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="COSTO_SERVIZIO"
+                      externalMetadataColumnId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].ExternalColumns[COSTO_SERVIZIO]"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[COSTO_SERVIZIO]" />
+                    <inputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].Columns[CODICE_PROMOZIONE]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="CODICE_PROMOZIONE"
+                      externalMetadataColumnId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].ExternalColumns[CODICE_PROMOZIONE]"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[CODICE_PROMOZIONE]" />
+                    <inputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].Columns[DESCRIZIONE_PROMO]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="DESCRIZIONE_PROMO"
+                      externalMetadataColumnId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].ExternalColumns[DESCRIZIONE_PROMO]"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[DESCRIZIONE_PROMO]" />
+                    <inputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].Columns[DATA_INIZIO_PROMO]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="DATA_INIZIO_PROMO"
+                      externalMetadataColumnId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].ExternalColumns[DATA_INIZIO_PROMO]"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[DATA_INIZIO_PROMO]" />
+                    <inputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].Columns[DATA_FINI_PROMO]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="DATA_FINI_PROMO"
+                      externalMetadataColumnId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].ExternalColumns[DATA_FINI_PROMO]"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[DATA_FINI_PROMO]" />
+                    <inputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].Columns[TIPO_ACQUISTO_PROMO]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="TIPO_ACQUISTO_PROMO"
+                      externalMetadataColumnId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].ExternalColumns[TIPO_ACQUISTO_PROMO]"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[TIPO_ACQUISTO_PROMO]" />
+                    <inputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].Columns[CLUSTER_PPV]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="CLUSTER_PPV"
+                      externalMetadataColumnId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].ExternalColumns[CLUSTER_PPV]"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[CLUSTER_PPV]" />
+                    <inputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].Columns[CREDITO_OMAGGIATO]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="CREDITO_OMAGGIATO"
+                      externalMetadataColumnId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].ExternalColumns[CREDITO_OMAGGIATO]"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[CREDITO_OMAGGIATO]" />
+                    <inputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].Columns[CREDITO_REWARD]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="CREDITO_REWARD"
+                      externalMetadataColumnId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].ExternalColumns[CREDITO_REWARD]"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[CREDITO_REWARD]" />
+                    <inputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].Columns[RICAVO_NETTO]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="RICAVO_NETTO"
+                      externalMetadataColumnId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].ExternalColumns[RICAVO_NETTO]"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[RICAVO_NETTO]" />
+                    <inputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].Columns[RICAVO_LORDO]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="RICAVO_LORDO"
+                      externalMetadataColumnId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].ExternalColumns[RICAVO_LORDO]"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[RICAVO_LORDO]" />
+                    <inputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].Columns[CHANNEL_TYPE]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="CHANNEL_TYPE"
+                      externalMetadataColumnId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].ExternalColumns[CHANNEL_TYPE]"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[CHANNEL_TYPE]" />
+                    <inputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].Columns[TECNOLOGIA_FRUIZ]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="TECNOLOGIA_FRUIZ"
+                      externalMetadataColumnId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].ExternalColumns[TECNOLOGIA_FRUIZ]"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[TECNOLOGIA_FRUIZ]" />
+                    <inputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].Columns[OFFER_ID]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="OFFER_ID"
+                      externalMetadataColumnId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].ExternalColumns[OFFER_ID]"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[OFFER_ID]" />
+                    <inputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].Columns[SMC]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="SMC"
+                      externalMetadataColumnId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].ExternalColumns[SMC]"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[SMC]" />
+                    <inputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].Columns[FLAG_STORNO]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="FLAG_STORNO"
+                      externalMetadataColumnId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].ExternalColumns[FLAG_STORNO]"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[FLAG_STORNO]" />
+                    <inputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].Columns[DATA_STORNO]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="DATA_STORNO"
+                      externalMetadataColumnId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].ExternalColumns[DATA_STORNO]"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output].Columns[DATA_STORNO]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].ExternalColumns[DATA_TRASM]"
+                      dataType="wstr"
+                      length="255"
+                      name="DATA_TRASM" />
+                    <externalMetadataColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].ExternalColumns[DATA_SCARICO_NC]"
+                      dataType="wstr"
+                      length="255"
+                      name="DATA_SCARICO_NC" />
+                    <externalMetadataColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].ExternalColumns[DATA_ACQUISTO_NC]"
+                      dataType="wstr"
+                      length="255"
+                      name="DATA_ACQUISTO_NC" />
+                    <externalMetadataColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].ExternalColumns[ID_EVENTO]"
+                      dataType="wstr"
+                      length="255"
+                      name="ID_EVENTO" />
+                    <externalMetadataColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].ExternalColumns[PURCHASE_ID]"
+                      dataType="wstr"
+                      length="255"
+                      name="PURCHASE_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].ExternalColumns[TITOLO_BROD]"
+                      dataType="wstr"
+                      length="255"
+                      name="TITOLO_BROD" />
+                    <externalMetadataColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].ExternalColumns[PROVIDER]"
+                      dataType="wstr"
+                      length="255"
+                      name="PROVIDER" />
+                    <externalMetadataColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].ExternalColumns[ACCOUNT]"
+                      dataType="wstr"
+                      length="255"
+                      name="ACCOUNT" />
+                    <externalMetadataColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].ExternalColumns[PREZZO_REALE]"
+                      dataType="wstr"
+                      length="255"
+                      name="PREZZO_REALE" />
+                    <externalMetadataColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].ExternalColumns[PREZZO_LISTINO]"
+                      dataType="wstr"
+                      length="255"
+                      name="PREZZO_LISTINO" />
+                    <externalMetadataColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].ExternalColumns[PRIMA_FILA_RICARICA]"
+                      dataType="wstr"
+                      length="255"
+                      name="PRIMA_FILA_RICARICA" />
+                    <externalMetadataColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].ExternalColumns[PROVENIENZA]"
+                      dataType="wstr"
+                      length="255"
+                      name="PROVENIENZA" />
+                    <externalMetadataColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].ExternalColumns[GENERE]"
+                      dataType="wstr"
+                      length="255"
+                      name="GENERE" />
+                    <externalMetadataColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].ExternalColumns[SOTTOGENERE]"
+                      dataType="wstr"
+                      length="255"
+                      name="SOTTOGENERE" />
+                    <externalMetadataColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].ExternalColumns[DETTAGLIO]"
+                      dataType="wstr"
+                      length="255"
+                      name="DETTAGLIO" />
+                    <externalMetadataColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].ExternalColumns[TIPO_ACQUISTO]"
+                      dataType="wstr"
+                      length="255"
+                      name="TIPO_ACQUISTO" />
+                    <externalMetadataColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].ExternalColumns[COSTO_SERVIZIO]"
+                      dataType="wstr"
+                      length="255"
+                      name="COSTO_SERVIZIO" />
+                    <externalMetadataColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].ExternalColumns[CODICE_PROMOZIONE]"
+                      dataType="wstr"
+                      length="255"
+                      name="CODICE_PROMOZIONE" />
+                    <externalMetadataColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].ExternalColumns[DESCRIZIONE_PROMO]"
+                      dataType="wstr"
+                      length="255"
+                      name="DESCRIZIONE_PROMO" />
+                    <externalMetadataColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].ExternalColumns[DATA_INIZIO_PROMO]"
+                      dataType="wstr"
+                      length="255"
+                      name="DATA_INIZIO_PROMO" />
+                    <externalMetadataColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].ExternalColumns[DATA_FINI_PROMO]"
+                      dataType="wstr"
+                      length="255"
+                      name="DATA_FINI_PROMO" />
+                    <externalMetadataColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].ExternalColumns[TIPO_ACQUISTO_PROMO]"
+                      dataType="wstr"
+                      length="255"
+                      name="TIPO_ACQUISTO_PROMO" />
+                    <externalMetadataColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].ExternalColumns[CLUSTER_PPV]"
+                      dataType="wstr"
+                      length="255"
+                      name="CLUSTER_PPV" />
+                    <externalMetadataColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].ExternalColumns[CREDITO_OMAGGIATO]"
+                      dataType="wstr"
+                      length="255"
+                      name="CREDITO_OMAGGIATO" />
+                    <externalMetadataColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].ExternalColumns[CREDITO_REWARD]"
+                      dataType="wstr"
+                      length="255"
+                      name="CREDITO_REWARD" />
+                    <externalMetadataColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].ExternalColumns[RICAVO_NETTO]"
+                      dataType="wstr"
+                      length="255"
+                      name="RICAVO_NETTO" />
+                    <externalMetadataColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].ExternalColumns[RICAVO_LORDO]"
+                      dataType="wstr"
+                      length="255"
+                      name="RICAVO_LORDO" />
+                    <externalMetadataColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].ExternalColumns[CHANNEL_TYPE]"
+                      dataType="wstr"
+                      length="255"
+                      name="CHANNEL_TYPE" />
+                    <externalMetadataColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].ExternalColumns[TECNOLOGIA_FRUIZ]"
+                      dataType="wstr"
+                      length="255"
+                      name="TECNOLOGIA_FRUIZ" />
+                    <externalMetadataColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].ExternalColumns[OFFER_ID]"
+                      dataType="wstr"
+                      length="255"
+                      name="OFFER_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].ExternalColumns[SMC]"
+                      dataType="wstr"
+                      length="255"
+                      name="SMC" />
+                    <externalMetadataColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].ExternalColumns[FLAG_STORNO]"
+                      dataType="wstr"
+                      length="255"
+                      name="FLAG_STORNO" />
+                    <externalMetadataColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input].ExternalColumns[DATA_STORNO]"
+                      dataType="wstr"
+                      length="255"
+                      name="DATA_STORNO" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Import buys storico in table T_PPV_BUYS_STORICO.Paths[Flat File Source Output]"
+              endId="Package\Import buys storico in table T_PPV_BUYS_STORICO\T_PPV_BUYS_STORICO.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Import buys storico in table T_PPV_BUYS_STORICO\RGT_DTBU_STO.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{97DFE564-2679-42A5-9E2F-A9DED90B3C10}"
+      DTS:From="Package\Drop and Create table T_PPV_BUYS_STORICO"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Import buys storico in table T_PPV_BUYS_STORICO" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="239,44"
+          Id="Package\Drop and Create table T_PPV_BUYS_STORICO"
+          TopLeft="27.4245283018868,5.5" />
+        <NodeLayout
+          Size="283,44"
+          Id="Package\Import buys storico in table T_PPV_BUYS_STORICO"
+          TopLeft="5.5,116.518867924528" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="146.745283018868,49.4245283018868">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,67.0943396226415"
+              Start="0,0"
+              End="0,59.5943396226415">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,59.5943396226415" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

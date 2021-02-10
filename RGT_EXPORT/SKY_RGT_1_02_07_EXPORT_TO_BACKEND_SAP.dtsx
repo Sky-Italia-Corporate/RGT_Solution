@@ -1,0 +1,1531 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/28/2011 4:34:04 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="HYPSRV-SVIL01"
+  DTS:CreatorName="SKY\vennia"
+  DTS:DTSID="{4D78B327-426F-4F01-BA81-8E1DFCBF76A2}"
+  DTS:EnableConfig="True"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.113"
+  DTS:LocaleID="11273"
+  DTS:ObjectName="SKY_RGT_1_02_07_EXPORT_TO_BACKEND_SAP"
+  DTS:PackageType="5"
+  DTS:VersionBuild="408"
+  DTS:VersionGUID="{116EB82B-B09A-4817-A02D-39CC304EBC40}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[(local).ICO_MONITOR]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{98C76D56-47A4-4AA3-8A5E-92C1854999C7}"
+      DTS:ObjectName="(local).ICO_MONITOR">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL01;Initial Catalog=ICO_MONITOR;Provider=SQLNCLI11;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_RGT_1_02_01_EXPORT_MOVIES_DAILY-{98C76D56-47A4-4AA3-8A5E-92C1854999C7}(local).ICO_MONITOR;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[(local).SKY_RGT]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{6E5F921A-6390-4934-A632-F20F6E43D7F1}"
+      DTS:ObjectName="(local).SKY_RGT">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL01;Initial Catalog=SKY_RGT;Provider=SQLNCLI11;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_RGT_1_02_01_EXPORT_MOVIES_DAILY-{6E5F921A-6390-4934-A632-F20F6E43D7F1}(local).SKY_RGT;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[RGT_CHMO]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{1ef9765c-46d5-410f-bb7c-8a637bc95d20}"
+      DTS:ObjectName="RGT_CHMO">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="\\DEVRMWDBHYP01\StagingArea\RGT\EXPORT\RGT_AN130523MO.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="14"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Budget Id"
+              DTS:DTSID="{CF5F42DA-E318-4731-BB8D-D25B77169D37}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Budget Title"
+              DTS:DTSID="{5992BDE0-B9F0-4D5C-B73F-5AECE71CC3FF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Title Notes"
+              DTS:DTSID="{E0A38B15-FC0D-4ADF-812C-80473E5DD7E0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:ObjectName="LTR"
+              DTS:DTSID="{732457D6-CF02-4DAE-B41E-80350031DD16}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:ObjectName="Start Avail Date"
+              DTS:DTSID="{666B3F58-7A42-47DD-9699-3D3F9D6FDBBD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:ObjectName="End Avail Date"
+              DTS:DTSID="{514C7153-4A37-4493-9B47-B5374C8F6D2A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="2"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Type of data avail"
+              DTS:DTSID="{76672A1C-A511-4090-81D6-82583EC28C7B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="13"
+              DTS:DataScale="2"
+              DTS:ObjectName="Minimum Guaranteed Valuta"
+              DTS:DTSID="{A5C7D1FB-5A33-43A7-9722-F9E3DD9D161C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="13"
+              DTS:DataScale="2"
+              DTS:ObjectName="Minimum Guaranteed Euro"
+              DTS:DTSID="{8A75E948-00CA-4DB1-9063-56DBF16297F3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="13"
+              DTS:DataScale="2"
+              DTS:ObjectName="Overages Valuta"
+              DTS:DTSID="{29489216-73FE-4206-A90B-CE381A277AF4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="13"
+              DTS:DataScale="2"
+              DTS:ObjectName="Overages Euro"
+              DTS:DTSID="{363A87B3-5A74-4649-AE14-37E5DBDB9A11}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Flat or Variable"
+              DTS:DTSID="{63E8A0D7-ACEA-44A9-9851-6BAB43885B6E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="2"
+              DTS:DataType="129"
+              DTS:ObjectName="Title State"
+              DTS:DTSID="{924A1BE1-E4DC-4A3E-BA6D-5C076AF51B2D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="2"
+              DTS:DataType="129"
+              DTS:ObjectName="Minimum Guaranteed State"
+              DTS:DTSID="{7363B815-23C7-4B8F-88EB-9929F4159C65}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="2"
+              DTS:DataType="129"
+              DTS:ObjectName="Price State"
+              DTS:DTSID="{4AF47977-0CB2-437D-94C9-B4D7804EECE0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Reported Flag"
+              DTS:DTSID="{29F0DC32-921D-4BFB-8076-FFCA64208CA2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:ObjectName="Contractual Accounting Statement Date"
+              DTS:DTSID="{D950714E-EF5A-4F65-ADE7-9E7FFACE5214}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:ObjectName="Actual Accounting Statement Date"
+              DTS:DTSID="{CA0410E1-0D1F-434E-9AB4-29B2D07AD36D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Master Deal Name IBMS"
+              DTS:DTSID="{86A726A3-7AAE-48BE-AA6B-5DD4BB0B1F8C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Master Deal Type IBMS"
+              DTS:DTSID="{0E26ACFF-14B8-4AD5-8D06-C6389AC55C23}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:ObjectName="Master Deal Start Date IBMS"
+              DTS:DTSID="{7EF0CEF6-4493-4040-8731-8DC46ACBF6EC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:ObjectName="Master Deal End Date IBMS"
+              DTS:DTSID="{612008FF-364D-4B7F-BDD8-82287EFDDC28}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Master Deal Distributor IBMS"
+              DTS:DTSID="{4D1E6EE9-9F1A-4DA9-9318-74B918E9E723}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Deal Code IBMS"
+              DTS:DTSID="{7943042A-BBF6-4F61-9F5D-97CB007192A0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Deal Name IBMS"
+              DTS:DTSID="{48984364-D6D9-489F-A5B3-4C2B4E7BCD82}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Deal Sub Type IBMS"
+              DTS:DTSID="{23E156D6-3294-4F0F-9180-B6F9BC0EA6B1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:ObjectName="Deal Start Date IBMS"
+              DTS:DTSID="{B11F2B57-FCC0-4BAE-A8ED-B351A3A54589}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:ObjectName="Deal End Date IBMS"
+              DTS:DTSID="{83EA8EB5-8293-445F-9142-07DA9D22629A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:ObjectName="Purchase Id IBMS"
+              DTS:DTSID="{5E010B8B-429F-42FB-807F-E4A558988B6C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Title IBMS"
+              DTS:DTSID="{F55BFB9E-5293-4EAF-B507-5C80EB64E994}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Title IBMS A K A "
+              DTS:DTSID="{C7CA993F-2AF9-446B-9EF1-693EBF7A7C79}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Country of Origin IBMS"
+              DTS:DTSID="{9C208E0E-CCFE-444A-A7C6-FAD237CE4D49}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Material Status IBMS"
+              DTS:DTSID="{5B070948-42E6-4102-96D4-46153FAF7E70}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:ObjectName="Date Material Status IBMS"
+              DTS:DTSID="{8305C8AC-6657-46A4-92AF-5665DA7159C8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Showing IBMS"
+              DTS:DTSID="{07CBB7B7-6E47-4E77-9231-C0B970B55638}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:ObjectName="Availability Start Date IBMS"
+              DTS:DTSID="{8C2AC25B-A9F6-41EF-8458-F4B55B11DC6E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:ObjectName="Availability End Date IBMS"
+              DTS:DTSID="{2FF711F7-2D55-4AFB-819C-BECA3E68B0FB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Dates Status IBMS"
+              DTS:DTSID="{BF702299-7FB0-4397-B379-DFCEA0C05D0D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AGCOM Indipendent Producer IBMS"
+              DTS:DTSID="{26EC9674-06EE-449D-8230-514B976E126A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AGCOM Country IBMS"
+              DTS:DTSID="{3700B2E6-F075-4158-9BE8-64AD77019649}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AGCOM Genre IBMS"
+              DTS:DTSID="{1FD9E4E6-8455-4AC8-BEE2-D3F2348C47FC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AGCOM Sub-Genre IBMS"
+              DTS:DTSID="{7251D9EC-3E39-4060-921F-DBBC4A9B8FD3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:ObjectName="AGCOM Year of Production IBMS"
+              DTS:DTSID="{A3E217B5-C10B-4392-8783-BEE6FC10A8A3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AGCOM Target IBMS"
+              DTS:DTSID="{4837C68E-5E8A-44BB-92EE-80A5165059F3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Station IBMS"
+              DTS:DTSID="{DDB27252-9FA9-416C-9420-68B87921D46C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:ObjectName="Hiatus Start Date IBMS"
+              DTS:DTSID="{C6D72088-15D7-4708-9B84-772C6274C46B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:ObjectName="Hiatus End Date IBMS"
+              DTS:DTSID="{5482B70D-BD40-4D4D-AFCE-E74A0D045F90}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Acquisition Id"
+              DTS:DTSID="{87FACA89-5564-4926-8495-26938FABF4EE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Acquisition Desc"
+              DTS:DTSID="{C292AD51-EEC3-4926-AB3B-B2D59F3FF580}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Contract Desc"
+              DTS:DTSID="{2FDEEAC8-0830-4194-AC3A-A6D7F2EFA7AB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Acquisition State"
+              DTS:DTSID="{BF5B0795-E587-4727-9968-70369728E685}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Engagement Form"
+              DTS:DTSID="{457E34CE-993D-4350-B2B3-B937D3B0B7A8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Acquisition-Master Deal Code IBMS"
+              DTS:DTSID="{A8F141E0-850C-4B95-AE97-BCA8D1F7E498}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="3"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Acquisition Currency"
+              DTS:DTSID="{B731ECEA-33D3-43ED-A32A-D4FA82DD8392}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:ObjectName="Acquisition Start Date"
+              DTS:DTSID="{D8864489-8C81-4FF3-8B56-92378DB99D20}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:ObjectName="Acquisition End Date"
+              DTS:DTSID="{D1DD5EA5-966F-4C74-BA5F-2AFAA3789263}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Accounting Statement Flag"
+              DTS:DTSID="{587027A7-4931-4C1F-B476-DAEA40356E60}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Accounting Statement Frequency"
+              DTS:DTSID="{2518C62A-9822-4FBF-94B1-163DE6E1AFCF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:ObjectName="Exchange Id"
+              DTS:DTSID="{57F287E1-45C1-4231-BEF1-3D7F364B842E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Exchange Desc"
+              DTS:DTSID="{CE5B26E9-A278-4326-A0B5-48F2CC4EFB5A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:ObjectName="Exchange Type"
+              DTS:DTSID="{8E67F795-05C5-404C-B602-123B463B7A0D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Hedge Type"
+              DTS:DTSID="{627A9EB4-CCB8-45B6-8AC1-E8DD305ACA27}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Reporting Supplier Ordine Interno"
+              DTS:DTSID="{B23639BC-B2CF-434B-ACFE-C16E6ED78792}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Supplier SAP Code"
+              DTS:DTSID="{87009695-E139-4F09-94B0-58BE05FBB6DF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="60"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Step AF"
+              DTS:DTSID="{58E6AB7E-1C97-4892-988F-ECC7E1B6063F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:ObjectName="Data Step AF"
+              DTS:DTSID="{65A3D135-5B7D-4780-BAA2-E74F66457D36}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="60"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Step EF"
+              DTS:DTSID="{D31D257D-2F7A-4663-BCDC-F8ED654A6191}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:ObjectName="Data Step EF"
+              DTS:DTSID="{24C8C060-2874-4A3C-BC12-BA1AB23A9BBA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Oggetto Contratto"
+              DTS:DTSID="{0EB16BE9-D4A9-45F9-B044-A823E0971C9D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="25"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Protocollo OUT"
+              DTS:DTSID="{7828CCEC-75A0-41AD-98EE-49B7CCEB641D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:ObjectName="Data Protocollo OUT"
+              DTS:DTSID="{FA4DC188-BECC-47AB-BA47-6E27C117DFEF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="25"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Protocollo IN"
+              DTS:DTSID="{339359DC-2BF4-4D4D-B4CD-E27429DF0903}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:ObjectName="Data Protocollo IN"
+              DTS:DTSID="{E9F537B0-49C2-4BF2-A3DA-34C1BD650658}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="30"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Stato Contratto"
+              DTS:DTSID="{E1666E6A-30BE-448A-8CAD-849A5F1A193B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="25"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Integra rinnova"
+              DTS:DTSID="{13BD9A9C-122C-41D5-AF44-F4ACBAB2A175}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="25"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Integrato rinnovato"
+              DTS:DTSID="{C9491940-DA6F-4995-A31A-41B8511B49DA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CdC"
+              DTS:DTSID="{0CA03C58-3B39-4606-BDA7-5F4DDECC8B11}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Appalto"
+              DTS:DTSID="{4685BF1C-5749-4B84-9CEA-9366F65E8325}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Tipo Ordine"
+              DTS:DTSID="{B478120E-9ADA-4B75-95F2-28FEAFABC49F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Ammortamento"
+              DTS:DTSID="{649A8D1F-7398-4375-B58B-4391BC8A7ACE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BudgetId Extra Ambito"
+              DTS:DTSID="{E14A44D3-1A8C-4F2C-BE02-A7C25BF3DD62}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:ObjectName="Data Inizio Contratto"
+              DTS:DTSID="{BB2676D8-9864-479E-8C73-E6EA156D7898}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:ObjectName="Data Fine Contratto"
+              DTS:DTSID="{054D4043-97E6-4FF6-8349-3FD75F55A077}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="13"
+              DTS:DataScale="2"
+              DTS:ObjectName="Cash Cost Totale MultiRights"
+              DTS:DTSID="{2518E672-6B76-438E-96C9-1B8204A27B6C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="131"
+              DTS:DataPrecision="13"
+              DTS:DataScale="2"
+              DTS:ObjectName="Quota Malus"
+              DTS:DTSID="{9A64E264-D71C-415A-848B-9E476996E509}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SQL01.SSIS_CONFIGURATION]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{A299ACEB-EF5F-49CC-A637-164F76CF1A67}"
+      DTS:ObjectName="SQL01.SSIS_CONFIGURATION">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL01;Initial Catalog=SSIS_CONFIGURATION;Provider=SQLNCLI11;Integrated Security=SSPI;Application Name=SSIS-SKY_RGT_1_02_01_EXPORT_MOVIES_DAILY-{A299ACEB-EF5F-49CC-A637-164F76CF1A67}SQL01.SSIS_CONFIGURATION;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Configurations>
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;SQL01.SSIS_CONFIGURATION&quot;;&quot;[dbo].[RGT_Solution]&quot;;&quot;File_RGT_CHMO&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{4E90597C-8E70-4FF2-86E6-1D82B201961D}"
+      DTS:ObjectName="File_RGT_CHMO" />
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;SQL01.SSIS_CONFIGURATION&quot;;&quot;[dbo].[RGT_Solution]&quot;;&quot;FileSystem_CHMO&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{52570E5D-CCA8-460B-8CF3-7FB8FBE6EF30}"
+      DTS:ObjectName="FileSystem_CHMO" />
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;SQL01.SSIS_CONFIGURATION&quot;;&quot;[dbo].[RGT_Solution]&quot;;&quot;FileSystem_ANMO&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{373DD699-9DAB-4306-8A4A-C9F977980FB2}"
+      DTS:ObjectName="FileSystem_ANMO" />
+  </DTS:Configurations>
+  <DTS:LogProviders>
+    <DTS:LogProvider
+      DTS:ConfigString="(local).ICO_MONITOR"
+      DTS:CreationName="Microsoft.LogProviderSQLServer"
+      DTS:Description="Writes log entries for events to a SQL Server database"
+      DTS:DTSID="{E1412A02-C949-48F7-836C-1027B7DDC3F1}"
+      DTS:ObjectName="SSIS log provider for SQL Server">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+  </DTS:LogProviders>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{CB67A083-06DA-42CC-8981-31005E8B299C}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="File_destination">
+      <DTS:VariableValue
+        DTS:DataType="8">\\filesrvmi03\Dati3\Hyperion\DATI_COLLAUDO\RIGHTS\titoli.txt</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{126B61E6-7186-49E6-9D7A-90EE3138AF22}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FILE_LOCALE">
+      <DTS:VariableValue
+        DTS:DataType="8">\\HYPAPP-SVL01\D$\StagingArea\utilities\winscp\RGT_TO_EXPORT\titoli.txt</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6D767F9C-1693-47B6-B063-EE80853295F1}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="File_to_copy">
+      <DTS:VariableValue
+        DTS:DataType="8">\\filesrvmi03\Dati3\Hyperion\DATI_COLLAUDO\RIGHTS\RGT_AN141119MO.txt</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6C37ECF7-3DA2-4546-AD8F-849A04ECC5FD}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Winscp">
+      <DTS:VariableValue
+        DTS:DataType="8">/c "winrs -r:HYPAPP-SVL01 E:\StagingArea\utilities\winscp\WinSCP.exe /script=E:\StagingArea\utilities\winscp\scriptwinscp_tit.bat /log=E:\StagingArea\utilities\winscp\WinSCP_log.txt"</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">6,7,OnError,13,OnPostExecute,14,OnPostValidate,12,OnPreExecute,13,OnPreValidate,12,OnTaskFailed</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnTaskFailed"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:SelectedLogProviders>
+      <DTS:SelectedLogProvider
+        DTS:InstanceID="{E1412A02-C949-48F7-836C-1027B7DDC3F1}" />
+    </DTS:SelectedLogProviders>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Copio il file in D stagingarea con il nome per SAP"
+      DTS:CreationName="Microsoft.FileSystemTask"
+      DTS:Description="File System Task"
+      DTS:DTSID="{e3f32679-c335-4098-8b73-11fe6dd4a928}"
+      DTS:ExecutableType="Microsoft.FileSystemTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Copio il file in D stagingarea con il nome per SAP"
+      DTS:TaskContact="File System Task;Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <FileSystemData
+          TaskOverwriteDestFile="True"
+          TaskSourcePath="User::File_destination"
+          TaskIsSourceVariable="True"
+          TaskDestinationPath="User::FILE_LOCALE"
+          TaskIsDestinationVariable="True" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Copio il file in filesrvmi03 con il nome per SAP"
+      DTS:CreationName="Microsoft.FileSystemTask"
+      DTS:Description="File System Task"
+      DTS:DTSID="{32976027-CDCF-44DB-95EB-D0592BEF7EFD}"
+      DTS:ExecutableType="Microsoft.FileSystemTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Copio il file in filesrvmi03 con il nome per SAP"
+      DTS:TaskContact="File System Task;Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <FileSystemData
+          TaskOverwriteDestFile="True"
+          TaskSourcePath="User::File_to_copy"
+          TaskIsSourceVariable="True"
+          TaskDestinationPath="User::File_destination"
+          TaskIsDestinationVariable="True" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\LOG FAIL"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{6ac97286-811e-4bc3-9bed-1a0ddf917d38}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="LOG FAIL"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{98C76D56-47A4-4AA3-8A5E-92C1854999C7}"
+          SQLTask:SqlStatementSource="INSERT INTO [ICO_LOG].dbo.LOG_TABLE VALUES('SKY_RGT_SSIS_FLOW', GETDATE(), 'Debug', 'DB', 'EXPORT_TO_BACKEND_SAP', 'Errore nella copia del file nel backend SAP' , '', NULL);&#xA;GO&#xA;&#xA;select 1/0" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\recupero carella locale per copiarlo poi su SAP"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{3B3B2216-37A7-4F62-A111-CDBF46912A0F}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="recupero carella locale per copiarlo poi su SAP"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{6E5F921A-6390-4934-A632-F20F6E43D7F1}"
+          SQLTask:SqlStatementSource="&#xA;&#xA;SELECT &#xA;'FILE_LOCALE' = case&#xA;&#x9;&#x9;&#x9;&#x9;when FOLDER like '%RGT_AN%' then cast((SELECT top 1 (SELECT  '\\'+ConfiguredValue+ '\D$\StagingArea\utilities\winscp\RGT_TO_EXPORT\'FROM    SSIS_CONFIGURATION.dbo.RGT_Solution where ConfigurationFilter='VAR_ServerApp01')+'titoli.txt' FROM [T_PATH_FOLDER_COPY] WHERE PATH_ID = 1) as varchar(255))&#xA;&#x9;&#x9;&#x9;&#x9;when FOLDER like '%RGT_CH%' then cast((SELECT top 1 (SELECT  '\\'+ConfiguredValue+ '\D$\StagingArea\utilities\winscp\RGT_TO_EXPORT\'FROM    SSIS_CONFIGURATION.dbo.RGT_Solution where ConfigurationFilter='VAR_ServerApp01')+'titoli.txt' FROM [T_PATH_FOLDER_COPY] WHERE PATH_ID = 1) as varchar(255))&#xA;&#x9;&#x9;&#x9;&#x9;when FOLDER like '%RGT_DT%' then cast((SELECT top 1 (SELECT  '\\'+ConfiguredValue+ '\D$\StagingArea\utilities\winscp\RGT_TO_EXPORT\'FROM    SSIS_CONFIGURATION.dbo.RGT_Solution where ConfigurationFilter='VAR_ServerApp01')+'ammortamenti.txt' FROM [T_PATH_FOLDER_COPY] WHERE PATH_ID = 1) as varchar(255))&#xA;&#x9;&#x9;&#x9;&#x9;when FOLDER like '%RGT_NSTI_AN%' then cast((SELECT top 1 (SELECT  '\\'+ConfiguredValue+ '\D$\StagingArea\utilities\winscp\RGT_TO_EXPORT\'FROM    SSIS_CONFIGURATION.dbo.RGT_Solution where ConfigurationFilter='VAR_ServerApp01')+'titoli_NSTI.txt' FROM [T_PATH_FOLDER_COPY] WHERE PATH_ID = 1) as varchar(255))&#xA;&#x9;&#x9;&#x9;&#x9;when FOLDER like '%RGT_NSTI_CH%' then cast((SELECT top 1 (SELECT  '\\'+ConfiguredValue+ '\D$\StagingArea\utilities\winscp\RGT_TO_EXPORT\'FROM    SSIS_CONFIGURATION.dbo.RGT_Solution where ConfigurationFilter='VAR_ServerApp01')+'titoli_NSTI.txt' FROM [T_PATH_FOLDER_COPY] WHERE PATH_ID = 1) as varchar(255))&#xA;&#x9;&#x9;&#x9;&#x9;when FOLDER like '%RGT_NSTI_DT%' then cast((SELECT top 1 (SELECT  '\\'+ConfiguredValue+ '\D$\StagingArea\utilities\winscp\RGT_TO_EXPORT\'FROM    SSIS_CONFIGURATION.dbo.RGT_Solution where ConfigurationFilter='VAR_ServerApp01')+'ammortamenti_NSTI.txt' FROM [T_PATH_FOLDER_COPY] WHERE PATH_ID = 1) as varchar(255))&#xA;&#x9;&#x9;&#x9;end&#xA;FROM [T_PATH_FOLDER_COPY] &#xA;WHERE PATH_ID = 4&#xA;&#xA;"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="FILE_LOCALE"
+            SQLTask:DtsVariableName="User::FILE_LOCALE" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@FILE_DESTINATION"
+            SQLTask:DtsVariableName="User::File_destination"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Recupero il path dell'eseguibile winscp e del bat di config"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{b8c07286-9f9d-44dd-a2d3-857617e7d14c}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Recupero il path dell'eseguibile winscp e del bat di config"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{6E5F921A-6390-4934-A632-F20F6E43D7F1}"
+          SQLTask:SqlStatementSource="IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[T_PATH_FOLDER_COPY]') AND type in (N'U'))&#xA;BEGIN&#xA;&#xA;SELECT  &#xA;'FOLDER' = case&#xA;&#x9;&#x9;&#x9;&#x9;when FOLDER like '%RGT_AN%' then cast((SELECT top 1 FOLDER+' /script=E:\StagingArea\utilities\winscp\scriptwinscp_tit.bat /log=E:\StagingArea\utilities\winscp\WinSCP_log.txt&quot;' as FOLDER FROM [T_PATH_FOLDER_COPY] WHERE PATH_ID = 5) as varchar(255))&#xA;&#x9;&#x9;&#x9;&#x9;when FOLDER like '%RGT_CH%' then cast((SELECT top 1 FOLDER+' /script=E:\StagingArea\utilities\winscp\scriptwinscp_tit.bat /log=E:\StagingArea\utilities\winscp\WinSCP_log.txt&quot;' as FOLDER FROM [T_PATH_FOLDER_COPY] WHERE PATH_ID = 5) as varchar(255))&#xA;&#x9;&#x9;&#x9;&#x9;when FOLDER like '%RGT_DT%' then cast((SELECT top 1 FOLDER+' /script=E:\StagingArea\utilities\winscp\scriptwinscp_amm.bat /log=E:\StagingArea\utilities\winscp\WinSCP_log.txt&quot;' as FOLDER FROM [T_PATH_FOLDER_COPY] WHERE PATH_ID = 5) as varchar(255))&#xA;&#x9;&#x9;&#x9;&#x9;when FOLDER like '%RGT_NSTI_AN%' then cast((SELECT top 1 FOLDER+' /script=E:\StagingArea\utilities\winscp\scriptwinscp_tit_nsti.bat /log=E:\StagingArea\utilities\winscp\WinSCP_log.txt&quot;' as FOLDER FROM [T_PATH_FOLDER_COPY] WHERE PATH_ID = 5) as varchar(255))&#xA;&#x9;&#x9;&#x9;&#x9;when FOLDER like '%RGT_NSTI_CH%' then cast((SELECT top 1 FOLDER+' /script=E:\StagingArea\utilities\winscp\scriptwinscp_tit_nsti.bat /log=E:\StagingArea\utilities\winscp\WinSCP_log.txt&quot;' as FOLDER FROM [T_PATH_FOLDER_COPY] WHERE PATH_ID = 5) as varchar(255))&#xA;&#x9;&#x9;&#x9;&#x9;when FOLDER like '%RGT_NSTI_DT%' then cast((SELECT top 1 FOLDER+' /script=E:\StagingArea\utilities\winscp\scriptwinscp_amm_nsti.bat /log=E:\StagingArea\utilities\winscp\WinSCP_log.txt&quot;' as FOLDER FROM [T_PATH_FOLDER_COPY] WHERE PATH_ID = 5) as varchar(255))&#xA;&#x9;&#x9;&#x9;end&#xA;&#xA;FROM [T_PATH_FOLDER_COPY] &#xA;WHERE PATH_ID = 4&#xA;&#xA;END&#xA;ELSE&#xA;BEGIN&#xA;--loggo l'errore&#xA;INSERT INTO [ICO_LOG].dbo.LOG_TABLE VALUES('SKY_RGT_SSIS_FLOW', GETDATE(), 'Debug', 'DB', 'EXPORT TO BACKEND SAP', 'Errore nel recupero della stringa del path winscp' , '', NULL);&#xA;--faccio fallire il package &#xA;SELECT 1/0&#xA;END"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="FOLDER"
+            SQLTask:DtsVariableName="User::Winscp" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Recupero il path ed il nome del file da copiare nel backend SAP"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{2b60ab30-3f66-49a7-98e9-8c378bcd5081}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Recupero il path ed il nome del file da copiare nel backend SAP"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{6E5F921A-6390-4934-A632-F20F6E43D7F1}"
+          SQLTask:SqlStatementSource="IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[T_PATH_FOLDER_COPY]') AND type in (N'U'))&#xA;BEGIN&#xA;&#xA;SELECT top 1 FOLDER FROM [T_PATH_FOLDER_COPY] WHERE PATH_ID = 4&#xA;&#xA;END&#xA;ELSE&#xA;BEGIN&#xA;--loggo l'errore&#xA;INSERT INTO [ICO_LOG].dbo.LOG_TABLE VALUES('SKY_RGT_SSIS_FLOW', GETDATE(), 'Debug', 'DB', 'EXPORT TO BACKEND SAP', 'Errore nel recupero della stringa del file da copiare' , '', NULL);&#xA;--faccio fallire il package &#xA;SELECT 1/0&#xA;END&#xA;"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="FOLDER"
+            SQLTask:DtsVariableName="User::File_to_copy" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Richiamo Winscp"
+      DTS:CreationName="Microsoft.ExecuteProcess"
+      DTS:Description="Execute Process Task"
+      DTS:DTSID="{1815A152-C68E-4B81-AD8D-1E05B4F7744F}"
+      DTS:ExecutableType="Microsoft.ExecuteProcess"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Richiamo Winscp"
+      DTS:TaskContact="Execute Process Task;Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:PropertyExpression
+        DTS:Name="Arguments">@[User::Winscp]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <ExecuteProcessData
+          Executable="C:\WINDOWS\System32\CMD.exe"
+          Arguments="/c &quot;winrs -r:HYPAPP-SVL01 E:\StagingArea\utilities\winscp\WinSCP.exe /script=E:\StagingArea\utilities\winscp\scriptwinscp_tit.bat /log=E:\StagingArea\utilities\winscp\WinSCP_log.txt&quot;" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\titoli o ammortamenti"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{02C1B1C7-794B-4CFF-B2E7-4FE5FE08B997}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="titoli o ammortamenti"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{6E5F921A-6390-4934-A632-F20F6E43D7F1}"
+          SQLTask:SqlStatementSource="SELECT &#xA;'FILE' = case&#xA;&#x9;&#x9;&#x9;&#x9;when FOLDER like '%RGT_AN%' then cast((SELECT top 1 FOLDER+'titoli.txt' FROM [T_PATH_FOLDER_COPY] WHERE PATH_ID = 1) as varchar(255))&#xA;&#x9;&#x9;&#x9;&#x9;when FOLDER like '%RGT_CH%' then cast((SELECT top 1 FOLDER+'titoli.txt' FROM [T_PATH_FOLDER_COPY] WHERE PATH_ID = 1) as varchar(255))&#xA;&#x9;&#x9;&#x9;&#x9;when FOLDER like '%RGT_DT%' then cast((SELECT top 1 FOLDER+'ammortamenti.txt' FROM [T_PATH_FOLDER_COPY] WHERE PATH_ID = 1) as varchar(255))&#xA;&#x9;&#x9;&#x9;&#x9;when FOLDER like '%RGT_NSTI_AN%' then cast((SELECT top 1 FOLDER+'titoli_NSTI.txt' FROM [T_PATH_FOLDER_COPY] WHERE PATH_ID = 1) as varchar(255))&#xA;&#x9;&#x9;&#x9;&#x9;when FOLDER like '%RGT_NSTI_CH%' then cast((SELECT top 1 FOLDER+'titoli_NSTI.txt' FROM [T_PATH_FOLDER_COPY] WHERE PATH_ID = 1) as varchar(255))&#xA;&#x9;&#x9;&#x9;&#x9;when FOLDER like '%RGT_NSTI_DT%' then cast((SELECT top 1 FOLDER+'ammortamenti_NSTI.txt' FROM [T_PATH_FOLDER_COPY] WHERE PATH_ID = 1) as varchar(255))&#xA;&#x9;&#x9;&#x9;end&#xA;FROM [T_PATH_FOLDER_COPY] &#xA;WHERE PATH_ID = 4"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="FILE"
+            SQLTask:DtsVariableName="User::File_destination" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{33DDBA42-D3F2-44D5-8D6D-629BB06D0C56}"
+      DTS:From="Package\Recupero il path ed il nome del file da copiare nel backend SAP"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\titoli o ammortamenti" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{6A87D04A-21E0-4A6E-A2E5-2C0EF1FFF9E8}"
+      DTS:From="Package\titoli o ammortamenti"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Recupero il path dell'eseguibile winscp e del bat di config" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{A1EDAFD9-B888-4E76-93BE-D313CC841B66}"
+      DTS:From="Package\Recupero il path dell'eseguibile winscp e del bat di config"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Copio il file in filesrvmi03 con il nome per SAP" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{3AE4776D-FF2F-48FF-B582-49C8B99B78C2}"
+      DTS:From="Package\Richiamo Winscp"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\LOG FAIL"
+      DTS:Value="1" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{582C441E-7F5F-4812-B93C-B2DBD5FE49EA}"
+      DTS:From="Package\Copio il file in filesrvmi03 con il nome per SAP"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\recupero carella locale per copiarlo poi su SAP" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{902F249B-61B9-4B4A-B390-13197B90F1CE}"
+      DTS:From="Package\Copio il file in D stagingarea con il nome per SAP"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 5"
+      DTS:To="Package\Richiamo Winscp" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
+      DTS:CreationName=""
+      DTS:DTSID="{B7957A0D-8D7A-480C-92EE-949C7A697ADE}"
+      DTS:From="Package\recupero carella locale per copiarlo poi su SAP"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 6"
+      DTS:To="Package\Copio il file in D stagingarea con il nome per SAP" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+        <NodeLayout
+          Size="169,58"
+          Id="Package\Copio il file in D stagingarea con il nome per SAP"
+          TopLeft="17.5,582.141509433962" />
+        <NodeLayout
+          Size="169,58"
+          Id="Package\Copio il file in filesrvmi03 con il nome per SAP"
+          TopLeft="17.5,378.103773584906" />
+        <NodeLayout
+          Size="136,44"
+          Id="Package\LOG FAIL"
+          TopLeft="33.9528301886792,815.877358490566" />
+        <NodeLayout
+          Size="171,71"
+          Id="Package\recupero carella locale per copiarlo poi su SAP"
+          TopLeft="16.4811320754717,478.632075471698" />
+        <NodeLayout
+          Size="193,79"
+          Id="Package\Recupero il path dell'eseguibile winscp e del bat di config"
+          TopLeft="5.5,245.009433962264" />
+        <NodeLayout
+          Size="193,79"
+          Id="Package\Recupero il path ed il nome del file da copiare nel backend SAP"
+          TopLeft="5.5,5.5" />
+        <NodeLayout
+          Size="159,42"
+          Id="Package\Richiamo Winscp"
+          TopLeft="15.0094339622641,688.669811320755" />
+        <NodeLayout
+          Size="173,67"
+          Id="Package\titoli o ammortamenti"
+          TopLeft="15.5,132.518867924528" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="101.839622641509,84.3679245283019">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,48.1509433962264"
+              Start="0,0"
+              End="0,40.6509433962264">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.6509433962264" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="101.839622641509,199.38679245283">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,45.622641509434"
+              Start="0,0"
+              End="0,38.122641509434">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.122641509434" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="101.839622641509,323.877358490566">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,54.2264150943396"
+              Start="0,0"
+              End="0,46.7264150943396">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.7264150943396" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="98.2311320754716,730.669811320755">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,85.2075471698114"
+              Start="0,0"
+              End="0,77.7075471698114">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,77.7075471698114" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-15.24134765625,33.9792618661557,30.4826953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="101.839622641509,436.028301886792">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,42.6037735849056"
+              Start="0,0"
+              End="0,35.1037735849056">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.1037735849056" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="98.254716981132,640.141509433962">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,48.5283018867924"
+              Start="0,0"
+              End="0,41.0283018867924">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.0283018867924" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 6]"
+          TopLeft="101.839622641509,549.537735849057">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,32.6037735849056"
+              Start="0,0"
+              End="0,25.1037735849056">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.1037735849056" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="copio il file titoli o ammortamenti in locale al server(D\stagingarea) prima di copiarlo su SAP"
+          ParentId="Package"
+          Size="439,51"
+          Id="b0ec1d37-7344-4ea9-a046-47b1ade1af4e"
+          TopLeft="248.292452830189,599.462264150943">
+          <AnnotationLayout.FontInfo>
+            <mssge:FontInfo
+              Family="Tahoma"
+              Size="11.25"
+              Color="#FF080000">
+              <mssge:FontInfo.TextDecorations>
+                <av:TextDecorationCollection />
+              </mssge:FontInfo.TextDecorations>
+            </mssge:FontInfo>
+          </AnnotationLayout.FontInfo>
+        </AnnotationLayout>
+        <AnnotationLayout
+          Text="Copio il file titoli o ammortamenti nel backend SAP con winscp"
+          ParentId="Package"
+          Size="292,51"
+          Id="5b52a4c4-2d65-44af-aec8-86f2f3a41050"
+          TopLeft="235.650943396226,699.424528301887">
+          <AnnotationLayout.FontInfo>
+            <mssge:FontInfo
+              Family="Tahoma"
+              Size="11.25"
+              Color="#FF080000">
+              <mssge:FontInfo.TextDecorations>
+                <av:TextDecorationCollection />
+              </mssge:FontInfo.TextDecorations>
+            </mssge:FontInfo>
+          </AnnotationLayout.FontInfo>
+        </AnnotationLayout>
+        <AnnotationLayout
+          Text="Copio il file originale (File_to_copy) in filesrvmi03 rinominandolo con il nome per SAP"
+          ParentId="Package"
+          Size="436,51"
+          Id="b19d4e5e-c6c2-42f4-b2a5-ed49ebf04b92"
+          TopLeft="241.650943396226,387.122641509434">
+          <AnnotationLayout.FontInfo>
+            <mssge:FontInfo
+              Family="Tahoma"
+              Size="11.25"
+              Color="#FF080000">
+              <mssge:FontInfo.TextDecorations>
+                <av:TextDecorationCollection />
+              </mssge:FontInfo.TextDecorations>
+            </mssge:FontInfo>
+          </AnnotationLayout.FontInfo>
+        </AnnotationLayout>
+        <AnnotationLayout
+          Text="File_destination"
+          ParentId="Package"
+          Size="226,38"
+          Id="289f388e-c7fc-4241-9f18-3a3fa8497e69"
+          TopLeft="249.61320754717,150.443396226415">
+          <AnnotationLayout.FontInfo>
+            <mssge:FontInfo
+              Family="Tahoma"
+              Size="11.25"
+              Color="#FF080000">
+              <mssge:FontInfo.TextDecorations>
+                <av:TextDecorationCollection />
+              </mssge:FontInfo.TextDecorations>
+            </mssge:FontInfo>
+          </AnnotationLayout.FontInfo>
+        </AnnotationLayout>
+        <AnnotationLayout
+          Text="Winscp (path eseguibile Winscp + bat di config (tit o amm) + file log winscp)"
+          ParentId="Package"
+          Size="642,38"
+          Id="14433b4b-be19-4cb0-a475-637807772855"
+          TopLeft="256.594339622641,281.5">
+          <AnnotationLayout.FontInfo>
+            <mssge:FontInfo
+              Family="Tahoma"
+              Size="11.25"
+              Color="#FF080000">
+              <mssge:FontInfo.TextDecorations>
+                <av:TextDecorationCollection />
+              </mssge:FontInfo.TextDecorations>
+            </mssge:FontInfo>
+          </AnnotationLayout.FontInfo>
+        </AnnotationLayout>
+        <AnnotationLayout
+          Text="File_to_copy"
+          ParentId="Package"
+          Size="226,38"
+          Id="e58b3167-ae32-49aa-a9ab-9b68a6071a73"
+          TopLeft="245.650943396226,37.877358490566">
+          <AnnotationLayout.FontInfo>
+            <mssge:FontInfo
+              Family="Tahoma"
+              Size="11.25"
+              Color="#FF080000">
+              <mssge:FontInfo.TextDecorations>
+                <av:TextDecorationCollection />
+              </mssge:FontInfo.TextDecorations>
+            </mssge:FontInfo>
+          </AnnotationLayout.FontInfo>
+        </AnnotationLayout>
+        <AnnotationLayout
+          Text="recupero la cartella locale del server per poi copiarlo su SAP"
+          ParentId="Package"
+          Size="341,38"
+          Id="8f32ca31-0f7b-4d09-8fad-6bfd222ba7e6"
+          TopLeft="271.27358490566,517.122641509434">
+          <AnnotationLayout.FontInfo>
+            <mssge:FontInfo
+              Family="Tahoma"
+              Size="11.25"
+              Color="#FF080000">
+              <mssge:FontInfo.TextDecorations>
+                <av:TextDecorationCollection />
+              </mssge:FontInfo.TextDecorations>
+            </mssge:FontInfo>
+          </AnnotationLayout.FontInfo>
+        </AnnotationLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

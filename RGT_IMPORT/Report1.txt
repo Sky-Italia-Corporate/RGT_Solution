@@ -1,0 +1,779 @@
+The Upgrade is Complete
+
+- Upgrading package SKY_RGT_1_01_01_SET_DATE.dtsx (Success)
+	Messages
+	* Information 0x40019316: : The provider name for the connection manager "(local).ICO_MONITOR" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40019316: : The provider name for the connection manager "(local).SKY_RGT" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40016019: : The package format was migrated from version 3 to version 8. It must be saved to retain migration changes.
+	
+	
+
+- Upgrading package SKY_RGT_1_01_02_IMPORT_AN_PURCH.dtsx (Success)
+	Messages
+	* Information 0x40019316: : The provider name for the connection manager "(local).ICO_MONITOR" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40019316: : The provider name for the connection manager "(local).SKY_RGT" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40019316: : The provider name for the connection manager "SQL01.SSIS_CONFIGURATION" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40016019: : The package format was migrated from version 3 to version 8. It must be saved to retain migration changes.
+	
+	
+	* Information 0x40016040: SKY_RGT_1_01_02_IMPORT_AN_PURCH: The package is attempting to configure from SQL Server using the configuration string ""SQL01.SSIS_CONFIGURATION";"[dbo].[RGT_Solution]";"File_RGT_ANPU";".
+	
+	
+	* Information 0x40016040: SKY_RGT_1_01_02_IMPORT_AN_PURCH: The package is attempting to configure from SQL Server using the configuration string ""SQL01.SSIS_CONFIGURATION";"[dbo].[RGT_Solution]";"File_RGT_ANPU";".
+	
+	
+	* Information 0x4004300a: Import anagrafiche in T_IBMS_PURCHASE: Validation phase is beginning.
+	
+	
+
+- Upgrading package SKY_RGT_1_01_03_IMPORT_DT_PLAYS.dtsx (Success)
+	Messages
+	* Information 0x40019316: : The provider name for the connection manager "(local).ICO_MONITOR" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40019316: : The provider name for the connection manager "(local).SKY_RGT" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40019316: : The provider name for the connection manager "SQL01.SSIS_CONFIGURATION" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40016019: : The package format was migrated from version 3 to version 8. It must be saved to retain migration changes.
+	
+	
+	* Information 0x40016040: SKY_RGT_1_01_03_IMPORT_DT_PLAYS: The package is attempting to configure from SQL Server using the configuration string ""SQL01.SSIS_CONFIGURATION";"[dbo].[RGT_Solution]";"File_RGT_DTPL";".
+	
+	
+	* Information 0x40016040: SKY_RGT_1_01_03_IMPORT_DT_PLAYS: The package is attempting to configure from SQL Server using the configuration string ""SQL01.SSIS_CONFIGURATION";"[dbo].[RGT_Solution]";"File_RGT_DTPL";".
+	
+	
+	* Information 0x4004300a: Import anagrafiche in T_IBMS_PASSAGGI: Validation phase is beginning.
+	
+	
+
+- Upgrading package SKY_RGT_1_01_04_IMPORT_DT_EXCHANGE.dtsx (Warning)
+	Messages
+	* Information 0x40019316: : The provider name for the connection manager "(local).ICO_MONITOR" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40019316: : The provider name for the connection manager "(local).SKY_RGT" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40019316: : The provider name for the connection manager "SQL01.SSIS_CONFIGURATION" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40016019: : The package format was migrated from version 3 to version 8. It must be saved to retain migration changes.
+	
+	
+	* Warning 0x40016044: Copia File Cambi in locale: Found SQL Server Integration Services 2008 Script Task "ScriptTask_5813f2d571214283b7e34d06cd940bdc" that requires migration!
+	
+	* Information 0x4001601a: Copia File Cambi in locale: The Script Task "ScriptTask_5813f2d571214283b7e34d06cd940bdc" has been migrated. The package must be saved to retain migration changes.
+	
+	* Information 0x4001601a: Copia File Cambi in locale: The Script Task "ScriptTask_5813f2d571214283b7e34d06cd940bdc" has been migrated. The package must be saved to retain migration changes.
+	
+	* Information 0x4001601a: Copia File Cambi in locale: The Script Task "ScriptTask_5813f2d571214283b7e34d06cd940bdc" has been migrated. The package must be saved to retain migration changes.
+	
+	* Warning 0x40016044: Copia File Cambi in locale NSTI: Found SQL Server Integration Services 2008 Script Task "ST_8059ed8d1c274d35b4cabbb0b9649870" that requires migration!
+	
+	* Information 0x4001601a: Copia File Cambi in locale NSTI: The Script Task "ST_8059ed8d1c274d35b4cabbb0b9649870" has been migrated. The package must be saved to retain migration changes.
+	
+	* Information 0x4001601a: Copia File Cambi in locale NSTI: The Script Task "ST_8059ed8d1c274d35b4cabbb0b9649870" has been migrated. The package must be saved to retain migration changes.
+	
+	* Information 0x4001601a: Copia File Cambi in locale NSTI: The Script Task "ST_8059ed8d1c274d35b4cabbb0b9649870" has been migrated. The package must be saved to retain migration changes.
+	
+	* Information 0x40016040: SKY_RGT_1_01_04_IMPORT_DT_EXCHANGE: The package is attempting to configure from SQL Server using the configuration string ""SQL01.SSIS_CONFIGURATION";"[dbo].[RGT_Solution]";"File_RGT_DTEX";".
+	
+	
+	* Information 0x40016040: SKY_RGT_1_01_04_IMPORT_DT_EXCHANGE: The package is attempting to configure from SQL Server using the configuration string ""SQL01.SSIS_CONFIGURATION";"[dbo].[RGT_Solution]";"FileSystem_Cambi";".
+	
+	
+	* Information 0x40016040: SKY_RGT_1_01_04_IMPORT_DT_EXCHANGE: The package is attempting to configure from SQL Server using the configuration string ""SQL01.SSIS_CONFIGURATION";"[dbo].[RGT_Solution]";"Item_DTEX";".
+	
+	
+	* Warning 0x80012017: SKY_RGT_1_01_04_IMPORT_DT_EXCHANGE: The package path referenced an object that cannot be found: "\Package\Loop sui file DT di EXCHANGE.ForEachEnumerator.Properties[Directory]". This occurs when an attempt is made to resolve a package path to an object that cannot be found.
+	
+	
+	* Information 0x40016040: SKY_RGT_1_01_04_IMPORT_DT_EXCHANGE: The package is attempting to configure from SQL Server using the configuration string ""SQL01.SSIS_CONFIGURATION";"[dbo].[RGT_Solution]";"FileSystem_Cambi_NSTI";".
+	
+	
+	* Information 0x40016040: SKY_RGT_1_01_04_IMPORT_DT_EXCHANGE: The package is attempting to configure from SQL Server using the configuration string ""SQL01.SSIS_CONFIGURATION";"[dbo].[RGT_Solution]";"File_RGT_DTEX";".
+	
+	
+	* Information 0x40016040: SKY_RGT_1_01_04_IMPORT_DT_EXCHANGE: The package is attempting to configure from SQL Server using the configuration string ""SQL01.SSIS_CONFIGURATION";"[dbo].[RGT_Solution]";"FileSystem_Cambi";".
+	
+	
+	* Information 0x40016040: SKY_RGT_1_01_04_IMPORT_DT_EXCHANGE: The package is attempting to configure from SQL Server using the configuration string ""SQL01.SSIS_CONFIGURATION";"[dbo].[RGT_Solution]";"Item_DTEX";".
+	
+	
+	* Warning 0x80012017: SKY_RGT_1_01_04_IMPORT_DT_EXCHANGE: The package path referenced an object that cannot be found: "\Package\Loop sui file DT di EXCHANGE.ForEachEnumerator.Properties[Directory]". This occurs when an attempt is made to resolve a package path to an object that cannot be found.
+	
+	
+	* Information 0x40016040: SKY_RGT_1_01_04_IMPORT_DT_EXCHANGE: The package is attempting to configure from SQL Server using the configuration string ""SQL01.SSIS_CONFIGURATION";"[dbo].[RGT_Solution]";"FileSystem_Cambi_NSTI";".
+	
+	
+	* Information 0x4004300a: Import anagrafiche in T_SAP_EXCHANGE: Validation phase is beginning.
+	
+	
+
+- Upgrading package SKY_RGT_1_01_05_IMPORT_AN_ENG_FORM.dtsx (Success)
+	Messages
+	* Information 0x40019316: : The provider name for the connection manager "(local).ICO_MONITOR" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40019316: : The provider name for the connection manager "(local).SKY_RGT" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40019316: : The provider name for the connection manager "SQL01.SSIS_CONFIGURATION" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40016019: : The package format was migrated from version 3 to version 8. It must be saved to retain migration changes.
+	
+	
+	* Information 0x40016040: SKY_RGT_1_01_05_IMPORT_AN_ENG_FORM: The package is attempting to configure from SQL Server using the configuration string ""SQL01.SSIS_CONFIGURATION";"[dbo].[RGT_Solution]";"File_RGT_ANEF";".
+	
+	
+	* Information 0x40016040: SKY_RGT_1_01_05_IMPORT_AN_ENG_FORM: The package is attempting to configure from SQL Server using the configuration string ""SQL01.SSIS_CONFIGURATION";"[dbo].[RGT_Solution]";"File_RGT_ANEF";".
+	
+	
+	* Information 0x4004300a: Import anagrafiche in T_IDM_ENG_FORM: Validation phase is beginning.
+	
+	
+
+- Upgrading package SKY_RGT_1_01_06_IMPORT_AN_RIGHTS_STORICO.dtsx (Success)
+	Messages
+	* Information 0x40019316: : The provider name for the connection manager "(local).ICO_MONITOR" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40019316: : The provider name for the connection manager "(local).SKY_RGT" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40019316: : The provider name for the connection manager "SQL01.SSIS_CONFIGURATION" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40016019: : The package format was migrated from version 3 to version 8. It must be saved to retain migration changes.
+	
+	
+	* Information 0x40016040: Package1: The package is attempting to configure from SQL Server using the configuration string ""SQL01.SSIS_CONFIGURATION";"[dbo].[RGT_Solution]";"File_RGT_ANMO";".
+	
+	
+	* Information 0x40016040: Package1: The package is attempting to configure from SQL Server using the configuration string ""SQL01.SSIS_CONFIGURATION";"[dbo].[RGT_Solution]";"File_RGT_ANMO";".
+	
+	
+	* Information 0x4004300a: Import anagrafica in tableT_RST_RIGHTS: Validation phase is beginning.
+	
+	
+
+- Upgrading package SKY_RGT_1_01_07_IMPORT_EXCHANGE_STORICO.dtsx (Success)
+	Messages
+	* Information 0x40019316: : The provider name for the connection manager "(local).ICO_MONITOR" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40019316: : The provider name for the connection manager "(local).SKY_RGT" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40019316: : The provider name for the connection manager "SQL01.SSIS_CONFIGURATION" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40016019: : The package format was migrated from version 3 to version 8. It must be saved to retain migration changes.
+	
+	
+	* Information 0x40016040: SKY_RGT_1_01_07_IMPORT_EXCHANGE_STORICO: The package is attempting to configure from SQL Server using the configuration string ""SQL01.SSIS_CONFIGURATION";"[dbo].[RGT_Solution]";"File_RGT_EXC";".
+	
+	
+	* Information 0x40016040: SKY_RGT_1_01_07_IMPORT_EXCHANGE_STORICO: The package is attempting to configure from SQL Server using the configuration string ""SQL01.SSIS_CONFIGURATION";"[dbo].[RGT_Solution]";"File_RGT_EXC";".
+	
+	
+	* Information 0x4004300a: Import anagrafica in T_IMPORT_EXCHANGE: Validation phase is beginning.
+	
+	
+
+- Upgrading package SKY_RGT_1_01_08_IMPORT_RIGHT_LIST_STORICO.dtsx (Success)
+	Messages
+	* Information 0x40019316: : The provider name for the connection manager "(local).ICO_MONITOR" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40019316: : The provider name for the connection manager "(local).SKY_RGT" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40019316: : The provider name for the connection manager "SQL01.SSIS_CONFIGURATION" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40016019: : The package format was migrated from version 3 to version 8. It must be saved to retain migration changes.
+	
+	
+	* Information 0x40016040: SKY_RGT_1_01_08_IMPORT_RIGHT_LIST_STORICO: The package is attempting to configure from SQL Server using the configuration string ""SQL01.SSIS_CONFIGURATION";"[dbo].[RGT_Solution]";"File_RGT_RI_LIST";".
+	
+	
+	* Information 0x40016040: SKY_RGT_1_01_08_IMPORT_RIGHT_LIST_STORICO: The package is attempting to configure from SQL Server using the configuration string ""SQL01.SSIS_CONFIGURATION";"[dbo].[RGT_Solution]";"File_RGT_RI_LIST";".
+	
+	
+	* Information 0x4004300a: Import listain T_RST_LIST_BDG_COD: Validation phase is beginning.
+	
+	
+
+- Upgrading package SKY_RGT_1_01_09_ALIGN_SVL.dtsx (Success)
+	Messages
+	* Information 0x40019316: : The provider name for the connection manager "HYPCOL01-SQL.SKY_RGT" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40019316: : The provider name for the connection manager "SQL01.SKY_RGT" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40016019: : The package format was migrated from version 3 to version 8. It must be saved to retain migration changes.
+	
+	
+
+- Upgrading package SKY_RGT_1_01_10_IMPORT_PPV_BUYS_STORICO.dtsx (Error)
+	Messages
+	* Information 0x40019316: : The provider name for the connection manager "(local).ICO_MONITOR" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40019316: : The provider name for the connection manager "(local).SKY_RGT" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40019316: : The provider name for the connection manager "SQL01.SSIS_CONFIGURATION" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40016019: : The package format was migrated from version 3 to version 8. It must be saved to retain migration changes.
+	
+	
+	* Information 0x40016040: Package1: The package is attempting to configure from SQL Server using the configuration string ""SQL01.SSIS_CONFIGURATION";"[dbo].[RGT_Solution]";"File_RGT_ANMO";".
+	
+	
+	* Information 0x40016040: Package1: The package is attempting to configure from SQL Server using the configuration string ""SQL01.SSIS_CONFIGURATION";"[dbo].[RGT_Solution]";"File_RGT_ANMO";".
+	
+	
+	* Information 0x4004300a: Import buys storico in table T_PPV_BUYS_STORICO: Validation phase is beginning.
+	
+	
+	* Error 0xc0202009: Import buys storico in table T_PPV_BUYS_STORICO: SSIS Error Code DTS_E_OLEDBERROR.  An OLE DB error has occurred. Error code: 0x80004005.
+	An OLE DB record is available.  Source: "Microsoft SQL Server Native Client 11.0"  Hresult: 0x80004005  Description: "Unspecified error".
+	An OLE DB record is available.  Source: "Microsoft SQL Server Native Client 11.0"  Hresult: 0x80004005  Description: "The metadata could not be determined because every code path results in an error; see previous errors for some of these.".
+	An OLE DB record is available.  Source: "Microsoft SQL Server Native Client 11.0"  Hresult: 0x80004005  Description: "Invalid object name 'dbo.T_PPV_BUYS_STORICO'.".
+	
+	
+	* Error 0xc0202040: Import buys storico in table T_PPV_BUYS_STORICO: Failed to open a fastload rowset for "[dbo].[T_PPV_BUYS_STORICO]". Check that the object exists in the database.
+	
+	
+	* Error 0xc004706b: Import buys storico in table T_PPV_BUYS_STORICO: "T_PPV_BUYS_STORICO" failed validation and returned validation status "VS_ISBROKEN".
+	
+	
+	* Error 0xc004700c: Import buys storico in table T_PPV_BUYS_STORICO: One or more component failed validation.
+	
+	
+	* Error 0xc0024107: Import buys storico in table T_PPV_BUYS_STORICO: There were errors during task validation.
+	
+	
+	* Error 0xc001f429: Package Upgrade: The validation of the package SKY_RGT_1_01_10_IMPORT_PPV_BUYS_STORICO.dtsx has failed.
+	
+
+- Upgrading package SKY_RGT_1_01_11_IMPORT_SOP_STORICO.dtsx (Success)
+	Messages
+	* Information 0x40019316: : The provider name for the connection manager "(local).ICO_MONITOR" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40019316: : The provider name for the connection manager "(local).SKY_RGT" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40019316: : The provider name for the connection manager "SQL01.SSIS_CONFIGURATION" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40016019: : The package format was migrated from version 3 to version 8. It must be saved to retain migration changes.
+	
+	
+	* Information 0x40016040: SKY_RGT_1_01_11_IMPORT_SOP_STORICO: The package is attempting to configure from SQL Server using the configuration string ""SQL01.SSIS_CONFIGURATION";"[dbo].[RGT_Solution]";"File_RGT_AMO";".
+	
+	
+	* Information 0x40016040: SKY_RGT_1_01_11_IMPORT_SOP_STORICO: The package is attempting to configure from SQL Server using the configuration string ""SQL01.SSIS_CONFIGURATION";"[dbo].[RGT_Solution]";"File_RGT_AMO";".
+	
+	
+	* Information 0x4004300a: Import file ammortamenti in table T_RST_AMORTIZATION: Validation phase is beginning.
+	
+	
+
+- Upgrading package SKY_RGT_1_01_12_IMPORT_AN_RIGHTS_STORICO_ACC_PER.dtsx (Success)
+	Messages
+	* Information 0x40019316: : The provider name for the connection manager "(local).ICO_MONITOR" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40019316: : The provider name for the connection manager "(local).SKY_RGT" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40019316: : The provider name for the connection manager "SQL01.SSIS_CONFIGURATION" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40016019: : The package format was migrated from version 3 to version 8. It must be saved to retain migration changes.
+	
+	
+	* Information 0x40016040: SKY_RGT_1_01_12_IMPORT_AN_RIGHTS_STORICO_ACC_PER: The package is attempting to configure from SQL Server using the configuration string ""SQL01.SSIS_CONFIGURATION";"[dbo].[RGT_Solution]";"File_RGT_ANMO_ACC_PER";".
+	
+	
+	* Information 0x40016040: SKY_RGT_1_01_12_IMPORT_AN_RIGHTS_STORICO_ACC_PER: The package is attempting to configure from SQL Server using the configuration string ""SQL01.SSIS_CONFIGURATION";"[dbo].[RGT_Solution]";"File_RGT_ANMO_ACC_PER";".
+	
+	
+	* Information 0x4004300a: Import anagrafica in tableT_RST_RIGHTS_ACC_PER: Validation phase is beginning.
+	
+	
+
+- Upgrading package SKY_RGT_1_01_13_IMPORT_RIGHTS_SAP.dtsx (Warning)
+	Messages
+	* Information 0x40019316: : The provider name for the connection manager "(local).ICO_MONITOR" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40019316: : The provider name for the connection manager "(local).SKY_RGT" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40019316: : The provider name for the connection manager "SQL01.SSIS_CONFIGURATION" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40016019: : The package format was migrated from version 3 to version 8. It must be saved to retain migration changes.
+	
+	
+	* Warning 0x40016044: Verifico la presenza del file in cartella: Found SQL Server Integration Services 2008 Script Task "ST_79089fcd04bc4250b0d85e1f048ee1b1" that requires migration!
+	
+	* Information 0x4001601a: Verifico la presenza del file in cartella: The Script Task "ST_79089fcd04bc4250b0d85e1f048ee1b1" has been migrated. The package must be saved to retain migration changes.
+	
+	* Information 0x4001601a: Verifico la presenza del file in cartella: The Script Task "ST_79089fcd04bc4250b0d85e1f048ee1b1" has been migrated. The package must be saved to retain migration changes.
+	
+	* Information 0x4001601a: Verifico la presenza del file in cartella: The Script Task "ST_79089fcd04bc4250b0d85e1f048ee1b1" has been migrated. The package must be saved to retain migration changes.
+	
+	* Warning 0x40016044: Copia File Cambi in SA sql locale: Found SQL Server Integration Services 2008 Script Task "ST_ad4fab8413504387988e26800797f64e" that requires migration!
+	
+	* Information 0x4001601a: Copia File Cambi in SA sql locale: The Script Task "ST_ad4fab8413504387988e26800797f64e" has been migrated. The package must be saved to retain migration changes.
+	
+	* Information 0x4001601a: Copia File Cambi in SA sql locale: The Script Task "ST_ad4fab8413504387988e26800797f64e" has been migrated. The package must be saved to retain migration changes.
+	
+	* Information 0x4001601a: Copia File Cambi in SA sql locale: The Script Task "ST_ad4fab8413504387988e26800797f64e" has been migrated. The package must be saved to retain migration changes.
+	
+	* Information 0x40016040: SKY_RGT_1_01_13_IMPORT_RIGHTS_SAP: The package is attempting to configure from SQL Server using the configuration string ""SQL01.SSIS_CONFIGURATION";"[dbo].[RGT_Solution]";"Item_RGTSAP";".
+	
+	
+	* Warning 0x80012017: SKY_RGT_1_01_13_IMPORT_RIGHTS_SAP: The package path referenced an object that cannot be found: "\Package\Loop sui file in cartella SAP.ForEachEnumerator.Properties[Directory]". This occurs when an attempt is made to resolve a package path to an object that cannot be found.
+	
+	
+	* Information 0x40016040: SKY_RGT_1_01_13_IMPORT_RIGHTS_SAP: The package is attempting to configure from SQL Server using the configuration string ""SQL01.SSIS_CONFIGURATION";"[dbo].[RGT_Solution]";"VAR_StagingAreaSAP";".
+	
+	
+	* Information 0x40016040: SKY_RGT_1_01_13_IMPORT_RIGHTS_SAP: The package is attempting to configure from SQL Server using the configuration string ""SQL01.SSIS_CONFIGURATION";"[dbo].[RGT_Solution]";"File_titoli_sap";".
+	
+	
+	* Information 0x40016040: SKY_RGT_1_01_13_IMPORT_RIGHTS_SAP: The package is attempting to configure from SQL Server using the configuration string ""SQL01.SSIS_CONFIGURATION";"[dbo].[RGT_Solution]";"Item_RGTSAP";".
+	
+	
+	* Warning 0x80012017: SKY_RGT_1_01_13_IMPORT_RIGHTS_SAP: The package path referenced an object that cannot be found: "\Package\Loop sui file in cartella SAP.ForEachEnumerator.Properties[Directory]". This occurs when an attempt is made to resolve a package path to an object that cannot be found.
+	
+	
+	* Information 0x40016040: SKY_RGT_1_01_13_IMPORT_RIGHTS_SAP: The package is attempting to configure from SQL Server using the configuration string ""SQL01.SSIS_CONFIGURATION";"[dbo].[RGT_Solution]";"VAR_StagingAreaSAP";".
+	
+	
+	* Information 0x40016040: SKY_RGT_1_01_13_IMPORT_RIGHTS_SAP: The package is attempting to configure from SQL Server using the configuration string ""SQL01.SSIS_CONFIGURATION";"[dbo].[RGT_Solution]";"File_titoli_sap";".
+	
+	
+	* Information 0x4004300a: Import RIGHTS da SAP: Validation phase is beginning.
+	
+	
+
+- Upgrading package SKY_RGT_1_01_14_IMPORT_MOVIES_NSTI.dtsx (Warning)
+	Messages
+	* Information 0x40019316: : The provider name for the connection manager "(local).ICO_MONITOR" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40019316: : The provider name for the connection manager "(local).SKY_RGT" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40019316: : The provider name for the connection manager "SQL01.SSIS_CONFIGURATION" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40016019: : The package format was migrated from version 3 to version 8. It must be saved to retain migration changes.
+	
+	
+	* Warning 0x40016044: Verifico la presenza del file in cartella: Found SQL Server Integration Services 2008 Script Task "ST_79089fcd04bc4250b0d85e1f048ee1b1" that requires migration!
+	
+	* Information 0x4001601a: Verifico la presenza del file in cartella: The Script Task "ST_79089fcd04bc4250b0d85e1f048ee1b1" has been migrated. The package must be saved to retain migration changes.
+	
+	* Information 0x4001601a: Verifico la presenza del file in cartella: The Script Task "ST_79089fcd04bc4250b0d85e1f048ee1b1" has been migrated. The package must be saved to retain migration changes.
+	
+	* Information 0x4001601a: Verifico la presenza del file in cartella: The Script Task "ST_79089fcd04bc4250b0d85e1f048ee1b1" has been migrated. The package must be saved to retain migration changes.
+	
+	* Warning 0x40016044: Copia File Cambi in SA sql locale: Found SQL Server Integration Services 2008 Script Task "ST_ad4fab8413504387988e26800797f64e" that requires migration!
+	
+	* Information 0x4001601a: Copia File Cambi in SA sql locale: The Script Task "ST_ad4fab8413504387988e26800797f64e" has been migrated. The package must be saved to retain migration changes.
+	
+	* Information 0x4001601a: Copia File Cambi in SA sql locale: The Script Task "ST_ad4fab8413504387988e26800797f64e" has been migrated. The package must be saved to retain migration changes.
+	
+	* Information 0x4001601a: Copia File Cambi in SA sql locale: The Script Task "ST_ad4fab8413504387988e26800797f64e" has been migrated. The package must be saved to retain migration changes.
+	
+	* Information 0x40016040: SKY_RGT_1_01_14_IMPORT_MOVIES_NSTI: The package is attempting to configure from SQL Server using the configuration string ""SQL01.SSIS_CONFIGURATION";"[dbo].[RGT_Solution]";"Item_RGTSAP";".
+	
+	
+	* Warning 0x80012017: SKY_RGT_1_01_14_IMPORT_MOVIES_NSTI: The package path referenced an object that cannot be found: "\Package\Loop sui file in cartella SAP.ForEachEnumerator.Properties[Directory]". This occurs when an attempt is made to resolve a package path to an object that cannot be found.
+	
+	
+	* Information 0x40016040: SKY_RGT_1_01_14_IMPORT_MOVIES_NSTI: The package is attempting to configure from SQL Server using the configuration string ""SQL01.SSIS_CONFIGURATION";"[dbo].[RGT_Solution]";"VAR_StagingAreaSAP";".
+	
+	
+	* Information 0x40016040: SKY_RGT_1_01_14_IMPORT_MOVIES_NSTI: The package is attempting to configure from SQL Server using the configuration string ""SQL01.SSIS_CONFIGURATION";"[dbo].[RGT_Solution]";"File_titoli_sap_NSTI";".
+	
+	
+	* Information 0x40016040: SKY_RGT_1_01_14_IMPORT_MOVIES_NSTI: The package is attempting to configure from SQL Server using the configuration string ""SQL01.SSIS_CONFIGURATION";"[dbo].[RGT_Solution]";"Item_RGTSAP";".
+	
+	
+	* Warning 0x80012017: SKY_RGT_1_01_14_IMPORT_MOVIES_NSTI: The package path referenced an object that cannot be found: "\Package\Loop sui file in cartella SAP.ForEachEnumerator.Properties[Directory]". This occurs when an attempt is made to resolve a package path to an object that cannot be found.
+	
+	
+	* Information 0x40016040: SKY_RGT_1_01_14_IMPORT_MOVIES_NSTI: The package is attempting to configure from SQL Server using the configuration string ""SQL01.SSIS_CONFIGURATION";"[dbo].[RGT_Solution]";"VAR_StagingAreaSAP";".
+	
+	
+	* Information 0x40016040: SKY_RGT_1_01_14_IMPORT_MOVIES_NSTI: The package is attempting to configure from SQL Server using the configuration string ""SQL01.SSIS_CONFIGURATION";"[dbo].[RGT_Solution]";"File_titoli_sap_NSTI";".
+	
+	
+	* Information 0x4004300a: Import MOVIES_NSTI da SAP: Validation phase is beginning.
+	
+	
+
+- Upgrading package SKY_RGT_1_01_15_IMPORT_EXCHANGE_NSTI.dtsx (Warning)
+	Messages
+	* Information 0x40019316: : The provider name for the connection manager "(local).ICO_MONITOR" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40019316: : The provider name for the connection manager "(local).SKY_RGT" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40019316: : The provider name for the connection manager "SQL01.SSIS_CONFIGURATION" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40016019: : The package format was migrated from version 3 to version 8. It must be saved to retain migration changes.
+	
+	
+	* Warning 0x40016044: Copia File Cambi in locale: Found SQL Server Integration Services 2008 Script Task "ScriptTask_5813f2d571214283b7e34d06cd940bdc" that requires migration!
+	
+	* Information 0x4001601a: Copia File Cambi in locale: The Script Task "ScriptTask_5813f2d571214283b7e34d06cd940bdc" has been migrated. The package must be saved to retain migration changes.
+	
+	* Information 0x4001601a: Copia File Cambi in locale: The Script Task "ScriptTask_5813f2d571214283b7e34d06cd940bdc" has been migrated. The package must be saved to retain migration changes.
+	
+	* Information 0x4001601a: Copia File Cambi in locale: The Script Task "ScriptTask_5813f2d571214283b7e34d06cd940bdc" has been migrated. The package must be saved to retain migration changes.
+	
+	* Warning 0x40016044: Modifica il persorso del file di estrazione: Found SQL Server Integration Services 2008 Script Task "ScriptTask_c5674b614bdd4f3b8a147074baa9751d" that requires migration!
+	
+	* Information 0x4001601a: Modifica il persorso del file di estrazione: The Script Task "ScriptTask_c5674b614bdd4f3b8a147074baa9751d" has been migrated. The package must be saved to retain migration changes.
+	
+	* Information 0x4001601a: Modifica il persorso del file di estrazione: The Script Task "ScriptTask_c5674b614bdd4f3b8a147074baa9751d" has been migrated. The package must be saved to retain migration changes.
+	
+	* Information 0x4001601a: Modifica il persorso del file di estrazione: The Script Task "ScriptTask_c5674b614bdd4f3b8a147074baa9751d" has been migrated. The package must be saved to retain migration changes.
+	
+	* Warning 0x40016044: Check: Found SQL Server Integration Services 2008 Script Task "ScriptTask_0155b2bed55e4a65965979c8ff9b1700" that requires migration!
+	
+	* Information 0x4001601a: Check: The Script Task "ScriptTask_0155b2bed55e4a65965979c8ff9b1700" has been migrated. The package must be saved to retain migration changes.
+	
+	* Information 0x4001601a: Check: The Script Task "ScriptTask_0155b2bed55e4a65965979c8ff9b1700" has been migrated. The package must be saved to retain migration changes.
+	
+	* Information 0x4001601a: Check: The Script Task "ScriptTask_0155b2bed55e4a65965979c8ff9b1700" has been migrated. The package must be saved to retain migration changes.
+	
+	* Information 0x40016040: SKY_RGT_1_01_15_IMPORT_EXCHANGE_NSTI: The package is attempting to configure from SQL Server using the configuration string ""SQL01.SSIS_CONFIGURATION";"[dbo].[RGT_Solution]";"File_RGT_DTEX_NSTI";".
+	
+	
+	* Information 0x40016040: SKY_RGT_1_01_15_IMPORT_EXCHANGE_NSTI: The package is attempting to configure from SQL Server using the configuration string ""SQL01.SSIS_CONFIGURATION";"[dbo].[RGT_Solution]";"FileSystem_Cambi";".
+	
+	
+	* Information 0x40016040: SKY_RGT_1_01_15_IMPORT_EXCHANGE_NSTI: The package is attempting to configure from SQL Server using the configuration string ""SQL01.SSIS_CONFIGURATION";"[dbo].[RGT_Solution]";"Item_DTEX";".
+	
+	
+	* Information 0x40016040: SKY_RGT_1_01_15_IMPORT_EXCHANGE_NSTI: The package is attempting to configure from SQL Server using the configuration string ""SQL01.SSIS_CONFIGURATION";"[dbo].[RGT_Solution]";"File_RGT_DTEX_NSTI";".
+	
+	
+	* Information 0x40016040: SKY_RGT_1_01_15_IMPORT_EXCHANGE_NSTI: The package is attempting to configure from SQL Server using the configuration string ""SQL01.SSIS_CONFIGURATION";"[dbo].[RGT_Solution]";"FileSystem_Cambi";".
+	
+	
+	* Information 0x40016040: SKY_RGT_1_01_15_IMPORT_EXCHANGE_NSTI: The package is attempting to configure from SQL Server using the configuration string ""SQL01.SSIS_CONFIGURATION";"[dbo].[RGT_Solution]";"Item_DTEX";".
+	
+	
+	* Information 0x4004300a: Import anagrafiche in T_SAP_IMPORT_EXCHANGE_NSTI: Validation phase is beginning.
+	
+	
+
+- Upgrading package M03_IMPORT_F01_S01_IT030_13.dtsx (Warning)
+	Messages
+	* Information 0x40019316: : The provider name for the connection manager "(local).ICO_MONITOR" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40019316: : The provider name for the connection manager "(local).SKY_RGT" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40019316: : The provider name for the connection manager "SQL01.SSIS_CONFIGURATION" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40016019: : The package format was migrated from version 3 to version 8. It must be saved to retain migration changes.
+	
+	
+	* Warning 0x40016044: Set EXCHANGE_RATE connection: Found SQL Server Integration Services 2008 Script Task "ST_8251192b25c946b98e817af87a2b2a07" that requires migration!
+	
+	* Information 0x4001601a: Set EXCHANGE_RATE connection: The Script Task "ST_8251192b25c946b98e817af87a2b2a07" has been migrated. The package must be saved to retain migration changes.
+	
+	* Information 0x4001601a: Set EXCHANGE_RATE connection: The Script Task "ST_8251192b25c946b98e817af87a2b2a07" has been migrated. The package must be saved to retain migration changes.
+	
+	* Information 0x4001601a: Set EXCHANGE_RATE connection: The Script Task "ST_8251192b25c946b98e817af87a2b2a07" has been migrated. The package must be saved to retain migration changes.
+	
+	* Information 0x40016040: M03_IMPORT_F01_S01_IT030_13: The package is attempting to configure from SQL Server using the configuration string ""SQL01.SSIS_CONFIGURATION";"[dbo].[RGT_Solution]";"Path_IT030.13";".
+	
+	
+	* Information 0x40016040: M03_IMPORT_F01_S01_IT030_13: The package is attempting to configure from SQL Server using the configuration string ""SQL01.SSIS_CONFIGURATION";"[dbo].[RGT_Solution]";"Path_IT030.13";".
+	
+	
+	* Information 0x4004300a: from T to E: Validation phase is beginning.
+	
+	
+	* Information 0x4004300a: from T to TT: Validation phase is beginning.
+	
+	
+	* Information 0x4004300a: from EXCHANGE_RATE to T_IMPORT_EXCHANGE_RATE: Validation phase is beginning.
+	
+	
+
+- Upgrading package M04_IMPORT_F01_S01_IT030_02.dtsx (Warning)
+	Messages
+	* Information 0x40019316: : The provider name for the connection manager "(local).ICO_MONITOR" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40019316: : The provider name for the connection manager "(local).SKY_RGT" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40019316: : The provider name for the connection manager "SQL01.SSIS_CONFIGURATION" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40016019: : The package format was migrated from version 3 to version 8. It must be saved to retain migration changes.
+	
+	
+	* Warning 0x40016044: Set INVOICE connection: Found SQL Server Integration Services 2008 Script Task "ST_8251192b25c946b98e817af87a2b2a07" that requires migration!
+	
+	* Information 0x4001601a: Set INVOICE connection: The Script Task "ST_8251192b25c946b98e817af87a2b2a07" has been migrated. The package must be saved to retain migration changes.
+	
+	* Information 0x4001601a: Set INVOICE connection: The Script Task "ST_8251192b25c946b98e817af87a2b2a07" has been migrated. The package must be saved to retain migration changes.
+	
+	* Information 0x4001601a: Set INVOICE connection: The Script Task "ST_8251192b25c946b98e817af87a2b2a07" has been migrated. The package must be saved to retain migration changes.
+	
+	* Information 0x40016040: M04_IMPORT_F01_S01_IT030_02: The package is attempting to configure from SQL Server using the configuration string ""SQL01.SSIS_CONFIGURATION";"[dbo].[RGT_Solution]";"Path_IT030.02";".
+	
+	
+	* Information 0x40016040: M04_IMPORT_F01_S01_IT030_02: The package is attempting to configure from SQL Server using the configuration string ""SQL01.SSIS_CONFIGURATION";"[dbo].[RGT_Solution]";"Path_IT030.02";".
+	
+	
+	* Information 0x4004300a: from T to E: Validation phase is beginning.
+	
+	
+	* Information 0x4004300a: from T to TT: Validation phase is beginning.
+	
+	
+	* Information 0x4004300a: from INVOICE to T_SAP_IMPORT_IT030_02: Validation phase is beginning.
+	
+	
+	* Information 0x4004300a: Modify File: Validation phase is beginning.
+	
+	
+
+- Upgrading package M05_LEV1_IMPORT_HRR_EXC.dtsx (Error)
+	Messages
+	* Information 0x40019316: : The provider name for the connection manager "(local).ICO_MONITOR" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40019316: : The provider name for the connection manager "(local).SKY_RGT" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40019316: : The provider name for the connection manager "SQL01.SSIS_CONFIGURATION" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40016019: : The package format was migrated from version 3 to version 8. It must be saved to retain migration changes.
+	
+	
+	* Information 0x4004300a: Import anagrafiche in T__EXC_DAILY_EXCHANGE_RATE: Validation phase is beginning.
+	
+	
+	* Error 0xc0202009: Import anagrafiche in T__EXC_DAILY_EXCHANGE_RATE: SSIS Error Code DTS_E_OLEDBERROR.  An OLE DB error has occurred. Error code: 0x80004005.
+	An OLE DB record is available.  Source: "Microsoft SQL Server Native Client 11.0"  Hresult: 0x80004005  Description: "Unspecified error".
+	An OLE DB record is available.  Source: "Microsoft SQL Server Native Client 11.0"  Hresult: 0x80004005  Description: "The metadata could not be determined because every code path results in an error; see previous errors for some of these.".
+	An OLE DB record is available.  Source: "Microsoft SQL Server Native Client 11.0"  Hresult: 0x80004005  Description: "Invalid object name 'dbo.T_EXC_DAILY_EXCHANGE_RATE'.".
+	
+	
+	* Error 0xc0202040: Import anagrafiche in T__EXC_DAILY_EXCHANGE_RATE: Failed to open a fastload rowset for "[dbo].[T_EXC_DAILY_EXCHANGE_RATE]". Check that the object exists in the database.
+	
+	
+	* Error 0xc004706b: Import anagrafiche in T__EXC_DAILY_EXCHANGE_RATE: "T__EXC_DAILY_EXCHANGE_RATE" failed validation and returned validation status "VS_ISBROKEN".
+	
+	
+	* Error 0xc004700c: Import anagrafiche in T__EXC_DAILY_EXCHANGE_RATE: One or more component failed validation.
+	
+	
+	* Error 0xc0024107: Import anagrafiche in T__EXC_DAILY_EXCHANGE_RATE: There were errors during task validation.
+	
+	
+	* Error 0xc001f429: Package Upgrade: The validation of the package M05_LEV1_IMPORT_HRR_EXC.dtsx has failed.
+	
+
+- Upgrading package M05_LEV1_IMPORT_HRR_HEAD.dtsx (Error)
+	Messages
+	* Information 0x40019316: : The provider name for the connection manager "(local).ICO_MONITOR" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40019316: : The provider name for the connection manager "(local).SKY_RGT" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40019316: : The provider name for the connection manager "SQL01.SSIS_CONFIGURATION" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40016019: : The package format was migrated from version 3 to version 8. It must be saved to retain migration changes.
+	
+	
+	* Information 0x40016044: Import anagrafiche in S_DOC_DOCUMENT_HEADER: Attempting to upgrade "Lookup". The package is attempting to upgrade an extensible object.
+	
+	
+	* Information 0x4004300a: Backup S_DOC_DOCUMENT_HEADER in WT_DOC_DOCUMENT_HEADER: Validation phase is beginning.
+	
+	
+	* Warning 0x800470c8: Backup S_DOC_DOCUMENT_HEADER in WT_DOC_DOCUMENT_HEADER: The external columns for S_DOC_DOCUMENT_HEADER are out of synchronization with the data source columns. The column "ROW_TYPE" needs to be added to the external columns.
+	The column "CMP_COD" needs to be added to the external columns.
+	The S_DOC_DOCUMENT_HEADER.Outputs[OLE DB Source Output].ExternalColumns[SOC_COD] needs to be removed from the external columns.
+	The S_DOC_DOCUMENT_HEADER.Outputs[OLE DB Source Output].ExternalColumns[DOC_COD] needs to be removed from the external columns.
+	
+	
+	* Error 0xc004706b: Backup S_DOC_DOCUMENT_HEADER in WT_DOC_DOCUMENT_HEADER: "S_DOC_DOCUMENT_HEADER" failed validation and returned validation status "VS_NEEDSNEWMETADATA".
+	
+	
+	* Error 0xc004700c: Backup S_DOC_DOCUMENT_HEADER in WT_DOC_DOCUMENT_HEADER: One or more component failed validation.
+	
+	
+	* Error 0xc0024107: Backup S_DOC_DOCUMENT_HEADER in WT_DOC_DOCUMENT_HEADER: There were errors during task validation.
+	
+	
+	* Error 0xc001f429: Package Upgrade: The validation of the package M05_LEV1_IMPORT_HRR_HEAD.dtsx has failed.
+	
+
+- Upgrading package M05_LEV1_IMPORT_HRR_LINE.dtsx (Error)
+	Messages
+	* Information 0x40019316: : The provider name for the connection manager "(local).ICO_MONITOR" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40019316: : The provider name for the connection manager "(local).SKY_RGT" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40019316: : The provider name for the connection manager "SQL01.SSIS_CONFIGURATION" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40016019: : The package format was migrated from version 3 to version 8. It must be saved to retain migration changes.
+	
+	
+	* Information 0x40016044: Import V_WT_DOC_DOCUMENT_LINE in SF_DOC_DOCUMENT_LINE: Attempting to upgrade "Remap WBS". The package is attempting to upgrade an extensible object.
+	
+	
+	* Information 0x4004300a: Import header in T_DOC_DOCUMENT_LINE: Validation phase is beginning.
+	
+	
+	* Error 0xc0202009: Import header in T_DOC_DOCUMENT_LINE: SSIS Error Code DTS_E_OLEDBERROR.  An OLE DB error has occurred. Error code: 0x80004005.
+	An OLE DB record is available.  Source: "Microsoft SQL Server Native Client 11.0"  Hresult: 0x80004005  Description: "Unspecified error".
+	An OLE DB record is available.  Source: "Microsoft SQL Server Native Client 11.0"  Hresult: 0x80004005  Description: "The metadata could not be determined because every code path results in an error; see previous errors for some of these.".
+	An OLE DB record is available.  Source: "Microsoft SQL Server Native Client 11.0"  Hresult: 0x80004005  Description: "Invalid object name 'dbo.T_DOC_DOCUMENT_LINE'.".
+	
+	
+	* Error 0xc0202040: Import header in T_DOC_DOCUMENT_LINE: Failed to open a fastload rowset for "[dbo].[T_DOC_DOCUMENT_LINE]". Check that the object exists in the database.
+	
+	
+	* Error 0xc004706b: Import header in T_DOC_DOCUMENT_LINE: "T_DOC_DOCUMENT_LINE" failed validation and returned validation status "VS_ISBROKEN".
+	
+	
+	* Error 0xc004700c: Import header in T_DOC_DOCUMENT_LINE: One or more component failed validation.
+	
+	
+	* Error 0xc0024107: Import header in T_DOC_DOCUMENT_LINE: There were errors during task validation.
+	
+	
+	* Error 0xc001f429: Package Upgrade: The validation of the package M05_LEV1_IMPORT_HRR_LINE.dtsx has failed.
+	
+
+- Upgrading package M05_LEV1_IMPORT_HRR_PLAN_MOD.dtsx (Error)
+	Messages
+	* Information 0x40019316: : The provider name for the connection manager "(local).ICO_MONITOR" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40019316: : The provider name for the connection manager "(local).SKY_RGT" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40019316: : The provider name for the connection manager "SQL01.SSIS_CONFIGURATION" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40016019: : The package format was migrated from version 3 to version 8. It must be saved to retain migration changes.
+	
+	
+	* Information 0x4004300a: Import header in T_FAT_PIANO_FATTURAZIONE_MOD: Validation phase is beginning.
+	
+	
+	* Error 0xc0202009: Import header in T_FAT_PIANO_FATTURAZIONE_MOD: SSIS Error Code DTS_E_OLEDBERROR.  An OLE DB error has occurred. Error code: 0x80004005.
+	An OLE DB record is available.  Source: "Microsoft SQL Server Native Client 11.0"  Hresult: 0x80004005  Description: "Unspecified error".
+	An OLE DB record is available.  Source: "Microsoft SQL Server Native Client 11.0"  Hresult: 0x80004005  Description: "The metadata could not be determined because every code path results in an error; see previous errors for some of these.".
+	An OLE DB record is available.  Source: "Microsoft SQL Server Native Client 11.0"  Hresult: 0x80004005  Description: "Invalid object name 'T_FAT_PIANO_FATTURAZIONE_MOD'.".
+	
+	
+	* Error 0xc0202040: Import header in T_FAT_PIANO_FATTURAZIONE_MOD: Failed to open a fastload rowset for "[T_FAT_PIANO_FATTURAZIONE_MOD]". Check that the object exists in the database.
+	
+	
+	* Error 0xc004706b: Import header in T_FAT_PIANO_FATTURAZIONE_MOD: "T_FAT_PIANO_FATTURAZIONE_MOD" failed validation and returned validation status "VS_ISBROKEN".
+	
+	
+	* Error 0xc004700c: Import header in T_FAT_PIANO_FATTURAZIONE_MOD: One or more component failed validation.
+	
+	
+	* Error 0xc0024107: Import header in T_FAT_PIANO_FATTURAZIONE_MOD: There were errors during task validation.
+	
+	
+	* Error 0xc001f429: Package Upgrade: The validation of the package M05_LEV1_IMPORT_HRR_PLAN_MOD.dtsx has failed.
+	
+
+- Upgrading package M05_LEV1_IMPORT_HRR_TRANSCO.dtsx (Error)
+	Messages
+	* Information 0x40019316: : The provider name for the connection manager "(local).ICO_MONITOR" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40019316: : The provider name for the connection manager "(local).SKY_RGT" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40019316: : The provider name for the connection manager "SQL01.SSIS_CONFIGURATION" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40016019: : The package format was migrated from version 3 to version 8. It must be saved to retain migration changes.
+	
+	
+	* Information 0x4004300a: Import header in T_DOC_DOCUMENT_TRANSCO: Validation phase is beginning.
+	
+	
+	* Error 0xc0202009: Import header in T_DOC_DOCUMENT_TRANSCO: SSIS Error Code DTS_E_OLEDBERROR.  An OLE DB error has occurred. Error code: 0x80004005.
+	An OLE DB record is available.  Source: "Microsoft SQL Server Native Client 11.0"  Hresult: 0x80004005  Description: "Unspecified error".
+	An OLE DB record is available.  Source: "Microsoft SQL Server Native Client 11.0"  Hresult: 0x80004005  Description: "The metadata could not be determined because every code path results in an error; see previous errors for some of these.".
+	An OLE DB record is available.  Source: "Microsoft SQL Server Native Client 11.0"  Hresult: 0x80004005  Description: "Invalid object name 'T_DOC_DOCUMENT_TRANSCO'.".
+	
+	
+	* Error 0xc0202040: Import header in T_DOC_DOCUMENT_TRANSCO: Failed to open a fastload rowset for "[T_DOC_DOCUMENT_TRANSCO]". Check that the object exists in the database.
+	
+	
+	* Error 0xc004706b: Import header in T_DOC_DOCUMENT_TRANSCO: "T_DOC_DOCUMENT_TRANSCO" failed validation and returned validation status "VS_ISBROKEN".
+	
+	
+	* Error 0xc004700c: Import header in T_DOC_DOCUMENT_TRANSCO: One or more component failed validation.
+	
+	
+	* Error 0xc0024107: Import header in T_DOC_DOCUMENT_TRANSCO: There were errors during task validation.
+	
+	
+	* Error 0xc001f429: Package Upgrade: The validation of the package M05_LEV1_IMPORT_HRR_TRANSCO.dtsx has failed.
+	
+
+- Upgrading package M05_LEV1_IMPORT_WBS.dtsx (Error)
+	Messages
+	* Information 0x40019316: : The provider name for the connection manager "(local).ICO_MONITOR" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40019316: : The provider name for the connection manager "(local).SKY_RGT" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40019316: : The provider name for the connection manager "SQL01.SSIS_CONFIGURATION" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40016019: : The package format was migrated from version 3 to version 8. It must be saved to retain migration changes.
+	
+	
+	* Information 0x4004300a: Import in T_WBS_LIST: Validation phase is beginning.
+	
+	
+	* Error 0xc0202009: Import in T_WBS_LIST: SSIS Error Code DTS_E_OLEDBERROR.  An OLE DB error has occurred. Error code: 0x80004005.
+	An OLE DB record is available.  Source: "Microsoft SQL Server Native Client 11.0"  Hresult: 0x80004005  Description: "Unspecified error".
+	An OLE DB record is available.  Source: "Microsoft SQL Server Native Client 11.0"  Hresult: 0x80004005  Description: "The metadata could not be determined because every code path results in an error; see previous errors for some of these.".
+	An OLE DB record is available.  Source: "Microsoft SQL Server Native Client 11.0"  Hresult: 0x80004005  Description: "Invalid object name 'dbo.T_WBS_LIST'.".
+	
+	
+	* Error 0xc0202040: Import in T_WBS_LIST: Failed to open a fastload rowset for "[dbo].[T_WBS_LIST]". Check that the object exists in the database.
+	
+	
+	* Error 0xc004706b: Import in T_WBS_LIST: "T_WBS_LIST" failed validation and returned validation status "VS_ISBROKEN".
+	
+	
+	* Error 0xc004700c: Import in T_WBS_LIST: One or more component failed validation.
+	
+	
+	* Error 0xc0024107: Import in T_WBS_LIST: There were errors during task validation.
+	
+	
+	* Error 0xc001f429: Package Upgrade: The validation of the package M05_LEV1_IMPORT_WBS.dtsx has failed.
+	
+
+- Upgrading package M05_LEV1_INIZIALIZZAZIONE_PAREGGIO_DOC.dtsx (Error)
+	Messages
+	* Information 0x40019316: : The provider name for the connection manager "(local).ICO_MONITOR" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40019316: : The provider name for the connection manager "(local).SKY_RGT" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40019316: : The provider name for the connection manager "SQL01.SSIS_CONFIGURATION" has been changed from "SQLNCLI10.1" to "SQLNCLI11".
+	
+	* Information 0x40016019: : The package format was migrated from version 3 to version 8. It must be saved to retain migration changes.
+	
+	
+	* Information 0x4004300a: Import V_INIZ_WT_FAT_MATCH_PAREGGIO_DOCUMENTI in WT_FAT_MATCH_PAREGGIO_DOCUMENTI: Validation phase is beginning.
+	
+	
+	* Error 0xc0202009: Import V_INIZ_WT_FAT_MATCH_PAREGGIO_DOCUMENTI in WT_FAT_MATCH_PAREGGIO_DOCUMENTI: SSIS Error Code DTS_E_OLEDBERROR.  An OLE DB error has occurred. Error code: 0x80040E37.
+	
+	
+	* Error 0xc02020e8: Import V_INIZ_WT_FAT_MATCH_PAREGGIO_DOCUMENTI in WT_FAT_MATCH_PAREGGIO_DOCUMENTI: Opening a rowset for "[dbo].[V_INIZ_WT_FAT_MATCH_PAREGGIO_DOCUMENTI]" failed. Check that the object exists in the database.
+	
+	
+	* Error 0xc004706b: Import V_INIZ_WT_FAT_MATCH_PAREGGIO_DOCUMENTI in WT_FAT_MATCH_PAREGGIO_DOCUMENTI: "V_INIZ_WT_FAT_MATCH_PAREGGIO_DOCUMENTI" failed validation and returned validation status "VS_ISBROKEN".
+	
+	
+	* Error 0xc004700c: Import V_INIZ_WT_FAT_MATCH_PAREGGIO_DOCUMENTI in WT_FAT_MATCH_PAREGGIO_DOCUMENTI: One or more component failed validation.
+	
+	
+	* Error 0xc0024107: Import V_INIZ_WT_FAT_MATCH_PAREGGIO_DOCUMENTI in WT_FAT_MATCH_PAREGGIO_DOCUMENTI: There were errors during task validation.
+	
+	
+	* Error 0xc001f429: Package Upgrade: The validation of the package M05_LEV1_INIZIALIZZAZIONE_PAREGGIO_DOC.dtsx has failed.
+	
+
+
+

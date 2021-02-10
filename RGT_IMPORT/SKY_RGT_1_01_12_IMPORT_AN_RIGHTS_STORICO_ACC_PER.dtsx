@@ -1,0 +1,1124 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/28/2013 12:13:43 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="HYPSRV-SVIL01"
+  DTS:CreatorName="SKY\vennia"
+  DTS:DTSID="{A5DF326B-F2D3-48DB-8FBC-B715549A0789}"
+  DTS:EnableConfig="True"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.113"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="SKY_RGT_1_01_12_IMPORT_AN_RIGHTS_STORICO_ACC_PER"
+  DTS:PackageType="5"
+  DTS:VersionBuild="84"
+  DTS:VersionGUID="{BE49515B-BB83-4CF5-BC30-8CE4ABB4FA83}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[(local).ICO_MONITOR]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{9470d9c0-6b8a-48af-9afd-1b661e38addc}"
+      DTS:ObjectName="(local).ICO_MONITOR">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL01;Initial Catalog=ICO_MONITOR;Provider=SQLNCLI11;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{9470d9c0-6b8a-48af-9afd-1b661e38addc}(local).ICO_MONITOR;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[(local).SKY_RGT]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{d7bbf7c7-4d99-448f-bbf2-1da9010755fb}"
+      DTS:ObjectName="(local).SKY_RGT">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL01;Initial Catalog=SKY_RGT;Provider=SQLNCLI11;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{d7bbf7c7-4d99-448f-bbf2-1da9010755fb}(local).SKY_RGT;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[RGT_ANMO_ACC_PER]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{AB0BEED7-CCFC-49FD-8D01-E242FB249DAA}"
+      DTS:ObjectName="RGT_ANMO_ACC_PER">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1040"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="\\DEVRMWDBHYP01\StagingArea\RGT\SAP\RGT_ANMO_ACC_PER.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ACC_PER Budget Id"
+              DTS:DTSID="{D0421DC1-0708-40EC-B540-7E7DFAFE2D3E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ACC_ PER Budget Title"
+              DTS:DTSID="{C2729EA1-D676-4B57-8146-84CB541D85FA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="19"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ACC_ Start Avail Date"
+              DTS:DTSID="{81DDA92C-8D47-4FB2-A2AB-D8AE15A7E885}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="19"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ACC_ End Avail Date"
+              DTS:DTSID="{68F0750A-8514-4E6C-8196-B0820F567829}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BDG_COD"
+              DTS:DTSID="{5D9904FB-954D-4696-A599-FFCF23F72589}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Budget Title"
+              DTS:DTSID="{E082DE17-7B9D-403D-B49C-63DF86B165D9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Acquisition Id"
+              DTS:DTSID="{B87B30AF-02B5-47A5-87AF-9859456CD44E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Event Id"
+              DTS:DTSID="{A1EFDF94-3ED9-4B7F-8A50-1D099A2BB008}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="19"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Purchase Id"
+              DTS:DTSID="{F5909B6C-36FB-4C37-8C88-4B17E05862DE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="19"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Start Avail Date"
+              DTS:DTSID="{57E09805-5BC6-4F65-9D8E-8F671B9882BD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="19"
+              DTS:TextQualified="True"
+              DTS:ObjectName="End Avail Date"
+              DTS:DTSID="{EE8B194D-5387-45AE-A2F6-41FBC4CC46D9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Flag Natura"
+              DTS:DTSID="{B9BE6892-F0C4-47B3-BFBF-439005527703}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="19"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Data Uscita Home Video"
+              DTS:DTSID="{A92B970F-FDEA-434F-BA41-8712403C2A44}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Technical Fee"
+              DTS:DTSID="{F82306BC-2085-45AE-B0D2-195B1BD5F6EE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="B O  Euro"
+              DTS:DTSID="{1A505791-75D6-479E-AA78-8B5717C1E1C8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Cash Cost Flag "
+              DTS:DTSID="{246E82DF-FA27-48A8-85E2-053FFEB6035A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Amortization Type"
+              DTS:DTSID="{FBB5DEF1-C65C-4A0F-AAC1-7BC94D0BB2BB}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SQL01.SSIS_CONFIGURATION]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{1191245D-6F10-414A-8563-2C5255A8D0E3}"
+      DTS:ObjectName="SQL01.SSIS_CONFIGURATION">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL01;Initial Catalog=SSIS_CONFIGURATION;Provider=SQLNCLI11;Integrated Security=SSPI;Application Name=SSIS-Package1-{1191245D-6F10-414A-8563-2C5255A8D0E3}SQL01.SSIS_CONFIGURATION;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Configurations>
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;SQL01.SSIS_CONFIGURATION&quot;;&quot;[dbo].[RGT_Solution]&quot;;&quot;File_RGT_ANMO_ACC_PER&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{B9884D8B-4610-44B9-AA79-C63F516221D9}"
+      DTS:ObjectName="File_RGT_ANMO_ACC_PER" />
+  </DTS:Configurations>
+  <DTS:Variables />
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1" />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Drop and Create table T_RST_RIGHTS_ACC_PERIOD"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{F75C9173-2129-40D8-8B8C-A7A8A14EA031}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Drop and Create table T_RST_RIGHTS_ACC_PERIOD"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{d7bbf7c7-4d99-448f-bbf2-1da9010755fb}"
+          SQLTask:SqlStatementSource="USE [SKY_RGT]&#xA;GO&#xA;&#xA;IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[T_RST_RIGHTS_ACC_PERIOD]') AND type in (N'U'))&#xA;DROP TABLE [dbo].[T_RST_RIGHTS_ACC_PERIOD]&#xA;GO&#xA;&#xA;USE [SKY_RGT]&#xA;GO&#xA;&#xA;SET ANSI_NULLS ON&#xA;GO&#xA;&#xA;SET QUOTED_IDENTIFIER ON&#xA;GO&#xA;&#xA;CREATE TABLE [dbo].[T_RST_RIGHTS_ACC_PERIOD](&#xA;&#x9;[ACC_PER_BUDGET_ID] [nvarchar](255) NULL,&#xA;&#x9;[ACC_PER_BUDGET_TITLE] [nvarchar](255) NULL,&#xA;&#x9;[ACC_START_AVAIL_DATE] [int] NULL,&#xA;&#x9;[ACC_END_AVAIL_DATE] [int] NULL,&#xA;&#x9;[BDG_COD] [nvarchar](255) NULL,&#xA;&#x9;[BUDGET_TITLE] [nvarchar](255) NULL,&#xA;&#x9;[ACQUISITION_ID] [nvarchar](255) NULL,&#xA;&#x9;[EVENT_ID] [nvarchar](255) NULL,&#xA;&#x9;[PURCHASE_ID] [int] NULL,&#xA;&#x9;[START_AVAIL_DATE] [int] NULL,&#xA;&#x9;[END_AVAIL_DATE] [int] NULL,&#xA;&#x9;[FLAG_NATURA] [nvarchar](255) NULL,&#xA;&#x9;[DATA_HOME_VIDEO] [int] NULL,&#xA;&#x9;[TECHNICAL_FEE] [nvarchar](255) NULL,&#xA;&#x9;[BO_EURO] [nvarchar](255) NULL,&#xA;&#x9;[CASH_COST_FLAG] [nvarchar](255) NULL,&#xA;&#x9;[AMORTIZATION_TYPE] [nvarchar](255) NULL&#xA;) ON [PRIMARY]&#xA;&#xA;GO&#xA;&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{398D9FA1-852E-4100-A1B2-98B8EDDE77BC}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Import anagrafica in tableT_RST_RIGHTS_ACC_PER"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server v9; (C) 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          BLOBTempStoragePath=""
+          bufferTempStoragePath=""
+          engineThreads="5"
+          version="1">
+          <components>
+            <component
+              refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1040"
+              name="RGT_ANMO_ACC_PER"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[RGT_ANMO_ACC_PER]"
+                  connectionManagerRefId="Package.ConnectionManagers[RGT_ANMO_ACC_PER]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].Columns[Budget Title]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].ExternalColumns[Budget Title]"
+                      length="255"
+                      lineageId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].Columns[Budget Title]"
+                      name="Budget Title"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].Columns[Start Avail Date]"
+                      dataType="ui4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].ExternalColumns[Start Avail Date]"
+                      lineageId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].Columns[Start Avail Date]"
+                      name="Start Avail Date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].Columns[End Avail Date]"
+                      dataType="ui4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].ExternalColumns[End Avail Date]"
+                      lineageId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].Columns[End Avail Date]"
+                      name="End Avail Date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].Columns[Acquisition Id]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].ExternalColumns[Acquisition Id]"
+                      length="255"
+                      lineageId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].Columns[Acquisition Id]"
+                      name="Acquisition Id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].Columns[ACC_PER Budget Id]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].ExternalColumns[ACC_PER Budget Id]"
+                      length="255"
+                      lineageId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].Columns[ACC_PER Budget Id]"
+                      name="ACC_PER Budget Id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].Columns[ACC_ PER Budget Title]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].ExternalColumns[ACC_ PER Budget Title]"
+                      length="255"
+                      lineageId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].Columns[ACC_ PER Budget Title]"
+                      name="ACC_ PER Budget Title"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].Columns[Event Id]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].ExternalColumns[Event Id]"
+                      length="255"
+                      lineageId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].Columns[Event Id]"
+                      name="Event Id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].Columns[Purchase Id]"
+                      dataType="ui4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].ExternalColumns[Purchase Id]"
+                      lineageId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].Columns[Purchase Id]"
+                      name="Purchase Id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].Columns[Flag Natura]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].ExternalColumns[Flag Natura]"
+                      length="255"
+                      lineageId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].Columns[Flag Natura]"
+                      name="Flag Natura"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].Columns[Data Uscita Home Video]"
+                      dataType="ui4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].ExternalColumns[Data Uscita Home Video]"
+                      lineageId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].Columns[Data Uscita Home Video]"
+                      name="Data Uscita Home Video"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].Columns[Technical Fee]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].ExternalColumns[Technical Fee]"
+                      length="255"
+                      lineageId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].Columns[Technical Fee]"
+                      name="Technical Fee"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].Columns[B O  Euro]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].ExternalColumns[B O  Euro]"
+                      length="255"
+                      lineageId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].Columns[B O  Euro]"
+                      name="B O  Euro"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].Columns[Cash Cost Flag ]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].ExternalColumns[Cash Cost Flag ]"
+                      length="255"
+                      lineageId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].Columns[Cash Cost Flag ]"
+                      name="Cash Cost Flag "
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].Columns[Amortization Type]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].ExternalColumns[Amortization Type]"
+                      length="255"
+                      lineageId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].Columns[Amortization Type]"
+                      name="Amortization Type"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].Columns[ACC_ Start Avail Date]"
+                      dataType="ui4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].ExternalColumns[ACC_ Start Avail Date]"
+                      lineageId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].Columns[ACC_ Start Avail Date]"
+                      name="ACC_ Start Avail Date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].Columns[ACC_ End Avail Date]"
+                      dataType="ui4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].ExternalColumns[ACC_ End Avail Date]"
+                      lineageId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].Columns[ACC_ End Avail Date]"
+                      name="ACC_ End Avail Date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].Columns[BDG_COD]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].ExternalColumns[BDG_COD]"
+                      length="255"
+                      lineageId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].Columns[BDG_COD]"
+                      name="BDG_COD"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].ExternalColumns[Budget Title]"
+                      dataType="wstr"
+                      length="255"
+                      name="Budget Title" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].ExternalColumns[Start Avail Date]"
+                      dataType="ui4"
+                      name="Start Avail Date" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].ExternalColumns[End Avail Date]"
+                      dataType="ui4"
+                      name="End Avail Date" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].ExternalColumns[Acquisition Id]"
+                      dataType="wstr"
+                      length="255"
+                      name="Acquisition Id" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].ExternalColumns[ACC_PER Budget Id]"
+                      dataType="wstr"
+                      length="255"
+                      name="ACC_PER Budget Id" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].ExternalColumns[ACC_ PER Budget Title]"
+                      dataType="wstr"
+                      length="255"
+                      name="ACC_ PER Budget Title" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].ExternalColumns[Event Id]"
+                      dataType="wstr"
+                      length="255"
+                      name="Event Id" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].ExternalColumns[Purchase Id]"
+                      dataType="ui4"
+                      name="Purchase Id" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].ExternalColumns[Flag Natura]"
+                      dataType="wstr"
+                      length="255"
+                      name="Flag Natura" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].ExternalColumns[Data Uscita Home Video]"
+                      dataType="ui4"
+                      name="Data Uscita Home Video" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].ExternalColumns[Technical Fee]"
+                      dataType="wstr"
+                      length="255"
+                      name="Technical Fee" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].ExternalColumns[B O  Euro]"
+                      dataType="wstr"
+                      length="255"
+                      name="B O  Euro" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].ExternalColumns[Cash Cost Flag ]"
+                      dataType="wstr"
+                      length="255"
+                      name="Cash Cost Flag " />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].ExternalColumns[Amortization Type]"
+                      dataType="wstr"
+                      length="255"
+                      name="Amortization Type" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].ExternalColumns[ACC_ Start Avail Date]"
+                      dataType="ui4"
+                      name="ACC_ Start Avail Date" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].ExternalColumns[ACC_ End Avail Date]"
+                      dataType="ui4"
+                      name="ACC_ End Avail Date" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].ExternalColumns[BDG_COD]"
+                      dataType="wstr"
+                      length="255"
+                      name="BDG_COD" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\T_RST_RIGHTS_ACC_PER"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="T_RST_RIGHTS_ACC_PER"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[T_RST_RIGHTS_ACC_PERIOD]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destinaton. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">ROWS_PER_BATCH = 10000</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">0</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\T_RST_RIGHTS_ACC_PER.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[(local).SKY_RGT]"
+                  connectionManagerRefId="Package.ConnectionManagers[(local).SKY_RGT]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\T_RST_RIGHTS_ACC_PER.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\T_RST_RIGHTS_ACC_PER.Inputs[OLE DB Destination Input].Columns[ACC_PER Budget Id]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="ACC_PER Budget Id"
+                      externalMetadataColumnId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\T_RST_RIGHTS_ACC_PER.Inputs[OLE DB Destination Input].ExternalColumns[ACC_PER_BUDGET_ID]"
+                      lineageId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].Columns[ACC_PER Budget Id]" />
+                    <inputColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\T_RST_RIGHTS_ACC_PER.Inputs[OLE DB Destination Input].Columns[ACC_ PER Budget Title]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="ACC_ PER Budget Title"
+                      externalMetadataColumnId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\T_RST_RIGHTS_ACC_PER.Inputs[OLE DB Destination Input].ExternalColumns[ACC_PER_BUDGET_TITLE]"
+                      lineageId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].Columns[ACC_ PER Budget Title]" />
+                    <inputColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\T_RST_RIGHTS_ACC_PER.Inputs[OLE DB Destination Input].Columns[Budget Title]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Budget Title"
+                      externalMetadataColumnId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\T_RST_RIGHTS_ACC_PER.Inputs[OLE DB Destination Input].ExternalColumns[BUDGET_TITLE]"
+                      lineageId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].Columns[Budget Title]" />
+                    <inputColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\T_RST_RIGHTS_ACC_PER.Inputs[OLE DB Destination Input].Columns[Acquisition Id]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Acquisition Id"
+                      externalMetadataColumnId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\T_RST_RIGHTS_ACC_PER.Inputs[OLE DB Destination Input].ExternalColumns[ACQUISITION_ID]"
+                      lineageId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].Columns[Acquisition Id]" />
+                    <inputColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\T_RST_RIGHTS_ACC_PER.Inputs[OLE DB Destination Input].Columns[Event Id]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Event Id"
+                      externalMetadataColumnId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\T_RST_RIGHTS_ACC_PER.Inputs[OLE DB Destination Input].ExternalColumns[EVENT_ID]"
+                      lineageId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].Columns[Event Id]" />
+                    <inputColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\T_RST_RIGHTS_ACC_PER.Inputs[OLE DB Destination Input].Columns[Purchase Id]"
+                      cachedDataType="ui4"
+                      cachedName="Purchase Id"
+                      externalMetadataColumnId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\T_RST_RIGHTS_ACC_PER.Inputs[OLE DB Destination Input].ExternalColumns[PURCHASE_ID]"
+                      lineageId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].Columns[Purchase Id]" />
+                    <inputColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\T_RST_RIGHTS_ACC_PER.Inputs[OLE DB Destination Input].Columns[Start Avail Date]"
+                      cachedDataType="ui4"
+                      cachedName="Start Avail Date"
+                      externalMetadataColumnId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\T_RST_RIGHTS_ACC_PER.Inputs[OLE DB Destination Input].ExternalColumns[START_AVAIL_DATE]"
+                      lineageId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].Columns[Start Avail Date]" />
+                    <inputColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\T_RST_RIGHTS_ACC_PER.Inputs[OLE DB Destination Input].Columns[End Avail Date]"
+                      cachedDataType="ui4"
+                      cachedName="End Avail Date"
+                      externalMetadataColumnId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\T_RST_RIGHTS_ACC_PER.Inputs[OLE DB Destination Input].ExternalColumns[END_AVAIL_DATE]"
+                      lineageId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].Columns[End Avail Date]" />
+                    <inputColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\T_RST_RIGHTS_ACC_PER.Inputs[OLE DB Destination Input].Columns[Flag Natura]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Flag Natura"
+                      externalMetadataColumnId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\T_RST_RIGHTS_ACC_PER.Inputs[OLE DB Destination Input].ExternalColumns[FLAG_NATURA]"
+                      lineageId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].Columns[Flag Natura]" />
+                    <inputColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\T_RST_RIGHTS_ACC_PER.Inputs[OLE DB Destination Input].Columns[Data Uscita Home Video]"
+                      cachedDataType="ui4"
+                      cachedName="Data Uscita Home Video"
+                      externalMetadataColumnId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\T_RST_RIGHTS_ACC_PER.Inputs[OLE DB Destination Input].ExternalColumns[DATA_HOME_VIDEO]"
+                      lineageId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].Columns[Data Uscita Home Video]" />
+                    <inputColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\T_RST_RIGHTS_ACC_PER.Inputs[OLE DB Destination Input].Columns[Technical Fee]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Technical Fee"
+                      externalMetadataColumnId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\T_RST_RIGHTS_ACC_PER.Inputs[OLE DB Destination Input].ExternalColumns[TECHNICAL_FEE]"
+                      lineageId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].Columns[Technical Fee]" />
+                    <inputColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\T_RST_RIGHTS_ACC_PER.Inputs[OLE DB Destination Input].Columns[B O  Euro]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="B O  Euro"
+                      externalMetadataColumnId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\T_RST_RIGHTS_ACC_PER.Inputs[OLE DB Destination Input].ExternalColumns[BO_EURO]"
+                      lineageId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].Columns[B O  Euro]" />
+                    <inputColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\T_RST_RIGHTS_ACC_PER.Inputs[OLE DB Destination Input].Columns[Cash Cost Flag ]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Cash Cost Flag "
+                      externalMetadataColumnId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\T_RST_RIGHTS_ACC_PER.Inputs[OLE DB Destination Input].ExternalColumns[CASH_COST_FLAG]"
+                      lineageId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].Columns[Cash Cost Flag ]" />
+                    <inputColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\T_RST_RIGHTS_ACC_PER.Inputs[OLE DB Destination Input].Columns[Amortization Type]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Amortization Type"
+                      externalMetadataColumnId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\T_RST_RIGHTS_ACC_PER.Inputs[OLE DB Destination Input].ExternalColumns[AMORTIZATION_TYPE]"
+                      lineageId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].Columns[Amortization Type]" />
+                    <inputColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\T_RST_RIGHTS_ACC_PER.Inputs[OLE DB Destination Input].Columns[ACC_ Start Avail Date]"
+                      cachedDataType="ui4"
+                      cachedName="ACC_ Start Avail Date"
+                      externalMetadataColumnId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\T_RST_RIGHTS_ACC_PER.Inputs[OLE DB Destination Input].ExternalColumns[ACC_START_AVAIL_DATE]"
+                      lineageId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].Columns[ACC_ Start Avail Date]" />
+                    <inputColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\T_RST_RIGHTS_ACC_PER.Inputs[OLE DB Destination Input].Columns[ACC_ End Avail Date]"
+                      cachedDataType="ui4"
+                      cachedName="ACC_ End Avail Date"
+                      externalMetadataColumnId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\T_RST_RIGHTS_ACC_PER.Inputs[OLE DB Destination Input].ExternalColumns[ACC_END_AVAIL_DATE]"
+                      lineageId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].Columns[ACC_ End Avail Date]" />
+                    <inputColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\T_RST_RIGHTS_ACC_PER.Inputs[OLE DB Destination Input].Columns[BDG_COD]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="BDG_COD"
+                      externalMetadataColumnId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\T_RST_RIGHTS_ACC_PER.Inputs[OLE DB Destination Input].ExternalColumns[BDG_COD]"
+                      lineageId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output].Columns[BDG_COD]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\T_RST_RIGHTS_ACC_PER.Inputs[OLE DB Destination Input].ExternalColumns[ACC_PER_BUDGET_ID]"
+                      dataType="wstr"
+                      length="255"
+                      name="ACC_PER_BUDGET_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\T_RST_RIGHTS_ACC_PER.Inputs[OLE DB Destination Input].ExternalColumns[ACC_PER_BUDGET_TITLE]"
+                      dataType="wstr"
+                      length="255"
+                      name="ACC_PER_BUDGET_TITLE" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\T_RST_RIGHTS_ACC_PER.Inputs[OLE DB Destination Input].ExternalColumns[BUDGET_TITLE]"
+                      dataType="wstr"
+                      length="255"
+                      name="BUDGET_TITLE" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\T_RST_RIGHTS_ACC_PER.Inputs[OLE DB Destination Input].ExternalColumns[ACQUISITION_ID]"
+                      dataType="wstr"
+                      length="255"
+                      name="ACQUISITION_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\T_RST_RIGHTS_ACC_PER.Inputs[OLE DB Destination Input].ExternalColumns[EVENT_ID]"
+                      dataType="wstr"
+                      length="255"
+                      name="EVENT_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\T_RST_RIGHTS_ACC_PER.Inputs[OLE DB Destination Input].ExternalColumns[PURCHASE_ID]"
+                      dataType="i4"
+                      name="PURCHASE_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\T_RST_RIGHTS_ACC_PER.Inputs[OLE DB Destination Input].ExternalColumns[START_AVAIL_DATE]"
+                      dataType="i4"
+                      name="START_AVAIL_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\T_RST_RIGHTS_ACC_PER.Inputs[OLE DB Destination Input].ExternalColumns[END_AVAIL_DATE]"
+                      dataType="i4"
+                      name="END_AVAIL_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\T_RST_RIGHTS_ACC_PER.Inputs[OLE DB Destination Input].ExternalColumns[FLAG_NATURA]"
+                      dataType="wstr"
+                      length="255"
+                      name="FLAG_NATURA" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\T_RST_RIGHTS_ACC_PER.Inputs[OLE DB Destination Input].ExternalColumns[DATA_HOME_VIDEO]"
+                      dataType="i4"
+                      name="DATA_HOME_VIDEO" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\T_RST_RIGHTS_ACC_PER.Inputs[OLE DB Destination Input].ExternalColumns[TECHNICAL_FEE]"
+                      dataType="wstr"
+                      length="255"
+                      name="TECHNICAL_FEE" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\T_RST_RIGHTS_ACC_PER.Inputs[OLE DB Destination Input].ExternalColumns[BO_EURO]"
+                      dataType="wstr"
+                      length="255"
+                      name="BO_EURO" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\T_RST_RIGHTS_ACC_PER.Inputs[OLE DB Destination Input].ExternalColumns[CASH_COST_FLAG]"
+                      dataType="wstr"
+                      length="255"
+                      name="CASH_COST_FLAG" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\T_RST_RIGHTS_ACC_PER.Inputs[OLE DB Destination Input].ExternalColumns[AMORTIZATION_TYPE]"
+                      dataType="wstr"
+                      length="255"
+                      name="AMORTIZATION_TYPE" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\T_RST_RIGHTS_ACC_PER.Inputs[OLE DB Destination Input].ExternalColumns[ACC_START_AVAIL_DATE]"
+                      dataType="i4"
+                      name="ACC_START_AVAIL_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\T_RST_RIGHTS_ACC_PER.Inputs[OLE DB Destination Input].ExternalColumns[ACC_END_AVAIL_DATE]"
+                      dataType="i4"
+                      name="ACC_END_AVAIL_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\T_RST_RIGHTS_ACC_PER.Inputs[OLE DB Destination Input].ExternalColumns[BDG_COD]"
+                      dataType="wstr"
+                      length="255"
+                      name="BDG_COD" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\T_RST_RIGHTS_ACC_PER.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\T_RST_RIGHTS_ACC_PER.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\T_RST_RIGHTS_ACC_PER.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\T_RST_RIGHTS_ACC_PER.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\T_RST_RIGHTS_ACC_PER.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\T_RST_RIGHTS_ACC_PER.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER.Paths[Flat File Source Output]"
+              endId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\T_RST_RIGHTS_ACC_PER.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{97DFE564-2679-42A5-9E2F-A9DED90B3C10}"
+      DTS:From="Package\Drop and Create table T_RST_RIGHTS_ACC_PERIOD"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER" />
+  </DTS:PrecedenceConstraints>
+  <DTS:PackageVariables>
+    <DTS:PackageVariable
+      DTS:CreationName=""
+      DTS:DTSID="{5549F150-0515-4480-B28D-8C066FF8E39A}"
+      DTS:Namespace="dts-designer-1.0"
+      DTS:ObjectName="{398D9FA1-852E-4100-A1B2-98B8EDDE77BC}">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="PackageVariableValue">&lt;TaskHost xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0"&gt;&lt;dwd:DtsDataFlowDiagram&gt;&lt;dwd:BoundingTop&gt;-186&lt;/dwd:BoundingTop&gt;&lt;dwd:Layout&gt;&lt;dds&gt;&lt;diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="Microsoft.DataWarehouse.Layout.GraphLayout110" defaultlineroute="Microsoft.DataWarehouse.Layout.GraphLayout110" version="7" nextobject="11" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="0" scrolltop="-1186" gridx="150" gridy="150" marginx="1000" marginy="1000" zoom="100" x="32279" y="19950" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="1" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="0" backpictureclsid="{00000000-0000-0000-0000-000000000000}"&gt;&lt;font&gt;&lt;ddsxmlobjectstreamwrapper binary="01010000900180380100065461686f6d61" /&gt;&lt;/font&gt;&lt;mouseicon&gt;&lt;ddsxmlobjectstreamwrapper binary="6c74000000000000" /&gt;&lt;/mouseicon&gt;&lt;/diagram&gt;&lt;layoutmanager&gt;&lt;ddsxmlobj /&gt;&lt;/layoutmanager&gt;&lt;ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="OLE DB Destination" left="0" top="3016" logicalid="4" controlid="1" masterid="0" hint1="0" hint2="0" width="4868" height="1164" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobjectstreaminitwrapper binary="00080000041300008c040000" /&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj&gt;&lt;property name="LogicalObject" value="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\T_RST_RIGHTS_ACC_PER" vartype="8" /&gt;&lt;property name="ShowConnectorSource" value="0" vartype="2" /&gt;&lt;/ddsxmlobj&gt;&lt;/layoutobject&gt;&lt;shape groupshapeid="0" groupnode="0" /&gt;&lt;/ddscontrol&gt;&lt;ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Flat File Source" left="40" top="-186" logicalid="5" controlid="2" masterid="0" hint1="0" hint2="0" width="4497" height="1164" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobjectstreaminitwrapper binary="00080000911100008c040000" /&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj&gt;&lt;property name="LogicalObject" value="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER\RGT_ANMO_ACC_PER" vartype="8" /&gt;&lt;property name="ShowConnectorSource" value="0" vartype="2" /&gt;&lt;/ddsxmlobj&gt;&lt;/layoutobject&gt;&lt;shape groupshapeid="0" groupnode="0" /&gt;&lt;/ddscontrol&gt;&lt;ddscontrol controlprogid="MSDDS.Polyline" left="1889" top="579" logicalid="6" controlid="3" masterid="0" hint1="0" hint2="0" width="945" height="2937" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobj&gt;&lt;polyline endtypedst="3" endtypesrc="1" usercolor="32768" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" /&gt;&lt;/ddsxmlobj&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj&gt;&lt;property name="LogicalObject" value="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER.Paths[Flat File Source Output]" vartype="8" /&gt;&lt;property name="Virtual" value="0" vartype="11" /&gt;&lt;property name="VisibleAP" value="0" vartype="3" /&gt;&lt;/ddsxmlobj&gt;&lt;/layoutobject&gt;&lt;connector lineroutestyle="Microsoft.DataWarehouse.Layout.GraphLayout110" sourceid="2" destid="1" sourceattachpoint="7" destattachpoint="8" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="2" relatedid="0" virtual="0"&gt;&lt;point x="2288" y="978" /&gt;&lt;point x="2288" y="1997" /&gt;&lt;point x="2434" y="1997" /&gt;&lt;point x="2434" y="3016" /&gt;&lt;/connector&gt;&lt;/ddscontrol&gt;&lt;/dds&gt;&lt;/dwd:Layout&gt;&lt;dwd:PersistedViewPortTop&gt;-1186&lt;/dwd:PersistedViewPortTop&gt;&lt;/dwd:DtsDataFlowDiagram&gt;&lt;dwd:DtsComponentDesignerPropertiesList&gt;&lt;dwd:DtsComponentDesignTimeProperty&gt;&lt;dwd:key xsi:type="xsd:string"&gt;1011	TableInfoObjectType&lt;/dwd:key&gt;&lt;dwd:value xsi:type="xsd:string"&gt;Table&lt;/dwd:value&gt;&lt;/dwd:DtsComponentDesignTimeProperty&gt;&lt;dwd:DtsComponentDesignTimeProperty&gt;&lt;dwd:key xsi:type="xsd:string"&gt;1011	DataSourceViewID&lt;/dwd:key&gt;&lt;/dwd:DtsComponentDesignTimeProperty&gt;&lt;/dwd:DtsComponentDesignerPropertiesList&gt;&lt;/TaskHost&gt;</DTS:Property>
+    </DTS:PackageVariable>
+    <DTS:PackageVariable
+      DTS:CreationName=""
+      DTS:DTSID="{C5A1660E-43E1-462A-A461-D98313D957C1}"
+      DTS:Namespace="dts-designer-1.0"
+      DTS:ObjectName="{398D9FA1-852E-4100-A1B2-98B8EDDE77BC}-4279">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="PackageVariableValue">&lt;PipelinePath xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0"&gt;&lt;dwd:SourceName&gt;Flat File Source Output&lt;/dwd:SourceName&gt;&lt;dwd:DestinationName&gt;OLE DB Destination Input&lt;/dwd:DestinationName&gt;&lt;/PipelinePath&gt;</DTS:Property>
+    </DTS:PackageVariable>
+    <DTS:PackageVariable
+      DTS:CreationName=""
+      DTS:DTSID="{7DB87203-8E54-4C73-93AB-BEC0D60F571F}"
+      DTS:Namespace="dts-designer-1.0"
+      DTS:ObjectName="{97DFE564-2679-42A5-9E2F-A9DED90B3C10}">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="PackageVariableValue">&lt;PrecedenceConstraint xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0"&gt;&lt;dwd:EvalOp&gt;Constraint&lt;/dwd:EvalOp&gt;&lt;/PrecedenceConstraint&gt;</DTS:Property>
+    </DTS:PackageVariable>
+    <DTS:PackageVariable
+      DTS:CreationName=""
+      DTS:DTSID="{805CC727-DEFC-4488-B861-193AD4425F23}"
+      DTS:Namespace="dts-designer-1.0"
+      DTS:ObjectName="package-diagram">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="PackageVariableValue">&lt;Package xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0"&gt;&lt;dwd:DtsControlFlowDiagram&gt;&lt;dwd:BoundingTop&gt;-1386&lt;/dwd:BoundingTop&gt;&lt;dwd:Layout&gt;&lt;dds&gt;&lt;diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="Microsoft.DataWarehouse.Layout.GraphLayout110" defaultlineroute="Microsoft.DataWarehouse.Layout.GraphLayout110" version="7" nextobject="12" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-878" scrolltop="-2386" gridx="150" gridy="150" marginx="1000" marginy="1000" zoom="100" x="32279" y="20876" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="1" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}"&gt;&lt;font&gt;&lt;ddsxmlobjectstreamwrapper binary="01010000900180380100065461686f6d61" /&gt;&lt;/font&gt;&lt;mouseicon&gt;&lt;ddsxmlobjectstreamwrapper binary="6c74000000000000" /&gt;&lt;/mouseicon&gt;&lt;/diagram&gt;&lt;layoutmanager&gt;&lt;ddsxmlobj /&gt;&lt;/layoutmanager&gt;&lt;ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Execute SQL Task" left="581" top="228" logicalid="5" controlid="1" masterid="0" hint1="0" hint2="0" width="6324" height="1164" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobjectstreaminitwrapper binary="00080000b41800008c040000" /&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj&gt;&lt;property name="LogicalObject" value="Package\Drop and Create table T_RST_RIGHTS_ACC_PERIOD" vartype="8" /&gt;&lt;property name="ShowConnectorSource" value="0" vartype="2" /&gt;&lt;/ddsxmlobj&gt;&lt;/layoutobject&gt;&lt;shape groupshapeid="0" groupnode="0" /&gt;&lt;/ddscontrol&gt;&lt;ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Data Flow Task" left="0" top="3170" logicalid="6" controlid="2" masterid="0" hint1="0" hint2="0" width="7487" height="1164" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobjectstreaminitwrapper binary="000800003f1d00008c040000" /&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj&gt;&lt;property name="LogicalObject" value="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER" vartype="8" /&gt;&lt;property name="ShowConnectorSource" value="0" vartype="2" /&gt;&lt;/ddsxmlobj&gt;&lt;/layoutobject&gt;&lt;shape groupshapeid="0" groupnode="0" /&gt;&lt;/ddscontrol&gt;&lt;ddscontrol controlprogid="MSDDS.Polyline" left="3344" top="993" logicalid="7" controlid="3" masterid="0" hint1="0" hint2="0" width="799" height="2677" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobj&gt;&lt;polyline endtypedst="3" endtypesrc="1" usercolor="32768" linestyle="0" linerender="2" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" /&gt;&lt;/ddsxmlobj&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj&gt;&lt;property name="LogicalObject" value="Package.PrecedenceConstraints[Constraint]" vartype="8" /&gt;&lt;property name="Virtual" value="0" vartype="11" /&gt;&lt;property name="VisibleAP" value="0" vartype="3" /&gt;&lt;/ddsxmlobj&gt;&lt;/layoutobject&gt;&lt;connector lineroutestyle="Microsoft.DataWarehouse.Layout.GraphLayout110" sourceid="1" destid="2" sourceattachpoint="11" destattachpoint="12" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="2" relatedid="0" virtual="0"&gt;&lt;point x="3743" y="1392" /&gt;&lt;point x="3743" y="3170" /&gt;&lt;/connector&gt;&lt;/ddscontrol&gt;&lt;ddscontrol controlprogid="MSDDS.Text" left="2759" top="-1386" logicalid="8" controlid="4" masterid="0" hint1="0" hint2="0" width="1968" height="412" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobjectstreaminitwrapper binary="00020000b00700009c0100000300640000000500008008000080000000002a0001000000900144420100065461686f6d610c004e0075006f0076006f00200066006c007500730073006f0000000000" /&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj /&gt;&lt;/layoutobject&gt;&lt;shape groupshapeid="0" groupnode="0" /&gt;&lt;/ddscontrol&gt;&lt;/dds&gt;&lt;/dwd:Layout&gt;&lt;dwd:PersistedViewPortLeft&gt;-878&lt;/dwd:PersistedViewPortLeft&gt;&lt;dwd:PersistedViewPortTop&gt;-2386&lt;/dwd:PersistedViewPortTop&gt;&lt;/dwd:DtsControlFlowDiagram&gt;&lt;/Package&gt;</DTS:Property>
+    </DTS:PackageVariable>
+    <DTS:PackageVariable
+      DTS:CreationName=""
+      DTS:DTSID="{A969A379-DA97-47E9-8CDE-16D8DB2023CF}"
+      DTS:Namespace="dts-designer-1.0"
+      DTS:ObjectName="package-diagram">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="PackageVariableValue">&lt;Package xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0"&gt;&lt;dwd:DtsControlFlowDiagram&gt;&lt;dwd:BoundingTop&gt;-1386&lt;/dwd:BoundingTop&gt;&lt;dwd:Layout&gt;&lt;dds&gt;&lt;diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="Microsoft.DataWarehouse.Layout.GraphLayout110" defaultlineroute="Microsoft.DataWarehouse.Layout.GraphLayout110" version="7" nextobject="12" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-878" scrolltop="-2386" gridx="150" gridy="150" marginx="1000" marginy="1000" zoom="100" x="32279" y="20876" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="1" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}"&gt;&lt;font&gt;&lt;ddsxmlobjectstreamwrapper binary="01010000900180380100065461686f6d61" /&gt;&lt;/font&gt;&lt;mouseicon&gt;&lt;ddsxmlobjectstreamwrapper binary="6c74000000000000" /&gt;&lt;/mouseicon&gt;&lt;/diagram&gt;&lt;layoutmanager&gt;&lt;ddsxmlobj /&gt;&lt;/layoutmanager&gt;&lt;ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Execute SQL Task" left="581" top="228" logicalid="5" controlid="1" masterid="0" hint1="0" hint2="0" width="6324" height="1164" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobjectstreaminitwrapper binary="00080000b41800008c040000" /&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj&gt;&lt;property name="LogicalObject" value="Package\Drop and Create table T_RST_RIGHTS_ACC_PERIOD" vartype="8" /&gt;&lt;property name="ShowConnectorSource" value="0" vartype="2" /&gt;&lt;/ddsxmlobj&gt;&lt;/layoutobject&gt;&lt;shape groupshapeid="0" groupnode="0" /&gt;&lt;/ddscontrol&gt;&lt;ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Data Flow Task" left="0" top="3170" logicalid="6" controlid="2" masterid="0" hint1="0" hint2="0" width="7487" height="1164" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobjectstreaminitwrapper binary="000800003f1d00008c040000" /&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj&gt;&lt;property name="LogicalObject" value="Package\Import anagrafica in tableT_RST_RIGHTS_ACC_PER" vartype="8" /&gt;&lt;property name="ShowConnectorSource" value="0" vartype="2" /&gt;&lt;/ddsxmlobj&gt;&lt;/layoutobject&gt;&lt;shape groupshapeid="0" groupnode="0" /&gt;&lt;/ddscontrol&gt;&lt;ddscontrol controlprogid="MSDDS.Polyline" left="3344" top="993" logicalid="7" controlid="3" masterid="0" hint1="0" hint2="0" width="799" height="2677" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobj&gt;&lt;polyline endtypedst="3" endtypesrc="1" usercolor="32768" linestyle="0" linerender="2" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" /&gt;&lt;/ddsxmlobj&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj&gt;&lt;property name="LogicalObject" value="Package.PrecedenceConstraints[Constraint]" vartype="8" /&gt;&lt;property name="Virtual" value="0" vartype="11" /&gt;&lt;property name="VisibleAP" value="0" vartype="3" /&gt;&lt;/ddsxmlobj&gt;&lt;/layoutobject&gt;&lt;connector lineroutestyle="Microsoft.DataWarehouse.Layout.GraphLayout110" sourceid="1" destid="2" sourceattachpoint="11" destattachpoint="12" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="2" relatedid="0" virtual="0"&gt;&lt;point x="3743" y="1392" /&gt;&lt;point x="3743" y="3170" /&gt;&lt;/connector&gt;&lt;/ddscontrol&gt;&lt;ddscontrol controlprogid="MSDDS.Text" left="2759" top="-1386" logicalid="8" controlid="4" masterid="0" hint1="0" hint2="0" width="1968" height="412" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobjectstreaminitwrapper binary="00020000b00700009c0100000300640000000500008008000080000000002a0001000000900144420100065461686f6d610c004e0075006f0076006f00200066006c007500730073006f0000000000" /&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj /&gt;&lt;/layoutobject&gt;&lt;shape groupshapeid="0" groupnode="0" /&gt;&lt;/ddscontrol&gt;&lt;/dds&gt;&lt;/dwd:Layout&gt;&lt;dwd:PersistedViewPortLeft&gt;-878&lt;/dwd:PersistedViewPortLeft&gt;&lt;dwd:PersistedViewPortTop&gt;-2386&lt;/dwd:PersistedViewPortTop&gt;&lt;/dwd:DtsControlFlowDiagram&gt;&lt;/Package&gt;</DTS:Property>
+    </DTS:PackageVariable>
+  </DTS:PackageVariables>
+</DTS:Executable>

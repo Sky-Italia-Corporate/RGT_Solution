@@ -1,0 +1,1536 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/27/2011 11:11:30 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="HYPSRV-SVIL01"
+  DTS:CreatorName="SKY\vennia"
+  DTS:DTSID="{A0C86F9C-3173-4F88-B957-3EA0234A970A}"
+  DTS:EnableConfig="True"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.113"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="SKY_RGT_1_01_05_IMPORT_AN_ENG_FORM"
+  DTS:PackageType="5"
+  DTS:VersionBuild="43"
+  DTS:VersionGUID="{C42F342A-B2A4-4127-B701-0D1D31C0AC71}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[(local).ICO_MONITOR]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{ADE1B470-BE99-45AB-922A-5BA2399A3EC1}"
+      DTS:ObjectName="(local).ICO_MONITOR">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL01;Initial Catalog=ICO_MONITOR;Provider=SQLNCLI11;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_RGT_1_01_05_IMPORT_AN_ENG_FORM-{ADE1B470-BE99-45AB-922A-5BA2399A3EC1}(local).ICO_MONITOR;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[(local).SKY_RGT]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{7603170A-B47F-4D1B-935B-EE4EFD89B269}"
+      DTS:ObjectName="(local).SKY_RGT">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL01;Initial Catalog=SKY_RGT;Provider=SQLNCLI11;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_RGT_1_01_05_IMPORT_AN_ENG_FORM-{7603170A-B47F-4D1B-935B-EE4EFD89B269}(local).SKY_RGT;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[RGT_ANEF]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{94631BFA-A662-437D-9282-D33263A5EED7}"
+      DTS:ObjectName="RGT_ANEF">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="\\DEVRMWDBHYP01\StagingArea\RGT\IDM\RGT_ANEF.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Codice EF"
+              DTS:DTSID="{ABEFCFB2-FFEA-42FC-9007-63A689822315}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Codice SAP"
+              DTS:DTSID="{21C4C2B2-31A8-47BF-9DBA-DD15DA22AF0C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Controparte"
+              DTS:DTSID="{88E8A608-3346-497C-BDF0-2F8B6A606513}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Step AF"
+              DTS:DTSID="{436E3F12-1545-42B8-A962-AF4283146261}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Data Step AF"
+              DTS:DTSID="{758E31B0-C902-41AA-A516-C4E397A2CA79}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Step EF"
+              DTS:DTSID="{529356F6-CFB5-4A7C-91C5-9B2EBC13B265}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Data Step EF"
+              DTS:DTSID="{37D7132D-4806-4E52-91EC-ABAFE8E3FE1F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Oggetto Contratto"
+              DTS:DTSID="{E38BB42F-A284-468D-A692-4532F5B7B7AC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Protocollo OUT"
+              DTS:DTSID="{29DDF0E8-6426-48C5-80A4-CBE25E528668}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Data Protocollo OUT"
+              DTS:DTSID="{56762FAF-A286-403E-91A0-E8F3A58D77B6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Protocollo IN"
+              DTS:DTSID="{5D0AD988-31A0-42E9-9965-226B84EA7FB0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Data Protocollo IN"
+              DTS:DTSID="{8FA5F406-4B3D-450C-91E3-C27FF5C2DDAD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Stato Contratto"
+              DTS:DTSID="{F608EE20-230E-4D7C-9454-AAC5EC5FAE68}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Integra rinnova"
+              DTS:DTSID="{7B80F965-635F-4649-8D89-0747D19AD00B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Integrato rinnovato"
+              DTS:DTSID="{2A03EEE1-C3C6-41CB-8A30-1F030B8776F6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Appalto"
+              DTS:DTSID="{5A083C9B-2DDB-4437-8696-2CFDA5D73DDE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Cdc"
+              DTS:DTSID="{2B9B5E8F-48B4-4681-BB65-C85579D62E9F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Data Inizio Contratto"
+              DTS:DTSID="{8730F8DF-769A-4B15-B164-E8CE37530A8F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Data Fine Contratto"
+              DTS:DTSID="{041178A9-200F-4666-B86C-1022CDC50034}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Societa"
+              DTS:DTSID="{545557FA-66F5-427D-A972-F36EFE3FC5C1}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SQL01.SSIS_CONFIGURATION]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{D8F1E2DE-EDD9-45F2-86D9-7E2361249284}"
+      DTS:ObjectName="SQL01.SSIS_CONFIGURATION">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL01;Initial Catalog=SSIS_CONFIGURATION;Provider=SQLNCLI11;Integrated Security=SSPI;Application Name=SSIS-SKY_RGT_1_01_05_IMPORT_AN_ENG_FORM-{D8F1E2DE-EDD9-45F2-86D9-7E2361249284}SQL01.SSIS_CONFIGURATION;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Configurations>
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;SQL01.SSIS_CONFIGURATION&quot;;&quot;[dbo].[RGT_Solution]&quot;;&quot;File_RGT_ANEF&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{1DA9CB17-FA49-4303-88C2-8F348DCCD667}"
+      DTS:ObjectName="File_RGT_ANEF" />
+  </DTS:Configurations>
+  <DTS:LogProviders>
+    <DTS:LogProvider
+      DTS:ConfigString="(local).ICO_MONITOR"
+      DTS:CreationName="Microsoft.LogProviderSQLServer"
+      DTS:Description="Writes log entries for events to a SQL Server database"
+      DTS:DTSID="{A5B97C87-0529-4EEA-ACC8-695EBC189E4B}"
+      DTS:ObjectName="SSIS log provider for SQL Server">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+  </DTS:LogProviders>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E3823C28-BE2B-4802-AAE8-09514DCD36C2}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Current_Date">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{7151B97A-8D59-4A29-84B4-4F3651F147AB}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FileCorrente">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{ABC2E155-ACF9-46EC-8D95-7B392E9E6DB6}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Success">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">6,7,OnError,13,OnPostExecute,14,OnPostValidate,12,OnPreExecute,13,OnPreValidate,12,OnTaskFailed</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnTaskFailed"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:SelectedLogProviders>
+      <DTS:SelectedLogProvider
+        DTS:InstanceID="{A5B97C87-0529-4EEA-ACC8-695EBC189E4B}" />
+    </DTS:SelectedLogProviders>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Import anagrafiche in T_IDM_ENG_FORM"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{eca506f2-893b-472a-9d8e-1fec0e547ff9}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Import anagrafiche in T_IDM_ENG_FORM">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <pipeline
+          BLOBTempStoragePath=""
+          bufferTempStoragePath=""
+          engineThreads="5"
+          version="1">
+          <components>
+            <component
+              refId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="RGT_ANEF"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[RGT_ANEF]"
+                  connectionManagerRefId="Package.ConnectionManagers[RGT_ANEF]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].Columns[Codice EF]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].ExternalColumns[Codice EF]"
+                      length="255"
+                      lineageId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].Columns[Codice EF]"
+                      name="Codice EF"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].Columns[Codice SAP]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].ExternalColumns[Codice SAP]"
+                      length="255"
+                      lineageId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].Columns[Codice SAP]"
+                      name="Codice SAP"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].Columns[Controparte]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].ExternalColumns[Controparte]"
+                      length="255"
+                      lineageId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].Columns[Controparte]"
+                      name="Controparte"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].Columns[Step AF]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].ExternalColumns[Step AF]"
+                      length="255"
+                      lineageId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].Columns[Step AF]"
+                      name="Step AF"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].Columns[Data Step AF]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].ExternalColumns[Data Step AF]"
+                      length="255"
+                      lineageId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].Columns[Data Step AF]"
+                      name="Data Step AF"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].Columns[Step EF]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].ExternalColumns[Step EF]"
+                      length="255"
+                      lineageId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].Columns[Step EF]"
+                      name="Step EF"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].Columns[Data Step EF]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].ExternalColumns[Data Step EF]"
+                      length="255"
+                      lineageId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].Columns[Data Step EF]"
+                      name="Data Step EF"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].Columns[Oggetto Contratto]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].ExternalColumns[Oggetto Contratto]"
+                      length="500"
+                      lineageId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].Columns[Oggetto Contratto]"
+                      name="Oggetto Contratto"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].Columns[Protocollo OUT]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].ExternalColumns[Protocollo OUT]"
+                      length="255"
+                      lineageId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].Columns[Protocollo OUT]"
+                      name="Protocollo OUT"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].Columns[Data Protocollo OUT]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].ExternalColumns[Data Protocollo OUT]"
+                      length="255"
+                      lineageId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].Columns[Data Protocollo OUT]"
+                      name="Data Protocollo OUT"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].Columns[Protocollo IN]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].ExternalColumns[Protocollo IN]"
+                      length="255"
+                      lineageId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].Columns[Protocollo IN]"
+                      name="Protocollo IN"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].Columns[Data Protocollo IN]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].ExternalColumns[Data Protocollo IN]"
+                      length="255"
+                      lineageId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].Columns[Data Protocollo IN]"
+                      name="Data Protocollo IN"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].Columns[Stato Contratto]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].ExternalColumns[Stato Contratto]"
+                      length="255"
+                      lineageId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].Columns[Stato Contratto]"
+                      name="Stato Contratto"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].Columns[Integra rinnova]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].ExternalColumns[Integra rinnova]"
+                      length="255"
+                      lineageId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].Columns[Integra rinnova]"
+                      name="Integra rinnova"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].Columns[Integrato rinnovato]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].ExternalColumns[Integrato rinnovato]"
+                      length="255"
+                      lineageId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].Columns[Integrato rinnovato]"
+                      name="Integrato rinnovato"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].Columns[Appalto]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].ExternalColumns[Appalto]"
+                      length="255"
+                      lineageId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].Columns[Appalto]"
+                      name="Appalto"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].Columns[Cdc]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].ExternalColumns[Cdc]"
+                      length="255"
+                      lineageId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].Columns[Cdc]"
+                      name="Cdc"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].Columns[Data Inizio Contratto]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].ExternalColumns[Data Inizio Contratto]"
+                      length="255"
+                      lineageId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].Columns[Data Inizio Contratto]"
+                      name="Data Inizio Contratto"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].Columns[Data Fine Contratto]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].ExternalColumns[Data Fine Contratto]"
+                      length="255"
+                      lineageId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].Columns[Data Fine Contratto]"
+                      name="Data Fine Contratto"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].Columns[Societa]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].ExternalColumns[Societa]"
+                      length="255"
+                      lineageId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].Columns[Societa]"
+                      name="Societa"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].ExternalColumns[Codice EF]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Codice EF" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].ExternalColumns[Codice SAP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Codice SAP" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].ExternalColumns[Controparte]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Controparte" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].ExternalColumns[Step AF]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Step AF" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].ExternalColumns[Data Step AF]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Data Step AF" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].ExternalColumns[Step EF]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Step EF" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].ExternalColumns[Data Step EF]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Data Step EF" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].ExternalColumns[Oggetto Contratto]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Oggetto Contratto" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].ExternalColumns[Protocollo OUT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Protocollo OUT" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].ExternalColumns[Data Protocollo OUT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Data Protocollo OUT" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].ExternalColumns[Protocollo IN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Protocollo IN" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].ExternalColumns[Data Protocollo IN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Data Protocollo IN" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].ExternalColumns[Stato Contratto]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Stato Contratto" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].ExternalColumns[Integra rinnova]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Integra rinnova" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].ExternalColumns[Integrato rinnovato]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Integrato rinnovato" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].ExternalColumns[Appalto]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Appalto" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].ExternalColumns[Cdc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Cdc" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].ExternalColumns[Data Inizio Contratto]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Data Inizio Contratto" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].ExternalColumns[Data Fine Contratto]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Data Fine Contratto" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].ExternalColumns[Societa]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Societa" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="T_IDM_ENG_FORM"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[T_IDM_ENG_FORM]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destinaton. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS,ROWS_PER_BATCH = 10000</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">0</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[(local).SKY_RGT]"
+                  connectionManagerRefId="Package.ConnectionManagers[(local).SKY_RGT]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Inputs[OLE DB Destination Input].Columns[Codice EF]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Codice EF"
+                      externalMetadataColumnId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Inputs[OLE DB Destination Input].ExternalColumns[Codice EF]"
+                      lineageId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].Columns[Codice EF]" />
+                    <inputColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Inputs[OLE DB Destination Input].Columns[Codice SAP]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Codice SAP"
+                      externalMetadataColumnId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Inputs[OLE DB Destination Input].ExternalColumns[Codice SAP]"
+                      lineageId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].Columns[Codice SAP]" />
+                    <inputColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Inputs[OLE DB Destination Input].Columns[Controparte]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Controparte"
+                      externalMetadataColumnId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Inputs[OLE DB Destination Input].ExternalColumns[Controparte]"
+                      lineageId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].Columns[Controparte]" />
+                    <inputColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Inputs[OLE DB Destination Input].Columns[Step AF]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Step AF"
+                      externalMetadataColumnId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Inputs[OLE DB Destination Input].ExternalColumns[Step AF]"
+                      lineageId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].Columns[Step AF]" />
+                    <inputColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Inputs[OLE DB Destination Input].Columns[Data Step AF]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Data Step AF"
+                      externalMetadataColumnId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Inputs[OLE DB Destination Input].ExternalColumns[Data Step AF]"
+                      lineageId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].Columns[Data Step AF]" />
+                    <inputColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Inputs[OLE DB Destination Input].Columns[Step EF]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Step EF"
+                      externalMetadataColumnId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Inputs[OLE DB Destination Input].ExternalColumns[Step EF]"
+                      lineageId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].Columns[Step EF]" />
+                    <inputColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Inputs[OLE DB Destination Input].Columns[Data Step EF]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Data Step EF"
+                      externalMetadataColumnId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Inputs[OLE DB Destination Input].ExternalColumns[Data Step EF]"
+                      lineageId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].Columns[Data Step EF]" />
+                    <inputColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Inputs[OLE DB Destination Input].Columns[Oggetto Contratto]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Oggetto Contratto"
+                      externalMetadataColumnId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Inputs[OLE DB Destination Input].ExternalColumns[Oggetto Contratto]"
+                      lineageId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].Columns[Oggetto Contratto]" />
+                    <inputColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Inputs[OLE DB Destination Input].Columns[Protocollo OUT]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Protocollo OUT"
+                      externalMetadataColumnId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Inputs[OLE DB Destination Input].ExternalColumns[Protocollo OUT]"
+                      lineageId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].Columns[Protocollo OUT]" />
+                    <inputColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Inputs[OLE DB Destination Input].Columns[Data Protocollo OUT]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Data Protocollo OUT"
+                      externalMetadataColumnId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Inputs[OLE DB Destination Input].ExternalColumns[Data Protocollo OUT]"
+                      lineageId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].Columns[Data Protocollo OUT]" />
+                    <inputColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Inputs[OLE DB Destination Input].Columns[Protocollo IN]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Protocollo IN"
+                      externalMetadataColumnId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Inputs[OLE DB Destination Input].ExternalColumns[Protocollo IN]"
+                      lineageId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].Columns[Protocollo IN]" />
+                    <inputColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Inputs[OLE DB Destination Input].Columns[Data Protocollo IN]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Data Protocollo IN"
+                      externalMetadataColumnId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Inputs[OLE DB Destination Input].ExternalColumns[Data Protocollo IN]"
+                      lineageId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].Columns[Data Protocollo IN]" />
+                    <inputColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Inputs[OLE DB Destination Input].Columns[Stato Contratto]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Stato Contratto"
+                      externalMetadataColumnId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Inputs[OLE DB Destination Input].ExternalColumns[Stato Contratto]"
+                      lineageId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].Columns[Stato Contratto]" />
+                    <inputColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Inputs[OLE DB Destination Input].Columns[Integra rinnova]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Integra rinnova"
+                      externalMetadataColumnId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Inputs[OLE DB Destination Input].ExternalColumns[Integra/rinnova]"
+                      lineageId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].Columns[Integra rinnova]" />
+                    <inputColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Inputs[OLE DB Destination Input].Columns[Integrato rinnovato]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Integrato rinnovato"
+                      externalMetadataColumnId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Inputs[OLE DB Destination Input].ExternalColumns[Integrato/rinnovato]"
+                      lineageId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].Columns[Integrato rinnovato]" />
+                    <inputColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Inputs[OLE DB Destination Input].Columns[Appalto]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Appalto"
+                      externalMetadataColumnId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Inputs[OLE DB Destination Input].ExternalColumns[Appalto]"
+                      lineageId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].Columns[Appalto]" />
+                    <inputColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Inputs[OLE DB Destination Input].Columns[Cdc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Cdc"
+                      externalMetadataColumnId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Inputs[OLE DB Destination Input].ExternalColumns[Cdc]"
+                      lineageId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].Columns[Cdc]" />
+                    <inputColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Inputs[OLE DB Destination Input].Columns[Data Inizio Contratto]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Data Inizio Contratto"
+                      externalMetadataColumnId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Inputs[OLE DB Destination Input].ExternalColumns[Data Inizio Contratto]"
+                      lineageId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].Columns[Data Inizio Contratto]" />
+                    <inputColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Inputs[OLE DB Destination Input].Columns[Data Fine Contratto]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Data Fine Contratto"
+                      externalMetadataColumnId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Inputs[OLE DB Destination Input].ExternalColumns[Data Fine Contratto]"
+                      lineageId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].Columns[Data Fine Contratto]" />
+                    <inputColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Inputs[OLE DB Destination Input].Columns[Societa]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Societa"
+                      externalMetadataColumnId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Inputs[OLE DB Destination Input].ExternalColumns[Societa]"
+                      lineageId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output].Columns[Societa]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Inputs[OLE DB Destination Input].ExternalColumns[Codice EF]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Codice EF" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Inputs[OLE DB Destination Input].ExternalColumns[Codice SAP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Codice SAP" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Inputs[OLE DB Destination Input].ExternalColumns[Controparte]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Controparte" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Inputs[OLE DB Destination Input].ExternalColumns[Step AF]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Step AF" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Inputs[OLE DB Destination Input].ExternalColumns[Data Step AF]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Data Step AF" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Inputs[OLE DB Destination Input].ExternalColumns[Step EF]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Step EF" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Inputs[OLE DB Destination Input].ExternalColumns[Data Step EF]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Data Step EF" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Inputs[OLE DB Destination Input].ExternalColumns[Oggetto Contratto]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Oggetto Contratto" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Inputs[OLE DB Destination Input].ExternalColumns[Protocollo OUT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Protocollo OUT" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Inputs[OLE DB Destination Input].ExternalColumns[Data Protocollo OUT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Data Protocollo OUT" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Inputs[OLE DB Destination Input].ExternalColumns[Protocollo IN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Protocollo IN" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Inputs[OLE DB Destination Input].ExternalColumns[Data Protocollo IN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Data Protocollo IN" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Inputs[OLE DB Destination Input].ExternalColumns[Stato Contratto]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Stato Contratto" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Inputs[OLE DB Destination Input].ExternalColumns[Integra/rinnova]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Integra/rinnova" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Inputs[OLE DB Destination Input].ExternalColumns[Integrato/rinnovato]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Integrato/rinnovato" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Inputs[OLE DB Destination Input].ExternalColumns[Appalto]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Appalto" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Inputs[OLE DB Destination Input].ExternalColumns[Cdc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Cdc" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Inputs[OLE DB Destination Input].ExternalColumns[Data Inizio Contratto]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Data Inizio Contratto" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Inputs[OLE DB Destination Input].ExternalColumns[Data Fine Contratto]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Data Fine Contratto" />
+                    <externalMetadataColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Inputs[OLE DB Destination Input].ExternalColumns[Societa]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Societa" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Import anagrafiche in T_IDM_ENG_FORM.Paths[Flat File Source Output]"
+              endId="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate T_IDM_ENG_FORM"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{a8ea5023-6c40-4e3e-8498-6275e57bb686}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate T_IDM_ENG_FORM"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{7603170A-B47F-4D1B-935B-EE4EFD89B269}"
+          SQLTask:SqlStatementSource="USE [SKY_RGT]&#xA;GO&#xA;&#xA;truncate table [T_IDM_ENG_FORM]&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{8b9da1f0-ce99-4369-ac84-5c6cbc69fc5f}"
+      DTS:From="Package\Truncate T_IDM_ENG_FORM"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Import anagrafiche in T_IDM_ENG_FORM" />
+  </DTS:PrecedenceConstraints>
+  <DTS:PackageVariables>
+    <DTS:PackageVariable
+      DTS:CreationName=""
+      DTS:DTSID="{25687CFF-FD37-42CF-A4A1-62E8DBA60E53}"
+      DTS:Namespace="dts-designer-1.0"
+      DTS:ObjectName="{8b9da1f0-ce99-4369-ac84-5c6cbc69fc5f}">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="PackageVariableValue">&lt;PrecedenceConstraint xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0"&gt;&lt;dwd:EvalOp&gt;Constraint&lt;/dwd:EvalOp&gt;&lt;/PrecedenceConstraint&gt;</DTS:Property>
+    </DTS:PackageVariable>
+    <DTS:PackageVariable
+      DTS:CreationName=""
+      DTS:DTSID="{768FE369-71A0-468E-8DB1-4BBBF238DC01}"
+      DTS:Namespace="dts-designer-1.0"
+      DTS:ObjectName="{eca506f2-893b-472a-9d8e-1fec0e547ff9}">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="PackageVariableValue">&lt;TaskHost xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0"&gt;&lt;dwd:DtsDataFlowDiagram&gt;&lt;dwd:BoundingLeft&gt;1000&lt;/dwd:BoundingLeft&gt;&lt;dwd:BoundingTop&gt;1000&lt;/dwd:BoundingTop&gt;&lt;dwd:Layout&gt;&lt;dds&gt;&lt;diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="Microsoft.DataWarehouse.Layout.GraphLayout110" defaultlineroute="Microsoft.DataWarehouse.Layout.GraphLayout110" version="7" nextobject="14" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="0" scrolltop="0" gridx="150" gridy="150" marginx="1000" marginy="1000" zoom="100" x="34713" y="16748" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="1" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="0" backpictureclsid="{00000000-0000-0000-0000-000000000000}"&gt;&lt;font&gt;&lt;ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" /&gt;&lt;/font&gt;&lt;mouseicon&gt;&lt;ddsxmlobjectstreamwrapper binary="6c74000000000000" /&gt;&lt;/mouseicon&gt;&lt;/diagram&gt;&lt;layoutmanager&gt;&lt;ddsxmlobj /&gt;&lt;/layoutmanager&gt;&lt;ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Flat File Source" left="2223" top="3016" logicalid="4" controlid="1" masterid="0" hint1="0" hint2="0" width="3598" height="1164" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobjectstreaminitwrapper binary="000800000e0e00008c040000" /&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj&gt;&lt;property name="LogicalObject" value="Package\Import anagrafiche in T_IDM_ENG_FORM\RGT_ANEF" vartype="8" /&gt;&lt;property name="ShowConnectorSource" value="0" vartype="2" /&gt;&lt;/ddsxmlobj&gt;&lt;/layoutobject&gt;&lt;shape groupshapeid="0" groupnode="0" /&gt;&lt;/ddscontrol&gt;&lt;ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="OLE DB Destination" left="2223" top="5632" logicalid="5" controlid="2" masterid="0" hint1="0" hint2="0" width="3598" height="1164" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobjectstreaminitwrapper binary="000800000e0e00008c040000" /&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj&gt;&lt;property name="LogicalObject" value="Package\Import anagrafiche in T_IDM_ENG_FORM\T_IDM_ENG_FORM" vartype="8" /&gt;&lt;property name="ShowConnectorSource" value="0" vartype="2" /&gt;&lt;/ddsxmlobj&gt;&lt;/layoutobject&gt;&lt;shape groupshapeid="0" groupnode="0" /&gt;&lt;/ddscontrol&gt;&lt;ddscontrol controlprogid="MSDDS.Polyline" left="3623" top="3781" logicalid="6" controlid="3" masterid="0" hint1="0" hint2="0" width="799" height="2351" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobj&gt;&lt;polyline endtypedst="3" endtypesrc="1" usercolor="32768" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" /&gt;&lt;/ddsxmlobj&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj&gt;&lt;property name="LogicalObject" value="Package\Import anagrafiche in T_IDM_ENG_FORM.Paths[Flat File Source Output]" vartype="8" /&gt;&lt;property name="Virtual" value="0" vartype="11" /&gt;&lt;property name="VisibleAP" value="0" vartype="3" /&gt;&lt;/ddsxmlobj&gt;&lt;/layoutobject&gt;&lt;connector lineroutestyle="Microsoft.DataWarehouse.Layout.GraphLayout110" sourceid="1" destid="2" sourceattachpoint="7" destattachpoint="6" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="2" relatedid="0" virtual="0"&gt;&lt;point x="4022" y="4180" /&gt;&lt;point x="4022" y="5632" /&gt;&lt;/connector&gt;&lt;/ddscontrol&gt;&lt;/dds&gt;&lt;/dwd:Layout&gt;&lt;/dwd:DtsDataFlowDiagram&gt;&lt;dwd:DtsComponentDesignerPropertiesList&gt;&lt;dwd:DtsComponentDesignTimeProperty&gt;&lt;dwd:key xsi:type="xsd:string"&gt;19247	DataSourceViewID&lt;/dwd:key&gt;&lt;/dwd:DtsComponentDesignTimeProperty&gt;&lt;dwd:DtsComponentDesignTimeProperty&gt;&lt;dwd:key xsi:type="xsd:string"&gt;20741	TableInfoObjectType&lt;/dwd:key&gt;&lt;dwd:value xsi:type="xsd:string"&gt;Table&lt;/dwd:value&gt;&lt;/dwd:DtsComponentDesignTimeProperty&gt;&lt;dwd:DtsComponentDesignTimeProperty&gt;&lt;dwd:key xsi:type="xsd:string"&gt;20741	DataSourceViewID&lt;/dwd:key&gt;&lt;/dwd:DtsComponentDesignTimeProperty&gt;&lt;dwd:DtsComponentDesignTimeProperty&gt;&lt;dwd:key xsi:type="xsd:string"&gt;19247	TableInfoObjectType&lt;/dwd:key&gt;&lt;dwd:value xsi:type="xsd:string"&gt;Table&lt;/dwd:value&gt;&lt;/dwd:DtsComponentDesignTimeProperty&gt;&lt;/dwd:DtsComponentDesignerPropertiesList&gt;&lt;/TaskHost&gt;</DTS:Property>
+    </DTS:PackageVariable>
+    <DTS:PackageVariable
+      DTS:CreationName=""
+      DTS:DTSID="{3C483484-A413-4BAC-8BAD-E44A0CA6E5C0}"
+      DTS:Namespace="dts-designer-1.0"
+      DTS:ObjectName="{eca506f2-893b-472a-9d8e-1fec0e547ff9}-20758">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="PackageVariableValue">&lt;PipelinePath xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0"&gt;&lt;dwd:SourceName&gt;Flat File Source Output&lt;/dwd:SourceName&gt;&lt;dwd:DestinationName&gt;OLE DB Destination Input&lt;/dwd:DestinationName&gt;&lt;/PipelinePath&gt;</DTS:Property>
+    </DTS:PackageVariable>
+    <DTS:PackageVariable
+      DTS:CreationName=""
+      DTS:DTSID="{6E5A4AD7-BF91-4258-831B-51CAF6C3F488}"
+      DTS:Namespace="dts-designer-1.0"
+      DTS:ObjectName="package-diagram">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="PackageVariableValue">&lt;Package xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0"&gt;&lt;dwd:DtsControlFlowDiagram&gt;&lt;dwd:BoundingLeft&gt;-3884&lt;/dwd:BoundingLeft&gt;&lt;dwd:BoundingTop&gt;-1240&lt;/dwd:BoundingTop&gt;&lt;dwd:Layout&gt;&lt;dds&gt;&lt;diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="Microsoft.DataWarehouse.Layout.GraphLayout110" defaultlineroute="Microsoft.DataWarehouse.Layout.GraphLayout110" version="7" nextobject="10" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-4513" scrolltop="-2240" gridx="150" gridy="150" marginx="1000" marginy="1000" zoom="100" x="45826" y="12462" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="1" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}"&gt;&lt;font&gt;&lt;ddsxmlobjectstreamwrapper binary="01010000900180380100065461686f6d61" /&gt;&lt;/font&gt;&lt;mouseicon&gt;&lt;ddsxmlobjectstreamwrapper binary="6c74000000000000" /&gt;&lt;/mouseicon&gt;&lt;/diagram&gt;&lt;layoutmanager&gt;&lt;ddsxmlobj /&gt;&lt;/layoutmanager&gt;&lt;ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Data Flow Task" left="-3884" top="1569" logicalid="4" controlid="1" masterid="0" hint1="0" hint2="0" width="5688" height="1164" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobjectstreaminitwrapper binary="00080000381600008c040000" /&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj&gt;&lt;property name="LogicalObject" value="Package\Import anagrafiche in T_IDM_ENG_FORM" vartype="8" /&gt;&lt;property name="ShowConnectorSource" value="0" vartype="2" /&gt;&lt;/ddsxmlobj&gt;&lt;/layoutobject&gt;&lt;shape groupshapeid="0" groupnode="0" /&gt;&lt;/ddscontrol&gt;&lt;ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Execute SQL Task" left="-3513" top="-1240" logicalid="5" controlid="2" masterid="0" hint1="0" hint2="0" width="4947" height="1164" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobjectstreaminitwrapper binary="00080000531300008c040000" /&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj&gt;&lt;property name="LogicalObject" value="Package\Truncate T_IDM_ENG_FORM" vartype="8" /&gt;&lt;property name="ShowConnectorSource" value="0" vartype="2" /&gt;&lt;/ddsxmlobj&gt;&lt;/layoutobject&gt;&lt;shape groupshapeid="0" groupnode="0" /&gt;&lt;/ddscontrol&gt;&lt;ddscontrol controlprogid="MSDDS.Polyline" left="-1439" top="-475" logicalid="6" controlid="3" masterid="0" hint1="0" hint2="0" width="799" height="2544" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobj&gt;&lt;polyline endtypedst="3" endtypesrc="1" usercolor="32768" linestyle="0" linerender="2" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" /&gt;&lt;/ddsxmlobj&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj&gt;&lt;property name="LogicalObject" value="Package.PrecedenceConstraints[Constraint 2]" vartype="8" /&gt;&lt;property name="Virtual" value="0" vartype="11" /&gt;&lt;property name="VisibleAP" value="0" vartype="3" /&gt;&lt;/ddsxmlobj&gt;&lt;/layoutobject&gt;&lt;connector sourceid="2" destid="1" sourceattachpoint="9" destattachpoint="8" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="2" relatedid="0" virtual="0"&gt;&lt;point x="-1040" y="-76" /&gt;&lt;point x="-1040" y="1569" /&gt;&lt;/connector&gt;&lt;/ddscontrol&gt;&lt;/dds&gt;&lt;/dwd:Layout&gt;&lt;dwd:PersistedViewPortLeft&gt;-4513&lt;/dwd:PersistedViewPortLeft&gt;&lt;dwd:PersistedViewPortTop&gt;-2240&lt;/dwd:PersistedViewPortTop&gt;&lt;/dwd:DtsControlFlowDiagram&gt;&lt;/Package&gt;</DTS:Property>
+    </DTS:PackageVariable>
+    <DTS:PackageVariable
+      DTS:CreationName=""
+      DTS:DTSID="{6D8B8910-E71A-4562-A52C-DF838948FAE5}"
+      DTS:Namespace="dts-designer-1.0"
+      DTS:ObjectName="package-diagram">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="PackageVariableValue">&lt;Package xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0"&gt;&lt;dwd:DtsControlFlowDiagram&gt;&lt;dwd:BoundingLeft&gt;-3884&lt;/dwd:BoundingLeft&gt;&lt;dwd:BoundingTop&gt;-1240&lt;/dwd:BoundingTop&gt;&lt;dwd:Layout&gt;&lt;dds&gt;&lt;diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="Microsoft.DataWarehouse.Layout.GraphLayout110" defaultlineroute="Microsoft.DataWarehouse.Layout.GraphLayout110" version="7" nextobject="10" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-4513" scrolltop="-2240" gridx="150" gridy="150" marginx="1000" marginy="1000" zoom="100" x="45826" y="12462" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="1" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}"&gt;&lt;font&gt;&lt;ddsxmlobjectstreamwrapper binary="01010000900180380100065461686f6d61" /&gt;&lt;/font&gt;&lt;mouseicon&gt;&lt;ddsxmlobjectstreamwrapper binary="6c74000000000000" /&gt;&lt;/mouseicon&gt;&lt;/diagram&gt;&lt;layoutmanager&gt;&lt;ddsxmlobj /&gt;&lt;/layoutmanager&gt;&lt;ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Data Flow Task" left="-3884" top="1569" logicalid="4" controlid="1" masterid="0" hint1="0" hint2="0" width="5688" height="1164" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobjectstreaminitwrapper binary="00080000381600008c040000" /&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj&gt;&lt;property name="LogicalObject" value="Package\Import anagrafiche in T_IDM_ENG_FORM" vartype="8" /&gt;&lt;property name="ShowConnectorSource" value="0" vartype="2" /&gt;&lt;/ddsxmlobj&gt;&lt;/layoutobject&gt;&lt;shape groupshapeid="0" groupnode="0" /&gt;&lt;/ddscontrol&gt;&lt;ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Execute SQL Task" left="-3513" top="-1240" logicalid="5" controlid="2" masterid="0" hint1="0" hint2="0" width="4947" height="1164" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobjectstreaminitwrapper binary="00080000531300008c040000" /&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj&gt;&lt;property name="LogicalObject" value="Package\Truncate T_IDM_ENG_FORM" vartype="8" /&gt;&lt;property name="ShowConnectorSource" value="0" vartype="2" /&gt;&lt;/ddsxmlobj&gt;&lt;/layoutobject&gt;&lt;shape groupshapeid="0" groupnode="0" /&gt;&lt;/ddscontrol&gt;&lt;ddscontrol controlprogid="MSDDS.Polyline" left="-1439" top="-475" logicalid="6" controlid="3" masterid="0" hint1="0" hint2="0" width="799" height="2544" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobj&gt;&lt;polyline endtypedst="3" endtypesrc="1" usercolor="32768" linestyle="0" linerender="2" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" /&gt;&lt;/ddsxmlobj&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj&gt;&lt;property name="LogicalObject" value="Package.PrecedenceConstraints[Constraint 2]" vartype="8" /&gt;&lt;property name="Virtual" value="0" vartype="11" /&gt;&lt;property name="VisibleAP" value="0" vartype="3" /&gt;&lt;/ddsxmlobj&gt;&lt;/layoutobject&gt;&lt;connector sourceid="2" destid="1" sourceattachpoint="9" destattachpoint="8" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="2" relatedid="0" virtual="0"&gt;&lt;point x="-1040" y="-76" /&gt;&lt;point x="-1040" y="1569" /&gt;&lt;/connector&gt;&lt;/ddscontrol&gt;&lt;/dds&gt;&lt;/dwd:Layout&gt;&lt;dwd:PersistedViewPortLeft&gt;-4513&lt;/dwd:PersistedViewPortLeft&gt;&lt;dwd:PersistedViewPortTop&gt;-2240&lt;/dwd:PersistedViewPortTop&gt;&lt;/dwd:DtsControlFlowDiagram&gt;&lt;/Package&gt;</DTS:Property>
+    </DTS:PackageVariable>
+  </DTS:PackageVariables>
+</DTS:Executable>
